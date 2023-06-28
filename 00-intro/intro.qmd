@@ -131,13 +131,13 @@ gapminder %>% filter(country %in% c("Canada", "France", "Germany", "Italy", "Jap
 ---
 
 ::: {layout="[[-1], [1], [-1]]"}
-![](figures/hcspend-maternal-mortality.gif){fig-align="center"}
+![](../figures/hcspend-maternal-mortality.gif){fig-align="center"}
 :::
 
 ---
 
 ::: {layout="[[-1], [1], [-1]]"}
-![](figures/hcspend-infant-mortality.gif){fig-align="center"}
+![](../figures/hcspend-infant-mortality.gif){fig-align="center"}
 :::
 
 
