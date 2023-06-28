@@ -1,5 +1,5 @@
 ---
-title: "Introuction: Why Supply-side Health?"
+title: "Introduction: Why Supply-side Health?"
 author: "Ian McCarthy | Emory University"
 format: 
   revealjs:
