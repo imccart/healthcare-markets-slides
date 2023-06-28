@@ -174,16 +174,16 @@ We have an "access" problem in the U.S. In many ways, we "overprovide" care to s
 
 ---
 
-Lots of interesting economic issues in health care (not all unique to the U.S.):
+Lots of interesting economic issues in health care, not all unique to the US.
 
---
-
+:::{.fragment}
 1. Extremely heterogeneous products
 2. Asymmetric information between patients and physicians
 3. Unobservable quality (experience good)
 4. Unpredictable need (inability to shop in many cases)
 5. Distortion of incentives due to insurance
 6. Adverse selection (asymmetric information between patients and insurers)
+:::
 
 
 ---
@@ -210,6 +210,7 @@ Some common arguments:
 The real culprit(s):
 - Administrative waste
 - Prices!
+- Some fraud
 
 ---
 
