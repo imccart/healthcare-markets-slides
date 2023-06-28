@@ -1,0 +1,49 @@
+---
+title: "Insurance: A New Language"
+author: "Ian McCarthy | Emory University"
+format: 
+  revealjs:
+    theme: [moon]
+    preview-links: auto
+    chalkboard:
+      boardmarker-width: 5
+#    embed-resources: true
+from: markdown+emoji
+execute: 
+  echo: true
+---
+
+```{r}
+#| include: false
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
+```
+
+# Table of contents
+
+1. Motivation
+
+2. Managed Care and Networks
+
+3. Cost-sharing
+
+
+# Motivation
+
+---
+
+## What is health insurance
+
+Why do people buy health insurance? What are they "insuring"?
+
+---
+
+Health insurance can still help improve health by:
+
+- improving affordability of care (by paying for some part of care when needed)
+- facilitating availability of care (providers receive lower payments for "cash" patients)
+
+::: {.fragment}
+Made more important due to extremely high healthcare prices
+:::
+
