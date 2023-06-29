@@ -22,6 +22,8 @@ pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 # Table of contents
 
 1. History of Health Insurance
+2. Employer Sponsored Insurance
+3. Non-group Coverage
 
 
 
@@ -54,8 +56,52 @@ pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 - Hospitals paid on a cost-plus basis (more on this later)
 - Any competing insurance plans had to offer the same structure
 
+---
 
-# Modern health insurance
+## Modern health insurance
+
+- Primarily through employers 
+- Only developed country to rely on employer-sponsored insurance
+
+```{r}
+#| include: false
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(tidyverse, ggplot2, janitor, plotly)
+
+ins.dat <- read_delim("../data/acs/acs_insurance.txt")
+
+ins.dat <- ins.dat %>%
+  mutate(perc_private = (ins_employer + ins_direct)/adult_pop,
+         perc_public = (ins_medicare + ins_medicaid)/adult_pop,
+         perc_ins = (adult_pop - uninsured)/adult_pop,
+         perc_unins = uninsured/adult_pop,
+         perc_employer = ins_employer/adult_pop,
+         perc_medicaid = ins_medicaid/adult_pop,
+         perc_medicare = ins_medicare/adult_pop,
+         perc_direct = ins_direct/adult_pop)
+```
+
+```{r}
+#| echo: false
+#| fig.cap: "Source of Health Insurance (2012)"
+#| label: fig-insurance-type
+ins.dat %>%
+  filter(year==2012) %>% pivot_longer(c("perc_employer","perc_direct","perc_medicaid", "perc_unins")) %>%
+  select(State, name, value) %>%
+  group_by(name) %>% summarize(mean=mean(value)) %>%
+  ggplot(aes(x=name, y=mean)) +
+  geom_col() + ylim(0,0.65) + 
+  labs(
+    x=" ",
+    y="Percent",
+    caption="Data from the American Community Survey, adults under age 65",
+    title=" "
+  ) + theme_bw() + scale_x_discrete(labels=c('perc_direct'='Direct Purchase',
+                                             'perc_employer'='Employer-provided',
+                                             'perc_medicaid'='Medicaid',
+                                             'perc_unins'='Uninsured'))
+```
+
 
 ---
 
