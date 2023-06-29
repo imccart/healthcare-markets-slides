@@ -1,0 +1,64 @@
+---
+title: "Private Health Insurance"
+author: "Ian McCarthy | Emory University"
+format: 
+  revealjs:
+    theme: [moon]
+    preview-links: auto
+    chalkboard:
+      boardmarker-width: 5
+#    embed-resources: true
+from: markdown+emoji
+execute: 
+  echo: true
+---
+
+```{r}
+#| include: false
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
+```
+
+# Table of contents
+
+1. History of Health Insurance
+
+
+
+# Background
+
+---
+
+## Early history of health insurance
+
+- 1929: "Hospital insurance" for schoolteachers to receive care from Baylor University Hospital in Dallas, TX
+- Essentially pre-paid medical care for about 1,500 schoolteachers in the area
+- Annual fee (or "premium") of \$6 per year, \$104 in 2023, for up to 21 days of hospital care
+- Subscription model offered regular cash flow for hospitals
+
+---
+
+- Popular revenue model for hospitals
+- Network of hospitals grew to be Blue Cross, first established in Sacramento, CA in 1932
+- Structure introduces a few distortions:
+    - Care concentrated in hospitals, even if other settings could provide care at lower cost
+    - No price competition
+- Blue Cross plans grew in the 1930s
+    - Operated as a not-for-profit
+    - Exempt from typical regulations on insurance markets
+
+---
+
+- Expansion into prepaid physician services (Blue Shield), combined to be Blue Cross and Blue Shield
+- By 1940, half of all health insurance plans were Blue Cross and Blue Shield plans
+- Hospitals paid on a cost-plus basis (more on this later)
+- Any competing insurance plans had to offer the same structure
+
+
+# Modern health insurance
+
+---
+
+
+
+

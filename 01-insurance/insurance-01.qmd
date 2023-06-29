@@ -1,5 +1,5 @@
 ---
-title: "Insurance: A New Language"
+title: "Health Insurance: A New Language"
 author: "Ian McCarthy | Emory University"
 format: 
   revealjs:
@@ -23,9 +23,9 @@ pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 
 1. Motivation
 
-2. Managed Care and Networks
+2. Terminology
 
-3. Cost-sharing
+3. Real life example
 
 
 # Motivation
@@ -38,7 +38,7 @@ Why do people buy health insurance? What are they "insuring"?
 
 ---
 
-Health insurance can still help improve health by:
+Health insurance can still improve health by:
 
 - improving affordability of care (by paying for some part of care when needed)
 - facilitating availability of care (providers receive lower payments for "cash" patients)
@@ -46,4 +46,64 @@ Health insurance can still help improve health by:
 ::: {.fragment}
 Made more important due to extremely high healthcare prices
 :::
+
+---
+
+## How does health insurance work?
+
+- Enrollees pay the insurer
+    - Fixed amount per month (premium)
+    - Some amount for care provided (cost-sharing)
+- Insurer pays provider
+    - Negotiated prices
+    - Pays share of bill depending on cost-sharing terms
+
+---
+
+- Modern health insurance is very complicated!
+- Need to work through some basic terminology before we go much further
+
+
+# Terminology
+
+---
+
+## Managed care
+
+
+---
+
+## Insurance networks
+
+---
+
+## Premiums
+
+
+---
+
+## Cost-sharing
+
+
+---
+
+## Deductible
+
+
+---
+
+## Copayment
+
+
+---
+
+## Coinsurance
+
+
+# Real-life example
+
+---
+
+- Let's look at some real-life health insurance options and descriptions
+- Emory's [health insurance plans](https://hr.emory.edu/eu/benefits/faculty-staff/medical/index.html) for its employees
 
