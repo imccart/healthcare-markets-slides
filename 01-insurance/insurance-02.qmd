@@ -63,6 +63,10 @@ pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 - Primarily through employers 
 - Only developed country to rely on employer-sponsored insurance
 
+# Employer-sponsored Insurance
+
+---
+
 ```{r}
 #| include: false
 if (!require("pacman")) install.packages("pacman")
@@ -105,6 +109,44 @@ ins.dat %>%
 
 ---
 
+## Why dependent on ESI?
 
+- Stabalization act of 1942 (wages frozen but not benefits)
+- Tax exemption for insurance expenditures (1954)
 
+---
+
+## How does ESI work?
+
+- Employer pays large share of premium
+- Employee pays smaller share "pre-tax"
+- Often only a few plan options
+- Many large employers are "self-funded"
+  - Employer actually pays for the health care
+  - Insurer is an administrator and negotiator
+  - Avoids state mandated benefits and state premium taxes (ERISA laws)
+  - Maybe useful for employers across state lines
+
+# Non-group coverage
+
+---
+
+## What is "non-group" coverage?
+
+- Health insurance plans purchased by individuals directly from insurers, rather than being obtained through employers or government programs
+- Possibly more choices, depending on where you live
+- Premiums vary based on factors such as age, location, and (historically) pre-existing conditions
+- Significant changes with the implementation of the Affordable Care Act (ACA) in the United States, which introduced marketplaces where individuals can compare and purchase health insurance plans, along with subsidies to help lower-income individuals afford coverage
+
+---
+
+## Big changes in non-group options from the ACA
+
+- [Health insurance marketplaces](https://www.healthcare.gov/)
+- Essential health benefits
+- Pre-existing condition protections
+- Subsidies and financial assistance
+- Coverage requirements and individual mandate
+  - Mandate challenged in Supreme Court and upheld at first
+  - Effectively removed in 2019 when penalty was set to \$0
 
