@@ -70,34 +70,52 @@ Made more important due to extremely high healthcare prices
 
 ## Managed care
 
+- Health insurance product that encompasses some attempt to manage utilization of health care among its enrollees, often via assigning providers (physicians, hospitals, etc.) into tiers separated based on pricing
+- Insurers "manage" care through the use of insurance "networks"
 
 ---
 
 ## Insurance networks
 
+Set of providers for which the insurer has agreed to pay some amount of care received at those providers, conditional on other cost-sharing terms of the insurance contract
+  - Preferred Provider Organizations (PPOs): tiered network structure, where patients will be responsible for less of the total cost of care when going to a higher tiered provider
+  - Health Maintenance Organizations (HMOs): more discrete network structure, with some providers in-network and other providers out-of-network
+
 ---
 
 ## Premiums
 
+What enrollees pay every month regardless of whether they use any health care
+
+![](../figures/kff-premiums.webp)
 
 ---
 
 ## Cost-sharing
+
+Generally refers to the amount of health care expenses that must be paid directly by the patient (as opposed to their insurance plan). The cost-sharing terms of an insurance contract will dictate how much a patient must pay out-of-pocket for any care received. Cost-sharing tends to encompass a **deductible**, **co-insurance**, and **co-payment**. 
 
 
 ---
 
 ## Deductible
 
+The amount of money that a patient must pay out-of-pocket before the insurance company will pay **anything**
+
+![](../figures/kff-deductibles.png)
 
 ---
 
 ## Copayment
+A fixed dollar amount for which the patient is responsible **after meeting their deductible.** Co-payments are more common for low-cost, predictable health care services like physician office visits. Patients might have a \$20 co-pay for office visits, which means they must pay \$20 for the visit and the insurance company will pay the rest.
 
 
 ---
 
 ## Coinsurance
+
+A percentage of costs for which the patient is responsible **after meeting their deductible.** For example, assume you have a 20% co-insurance rate. Assume also that you've met your deductible and that you've received a hospital bill for \$5,000. Then you'd have to pay \$1,000 (20% of \$5,000) to the hospital as your co-insurance. The insurer would pay the remaining 80%. Co-insurance is more common for more complicated or less predictable services, like hospital stays or emergency department visits.
+
 
 
 # Real-life example
