@@ -87,7 +87,9 @@ Set of providers for which the insurer has agreed to pay some amount of care rec
 
 What enrollees pay every month regardless of whether they use any health care
 
-![](../figures/kff-premiums.webp)
+---
+
+![](../figures/kff-premiums.webp){fig-align="center"}
 
 ---
 
@@ -102,7 +104,9 @@ Generally refers to the amount of health care expenses that must be paid directl
 
 The amount of money that a patient must pay out-of-pocket before the insurance company will pay **anything**
 
-![](../figures/kff-deductibles.png)
+---
+
+![](../figures/kff-deductibles.png){fig-align="center"}
 
 ---
 
