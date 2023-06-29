@@ -1,0 +1,27 @@
+---
+title: "Public Health Insurance"
+author: "Ian McCarthy | Emory University"
+format: 
+  revealjs:
+    theme: [moon]
+    preview-links: auto
+    chalkboard:
+      boardmarker-width: 5
+#    embed-resources: true
+from: markdown+emoji
+execute: 
+  echo: true
+---
+
+```{r}
+#| include: false
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
+```
+
+# Table of contents
+
+1. Medicare
+2. Medicaid
+3. Veterans Administration
+
