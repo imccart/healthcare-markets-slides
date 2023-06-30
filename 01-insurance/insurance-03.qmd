@@ -97,7 +97,7 @@ Part A benefit structure:
 - Accounts for nearly **half** of total Medicare enrollees
 - Some early difficulties with adverse selection and risk-adjustment
 - Still slightly sicker people staying in traditional Medicare
-- Could be a <b>big</b> part of any future "Medicare-for-all" type program
+- Could be a **big** part of any future "Medicare-for-all" type program
 
 ---
 
