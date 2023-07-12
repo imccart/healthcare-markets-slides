@@ -1,0 +1,193 @@
+---
+title: "Risk Premium and Willingness to Pay"
+author: "Ian McCarthy | Emory University"
+format: 
+  revealjs:
+    theme: [moon]
+    preview-links: auto
+    chalkboard:
+      boardmarker-width: 5
+    slide-number: true
+    width: 1600
+    height: 900    
+#    embed-resources: true
+from: markdown+emoji
+execute: 
+  echo: true
+---
+
+```{r}
+#| include: false
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
+```
+
+# Table of contents
+
+1. Motivation
+2. Risk Premium and WTP
+3. Determinants of WTP
+
+---
+
+## An Example from Real Life
+
+In 2018, Humana exited the ACA exchanges due to an "unbalanced risk pool based on the results of the 2017 open enrollment period". [CNN Money Article](https://money.cnn.com/2017/02/14/news/economy/humana-obamacare-insurer)<br>
+
+::: {.fragment}
+Fun fact: Humana and Aetna's merger deal had just been blocked. [NPR Article](https://www.npr.org/sections/thetwo-way/2017/02/14/515167491/aetna-and-humana-call-off-merger-after-court-decision)
+:::
+
+
+---
+
+## Managing risk is really important
+
+::: {layout-ncol=2}
+
+![spend](../figures/meps-expenditure.png){}
+
+![visits](../figures/meps-visits.png){}
+
+:::
+
+
+# Risk Premium and WTP
+
+---
+
+## Risk premium
+
+The maximum amount of money that a risk-averse person is willing to pay to avoid the risky scenario. In other words, the amount of money that makes a person indifferent between the certain and uncertain situations.
+
+
+::: {.fragment}
+This is part of how we measure willingness-to-pay for health insurance.
+:::
+
+---
+
+```{tikz}
+#| echo: false
+#| fig.cap: "Depiction of risk premium"
+
+\usetikzlibrary{calc}
+\begin{tikzpicture}[my plot/.style={
+                        thick,
+                        smooth,
+                        samples=100,
+                        domain=0.1:5},
+                    scale=0.75,
+                    my grid/.style={dashed,opacity=0.5, every node/.style={black,opacity=1}, transform shape},
+                    my axis/.style={latex-latex}]
+\draw[my plot] (0,0) plot (\x,{ln(\x)});
+\coordinate (start plot) at (0.1,{ln(0.1)}); % domain start
+\coordinate (end plot) at (5,{ln(5)}); % domain end
+\draw[my axis] ([shift={(-0.5cm,0.5cm)}]start plot |- end plot) |- node[coordinate](origin){} ([shift={(0.5cm,-0.5cm)}]start plot -| end plot);
+\def\x{0.5}\def\y{4}\def\p{0.55} % define the x, y and p values
+\coordinate (Ux) at (\x,{ln(\x)}); % set the u(x) coordinate
+\coordinate (Uy) at (\y,{ln(\y)}); % set the u(y) coordinate
+\coordinate (Up) at ({\p*\x+(1-\p)*\y},{ln(\p*\x+(1-\p)*\y)}); % set the u(p*x+(1-p)*y) coordinate
+\draw (Ux) -- coordinate[pos=1-\p] (Up-mid) (Uy); % set the coordinate on the linear curve
+\path let \p1=(Up-mid), \n1={pow(e,\y1*0.03514)} in (28.4576*\n1,\y1) coordinate (Up-mid2); 
+\draw[my grid] (Ux) |- node[below]{$x_{1}$} (origin) |- node[left]{$u(x_{1})$} cycle;
+\draw[my grid] (Uy) |- node[below]{$x_{2}$} (origin) |- node[left]{$u(x_{2})$} cycle;
+%\draw[my grid] (Up) |- (origin) |- cycle;
+\draw[my grid] (Up) |- (origin);
+%\draw[my grid] (Up-mid2) |- node[below,font=\scriptsize]{$c(F,u)$} (origin) |- node[left]{$pu(x)+(1-p)u(y)$} cycle;
+\draw[my grid] (Up-mid2) |- node[below right]{\hspace{.05cm} $\pi$} (origin) |- node[left,font=\scriptsize]{$E[u(x)]$} cycle;
+\draw[my grid] (Up-mid) -- (Up-mid2);
+\end{tikzpicture}
+```
+
+
+---
+
+## Example
+Consider the utility function, $u(w)=\ln(w)$. An individual starts with a wealth of \$100,000. With probability 0.25, this person will get sick and incur a cost of \$20,000. Their wealth in the sick state is therefore \$80,000. What is the maximum amount this person is willing to pay for health insurance?
+
+---
+
+1. Calculate expected wealth, $E[w]$.
+2. Calculate expected utility, $E[U(w)]$.
+3. Calculate value of wealth that gives you $u=E[U(w)]$ (based on the utility function).
+4. Calculate the risk premium as the difference between (1) and (3).
+5. Calculate maximum willingness to pay by adding the risk premium and the expected cost.
+
+
+---
+
+## Answer
+```{r}
+#| echo: false
+
+ecost <- .25*20000
+eu <- .75*log(100000) + .25*log(80000)
+inv.u <- exp(eu)
+wtp <- 100000-inv.u
+```
+We're asked to find some wealth level, $y$, such that the person is indifferent between $y$ with certainty versus the risky wealth levels, $w_{h}=$ \$100,000 with probability 0.75 or $w_{s}=$ \$80,000 with probability 0.25.<br>
+
+The person's expected utility with uncertainty is: $E[u]=0.75\times \ln (100000) + 0.25 \times \ln (80000) =$ `r eu`. We therefore need to find $y$ such that $u(y)=$ `r eu`. Given our utility function, this is satisfied for $y=$ \$`r format(inv.u,digits=5,big.mark=",")`. Since the person starts with \$100,000, they are willing to pay a maximum of \$100,000 $-$ \$`r format(inv.u,digits=5,big.mark=",")` $=$ \$`r format(wtp,digits=5,big.mark=",")` for health insurance.
+
+---
+
+Finally, since the expected cost of care is <span>&#36;</span>`r format(ecost,digits=5,big.mark=",")`, we can break this \$`r format(wtp,digits=5,big.mark=",")` into its actuarily fair premium of \$`r format(ecost,digits=5,big.mark=",")` plus the loading factor or risk premium of \$`r format(wtp-ecost,digits=5,big.mark=",")`.
+
+---
+
+## In-class Problem: Demand for insurance
+Assume that utility takes the log form, $u(x)=ln(x)$. If someone is healthy, they maintain their current wealth of \$100, and if they become ill, they must incur a cost of \$50. Answer the following questions based on this setup.
+
+1. Calculate the risk premium and WTP based on a probability of illness of 0.1.
+2. Repeat part (1) using a probability of illness of 0.2.
+3. Repeat part (1) using a probability of illness of 0.5.
+4. Explain how these values differ and why. What might this say about the profitability of insurance in a market with many sick people?
+
+# Determinants of Risk Premium and WTP
+
+---
+
+## What affects the risk premium?
+
+Based on the graph, what do you think are some things that might affect the risk premium and WTP?
+
+::: {.fragment}
+1. Curvature of the utility function
+2. Probability of illness
+3. Cost of illness
+:::
+
+
+# Other issues
+
+---
+
+## High risk pools
+
+- A "high-risk pool" is a way to put people that are more likely to incur high medical costs all in one plan. 
+- Recalling the curvature of demand function, probability of illness, and cost of illness...do you think a high-risk pool is sustainable (think about the profit to the insurer)?<br>
+
+::: {.fragment}
+Let's look at this in practice, [KFF High-risk Pools](https://www.kff.org/health-reform/issue-brief/high-risk-pools-for-uninsurable-individuals/)
+:::
+
+---
+
+## Other reasons to buy health insurance
+
+1. Increase bargaining power with providers
+
+2. Manage where care is delivered (due to information problems in health care decisions)
+
+
+# Main takeaways
+
+---
+
+1. Calculate risk premium and maximum willingness to pay for health insurance
+
+2. Explain and show graphically how changes in the utility function, probability of illness, and the cost of illness affect the risk premium
+
+3. Discuss how these factors (preferences, probability of illness, and cost of illness) help us in understanding the effects of real-world health insurance policy.
+
