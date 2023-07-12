@@ -105,6 +105,7 @@ What does this mean in words?
 
 ## Risk aversion
 
+
 ```{tikz}
 #| echo: false
 
@@ -131,6 +132,7 @@ What does this mean in words?
 \draw[my grid] (Ux) |- node[below]{$w_{s}$} (origin) |- node[left]{$u(w_{s})$} cycle;
 \draw[my grid] (Uy) |- node[below]{$w_{h}$} (origin) |- node[left]{$u(w_{h})$} cycle;
 \end{tikzpicture}
+
 ```
 
 
