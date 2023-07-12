@@ -104,7 +104,10 @@ What does this mean in words?
 ---
 
 ## Risk aversion
-```{tikz echo=FALSE, fig.ext='png', cache=TRUE, tikz-aversion}
+
+```{tikz}
+#| echo: false
+
 \usetikzlibrary{calc}
 \begin{tikzpicture}[my plot/.style={
                         thick,
@@ -125,11 +128,8 @@ What does this mean in words?
 \coordinate (Up) at ({\p*\x+(1-\p)*\y},{ln(\p*\x+(1-\p)*\y)}); % set the u(p*x+(1-p)*y) coordinate
 \draw (Ux) -- coordinate[pos=1-\p] (Up-mid) (Uy); % set the coordinate on the linear curve
 \path let \p1=(Up-mid), \n1={pow(e,\y1*0.03514)} in (28.4576*\n1,\y1) coordinate (Up-mid2); 
-\draw[my grid] (Ux) |- node[below]{$x_{1}$} (origin) |- node[left]{$u(x_{1})$} cycle;
-\draw[my grid] (Uy) |- node[below]{$x_{2}$} (origin) |- node[left]{$u(x_{2})$} cycle;
-\draw[my grid] (Up) |- node[below,font=\scriptsize]{$p_{1}x_{1}+p_{2}x_{2}$} (origin) |- node[left,font=\scriptsize]{$u(p_{1}x_{1}+p_{2}x_{2})$} cycle;
-%\draw[my grid] (Up-mid2) |- node[below,font=\scriptsize]{$c(F,u)$} (origin) |- node[left]{$pu(x)+(1-p)u(y)$} cycle;
-%\draw[my grid] (Up-mid) -- (Up-mid2);
+\draw[my grid] (Ux) |- node[below]{$w_{s}$} (origin) |- node[left]{$u(w_{s})$} cycle;
+\draw[my grid] (Uy) |- node[below]{$w_{h}$} (origin) |- node[left]{$u(w_{h})$} cycle;
 \end{tikzpicture}
 ```
 
