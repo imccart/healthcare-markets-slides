@@ -1,0 +1,172 @@
+---
+title: "Understanding Risk"
+author: "Ian McCarthy | Emory University"
+format: 
+  revealjs:
+    theme: [moon]
+    preview-links: auto
+    chalkboard:
+      boardmarker-width: 5
+#    embed-resources: true
+from: markdown+emoji
+execute: 
+  echo: true
+---
+
+```{r}
+#| include: false
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
+```
+
+# Describing risk
+
+We need three things to define risk in this class:
+1. Probability
+2. Expected value
+3. Preferences (i.e., a utility function)
+
+---
+
+## 1. Probability
+Definition: The likelihood that a given outcome will occur.<br>
+
+
+::: {.fragment}
+Important to note the timing here...probability applies to an uncertain event that may have several possible outcomes. For example, I may have a heart attack or I may not. [Risk Calculator](http://www.cvriskcalculator.com/).
+:::
+
+---
+
+## 2. Expected value
+Definition: The probability weighted average of the payoffs (or costs) associated with all possible outcomes.<br>
+
+
+::: {.fragment}
+
+For two potential outcomes, $x_{1}$ and $x_{2}$, with probabilities $p_{1}$ and $p_{2}$:<br>
+
+$E[x] = p_{1}x_{1} + p_{2}x_{2}$
+
+:::
+
+---
+
+## Example
+What is my expected cost?
+- Two possible outcomes: heart attack or no heart attack
+- 10% chance of having a heart attack
+- Cost of <span>&#36;</span>100,000 if I have a heart attack (but I will survive and recover)<br>
+
+
+---
+
+## Answer
+
+I will incur a cost of \$100,000 with 10% probability. So my expected cost is just $E[cost]=0.1*100,000 =$ `r format(0.1*100000,digits=5,big.mark=",")`.
+
+---
+
+## 3. Preferences
+Definition: Preferences take the form of a utility function, $u(x)$, which tells us how much we benefit get from some consumption bundle, $x$.<br>
+
+::: {.fragment}
+
+Expected utility combines expected value and utility...<br>
+$E[u(x)] = p_{1}u(x_{1}) + p_{2}u(x_{2})$
+
+:::
+
+---
+
+## Risk preferences
+With probabilities, expected values, and utilities/preferences, we can now measure preferences toward risk.
+
+::: {.fragment}
+- **Risk averse:** We prefer to avoid the risky situation. You would rather have the same (or slightly less) with certainty than a lottery over two risky outcomes.
+- **Risk neutral:** Indifferent between the risky situation or that of certainty.
+- **Risk loving:** Prefer the risky situation. 
+:::
+
+---
+
+## Risk aversion
+Most common assumption is that individuals are risk averse. Mathematically, this follows from diminishing marginal utility.
+
+::: {.fragment}
+$u'(x_{1}) > u'(x_{2})$ for $x_{1} < x_{2}$
+:::
+
+::: {.fragment}
+What does this mean in words?
+:::
+
+---
+
+## Risk aversion
+```{tikz echo=FALSE, fig.ext='png', cache=TRUE, tikz-aversion}
+\usetikzlibrary{calc}
+\begin{tikzpicture}[my plot/.style={
+                        thick,
+                        smooth,
+                        samples=100,
+                        domain=0.1:5},
+                    scale=0.75,
+                    my grid/.style={dashed,opacity=0.5, every node/.style={black,opacity=1, transform shape}},
+                    my axis/.style={latex-latex}]
+\draw[my plot] (0,0) plot (\x,{ln(\x)});
+\coordinate (start plot) at (0.1,{ln(0.1)}); % domain start
+\coordinate (end plot) at (5,{ln(5)}); % domain end
+%\draw[my axis] ([shift={(-0.5cm,0.5cm)}]start plot |- end plot) node[left] {$u(\cdot)$} |- node[coordinate](origin){} ([shift={(0.5cm,-0.5cm)}]start plot -| end plot) node[below] {$\cdot$};
+\draw[my axis] ([shift={(-0.5cm,0.5cm)}]start plot |- end plot) |- node[coordinate](origin){} ([shift={(0.5cm,-0.5cm)}]start plot -| end plot);
+\def\x{0.5}\def\y{4}\def\p{0.55} % define the x, y and p values
+\coordinate (Ux) at (\x,{ln(\x)}); % set the u(x) coordinate
+\coordinate (Uy) at (\y,{ln(\y)}); % set the u(y) coordinate
+\coordinate (Up) at ({\p*\x+(1-\p)*\y},{ln(\p*\x+(1-\p)*\y)}); % set the u(p*x+(1-p)*y) coordinate
+\draw (Ux) -- coordinate[pos=1-\p] (Up-mid) (Uy); % set the coordinate on the linear curve
+\path let \p1=(Up-mid), \n1={pow(e,\y1*0.03514)} in (28.4576*\n1,\y1) coordinate (Up-mid2); 
+\draw[my grid] (Ux) |- node[below]{$x_{1}$} (origin) |- node[left]{$u(x_{1})$} cycle;
+\draw[my grid] (Uy) |- node[below]{$x_{2}$} (origin) |- node[left]{$u(x_{2})$} cycle;
+\draw[my grid] (Up) |- node[below,font=\scriptsize]{$p_{1}x_{1}+p_{2}x_{2}$} (origin) |- node[left,font=\scriptsize]{$u(p_{1}x_{1}+p_{2}x_{2})$} cycle;
+%\draw[my grid] (Up-mid2) |- node[below,font=\scriptsize]{$c(F,u)$} (origin) |- node[left]{$pu(x)+(1-p)u(y)$} cycle;
+%\draw[my grid] (Up-mid) -- (Up-mid2);
+\end{tikzpicture}
+```
+
+
+---
+
+## In-class Problem: Expected values
+An individual starts with a wealth of \$100,000. With probability 0.3, they will get sick and incur a cost of \$40,000.
+
+::: {.fragment}
+1. What is this person's expected cost of illness?
+2. Assume this individual has a utility function of the form, $u(w) = w^{0.20}$. What is this person's expected utility?
+3. Calculate this person's utility if they were to incur the expected cost of illness. Is this utility higher or lower than what you found in part (2)?
+:::
+
+
+---
+
+## Why purchase health insurance?
+Say your utility function is $u(w)=\sqrt{w}$ and that you're starting with $w=$ \$100. I propose a lottery in which I flip a coin...heads you win \$20 and tails you lose \$20.
+
+::: {.fragment}
+
+1. What is the expected monetary value of this lottery? 
+
+2. What is your utility at this expected value? 
+
+3. What is the expected utility from this lottery?
+:::
+
+---
+
+## Answer
+```{r include=FALSE}
+ew <- .5*80+.5*120
+eu <- .5*sqrt(80) + .5*sqrt(120)
+
+```
+Expected wealth is simply $\frac{1}{2} \times 80 + \frac{1}{2} \times 120 =$ `r format(ew,digits=3)`, which yields a utility of $u(w)=$ `r format(sqrt(ew),digits=3)`. But your expected utility is $\frac{1}{2} \times u(w_{heads}) + \frac{1}{2} \times u(w_{tails}) = \frac{1}{2} \times \sqrt{80} + \frac{1}{2} \times \sqrt{120} =$ `r format(eu, digits=3)`.
+
