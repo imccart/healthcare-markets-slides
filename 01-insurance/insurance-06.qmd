@@ -147,15 +147,37 @@ Here's a good example, [Costs during special enrollment periods](https://www.hea
 
 ---
 
-For any amount of unraveling, we need at least two features in the market:
+For any amount of unravelling, we need at least two features in the market:
 
 1. Individuals select plans based on health needs (which is private information)
 2. Common price to all enrollees of a given plan (community rating)
 
+---
+
+To think about unravelling, we need to think of this graph in stages or periods.
+
+- In the initial period, insurers set prices, unsure about who will enroll because healthcare needs are private information
+- Upon setting premiums, insurers will know who enrolled and they will know the costs they incurred by the end of the year
+- Insurers can then update their premiums if needed (we will again assume zero profits to keep things simple)
+
 
 ---
 
-## Example
+## Conceptual Example
+
+- Assume the demand curve is below AC at least beyond some point (not necessarily always below AC)
+- In the initial period, assume an insurer sets the premium at a point such that $AC>D$
+- In the subsequent period, knowing that costs were too high relative to premiums, the insurer increases their premium
+- Increase in price means a movement up the demand curve, but who leaves the market?
+
+::: {.fragment}
+  - the relatively healthy or low cost individuals!
+  - so AC is now higher, and the insurer will need to continue raising premiums until they reach equilibrium
+:::
+
+---
+
+## Numerical Example
 
 Assume the insurer's cost function is $C=100q - 2q^{2}$, where $q$ denotes the number of people enrolled in the plan. Further assume that demand is given by $D=140-4q$. Assuming the insurer enters the market with $p_{1}=40$,<br>
 
@@ -167,7 +189,7 @@ Assume the insurer's cost function is $C=100q - 2q^{2}$, where $q$ denotes the n
 
 ## Answer
 
-To solve this, we need to first calculate the marginal cost curve, $mc=100-4q$, and the average cost curve, $ac=100-2q$. At a price of $p=40$, we know that quantity demanded will be $q=25$. At that point, the average cost is then <span>&#36;</span>50. Since $AC>p$, the firm is losing money. If they set prices to break-even, then next period's price would be set to their observed AC, $p_{2}=$ <span>&#36;</span>50. We can find the equilibrium price as the point where the AC and D curves intersect, which occurs at $q$ of 20 and price of <span>&#36;</span>60.
+To solve this, we need to first calculate the marginal cost curve, $mc=100-4q$, and the average cost curve, $ac=100-2q$. At a price of $p=40$, we know that quantity demanded will be $q=25$. At that point, the average cost is then \$50. Since $AC>p$, the firm is losing money. If they set prices to break-even, then next period's price would be set to their observed AC, $p_{2}=$ \$50. We can find the equilibrium price as the point where the AC and D curves intersect, which occurs at $q$ of 20 and price of \$60.
 
 
 ---
@@ -176,10 +198,10 @@ To solve this, we need to first calculate the marginal cost curve, $mc=100-4q$, 
 
 Assume that the insurer's cost function is given by $C=100q - 2q^{2}$, where $q$ denotes the number of people enrolled in the plan. Further assume that the inverse demand function takes the form, $D=110 - 3q$, and that there are 20 individuals total in this market.
 
-1. If the insurer enters the market at a price of <span>&#36;</span>65, what is the insurer's profit (or loss)?
+1. If the insurer enters the market at a price of \$65, what is the insurer's profit (or loss)?
 2. What price does the insurer set next year if they set price equal to average cost in the prior year?
 3. What is the equilibrium price in this market?
-4. What if there is a <span>&#36;</span>10 penalty imposed for those that do not purchase health insurance?
+4. What if there is a \$10 penalty imposed for those that do not purchase health insurance?
 
 ---
 

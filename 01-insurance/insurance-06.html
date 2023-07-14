@@ -387,14 +387,38 @@ Ian McCarthy | Emory University
 <img data-src="insurance-06_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch quarto-figure-center"><p class="caption">Demand always below AC</p></section>
 <section class="slide level2">
 
-<p>For any amount of unraveling, we need at least two features in the market:</p>
+<p>For any amount of unravelling, we need at least two features in the market:</p>
 <ol type="1">
 <li>Individuals select plans based on health needs (which is private information)</li>
 <li>Common price to all enrollees of a given plan (community rating)</li>
 </ol>
 </section>
-<section id="example" class="slide level2">
-<h2>Example</h2>
+<section class="slide level2">
+
+<p>To think about unravelling, we need to think of this graph in stages or periods.</p>
+<ul>
+<li>In the initial period, insurers set prices, unsure about who will enroll because healthcare needs are private information</li>
+<li>Upon setting premiums, insurers will know who enrolled and they will know the costs they incurred by the end of the year</li>
+<li>Insurers can then update their premiums if needed (we will again assume zero profits to keep things simple)</li>
+</ul>
+</section>
+<section id="conceptual-example" class="slide level2">
+<h2>Conceptual Example</h2>
+<ul>
+<li>Assume the demand curve is below AC at least beyond some point (not necessarily always below AC)</li>
+<li>In the initial period, assume an insurer sets the premium at a point such that <span class="math inline">\(AC&gt;D\)</span></li>
+<li>In the subsequent period, knowing that costs were too high relative to premiums, the insurer increases their premium</li>
+<li>Increase in price means a movement up the demand curve, but who leaves the market?</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>the relatively healthy or low cost individuals!</li>
+<li>so AC is now higher, and the insurer will need to continue raising premiums until they reach equilibrium</li>
+</ul>
+</div>
+</section>
+<section id="numerical-example" class="slide level2">
+<h2>Numerical Example</h2>
 <p>Assume the insurer’s cost function is <span class="math inline">\(C=100q - 2q^{2}\)</span>, where <span class="math inline">\(q\)</span> denotes the number of people enrolled in the plan. Further assume that demand is given by <span class="math inline">\(D=140-4q\)</span>. Assuming the insurer enters the market with <span class="math inline">\(p_{1}=40\)</span>,<br></p>
 <ol type="1">
 <li>What is the next year’s price (if profits are $0 based on period 1)?</li>
@@ -403,16 +427,16 @@ Ian McCarthy | Emory University
 </section>
 <section id="answer" class="slide level2">
 <h2>Answer</h2>
-<p>To solve this, we need to first calculate the marginal cost curve, <span class="math inline">\(mc=100-4q\)</span>, and the average cost curve, <span class="math inline">\(ac=100-2q\)</span>. At a price of <span class="math inline">\(p=40\)</span>, we know that quantity demanded will be <span class="math inline">\(q=25\)</span>. At that point, the average cost is then <span>$</span>50. Since <span class="math inline">\(AC&gt;p\)</span>, the firm is losing money. If they set prices to break-even, then next period’s price would be set to their observed AC, <span class="math inline">\(p_{2}=\)</span> <span>$</span>50. We can find the equilibrium price as the point where the AC and D curves intersect, which occurs at <span class="math inline">\(q\)</span> of 20 and price of <span>$</span>60.</p>
+<p>To solve this, we need to first calculate the marginal cost curve, <span class="math inline">\(mc=100-4q\)</span>, and the average cost curve, <span class="math inline">\(ac=100-2q\)</span>. At a price of <span class="math inline">\(p=40\)</span>, we know that quantity demanded will be <span class="math inline">\(q=25\)</span>. At that point, the average cost is then $50. Since <span class="math inline">\(AC&gt;p\)</span>, the firm is losing money. If they set prices to break-even, then next period’s price would be set to their observed AC, <span class="math inline">\(p_{2}=\)</span> $50. We can find the equilibrium price as the point where the AC and D curves intersect, which occurs at <span class="math inline">\(q\)</span> of 20 and price of $60.</p>
 </section>
 <section id="in-class-problem-adverse-selection" class="slide level2">
 <h2>In-class Problem: Adverse selection</h2>
 <p>Assume that the insurer’s cost function is given by <span class="math inline">\(C=100q - 2q^{2}\)</span>, where <span class="math inline">\(q\)</span> denotes the number of people enrolled in the plan. Further assume that the inverse demand function takes the form, <span class="math inline">\(D=110 - 3q\)</span>, and that there are 20 individuals total in this market.</p>
 <ol type="1">
-<li>If the insurer enters the market at a price of <span>$</span>65, what is the insurer’s profit (or loss)?</li>
+<li>If the insurer enters the market at a price of $65, what is the insurer’s profit (or loss)?</li>
 <li>What price does the insurer set next year if they set price equal to average cost in the prior year?</li>
 <li>What is the equilibrium price in this market?</li>
-<li>What if there is a <span>$</span>10 penalty imposed for those that do not purchase health insurance?</li>
+<li>What if there is a $10 penalty imposed for those that do not purchase health insurance?</li>
 </ol>
 </section>
 <section id="death-spiral" class="slide level2">
