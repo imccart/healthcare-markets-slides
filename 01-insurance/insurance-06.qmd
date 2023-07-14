@@ -1,0 +1,160 @@
+---
+title: "Adverse Selection and Pricing"
+author: "Ian McCarthy | Emory University"
+format: 
+  revealjs:
+    theme: [moon]
+    preview-links: auto
+    chalkboard:
+      boardmarker-width: 5
+    slide-number: true
+    width: 1600
+    height: 900    
+#    embed-resources: true
+from: markdown+emoji
+execute: 
+  echo: true
+---
+
+```{r}
+#| include: false
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
+```
+
+
+# Adverse selection
+
+In practice, people know more about their health than insurers. This is a form of **asymmetric information**.
+
+::: {.fragment}
+Here's a good example, [Costs during special enrollment periods](https://www.healthaffairs.org/doi/full/10.1377/hlthaff.2019.01155).
+:::
+
+
+---
+
+```{tikz}
+#| echo: false
+#| fig.cap: "Textbook depiction of adverse selection"
+
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows}
+\begin{tikzpicture}[scale=1, every node/.style={transform shape}]
+\draw[thick,->] (0,0) -- (0,6) node[anchor=north west] {$p$};
+\draw[thick,->] (0,0) -- (8,0) node[anchor=south east] {$q$};
+\draw (0,5) node[anchor=north east]{Demand} -- (6,1);
+\draw (0,3) node[anchor=south west]{AC} -- (6,2);
+\draw (0,3) -- (6,0.5) node[anchor=east]{MC};
+\draw (6,0) -- (6,6);
+\draw (6,-.5) node[anchor=south] {$\bar{q}$};
+\end{tikzpicture}
+```
+
+
+
+---
+
+## Possible outcomes
+
+1. Demand above AC: full insurance and no problems from adverse selection
+2. Demand intersects AC at some point: underinsurance from people willing and able but ultimately not purchasing
+3. Demand below AC: death spiral! (or, less dramatic, unraveling)<br>
+
+
+---
+
+## Unraveling
+
+For any amount of unraveling, we need at least two features in the market:
+
+1. Individuals select plans based on health needs (which is private information)
+2. Common price to all enrollees of a given plan (community rating)
+
+
+---
+
+## Example
+
+Assume the insurer's cost function is $C=100q - 2q^{2}$, where $q$ denotes the number of people enrolled in the plan. Further assume that demand is given by $D=140-4q$. Assuming the insurer enters the market with $p_{1}=40$,<br>
+
+1. What is the next year's price (if profits are \$0 based on period 1)? 
+2. What is the equilibrium price?
+
+
+---
+
+## Answer
+
+To solve this, we need to first calculate the marginal cost curve, $mc=100-4q$, and the average cost curve, $ac=100-2q$. At a price of $p=40$, we know that quantity demanded will be $q=25$. At that point, the average cost is then <span>&#36;</span>50. Since $AC>p$, the firm is losing money. If they set prices to break-even, then next period's price would be set to their observed AC, $p_{2}=$ <span>&#36;</span>50. We can find the equilibrium price as the point where the AC and D curves intersect, which occurs at $q$ of 20 and price of <span>&#36;</span>60.
+
+
+---
+
+## In-class Problem: Adverse selection
+
+Assume that the insurer's cost function is given by $C=100q - 2q^{2}$, where $q$ denotes the number of people enrolled in the plan. Further assume that the inverse demand function takes the form, $D=110 - 3q$, and that there are 20 individuals total in this market.
+
+1. If the insurer enters the market at a price of <span>&#36;</span>65, what is the insurer's profit (or loss)?
+2. What price does the insurer set next year if they set price equal to average cost in the prior year?
+3. What is the equilibrium price in this market?
+4. What if there is a <span>&#36;</span>10 penalty imposed for those that do not purchase health insurance?
+
+---
+
+## Death spiral!
+
+[Paul Ryan on Death Spirals](https://www.washingtonpost.com/videonational/ryan-obamacare-is-in-death-spiral/2017/01/05/375a49da-d366-11e6-9651-54a0154cf5b3_video.html)
+
+---
+
+![spend](../figures/aca-premiums.png){align="center"}
+::: {.aside}
+[https://www.kff.org/health-costs/issue-brief/how-aca-marketplace-premiums-are-changing-by-county-in-2020](Kaiser Family Foundation)
+:::
+
+---
+
+## Death spiral!
+
+So, are the exchanges in a "death spiral"?
+
+
+::: {.fragment}
+Standard & Poor's writes: “The ACA individual market is not in a 'death spiral.' However, every time something new (and potentially disruptive) is thrown into the works, it impedes the individual market’s path to stability.”
+:::
+
+
+---
+
+## Some potential policy solutions
+
+1. Subsidize consumers
+2. Subsidize insurers
+3. Mandate purchases<br>
+
+::: {.fragment}
+Can you examine each of these policies graphically? How do they differ from the patient's or government's point of view?
+::
+
+# Other related issues
+
+---
+
+## Effects from other insurance markets
+Based on our discussion of adverse selection and health insurance markets, what would you expect to happen if we increased the Medicare age from 65 to 70 years old? 
+
+
+---
+
+## Advantageous selection
+What if individuals who are high risk are also less risk-averse? In this case, individuals who are willing to pay the most for health insurance (the most risk averse) are actually less risky and therefore the cheapest to insure. Very different policy implications (e.g., individual mandate is bad in this case). 
+
+
+
+# Main takeaways
+
+1. Explain, using a graph, how unravelling could occur in a market with adverse selection.
+
+2. Discuss and show graphically how an individual mandate or subsidies could help to alleviate or minimize the adverse selection problem.
+
