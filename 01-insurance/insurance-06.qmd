@@ -55,16 +55,97 @@ Here's a good example, [Costs during special enrollment periods](https://www.hea
 
 ---
 
-## Possible outcomes
+## Description of graph
 
-1. Demand above AC: full insurance and no problems from adverse selection
-2. Demand intersects AC at some point: underinsurance from people willing and able but ultimately not purchasing
-3. Demand below AC: death spiral! (or, less dramatic, unraveling)<br>
+- Demand (willingness to pay) for health insurance
+- Average cost (AC): average healthcare costs incurred by all enrollees
+- Marginal cost (MC): additional healthcare costs incurred by one more enrollee
+- Downward sloping because healthier individuals (lower cost) are willing to pay less for health insurance
+
+::: {.fragment}
+- $D>MC$ because willingness to pay is expected costs plus risk premium
+- Relationship between demand and AC reflects problems due to adverse selection
+:::
+
+---
+
+## Assumed equilibrium
+
+- Simplifying assumption that insurers earn 0 profit (at least approximately)
+- Equilibrium point where $D=AC$
+- Clearly not true, but it helps us focus on adverse selection and avoid everything else
 
 
 ---
 
-## Unraveling
+## 1. Full insurance
+
+
+```{tikz}
+#| echo: false
+#| fig.cap: "Demand always above AC"
+
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows}
+\begin{tikzpicture}[scale=1, every node/.style={transform shape}]
+\draw[thick,->] (0,0) -- (0,6) node[anchor=north west] {$p$};
+\draw[thick,->] (0,0) -- (8,0) node[anchor=south east] {$q$};
+\draw (0,5) node[anchor=north east]{Demand} -- (6,2.5);
+\draw (0,3) node[anchor=south west]{AC} -- (6,2);
+\draw (0,3) -- (6,0.5) node[anchor=east]{MC};
+\draw (6,0) -- (6,6);
+\draw (6,-.5) node[anchor=south] {$\bar{q}$};
+\end{tikzpicture}
+```
+
+
+
+---
+
+## 2. Under-insurance (partial unravelling)
+
+```{tikz}
+#| echo: false
+#| fig.cap: "Demand intersects with AC somewhere"
+
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows}
+\begin{tikzpicture}[scale=1, every node/.style={transform shape}]
+\draw[thick,->] (0,0) -- (0,6) node[anchor=north west] {$p$};
+\draw[thick,->] (0,0) -- (8,0) node[anchor=south east] {$q$};
+\draw (0,5) node[anchor=north east]{Demand} -- (6,1);
+\draw (0,3) node[anchor=south west]{AC} -- (6,2);
+\draw (0,3) -- (6,0.5) node[anchor=east]{MC};
+\draw (6,0) -- (6,6);
+\draw (6,-.5) node[anchor=south] {$\bar{q}$};
+\end{tikzpicture}
+```
+
+
+
+---
+
+## 3. Full unravelling
+
+```{tikz}
+#| echo: false
+#| fig.cap: "Demand always below AC"
+
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows}
+\begin{tikzpicture}[scale=1, every node/.style={transform shape}]
+\draw[thick,->] (0,0) -- (0,6) node[anchor=north west] {$p$};
+\draw[thick,->] (0,0) -- (8,0) node[anchor=south east] {$q$};
+\draw (0,3) -- (6,1) node[anchor=north east]{Demand};
+\draw (0,3) node[anchor=south west]{AC} -- (6,2);
+\draw (0,3) -- (6,0.5) node[anchor=east]{MC};
+\draw (6,0) -- (6,6);
+\draw (6,-.5) node[anchor=south] {$\bar{q}$};
+\end{tikzpicture}
+```
+
+
+---
 
 For any amount of unraveling, we need at least two features in the market:
 
