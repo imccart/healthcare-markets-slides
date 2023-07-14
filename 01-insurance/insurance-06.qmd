@@ -136,7 +136,7 @@ Here's a good example, [Costs during special enrollment periods](https://www.hea
 \begin{tikzpicture}[scale=1, every node/.style={transform shape}]
 \draw[thick,->] (0,0) -- (0,6) node[anchor=north west] {$p$};
 \draw[thick,->] (0,0) -- (8,0) node[anchor=south east] {$q$};
-\draw (0,3) -- (6,1) node[anchor=north east]{Demand};
+\draw (0,3) -- (6,1) node[anchor=west]{Demand};
 \draw (0,3) node[anchor=south west]{AC} -- (6,2);
 \draw (0,3) -- (6,0.5) node[anchor=east]{MC};
 \draw (6,0) -- (6,6);
