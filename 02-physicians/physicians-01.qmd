@@ -157,9 +157,3 @@ Consequences of physician agency:
 But...Many estimates of "waste" are after-the-fact. It's actually very hard to identify waste before-hand. [Report on End-of-life Spending](http://news.mit.edu/2018/value-late-life-health-care-spending-medicare-0628)
 :::
 
----
-
-## More examples
-
-- Here's a great example of the role of physician agency and what it might mean for health care spending, [link](https://nihcm.org/publications/is-health-care-shoppable-1)
-
