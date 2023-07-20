@@ -1,0 +1,165 @@
+---
+title: "The Role of Physicians in Health Care Delivery"
+author: "Ian McCarthy | Emory University"
+format: 
+  revealjs:
+    theme: [moon]
+    preview-links: auto
+    chalkboard:
+      boardmarker-width: 5
+    slide-number: true
+    width: 1600
+    height: 900    
+#    embed-resources: true
+from: markdown+emoji
+execute: 
+  echo: true
+---
+
+```{r}
+#| include: false
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
+```
+
+# Overview
+
+---
+
+## Lots of different players
+
+- Physicians
+- Nurses
+- Hospitals
+- Prescription drugs
+- Rehabilitation (home health, SNF, rehap hospitals)
+- Long-term care (home health, SNF)
+- Ancillary services (labs, imaging)
+
+::: {.fragment}
+But physicians have an outsized role as they influence almost all areas of health care delivery
+:::
+
+
+---
+
+## Physician training and interactions
+
+- Training, residency, and maybe fellowship...all influence future practice styles
+- Primary care vs specialists
+- Referrals within and across physician types
+
+---
+
+## Physician organizational affiliations
+
+- Self-employed as part of own practice
+- Part of much larger group practice
+- Vertically integrated with hospital or insurer
+
+---
+
+## Types of hospitals
+
+- General, acute-care, short term
+- Rehab hospitals
+- Specialty hospitals (Children's, orthopedic, cardiac, cancer centers)
+- Long-term care hospitals
+- Inpatient versus outpatient
+- Stand-alone surgery centers
+- Stand-alone EDs
+
+---
+
+## Ownership type
+
+- Government owned or assisted
+- Private not-for-profit
+- Private for-profit
+- Private equity 
+
+---
+
+## Why does all of this matter
+
+Physicians are often the "gatekeepers" into many other facets of health care:
+
+- Physician is entry point into health care for most patients (even in the ED)
+- PCPs refer to specialists and ancillary services
+- Specialists refer to ancillary services, other specialists, and may select where to operate (if needed)
+- Specialists or hospitalists refer patients to follow-up care after inpatient stays
+- All types of physicians help in selecting medications
+
+---
+
+In making these decisions, physicians are influenced by many factors:
+
+- Patient preferences
+- Patient "need"
+- Knowledge of possible treatments and interventions
+- Skill/training in specific interventions
+- Payment for different services
+- Relationships with other physicians and institutions 
+
+---
+
+## Physician agency
+
+- Physicians more informed that patients
+- Physicians can influence what care is provided and where
+
+::: {.fragment}
+- **Physician agency** reflects the fact that physicians make/suggest health care decisions on behalf of the patient, so the physician is an "agent" of the patient
+- When is this decision more or less similar to what the patient would have made on their own?
+:::
+
+# Variation in Health Care Utilization
+
+---
+
+Consequences of physician agency:
+
+- Patients subjected to information frictions or financial incentives of physicians
+- The types of care people receive will depend on the physician
+- Potential variation in health care utilization and spending across and even within markets
+- Example, [Is Health Care Shoppable?](https://nihcm.org/publications/is-health-care-shoppable-1)
+
+---
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![](../figures/dartmouth_map.png)
+:::
+
+::: {.column width="50%"}
+![](../figures/dartmouth_dist.png)
+:::
+
+::::
+  
+# Variation versus "Waste"?
+
+---
+
+## What does this say about waste?
+
+- Estimates are that more than 30% of health care expenditures are "wasteful": [(The Atlantic, 2013)](https://www.theatlantic.com/health/archive/2013/12/youre-getting-too-much-healthcare/281896/)
+
+- Some clear areas of waste:
+  - Payment differentials by location of treatment (policy quirks)
+  - Better imaging with little benefit
+  - Proton treatment (for some conditions)
+  - Heart stents (for some patients)
+  - Arthroscopic knee surgery
+  
+::: {.fragment}
+But...Many estimates of "waste" are after-the-fact. It's actually very hard to identify waste before-hand. [Report on End-of-life Spending](http://news.mit.edu/2018/value-late-life-health-care-spending-medicare-0628)
+:::
+
+---
+
+## More examples
+
+- Here's a great example of the role of physician agency and what it might mean for health care spending, [link](https://nihcm.org/publications/is-health-care-shoppable-1)
+
