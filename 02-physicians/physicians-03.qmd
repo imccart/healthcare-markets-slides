@@ -27,7 +27,8 @@ pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 :::: {.columns}
 
 ::: {.column width="50%"}
-**Fee-for-Service (FFS) payments:**
+**Fee-for-Service (FFS) payments**
+
 - Separate payment for each service
 - More care means more revenue
 - Example: Traditional Medicare
@@ -35,12 +36,14 @@ pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 
 ::: {.column width="50%"}
 **Capitated payments**
+
 - Set amount intended to cover all expenses for a given person/group
 - If expenses exceed that amount, the providers lose money
 - If expenses fall below that amount, the providers make a profit
 - Examples in U.S.: Accountable Care Organizations, Kaiser System
 :::
 
+::::
 
 ---
 
@@ -124,3 +127,30 @@ There are three main pay for performance programs employed in Medicare right now
 2. [Value-based Purchasing](https://www.cms.gov/Medicare/Quality-Initiatives-Patient-Assessment-Instruments/Value-Based-Programs/HVBP/Hospital-Value-Based-Purchasing)
 3. [Quality Payment Program](https://qpp.cms.gov/about/qpp-overview) for physicians: Merit-based Incentive Payment System (MIPS) and Advanced Alternative Payment Models (APMs)
 
+
+# Physician Agency and Financial Incentives IRL
+
+---
+
+## More general setup
+
+- Physicians choose $x$, incorporating their own profit, the benefit to the patient, and some disutility of work
+$$u(x) = V(\pi) -e(x) + \alpha B(x)$$
+- $x$ need not be "quantity of care"
+- Agency more reasonably applies to which types of treatment physicians choose rather than "how much"
+
+---
+
+## Evidence on Financial Incentives and Treatment Decisions
+
+Effects of financial incentives on...
+
+- treatment patterns, [Clemens and Gottlieb, 2014](https://www.aeaweb.org/articles?id=10.1257/aer.104.4.1320)
+- discharge patterns, [Einav et al., 2018](https://onlinelibrary.wiley.com/doi/abs/10.3982/ECTA15022) and [Eliason et al., 2018](https://www.aeaweb.org/articles?id=10.1257/aer.20170092)
+- types of patients seen, [Cabral et al., 2023](https://www.nber.org/papers/w29471)
+- location of care, [Munnich et al., 2023](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3845073) and [Baker et al., 2016](https://www.sciencedirect.com/science/article/abs/pii/S0167629616301679)
+- spillovers to other patients, [Barnett et al., 2023](https://www.aeaweb.org/articles?id=10.1257/pol.20200553)
+
+::: {.fragment}
+**The Takeaway**: On the margin, financial incentives *do* affect treatment decisions. Some responses may negatively affect patients, but typically this probably involves more money for similar-quality care.
+:::
