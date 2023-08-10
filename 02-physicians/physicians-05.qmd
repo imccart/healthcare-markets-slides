@@ -1,0 +1,61 @@
+---
+title: "Physician Agency, Training, and Location"
+author: "Ian McCarthy | Emory University"
+format: 
+  revealjs:
+    theme: [moon]
+    preview-links: auto
+    chalkboard:
+      boardmarker-width: 5
+    slide-number: true
+    width: 1600
+    height: 900    
+#    embed-resources: true
+from: markdown+emoji
+execute: 
+  echo: true
+---
+
+```{r}
+#| include: false
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
+```
+
+# Variation in Health Care
+
+---
+
+## Variation in Health Care
+
+Consequences of physician agency:
+
+- Patients subjected to information frictions or financial incentives of physicians
+- The types of care people receive will depend on the physician
+- Potential variation in health care utilization and spending across and even within markets
+
+---
+
+## Variation in Health Care
+
+Consequences of physician agency:
+
+- Patients subjected to [information frictions]{.underline} or financial incentives of physicians
+- The types of care people receive will depend on the physician
+- Potential variation in health care utilization and spending across and even within markets
+
+---
+
+## Information frictions
+
+- Physicians don't all have the exact same information
+- May depend on...
+  - Learning over time (exposure to different patients and different treatment options)
+  - **Training and Location** (peers)
+  - Ownership structure (employee of hospital, large group, or self-employed)
+  
+  
+# Physician Training
+
+---
+

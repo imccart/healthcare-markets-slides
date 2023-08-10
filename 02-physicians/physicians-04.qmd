@@ -1,0 +1,215 @@
+---
+title: "Physician Learning"
+author: "Ian McCarthy | Emory University"
+format: 
+  revealjs:
+    theme: [moon]
+    preview-links: auto
+    chalkboard:
+      boardmarker-width: 5
+    slide-number: true
+    width: 1600
+    height: 900    
+#    embed-resources: true
+from: markdown+emoji
+execute: 
+  echo: true
+---
+
+```{r}
+#| include: false
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
+```
+
+# Variation in Health Care
+
+---
+
+## Variation in Health Care
+
+Consequences of physician agency:
+
+- Patients subjected to information frictions or financial incentives of physicians
+- The types of care people receive will depend on the physician
+- Potential variation in health care utilization and spending across and even within markets
+
+---
+
+## Variation in Health Care
+
+Consequences of physician agency:
+
+- Patients subjected to [information frictions]{.underline} or financial incentives of physicians
+- The types of care people receive will depend on the physician
+- Potential variation in health care utilization and spending across and even within markets
+
+---
+
+## Information frictions
+
+- Physicians don't all have the exact same information
+- May depend on...
+  - **Learning over time** (exposure to different patients and different treatment options)
+  - Training and Location (peers)
+  - Ownership structure (employee of hospital, large group, or self-employed)
+  
+  
+# Physician Learning
+
+---
+
+## Basic setup
+
+1. **Agent:** Economic agent who is trying to learn about an uncertain parameter, denoted $\theta$ (e.g., physician wants to identify the best treatment)
+2. **Beliefs:** Agent's initial belief about $\theta$ is represented by a prior probability distribution, denoted $P(\theta)$ (e.g., physician's initial belief about the quality of a given treatment)
+3. **Observation:** Agent collects new data, denoted $y$, which provides information about $\theta$ (e.g., physician observes patient outcomes from treatment)
+
+---
+
+## Bayesian updating
+
+Given prior beliefs about treatment quality, $P(\theta$), and observed outcomes $y$, the physician updates their belief on the quality of treatment using:
+
+$$\begin{align}
+P(\theta|y) &= \frac{P(y|\theta) \times P(\theta)}{P(y)} \\
+ & \propto P(y|\theta) \times P(\theta)
+\end{align}$$
+
+- $P(\theta | y)$ is the updated belief (posterior distribution) about the effectiveness of treatment after observing outcomes 
+- $P(y | \theta)$ is probability of outcome $y$ given the effectiveness $\theta$ (the likelihood)
+- $P(y)$ is the marginal probability of patient outcome $y$
+- typically use "proportional to" expression, $\propto$, to focus on relative probabilities and avoid complications from the normalization $P(y)$
+
+---
+
+## Intuition
+
+- Physician is considering a new treatment for a certain condition
+- Initial belief might be "diffuse", with equal probability assigned to all possible outcomes on the $[0,1]$ interval (represented by a uniform distribution) 
+- As the physician treats patients and observes outcomes, they update their beliefs using Bayes' rule
+
+---
+
+## Bayes' Rule and Posterior Distributions
+
+- Exploits the usual Bayes' rule, $$P(B|A) = \frac{P(A|B)*P(B)}{P(A)}$$
+- In general, solving model requires integration of the posterior distribution
+- With specific assumptions, there are "closed-form" solutions to the posterior distribution
+  - We call these "conjugate" distributions
+  - One example: The beta distribution is the conjugate prior distribution for the Bernoulli distribution (among others)
+
+---
+
+## Working with the beta distribution
+
+- The Beta distribution is governed by its "shape" parameters, $\alpha$ and $\beta$
+
+$$P(θ) = \frac{\theta^{\alpha-1} (1 - \theta)^{\beta-1} }{B(\alpha, \beta)},$$
+where $B(\alpha, \beta)$ is a normalization constant to ensure the PDF integrates to 1.
+
+- Binomial outcome, $y\sim B(n,\theta)$, where $n$ is the number of trials and $\theta$ is the probability of success for any single case
+
+$$ P(y|n, \theta) = {n \choose s} \theta^{s} (1-\theta)^{n-s}$$
+
+- Want to find the posterior distribution for $\theta$ with prior, $\theta \sim Beta(\alpha_{0}, \beta_{0})$
+
+---
+
+## Posterior distribution
+
+$$\begin{align}
+P(\theta | y) &= \frac{P(y| \theta) P(\theta)}{P(y)} \\
+ & \propto \frac{ {n \choose s} \theta^{s} (1 - \theta)^{n - s} \theta^{\alpha-1} (1 - \theta)^{\beta-1} } { B(\alpha, \beta) } \\
+ & \propto \frac{ {n \choose s} \theta^{\alpha+s-1} (1 - \theta)^{\beta+n-s-1} } { B(\alpha, \beta) } \\
+ & \propto B(\alpha+s, \beta + n - s)
+\end{align}$$
+
+- ${n \choose s}$ and $B(\alpha, \beta)$ are just normalization constants, so we can ignore them
+- reduces to a Beta distribution with shape parameters $\alpha+s$ and $\beta + n - s$.
+
+
+# Some Examples
+
+---
+
+## Case 1: "Diffuse" prior setup
+
+A physician is evaluating the effectiveness of Treatment A for a certain medical condition. The physician treats 100 patients with Treatment A and observes that 70 patients show improvement.
+
+**Assumptions**:
+
+1. **Prior Belief**: The physician's prior belief about the effectiveness of Treatment A follows a $Beta(\alpha_{0}, \beta_{0})$ distribution, where $\alpha_{0}=1$ and $\beta_{0}=1$. These are the "shape" parameters of the Beta distribution. In this case, this represents a uniform prior, which can be considered a "diffuse" prior.
+
+2. **Observation**: 70 out of 100 patients showed improvement following treatment (i.e., had a successful outcome)
+
+---
+
+## Case 1: "Diffuse" prior solution
+
+Given the assumptions, the physician wants to update their belief about the effectiveness of Treatment A using the mean of the posterior distribution.
+
+1. Calculate the parameters of the posterior distribution for the effectiveness of Treatment A using the observed data:
+   - $\alpha_{1} = \alpha_{0} + 70 = 71$
+   - $\beta_{1}  = \beta_{0} + 100 - 70 = 31$
+
+2. Calculate the mean of the posterior distribution using the updated parameters:
+   - $\mu = \frac{\alpha_{1}}{\alpha_{1}+\beta_{1}} = \frac{71}{71+31} \approx 0.6969$
+
+---
+
+## Case 1: Discussion
+
+In this scenario, the physician's updated belief for the mean effectiveness of treatment is approximately 0.6969, which aligns more closely with the actual mean of 70% based on the observed data and the diffuse prior belief. Because the physician's initial belief (i.e., their prior) is not strong, they update their belief to almost perfectly match the observed data.
+
+---
+
+## Case 2: "Strong" prior setup
+
+A physician is evaluating the effectiveness of Treatment A for a certain medical condition. The physician treats 100 patients with Treatment A and observes that 70 patients show improvement.
+
+**Assumptions**:
+
+1. **Prior Belief**: The physician's prior belief about the effectiveness of Treatment A follows a $Beta(\alpha_{0}, \beta_{0})$ distribution, where $\alpha_{0}=1$ and $\beta_{0}=8$. These are the "shape" parameters of the Beta distribution. In this case, this represents a strong prior on a low probability of success (i.e., the physician initially believes that the treatment is relatively ineffective)
+
+2. **Observation**: 70 out of 100 patients showed improvement following treatment (i.e., had a successful outcome)
+
+
+---
+
+## Case 2: "Strong" prior solution
+
+Given the assumptions, the physician wants to update their belief about the effectiveness of Treatment A using the mean of the posterior distribution.
+
+1. Calculate the parameters of the posterior distribution for the effectiveness of Treatment A using the observed data:
+   - $\alpha_{1} = \alpha_{0} + 70 = 71$
+   - $\beta_{1}  = \beta_{0} + 100 - 70 = 50$
+
+2. Calculate the mean of the posterior distribution using the updated parameters:
+   - $\mu = \frac{\alpha_{1}}{\alpha_{1}+\beta_{1}} = \frac{71}{71+50} \approx 0.5861$
+
+
+---
+
+## Case 2: Discussion
+
+In this scenario, the physician's updated belief for the mean effectiveness of treatment is approximately 0.5861, which is much lower relative to the first case of a diffuse prior. Why is that?
+
+
+
+---
+
+## In-class problem: Physician Learning
+
+- Two physicians are considering adopting a new medical technology and are trying to determine its effectiveness, denoted $\theta$
+- New clinical trial showing improvement in 70 patients out of 100
+- Physician 1 with a diffuse prior, $P(\theta) \sim Beta(\alpha_{0}=1, \beta_{0}=1)$
+- Physician 2 is highly skeptical, with a strong negative prior, $P(\theta) \sim Beta(\alpha_{0}=0.01, \beta_{0}=100)$.
+
+---
+
+## In-class problem: Physician learning
+
+- Find Physician 1's updated belief as to the mean effectiveness of the new treatment
+- Repeat for Physician 2
+- Which physician will more quickly adopt the new treatment?
