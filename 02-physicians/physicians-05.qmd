@@ -59,3 +59,27 @@ Consequences of physician agency:
 
 ---
 
+## Areas of "training"
+
+- Medical education
+- Choice of specialization
+- Personal biases (not really training, but important nonetheless)
+
+---
+
+## Examples
+
+- Team effects and influence during residency (Chan, 2021)
+- Physicians following treatment patterns of advisors in residency [(Pany, 2023)](https://ashecon.confex.com/ashecon/2023/meetingapp.cgi/Paper/14080)
+- PCP training associated with less healthcare utilization (Kravitz and Greenfield, 1995)
+
+
+# Physician Location and Practice
+
+---
+
+## Peer effects
+
+- Peer effects pervasive in many areas
+- Do they apply to physicians in terms of their treatment decisions?
+- Physicians adopting practice patterns of peers in new practice (Molitor, 2018)
