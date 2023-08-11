@@ -170,7 +170,7 @@ A physician is evaluating the effectiveness of Treatment A for a certain medical
 
 **Assumptions**:
 
-1. **Prior Belief**: The physician's prior belief about the effectiveness of Treatment A follows a $Beta(\alpha_{0}, \beta_{0})$ distribution, where $\alpha_{0}=1$ and $\beta_{0}=8$. These are the "shape" parameters of the Beta distribution. In this case, this represents a strong prior on a low probability of success (i.e., the physician initially believes that the treatment is relatively ineffective)
+1. **Prior Belief**: The physician's prior belief about the effectiveness of Treatment A follows a $Beta(\alpha_{0}, \beta_{0})$ distribution, where $\alpha_{0}=1$ and $\beta_{0}=20$. These are the "shape" parameters of the Beta distribution. In this case, this represents a strong prior on a low probability of success (i.e., the physician initially believes that the treatment is relatively ineffective)
 
 2. **Observation**: 70 out of 100 patients showed improvement following treatment (i.e., had a successful outcome)
 
