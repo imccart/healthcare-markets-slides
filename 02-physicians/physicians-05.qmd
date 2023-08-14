@@ -83,3 +83,56 @@ Consequences of physician agency:
 - Peer effects pervasive in many areas
 - Do they apply to physicians in terms of their treatment decisions?
 - Physicians adopting practice patterns of peers in new practice (Molitor, 2018)
+
+
+---
+
+## Molitor (2018)
+
+- **The evolution of physician practice styles: evidence from cardiologist migration**
+- Study cardiologist practice styles upon joining new practices (physician movers)
+- Practice environment can explain 60-80% of "supply-side" variation, at least in cardiology
+
+---
+
+## Badinski, et al. (2023)
+
+- **Geographic Variation in Healthcare Utilization: The Role of Physicians**
+- New work effectively combining lots of prior approaches into one coherent study
+- Illustrates significant heterogeneities across types of physicians
+- For cardiologists:
+  - Practice environment a major factor
+  - Individual physician practice style less relevant
+- For PCPs:
+  - Practice environment less critical
+  - Individual physician practice style more important (explains around 20% of observed variation)
+  
+
+# Who cares?
+
+---
+
+## The problem
+
+- Significant variation in healthcare utilization across and within markets 
+- Not explained by patient need or quality of care
+- Points to clear inefficiencies (can reduce utilization without sacrificing quality)
+
+---
+
+## Sources of inefficiency
+
+
+- Learning and information
+- Practice environment and peer effects
+- Physician training and prior beliefs
+
+---
+
+## Potential solutions
+
+- Information transparency (FDA, rating systems, etc.)
+- Opportunity for spillovers, but changing practice patterns is hard
+  - Checklists, EHRs, etc.
+  - Physicians don't always like them
+
