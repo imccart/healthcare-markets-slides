@@ -1,0 +1,165 @@
+---
+title: "Introduction to U.S. Hospitals and Prices"
+author: "Ian McCarthy | Emory University"
+format: 
+  revealjs:
+    theme: [moon]
+    preview-links: auto
+    chalkboard:
+      boardmarker-width: 5
+    slide-number: true
+    width: 1600
+    height: 900    
+#    embed-resources: true
+from: markdown+emoji
+execute: 
+  echo: true
+---
+
+```{r}
+#| include: false
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
+```
+
+# Some History
+
+---
+
+## Timeline of hospitcal care in the U.S.
+
+- Before 1900: Just don't go to the hospital! (at least in the U.S.)
+  - mainly charity care
+  - hospitals were a learning experience for physicians
+
+- Early 1900s: big safety and technological improvements
+
+- Mid 1900s: huge growth, especially in wealthy and urban areas
+  - Medicare and Medicaid in 1965 (Social Security Act)
+  - Originally paid on a "cost-plus" basis
+
+---
+
+## How does this play out now?
+
+- Predominately not-for-profit
+- Associations with universities, religious affiliations
+- Concentration in urban areas, limited access in rural areas
+- Opaque pricing and little or no cost management
+
+---
+
+## Recent developments
+
+- Major technology integration over past 30 years
+- Move toward quality improvement programs, pay-for-performance, and mild versions of capitation
+- Move toward increasing transparency in prices
+- Significant reductions in competitiveness
+- Increasing vertical integration (hospitals owning physician practices or insurers owning hospitals)
+
+---
+
+## Why does any of this matter?
+
+- As we know, we now spend **a lot** on health care in the U.S., and a big part of that is very high health care prices (and a big part of that is hospital prices)
+- Must understand hospital markets and hospital pricing if we want to address healthcare spending
+
+# What is a hospital's **price**?
+
+---
+
+In practice, it's a negotiation with insurers
+- Hospitals can't set price on their own
+- Bargaining problem where insurer and hospital split some total amount
+- Agent/entity with higher bargaining position will get larger share
+
+
+---
+
+Defining characteristic of hospital prices and services: *it's complicated!*
+
+::: {layout="[[-1], [1], [-1]]"}
+![](../figures/BillExample.jpg){fig-align="center"}
+:::
+
+::: aside
+Brill, Steven. 2013. "Bitter Pill: Why Medical Bills are Killing Us." *Time Magazine*.
+:::
+
+
+---
+
+Lots of different payers paying lots of different prices:
+- [Medicare fee-for-service prices](https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/Downloads/AcutePaymtSysfctsht.pdf)
+- [Medicaid payments](https://www.kff.org/report-section/understanding-medicaid-hospital-payments-and-the-impact-of-recent-policy-changes-issue-brief/)
+- Private insurance negotiations (including Medicare Advantage)
+- But what about the price to patients?
+
+::: {.fragment}
+Price $\neq$ charge $\neq$ cost $\neq$ patient out-of-pocket spending
+:::
+
+---
+
+## Different prices for different payors
+
+::: {layout="[[-1], [1], [-1]]"}
+![](../figures/DifferentPrices.jpg){fig-align="center"}
+:::
+
+::: aside
+Source: [Health Care Pricing Project](https://healthcarepricingproject.org/)
+:::
+
+
+---
+
+## Different notions of "price"
+
+:::: {.columns}
+
+::: {.column width="50%"}
+**Fee-for-service**
+- price per procedure
+- percentage of charges
+- markup over Medicare rates
+
+:::
+
+::: {.column width="50%"}
+**Capitation**
+- payment per patient
+- pay-for-performance
+- shared savings
+
+:::
+
+::::
+
+---
+
+## Hospital prices in real life
+
+We'll get into the real data later in this module, but for now...a few facts:
+
+1. Hospital services are expensive
+
+2. Prices vary dramatically across different areas
+
+3. Lack of competition is a major reason for high prices
+
+---
+
+## Hospital prices in real life
+
+::: {layout-ncol=2}
+
+![](../figures/HC_var_withinmkt_hip_ga_atlanta.png)
+
+![](../figures/HC_var_withinmkt_kmri_ga_atlanta.png)
+
+:::
+
+::: aside
+Source: [Health Care Pricing Project](https://healthcarepricingproject.org)
+:::
