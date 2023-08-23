@@ -1,0 +1,119 @@
+---
+title: "Unilateral Pricing"
+author: "Ian McCarthy | Emory University"
+format: 
+  revealjs:
+    theme: [moon]
+    preview-links: auto
+    chalkboard:
+      boardmarker-width: 5
+    slide-number: true
+    width: 1600
+    height: 900    
+#    embed-resources: true
+from: markdown+emoji
+execute: 
+  echo: true
+---
+
+```{r}
+#| include: false
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
+```
+
+
+## Motivation
+
+In health care, providers usually face two prices:
+
+1. A price fixed by Medicare and Medicaid, $p_{m}$.
+2. A price that is negotiated with insurers, $p_{n}$.
+
+How does $p_{m}$ affect $p_{n}$? For now, let's focus on these two situations separately.
+
+
+# Unilateral Pricing (depends on the objective)
+
+---
+
+## Pricing for NFP hospitals
+
+Objective is to maximize some function of profits and quantity of care provided, denoted by
+$$U\left( \pi_{j} = \pi_{i,j} + \pi_{g,j},D_{i,j}, D_{g,j} \right)$$
+
+where $\pi_{j}$ denotes total profits for hospital $j$ and $D_{i,j}$ denotes hospital demand from insurer $i$. We assume that $p_{j}$ is exogenous and determined by a public payer, so the hospital need only set its price for private insurance customers, $p_{i}$.
+
+---
+
+## Solution for NFP hospital
+
+The hospital chooses $p_{i}$ such that
+
+$$\frac{\mathrm{d}U}{\mathrm{d}p_{i}} = U_{1} \pi_{1}^{i} + U_{2} \frac{\mathrm{d}D_{i}}{\mathrm{d}p_{i}}=0$$
+
+where $U_{1}$ denotes the derivative of $U(\cdot)$ with respect to its first argument and similarly for $U_{2}$.
+
+::: {.fragment}
+In general, we can't solve this directly without knowing the hospital's utility function. 
+:::
+
+
+---
+
+## Assuming pure profit maximization
+
+```{tikz}
+#| echo: false
+
+\usetikzlibrary{calc}
+\begin{tikzpicture}[scale=0.40, every node/.style={black,opacity=1, transform shape}]
+\draw [thick](0,9) node [left,align=center] {\small Costs and\\ \small Revenue} -- (0,0) node [below left] {$0$} -- (10,0) node [below, align=center] {\small Quantity};
+\draw [thick, blue!90](0,7)-- (8,2)node[right, black, align=center]{\small Demand};
+\draw [thick, purple!90](0,7)-- (6,1)node[black, right]{\small Marginal Revenue};
+\draw [thick, blue!90](1,4) to [out=300, in=240] (7,5)node[right,black]{\small Average total cost};
+\draw [thick, purple!90](2,1) node[black, left, align=center]{\small Marginal \\cost}--(5.25, 6);
+\draw[fill] (3.6,3.4) node[right] {$A$} circle [radius=0.1];
+\draw[fill] (3.6,4.75) node[above] {$B$} circle [radius=0.1];
+\draw[dashed](0,4.75) node[left, align=center]{\small Monopoly\\ \small price}--(3.6,4.75)--(3.6,0)node[below]{$q^{*}$};
+\end{tikzpicture}
+```
+
+---
+
+## Example
+
+Consider the firm's demand curve, $d=16-q$, and cost curve, $c(q)=5+q^{2}$. Where will the firm produce and at what price? What is the firm's markup over marginal cost?
+
+::: {.fragment}
+The profit function is, $\pi = (16-q)q - 5 - q^{2}$. Differentiating with respect to quantity yields $-q + 16 - q - 2q= 16-4q=0$, or $q=4$. At this quantity, the price is $p=12$, which is a markup of 4 over the marginal cost (or 50% markup).
+:::
+
+---
+
+## In-class problem (unilateral pricing)
+
+Consider the firm's demand curve, $d=40-2q$, and cost curve, $c(q)=5q+\frac{1}{2}q^{2}$. 
+
+1. What is the firm's profit maximizing choice of quantity and price? 
+2. What is the markup over marginal cost?
+
+
+# Pure Price Taker
+
+---
+
+Sell at the public price to the point where marginal revenue equals marginal cost
+
+```{tikz}
+#| echo: false
+
+\usetikzlibrary{calc}
+\begin{tikzpicture}[scale=0.40, every node/.style={black,opacity=1, transform shape}]
+\draw [thick](0,9) node [left,align=center] {\small Costs and\\ \small Revenue} -- (0,0) node [below left] {$0$} -- (10,0) node [below, align=center] {\small Quantity};
+\draw (0,4) node[black, left]{$p_{m}$} -- (7,4);
+\draw [thick, purple!90](2,1) node[black, left, align=center]{\small Marginal \\cost}--(5.25, 6);
+\draw[dashed](3.9,0) node[below]{$q$} -- (3.9,4);
+\draw[fill] (3.9,4) node[below] {$t$} circle [radius=0.1];
+\end{tikzpicture}
+```
