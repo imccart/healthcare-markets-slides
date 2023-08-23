@@ -201,6 +201,7 @@ Lots of interesting economic issues in health care, not all unique to the US.
 ---
 
 Some common arguments:
+
 - Poor health
 - Overutilization
 - High physician salaries
@@ -211,6 +212,7 @@ Some common arguments:
 ---
 
 The real culprit(s):
+
 - Administrative waste
 - Prices!
 - Some fraud
@@ -220,6 +222,7 @@ The real culprit(s):
 ## Fragmentation
 
 A frustrating feature of U.S. health care is that it is extremely fragmented:
+
 - different ways to get insurance
 - different entities providing health care
 - separate billing (for the most part)

@@ -1,0 +1,206 @@
+---
+title: "Hospital Objective Functions"
+author: "Ian McCarthy | Emory University"
+format: 
+  revealjs:
+    theme: [moon]
+    preview-links: auto
+    chalkboard:
+      boardmarker-width: 5
+    slide-number: true
+    width: 1600
+    height: 900    
+#    embed-resources: true
+from: markdown+emoji
+execute: 
+  echo: true
+---
+
+```{r}
+#| include: false
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
+```
+
+# Hopsital Ownership
+
+---
+
+## Forms of ownership:
+
+1. Private not-for-profit: About 60%
+2. For-profit: About 20%
+3. State and local gov't: About 20%
+
+::: aside
+Source: [AHA Fast Facts](https://www.aha.org/statistics/fast-facts-us-hospitals)
+:::
+
+---
+
+## Non-profit hospitals
+
+What does it mean to be a not-for-profit hospital?
+
+::: {.fragment}
+From an economics perspective:
+
+- Hospital assumed to maximize some objective function, $u(q,z)$, subject to a production constraint
+- $q$ denotes quantity of care and $z$ denotes quality of care
+- Production is constrained by the break-even condition
+:::
+
+---
+
+## Non-profit hospitals
+
+What does it mean to be a not-for-profit hospital?
+
+From a practical perspective:
+
+- Profits must be re-invested into the hospital
+- Must show "community benefit" (no consensus definition...includes uncompensated care, services to Medicaid, and certain specialized services that are generally unprofitable)
+- No taxes! and tax-free bonds
+
+---
+
+## Non-profit hospitals and tax benefits
+
+- \$24.6 billion in tax exemptions in 2011
+- \$62.4 billion in "community benefits"
+- [Washington Post Article](https://www.washingtonpost.com/national/health-science/value-of-tax-breaks-for-nonprofit-hospitals-doubled-in-a-decade/2015/06/17/4162c640-1450-11e5-9ddc-e3353542100c_story.html?utm_term=.4f877a72a09f)
+- [NYTimes Article](https://www.nytimes.com/2013/12/17/us/benefits-questioned-in-tax-breaks-for-nonprofit-hospitals.html)
+- Unfortunately still an issue 10+ years later:
+  - [Do Nonprofit Hospitals Deserve Their Tax Exemption?, NEJM, 2023](https://www.nejm.org/doi/full/10.1056/NEJMp2303245)
+  - [Interview with NEJM Authors](https://www.nejm.org/action/showMediaPlayer?doi=10.1056%2FNEJMdo007183&aid=10.1056%2FNEJMp2303245&area=)
+
+::: {.fragment}
+What do you think? Are these community benefits measured appropriately?
+:::
+
+---
+
+## Public NFP hospitals
+
+- Operate similarly to NFP hospitals but with heavier reliance on federal, state, or local government funding
+- Often the "safety net" hospitals of the area
+- Large share of uninsured or Medicaid patients
+- Less controversy re tax breaks and community benefits
+
+---
+
+## For-profit hospitals
+
+- Owned by private entities, investors, or corporations
+- Explicit profit motives...primary objective is to generate financial returns for shareholders or individual owners
+- Still provide medical services
+- Still subjected to variety of regulations
+
+# Objective Functions
+
+---
+
+## What is the objective function?
+
+As economists, the real question is...what is the hospital's objective function? Does NFP status actually reflect a different objective than FP? Some possible objectives for NFPs include:
+
+- For-profit in disguise
+- Output maximizers (provide as much care as possible)
+- Social welfare maximizers
+- **General setup:** Utility maximizers (can include social welfare, profit, output, etc.)
+
+::: {.fragment}
+Most empirical evidence doesn't find much of a difference between FP and NFP hospitals, except FPs have higher prices. Why is that?
+:::
+
+
+---
+
+## Utility maximizers
+
+From an economics perspective:
+
+- Hospital assumed to maximize some objective function, e.g. $u(q,z)$, subject to a production constraint
+- $q$ denotes quantity of care and $z$ denotes quality of care
+- Production is constrained by the break-even condition
+
+---
+
+## Demand and Cost Changes from Increase in Quality
+
+```{tikz}
+#| echo: false
+
+\usetikzlibrary{calc}
+\begin{tikzpicture}[scale=1]
+\draw [thick] (0,0) -- (8,0);
+\draw [thick] (0,0) -- (0,5);
+\node [right] at (8,0) {$x$};
+\node [above] at (0,5) {\$};
+\draw [thick] (1.5,4.6) -- (7.4,1.3);
+\node [left] at (7.2,1.2) {$D_{H}$};
+\draw [thick] (1,3.4) -- (5.3,1);
+\node [left] at (5,1) {$D_{L}$};
+\draw (.5,3.5) to [out=300,in=200] (6,2.5);
+\node [below] at (.5,3.2) {$AC_{L}$};
+\draw (.8,5) to [out=300,in=200] (7.2,3.5);
+\node [below] at (7,3.4) {$AC_{H}$};
+\draw[dashed](3.5,2)--(3.5,0);
+\draw [fill] (3.5,2) circle [radius =0.05];
+\draw[dashed](4.4,3)--(4.4,0);
+\draw [fill] (4.4,3) circle [radius =0.05];
+\end{tikzpicture}
+
+```
+
+
+---
+
+## PPC from Demand and Cost Intersection
+
+```{tikz}
+#| echo: false
+
+\usetikzlibrary{calc}
+\begin{tikzpicture}[scale=.8]
+\draw [thick] (0,0) -- (8,0);
+\draw [thick] (0,0) -- (0,7);
+\node [right] at (8,0) {$x$};
+\node [above] at (0,7) {\$};
+\draw [thick] (2.5,5.6) -- (7.8,2.5);
+\node [left] at (7.8,2.5) {$D_{HH}$};
+\draw [thick] (1.5,4.6) -- (7.4,1.3);
+\node [left] at (7.2,1.2) {$D_{H}$};
+\draw [thick] (1,3.4) -- (5.3,1);
+\node [left] at (5,1) {$D_{L}$};
+\draw (.5,3.5) to [out=300,in=200] (6,2.5);
+\node [below] at (.5,3.2) {$AC_{L}$};
+\draw (.8,5) to [out=300,in=200] (7.2,3.5);
+\node [above] at (7,3.6) {$AC_{H}$};
+\draw (1.1,6) to [out=300,in=200] (7,5.5);
+\node [above] at (7,5.6) {$AC_{HH}$};
+\draw [fill] (3.5,2) circle [radius =0.05];
+\draw [fill] (4.4,3) circle [radius =0.05];
+\draw [fill] (4.05,4.75) circle [radius =0.05];
+\draw [very thick] (1.8,1) .. controls (4,2) and (5.5,3.2) .. (3.5,5.5);
+\end{tikzpicture}
+
+```
+
+---
+
+## Predictions from this framework
+
+Assume that the hospital experiences an exogenous increase in the number of insured people in their area. What would be the likely effect of this policy change on hospital quantity? What about an increase in costs?
+
+
+---
+
+## Profit maximizers
+
+These are easier to study theoretically...just a standard profit maximizing firm.
+
+- $\pi=P(q)q - C(q),$ where $q$ denotes quantity of care
+- Firm has some market power and so faces a downward sloping demand curve
+- Will discuss bargaining power and price negotiations later in this module
+
