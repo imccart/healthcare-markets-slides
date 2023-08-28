@@ -81,6 +81,7 @@ Made more important due to extremely high healthcare prices
 ## Insurance networks
 
 Set of providers for which the insurer has agreed to pay some amount of care received at those providers, conditional on other cost-sharing terms of the insurance contract
+  
   - Preferred Provider Organizations (PPOs): tiered network structure, where patients will be responsible for less of the total cost of care when going to a higher tiered provider
   - Health Maintenance Organizations (HMOs): more discrete network structure, with some providers in-network and other providers out-of-network
 
@@ -98,7 +99,10 @@ What enrollees pay every month regardless of whether they use any health care
 
 ## Cost-sharing
 
-Generally refers to the amount of health care expenses that must be paid directly by the patient (as opposed to their insurance plan). The cost-sharing terms of an insurance contract will dictate how much a patient must pay out-of-pocket for any care received. Cost-sharing tends to encompass a **deductible**, **co-insurance**, and **co-payment**. 
+Generally refers to the amount of health care expenses that must be paid directly by the patient (as opposed to their insurance plan)
+
+- Dictates how much a patient must pay out-of-pocket for any care received
+- Encompasses a **deductible**, **co-insurance**, and **co-payment**
 
 
 ---
@@ -114,14 +118,24 @@ The amount of money that a patient must pay out-of-pocket before the insurance c
 ---
 
 ## Copayment
-A fixed dollar amount for which the patient is responsible **after meeting their deductible.** Co-payments are more common for low-cost, predictable health care services like physician office visits. Patients might have a \$20 co-pay for office visits, which means they must pay \$20 for the visit and the insurance company will pay the rest.
+
+A fixed dollar amount for which the patient is responsible **after meeting their deductible.** 
+
+- More common for low-cost, predictable health care services like physician office visits
+- Example: \$20 co-pay for office visits, which means patients must pay \$20 for the visit and the insurance company will pay the rest (after the deductible is met)
 
 
 ---
 
 ## Coinsurance
 
-A percentage of costs for which the patient is responsible **after meeting their deductible.** For example, assume you have a 20% co-insurance rate. Assume also that you've met your deductible and that you've received a hospital bill for \$5,000. Then you'd have to pay \$1,000 (20% of \$5,000) to the hospital as your co-insurance. The insurer would pay the remaining 80%. Co-insurance is more common for more complicated or less predictable services, like hospital stays or emergency department visits.
+A percentage of costs for which the patient is responsible **after meeting their deductible.** 
+
+- Example: assume you have a 20% co-insurance rate (and you've met your deductible)
+- Hospital visit with a \$5,000 bill
+- Patient would pay \$1,000 (20% of \$5,000) to the hospital as co-insurance
+- Insurer pays the remaining 80%
+- Co-insurance is common for more complicated or less predictable services, like hospital stays or emergency department visits
 
 ---
 
