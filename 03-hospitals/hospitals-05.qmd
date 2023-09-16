@@ -1,0 +1,181 @@
+---
+title: "Bargaining"
+author: "Ian McCarthy | Emory University"
+format: 
+  revealjs:
+    theme: [moon]
+    preview-links: auto
+    chalkboard:
+      boardmarker-width: 5
+    slide-number: true
+    width: 1600
+    height: 900    
+#    embed-resources: true
+from: markdown+emoji
+execute: 
+  echo: true
+---
+
+```{r}
+#| include: false
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
+```
+
+
+# Nash Bargaining
+
+---
+
+## Basics
+
+We model this bargaining problem as a "Nash bargaining" problem.
+
+- Two people are faced with a negotiation
+- If they agree, each gets payoffs $u_{1}$ $u_{2}$, respectively
+- If they disagree, each gets some other payoff, $t_{1}$ and $t_{2}$, with $u_{1} > t_{1}$ and $u_{2} > t_{2}$ 
+- Nash showed that the solution is $\max (u_{1}- t_{1})(u_{2} - t_{2})$
+
+---
+
+## Understanding the outside option
+
+Key part of understanding effect on price is to understand the "outside option". What does this mean?
+
+::: {.fragment}
+- Profit to the hospital or insurer if a negotiation "breaks down"
+- What is the outside option to an insurer if they are in a monopoly hospital market?
+:::
+
+---
+
+## In-class problem (Nash bargaining)
+
+Assume that two agents are negotiating over how best to divide their quantity of good x, which is normalized to 1. If the players reach an agreement, player 1 receives utility $u_{1} = x$, and player 2 receives utility $u_{2} = (1-x)$. If the players do not reach an agreement, player 1 receives a payoff of $t1 = 0$, and
+player 2 receives payoff $t_{2} = a > 0$.<br>
+
+1. Find the Nash bargaining solution to this game.
+2. Explain how this solution varies with $a$.
+
+# Bargaining in Healthcare
+
+---
+
+## Basic Idea
+
+- Extend Nash bargaining framework to consider a hospital-insurer negotiation
+- Two-stage bargaining process:
+
+  1. Hospitals and insurers negotiate the terms of their agreement
+  2. Individuals receive health draws which dictate their health care needs
+    
+::: {.fragment}
+Solve the problem working backward, finding patient choice probabilities based on prices, and then solving for prices. Take as given the employer-insurer relationship, avoiding concerns regarding employers changing insurers or patients choosing different health care plans.
+:::
+
+---
+
+## Setup
+
+- Denote consumers by $i$, insurance companies by $m$, hospitals by $j$, and diseases by $d$
+- Denote by $f_{mid}$ the probability that patient $i$ enrolled in MCO $m$ has disease $d$ ($d=0$ implies no disease)
+- Denote by $w_{d}$ the weights reflecting the relative intensity of resource use for illness $d$, with $w_{0}$ normalized to 0
+- Insurer and hospital negotiate a base price, to which all other payments are adjusted using the relative weight
+- Price paid for a given treatment is $p_{mj} \times w_{d}$.
+
+---
+
+## Patients
+
+- Coinsurance rate, denoted $c_{mit}$
+- Patient with disease $d$ chooses the hospital $j$ in their network ($N_{m}$) that maximizes their utility
+- Patient utility is given by: $$u_{mijd} = \beta x_{mijd} - \alpha c_{mid} w_{d} p_{mj} + e_{mij}$$ 
+- $x_{mijd}$ denotes a vector of hospital and patient characteristics, and $e_{mij}$ is an iid error term assumed to follow a Type I extreme value distribution
+
+---
+
+## Patients
+
+- Probability of choosing hospital $j$ is given by $$s_{mijd}(N_{m},\vec{p}_{m}) = \frac{\exp (\beta x_{mijd} - \alpha c_{mid} w_{d} p_{mj})}{\sum_{k}\exp (\beta x_{mikd} - \alpha c_{mid} w_{d} p_{mk})},$$ where $\sum_{k}$ denotes the sum over all $k$ hospitals in the patient's network as well as their outside option. 
+- Expected number of patients admitted to hospital $j$, weighted by the relative intensity of resource use, is $$q_{mj}(N_{m},\vec{p}_{m}) = \sum_{i=1}^{I_{m}} \sum_{d=1}^{D} f_{mid} w_{d} s_{mijd}(N_{m},\vec{p}_{m}).$$
+
+---
+
+## Patients
+
+- Closed form expression for consumer surplus, $$W_{m}(N_{m},\vec{p}_{m})=\frac{1}{\alpha} \sum_{i=1}^{I_{m}} \sum_{d=1}^{D} f_{mid} \ln \left( \sum_{k}\exp (\beta x_{mikd} - \alpha c_{mid} w_{d} p_{mk}) \right)$$ 
+- Difference between $W_{m}$ with and without hospital $j$ in the patient's network, $W_{m}(N_{m},\vec{p}_{m}) - W_{m}(N_{m,-j},\vec{p}_{m})$, then serves as an estimate of the patient's willingness to pay for hospital $j$
+
+---
+
+## Insurers
+
+- Expected cost to the MCO for a given hospital and associated prices, $$TC_{m}(N_{m},\vec{p}_{m})=\sum_{i=1}^{I_{m}} \sum_{d=1}^{D} (1 - c_{mid}) \times \sum_{j\in N_{m}} p_{mj} f_{mid} s_{mijd}(N_{m},\vec{p}_{m})$$ 
+- Value for the MCO is $$V_{m}(N_{m},\vec{p}_{m}) = \tau W_{m}(N_{m},\vec{p}_{m}) - TC_{m}(N_{m},\vec{p}_{m}),$$ where $\tau$ is the relative weight placed on employee welfare
+- Net value that MCO $m$ receives from including system $s$ in its network is then $V_{m}(N_{m},\vec{p}_{m})-V_{m}(N_{m,-j},\vec{p}_{m})$.
+
+---
+
+## Hospitals
+
+- Hospital $j$'s marginal cost for services provided to patients in MCO $m$ is given by $$mc_{mj}=\gamma \nu_{mj} + \varepsilon_{mj},$$ where $\nu_{mj}$ denotes a set of cost shifters, $\gamma$ are parameters to estimate, and $\varepsilon$ is an error term
+- Profit for hospital $j$ for a given set of MCO contracts (denoted $M_{s}$), is $$\pi_{s}\left(M_{s},\{\vec{p}_{m}\}_{m\in M_{s}},\{N_{m} \}_{m\in M_{s}} \right)=\sum_{m\in M_{s}} \sum_{j \in J_{s}} q_{mj}(N_{m},\vec{p}_{m}) \left[p_{mj} - mc_{mj} \right]$$
+- Net value that system $s$ receives from including MCO $m$ in its network is $$\sum_{j \in J_{s}} q_{mj}(N_{m},\vec{p}_{m}) \left[p_{mj} - mc_{mj} \right].$$
+
+---
+
+## Nash Bargaining Solution
+
+Nash bargaining solution is the choice of prices maximizing exponentiated product of the net value from agreement:
+
+$$\begin{align*}
+NB^{m,s} \left(p_{mj, j\in J_{s}} | \vec{p}_{m,-s}\right) &= \left(\sum_{j\in J_{s}}q_{mj}(N_{m},\vec{p}_{m}) \left[p_{mj} - mc_{mj} \right]\right)^{b_{s(m)}} \\
+& \times \left(V_{m}(N_{m},\vec{p}_{m})-V_{m}(N_{m,-j},\vec{p}_{m})\right)^{b_{m(s)}},
+\end{align*}$$
+where $b_{s(m)}$ is the bargaining weight of system $s$ when facing MCO $m$, $b_{m(s)}$ is the bargaining weight of MCO $m$ when facing system $s$, and $\vec{p}_{m,-s}$ is the vector of prices for MCO $m$ and hospitals in systems other than $s$. We can normalize bargaining weight such that $b_{s(m)} + b_{m(s)} = 1$.
+
+---
+
+## Nash Bargaining Solution
+
+Note that taking the natural log of the objective does not change the maximum, since the natural log is a ``monotonic transformation.'' In other words, the log will change the value of some function $f(x)$, but it will not change the order, so that if $f(x_{1})>f(x_{2})$, it follows that $\ln (f(x_{1})) > \ln (f(x_{2}))$. 
+
+The resulting first order condition yields:
+$$\begin{align*}
+\frac{d \ln (NB^{m,s})}{p_{mj}} &= b_{s(m)} \frac{d q_{mj} + \sum_{k\in J_{s}} \frac{d q_{mk}}{d p_{mj}} \left[p_{mk}-mc_{mk}\right]}{\sum_{k\in J_{s}} q_{mk}\left[p_{mk}-mc_{mk}\right]} + b_{m(s)} \frac{\frac{d V_{m}}{d p_{mj}}}{V_{m}(N_{m},\vec{p}_{m})-V_{m}(N_{m,-j},\vec{p}_{m})} \\
+&= 0 \end{align*}$$
+
+---
+
+## Nash Bargaining Solution
+
+- Rearrange this equation to write:
+$$q_{mj} + \sum_{k\in J_{s}} \frac{d q_{mk}}{d p_{mj}} \left[p_{mk}-mc_{mk}\right] = -\frac{b_{m(s)}}{b_{s(m)}} \frac{\frac{d V_{m}}{d p_{mj}} \sum_{k\in J_{s}} q_{mk}\left[p_{mk}-mc_{mk}\right]}{V_{m}(N_{m},\vec{p}_{m})-V_{m}(N_{m,-j},\vec{p}_{m})}$$
+
+- By assumption, the first order conditions are separable across insurers. Combining all first order conditions therefore yields the following system of equations:
+$$q + \omega (p-mc) = -\lambda (p-mc),$$
+where $\omega$ and $\lambda$ are each $J_{s} \times J_{s}$ matrices, while $q$ and $p-mc$ are $J_{s} \times 1$ vectors
+
+- We can then solve for prices:
+$$p = mc - (\omega + \lambda)^{-1} q$$
+
+---
+
+## Insurer Steering
+
+"Reasonable assumptions" such that $$\frac{d V_{m}}{d p_{mj}}=-q_{mj}-\alpha \sum_{i}\sum_{d}\gamma_{id}c_{id}(1-c_{id}) \left(\sum_{k\in N_{m}} p_{mk}s_{ikd} - p_{mj}\right),$$ where $\gamma_{id}$ includes several terms including disease weights and probability of disease
+
+- $c_{id}\times (1-c_{id})$ captures role of insurer coinsurance rates in steering patients 
+  - If $p_{mj}$ is high relative to the weighted average price of other hospitals, then $\frac{d V_{m}}{d p_{mj}}$ is less negative due to the term in parenthesis, and thus it is optimal (in the sense of maximizing joint surplus) to allow $p_{mj}$ to increase so as to channel customers to the low price hospital.
+  - In the extreme cases, at $c_{id}=1$ the insurer wouldn't care about negotiating price with physicians since all of the extra cost is borne by patients. Conversely, at $c_{id}=0$ the term in parenthesis is again irrelevant as the patients do not switch to lower price hospitals.
+
+---
+
+## Bargaining and Prices
+
+Consider the special case of a single-hospital system, 
+$$p_{mj} - mc_{mj} = -q_{mj} \left(\frac{d q_{mj}}{d p_{mj}} + q_{mj} \times \frac{b_{m(j)}}{b_{j(m)}} \times \frac{\frac{d V_{m}}{d p_{mj}}}{\triangle V_{m}} \right)^{-1}$$
+
+- The term $\triangle V_{m}$ is positive by construction. With some work, we can find that $\frac{d V_{m}}{d p_{mj}}<0$ under most conditions. This means that the presence of bargaining tends to increase the ``effective'' price sensitivity and reduce hospital margins relative to standard pricing conditions. 
+- However, note that this result does not always hold. In cases where some hospitals are particularly higher priced than others, then the insurer may allow a given hospital to increase its margins (relative to standard pricing conditions) so as to steer patients away from the very high priced hospital.
+

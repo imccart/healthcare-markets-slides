@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="hospitals-04_files/libs/clipboard/clipboard.min.js"></script>
-<script src="hospitals-04_files/libs/quarto-html/tabby.min.js"></script>
-<script src="hospitals-04_files/libs/quarto-html/popper.min.js"></script>
-<script src="hospitals-04_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="hospitals-04_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="hospitals-04_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="hospitals-04_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="hospitals-04_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="hospitals-05_files/libs/clipboard/clipboard.min.js"></script>
+<script src="hospitals-05_files/libs/quarto-html/tabby.min.js"></script>
+<script src="hospitals-05_files/libs/quarto-html/popper.min.js"></script>
+<script src="hospitals-05_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="hospitals-05_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="hospitals-05_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="hospitals-05_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="hospitals-05_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.3.450">
 
   <meta name="author" content="Ian McCarthy | Emory University">
-  <title>Two-Price Market</title>
+  <title>Bargaining</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="hospitals-04_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="hospitals-04_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="hospitals-05_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="hospitals-05_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -30,13 +30,13 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="hospitals-04_files/libs/revealjs/dist/theme/quarto.css">
-  <link href="hospitals-04_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="hospitals-04_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="hospitals-04_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="hospitals-04_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
-  <link href="hospitals-04_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
-  <link href="hospitals-04_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="hospitals-05_files/libs/revealjs/dist/theme/quarto.css">
+  <link href="hospitals-05_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="hospitals-05_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="hospitals-05_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="hospitals-05_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="hospitals-05_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="hospitals-05_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -327,7 +327,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Two-Price Market</h1>
+  <h1 class="title">Bargaining</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -338,75 +338,148 @@ Ian McCarthy | Emory University
 </div>
 
 </section>
-<section id="motivation" class="slide level2">
-<h2>Motivation</h2>
-<p>In health care, providers usually face two prices:</p>
-<ol type="1">
-<li>A price fixed by Medicare and Medicaid, <span class="math inline">\(p_{m}\)</span>.</li>
-<li>A price that is negotiated with insurers, <span class="math inline">\(p_{n}\)</span>.</li>
-</ol>
-<p>How does <span class="math inline">\(p_{m}\)</span> affect <span class="math inline">\(p_{n}\)</span>?</p>
-</section>
 <section>
-<section id="profit-maximizing-hospital" class="title-slide slide level1 center">
-<h1>Profit maximizing hospital</h1>
+<section id="nash-bargaining" class="title-slide slide level1 center">
+<h1>Nash Bargaining</h1>
 
 </section>
-<section id="two-price-market-and-fp" class="slide level2">
-<h2>Two price market and FP</h2>
-<p>Because the hospital is a profit maximizing firm, it will choose the quantity that maximizes profits, <span class="math inline">\(q^{*}\)</span>, where:</p>
+<section id="basics" class="slide level2">
+<h2>Basics</h2>
+<p>We model this bargaining problem as a “Nash bargaining” problem.</p>
 <ul>
-<li>Sell to “private” market as long as marginal revenue exceeds the public price</li>
-<li>Switch to “public’” market otherwise, and sell to the point where price equals marginal cost</li>
+<li>Two people are faced with a negotiation</li>
+<li>If they agree, each gets payoffs <span class="math inline">\(u_{1}\)</span> <span class="math inline">\(u_{2}\)</span>, respectively</li>
+<li>If they disagree, each gets some other payoff, <span class="math inline">\(t_{1}\)</span> and <span class="math inline">\(t_{2}\)</span>, with <span class="math inline">\(u_{1} &gt; t_{1}\)</span> and <span class="math inline">\(u_{2} &gt; t_{2}\)</span></li>
+<li>Nash showed that the solution is <span class="math inline">\(\max (u_{1}- t_{1})(u_{2} - t_{2})\)</span></li>
 </ul>
 </section>
-<section id="two-price-market-in-pictures" class="slide level2">
-<h2>Two-price market in pictures</h2>
-
-<img data-src="hospitals-04_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
-<section id="in-class-problem-two-price-market" class="slide level2">
-<h2>In-class problem (two-price market)</h2>
-<p>Consider the firm’s demand curve in the private insurance market, <span class="math inline">\(d=16-q\)</span>, and costs, <span class="math inline">\(c(q)=5+q^{2}\)</span>. Assume that there exists a public insurer that pays a fixed price of <span class="math inline">\(\bar{p}=10\)</span>.<br></p>
+<section id="understanding-the-outside-option" class="slide level2">
+<h2>Understanding the outside option</h2>
+<p>Key part of understanding effect on price is to understand the “outside option”. What does this mean?</p>
+<div class="fragment">
+<ul>
+<li>Profit to the hospital or insurer if a negotiation “breaks down”</li>
+<li>What is the outside option to an insurer if they are in a monopoly hospital market?</li>
+</ul>
+</div>
+</section>
+<section id="in-class-problem-nash-bargaining" class="slide level2">
+<h2>In-class problem (Nash bargaining)</h2>
+<p>Assume that two agents are negotiating over how best to divide their quantity of good x, which is normalized to 1. If the players reach an agreement, player 1 receives utility <span class="math inline">\(u_{1} = x\)</span>, and player 2 receives utility <span class="math inline">\(u_{2} = (1-x)\)</span>. If the players do not reach an agreement, player 1 receives a payoff of <span class="math inline">\(t1 = 0\)</span>, and player 2 receives payoff <span class="math inline">\(t_{2} = a &gt; 0\)</span>.<br></p>
 <ol type="1">
-<li>How many private patients will the provider serve?</li>
-<li>How many public patients?</li>
-<li>What if <span class="math inline">\(\bar{p}\)</span> drops to $9.</li>
+<li>Find the Nash bargaining solution to this game.</li>
+<li>Explain how this solution varies with <span class="math inline">\(a\)</span>.</li>
 </ol>
 </section></section>
 <section>
-<section id="not-for-profit-objectives" class="title-slide slide level1 center">
-<h1>Not-for-profit objectives</h1>
+<section id="bargaining-in-healthcare" class="title-slide slide level1 center">
+<h1>Bargaining in Healthcare</h1>
 
 </section>
-<section id="two-price-market-and-nfp" class="slide level2">
-<h2>Two price market and NFP</h2>
-<p>Although we don’t know the general solution for the private price, we can find how it varies with the public price…</p>
-<div class="fragment">
-<p><span class="math display">\[\frac{\mathrm{d}p_{i}}{\mathrm{d}p_{j}} = - \frac{U_{11}\pi_{1}^{i}\pi_{1}^{j} + \frac{\mathrm{d}D_{i}}{\mathrm{d}p_{i}}U_{12}\pi_{1}^{j}}{\frac{\mathrm{d}^{2}U}{\mathrm{d}p_{i}^{2}}}\]</span></p>
-</div>
-</section>
-<section id="cost-shifting" class="slide level2">
-<h2>Cost-shifting</h2>
+<section id="basic-idea" class="slide level2">
+<h2>Basic Idea</h2>
 <ul>
-<li>Relationship between public and private price is important</li>
-<li>Speaks to anticipated effects of a change in Medicaid or Medicare rates</li>
-<li>Do hospitals “make up” the difference?</li>
+<li><p>Extend Nash bargaining framework to consider a hospital-insurer negotiation</p></li>
+<li><p>Two-stage bargaining process:</p>
+<ol type="1">
+<li>Hospitals and insurers negotiate the terms of their agreement</li>
+<li>Individuals receive health draws which dictate their health care needs</li>
+</ol></li>
 </ul>
 <div class="fragment">
-<p>The idea that hospitals will increase private prices following a decrease in the public price is called <strong>cost shifting</strong>.</p>
+<p>Solve the problem working backward, finding patient choice probabilities based on prices, and then solving for prices. Take as given the employer-insurer relationship, avoiding concerns regarding employers changing insurers or patients choosing different health care plans.</p>
 </div>
 </section>
-<section id="how-does-cost-shifting-work" class="slide level2">
-<h2>How does cost-shifting work?</h2>
-<p>Assumes that hospitals could have increased private prices earlier but chose not too. This is technically possible if, for example:</p>
+<section id="setup" class="slide level2">
+<h2>Setup</h2>
 <ul>
-<li>Hospital has very low margins (maybe negative with a lower public price)</li>
-<li>Insurer wants to prop up the hospital for competitive reasons</li>
-<li>Hospital has diminishing returns to profits<br></li>
+<li>Denote consumers by <span class="math inline">\(i\)</span>, insurance companies by <span class="math inline">\(m\)</span>, hospitals by <span class="math inline">\(j\)</span>, and diseases by <span class="math inline">\(d\)</span></li>
+<li>Denote by <span class="math inline">\(f_{mid}\)</span> the probability that patient <span class="math inline">\(i\)</span> enrolled in MCO <span class="math inline">\(m\)</span> has disease <span class="math inline">\(d\)</span> (<span class="math inline">\(d=0\)</span> implies no disease)</li>
+<li>Denote by <span class="math inline">\(w_{d}\)</span> the weights reflecting the relative intensity of resource use for illness <span class="math inline">\(d\)</span>, with <span class="math inline">\(w_{0}\)</span> normalized to 0</li>
+<li>Insurer and hospital negotiate a base price, to which all other payments are adjusted using the relative weight</li>
+<li>Price paid for a given treatment is <span class="math inline">\(p_{mj} \times w_{d}\)</span>.</li>
 </ul>
-<div class="fragment">
-<p>but economists usually see this as a smaller effect than most policy makers</p>
-</div>
+</section>
+<section id="patients" class="slide level2">
+<h2>Patients</h2>
+<ul>
+<li>Coinsurance rate, denoted <span class="math inline">\(c_{mit}\)</span></li>
+<li>Patient with disease <span class="math inline">\(d\)</span> chooses the hospital <span class="math inline">\(j\)</span> in their network (<span class="math inline">\(N_{m}\)</span>) that maximizes their utility</li>
+<li>Patient utility is given by: <span class="math display">\[u_{mijd} = \beta x_{mijd} - \alpha c_{mid} w_{d} p_{mj} + e_{mij}\]</span></li>
+<li><span class="math inline">\(x_{mijd}\)</span> denotes a vector of hospital and patient characteristics, and <span class="math inline">\(e_{mij}\)</span> is an iid error term assumed to follow a Type I extreme value distribution</li>
+</ul>
+</section>
+<section id="patients-1" class="slide level2">
+<h2>Patients</h2>
+<ul>
+<li>Probability of choosing hospital <span class="math inline">\(j\)</span> is given by <span class="math display">\[s_{mijd}(N_{m},\vec{p}_{m}) = \frac{\exp (\beta x_{mijd} - \alpha c_{mid} w_{d} p_{mj})}{\sum_{k}\exp (\beta x_{mikd} - \alpha c_{mid} w_{d} p_{mk})},\]</span> where <span class="math inline">\(\sum_{k}\)</span> denotes the sum over all <span class="math inline">\(k\)</span> hospitals in the patient’s network as well as their outside option.</li>
+<li>Expected number of patients admitted to hospital <span class="math inline">\(j\)</span>, weighted by the relative intensity of resource use, is <span class="math display">\[q_{mj}(N_{m},\vec{p}_{m}) = \sum_{i=1}^{I_{m}} \sum_{d=1}^{D} f_{mid} w_{d} s_{mijd}(N_{m},\vec{p}_{m}).\]</span></li>
+</ul>
+</section>
+<section id="patients-2" class="slide level2">
+<h2>Patients</h2>
+<ul>
+<li>Closed form expression for consumer surplus, <span class="math display">\[W_{m}(N_{m},\vec{p}_{m})=\frac{1}{\alpha} \sum_{i=1}^{I_{m}} \sum_{d=1}^{D} f_{mid} \ln \left( \sum_{k}\exp (\beta x_{mikd} - \alpha c_{mid} w_{d} p_{mk}) \right)\]</span></li>
+<li>Difference between <span class="math inline">\(W_{m}\)</span> with and without hospital <span class="math inline">\(j\)</span> in the patient’s network, <span class="math inline">\(W_{m}(N_{m},\vec{p}_{m}) - W_{m}(N_{m,-j},\vec{p}_{m})\)</span>, then serves as an estimate of the patient’s willingness to pay for hospital <span class="math inline">\(j\)</span></li>
+</ul>
+</section>
+<section id="insurers" class="slide level2">
+<h2>Insurers</h2>
+<ul>
+<li>Expected cost to the MCO for a given hospital and associated prices, <span class="math display">\[TC_{m}(N_{m},\vec{p}_{m})=\sum_{i=1}^{I_{m}} \sum_{d=1}^{D} (1 - c_{mid}) \times \sum_{j\in N_{m}} p_{mj} f_{mid} s_{mijd}(N_{m},\vec{p}_{m})\]</span></li>
+<li>Value for the MCO is <span class="math display">\[V_{m}(N_{m},\vec{p}_{m}) = \tau W_{m}(N_{m},\vec{p}_{m}) - TC_{m}(N_{m},\vec{p}_{m}),\]</span> where <span class="math inline">\(\tau\)</span> is the relative weight placed on employee welfare</li>
+<li>Net value that MCO <span class="math inline">\(m\)</span> receives from including system <span class="math inline">\(s\)</span> in its network is then <span class="math inline">\(V_{m}(N_{m},\vec{p}_{m})-V_{m}(N_{m,-j},\vec{p}_{m})\)</span>.</li>
+</ul>
+</section>
+<section id="hospitals" class="slide level2">
+<h2>Hospitals</h2>
+<ul>
+<li>Hospital <span class="math inline">\(j\)</span>’s marginal cost for services provided to patients in MCO <span class="math inline">\(m\)</span> is given by <span class="math display">\[mc_{mj}=\gamma \nu_{mj} + \varepsilon_{mj},\]</span> where <span class="math inline">\(\nu_{mj}\)</span> denotes a set of cost shifters, <span class="math inline">\(\gamma\)</span> are parameters to estimate, and <span class="math inline">\(\varepsilon\)</span> is an error term</li>
+<li>Profit for hospital <span class="math inline">\(j\)</span> for a given set of MCO contracts (denoted <span class="math inline">\(M_{s}\)</span>), is <span class="math display">\[\pi_{s}\left(M_{s},\{\vec{p}_{m}\}_{m\in M_{s}},\{N_{m} \}_{m\in M_{s}} \right)=\sum_{m\in M_{s}} \sum_{j \in J_{s}} q_{mj}(N_{m},\vec{p}_{m}) \left[p_{mj} - mc_{mj} \right]\]</span></li>
+<li>Net value that system <span class="math inline">\(s\)</span> receives from including MCO <span class="math inline">\(m\)</span> in its network is <span class="math display">\[\sum_{j \in J_{s}} q_{mj}(N_{m},\vec{p}_{m}) \left[p_{mj} - mc_{mj} \right].\]</span></li>
+</ul>
+</section>
+<section id="nash-bargaining-solution" class="slide level2">
+<h2>Nash Bargaining Solution</h2>
+<p>Nash bargaining solution is the choice of prices maximizing exponentiated product of the net value from agreement:</p>
+<p><span class="math display">\[\begin{align*}
+NB^{m,s} \left(p_{mj, j\in J_{s}} | \vec{p}_{m,-s}\right) &amp;= \left(\sum_{j\in J_{s}}q_{mj}(N_{m},\vec{p}_{m}) \left[p_{mj} - mc_{mj} \right]\right)^{b_{s(m)}} \\
+&amp; \times \left(V_{m}(N_{m},\vec{p}_{m})-V_{m}(N_{m,-j},\vec{p}_{m})\right)^{b_{m(s)}},
+\end{align*}\]</span> where <span class="math inline">\(b_{s(m)}\)</span> is the bargaining weight of system <span class="math inline">\(s\)</span> when facing MCO <span class="math inline">\(m\)</span>, <span class="math inline">\(b_{m(s)}\)</span> is the bargaining weight of MCO <span class="math inline">\(m\)</span> when facing system <span class="math inline">\(s\)</span>, and <span class="math inline">\(\vec{p}_{m,-s}\)</span> is the vector of prices for MCO <span class="math inline">\(m\)</span> and hospitals in systems other than <span class="math inline">\(s\)</span>. We can normalize bargaining weight such that <span class="math inline">\(b_{s(m)} + b_{m(s)} = 1\)</span>.</p>
+</section>
+<section id="nash-bargaining-solution-1" class="slide level2">
+<h2>Nash Bargaining Solution</h2>
+<p>Note that taking the natural log of the objective does not change the maximum, since the natural log is a ``monotonic transformation.’’ In other words, the log will change the value of some function <span class="math inline">\(f(x)\)</span>, but it will not change the order, so that if <span class="math inline">\(f(x_{1})&gt;f(x_{2})\)</span>, it follows that <span class="math inline">\(\ln (f(x_{1})) &gt; \ln (f(x_{2}))\)</span>.</p>
+<p>The resulting first order condition yields: <span class="math display">\[\begin{align*}
+\frac{d \ln (NB^{m,s})}{p_{mj}} &amp;= b_{s(m)} \frac{d q_{mj} + \sum_{k\in J_{s}} \frac{d q_{mk}}{d p_{mj}} \left[p_{mk}-mc_{mk}\right]}{\sum_{k\in J_{s}} q_{mk}\left[p_{mk}-mc_{mk}\right]} + b_{m(s)} \frac{\frac{d V_{m}}{d p_{mj}}}{V_{m}(N_{m},\vec{p}_{m})-V_{m}(N_{m,-j},\vec{p}_{m})} \\
+&amp;= 0 \end{align*}\]</span></p>
+</section>
+<section id="nash-bargaining-solution-2" class="slide level2">
+<h2>Nash Bargaining Solution</h2>
+<ul>
+<li><p>Rearrange this equation to write: <span class="math display">\[q_{mj} + \sum_{k\in J_{s}} \frac{d q_{mk}}{d p_{mj}} \left[p_{mk}-mc_{mk}\right] = -\frac{b_{m(s)}}{b_{s(m)}} \frac{\frac{d V_{m}}{d p_{mj}} \sum_{k\in J_{s}} q_{mk}\left[p_{mk}-mc_{mk}\right]}{V_{m}(N_{m},\vec{p}_{m})-V_{m}(N_{m,-j},\vec{p}_{m})}\]</span></p></li>
+<li><p>By assumption, the first order conditions are separable across insurers. Combining all first order conditions therefore yields the following system of equations: <span class="math display">\[q + \omega (p-mc) = -\lambda (p-mc),\]</span> where <span class="math inline">\(\omega\)</span> and <span class="math inline">\(\lambda\)</span> are each <span class="math inline">\(J_{s} \times J_{s}\)</span> matrices, while <span class="math inline">\(q\)</span> and <span class="math inline">\(p-mc\)</span> are <span class="math inline">\(J_{s} \times 1\)</span> vectors</p></li>
+<li><p>We can then solve for prices: <span class="math display">\[p = mc - (\omega + \lambda)^{-1} q\]</span></p></li>
+</ul>
+</section>
+<section id="insurer-steering" class="slide level2">
+<h2>Insurer Steering</h2>
+<p>“Reasonable assumptions” such that <span class="math display">\[\frac{d V_{m}}{d p_{mj}}=-q_{mj}-\alpha \sum_{i}\sum_{d}\gamma_{id}c_{id}(1-c_{id}) \left(\sum_{k\in N_{m}} p_{mk}s_{ikd} - p_{mj}\right),\]</span> where <span class="math inline">\(\gamma_{id}\)</span> includes several terms including disease weights and probability of disease</p>
+<ul>
+<li><span class="math inline">\(c_{id}\times (1-c_{id})\)</span> captures role of insurer coinsurance rates in steering patients
+<ul>
+<li>If <span class="math inline">\(p_{mj}\)</span> is high relative to the weighted average price of other hospitals, then <span class="math inline">\(\frac{d V_{m}}{d p_{mj}}\)</span> is less negative due to the term in parenthesis, and thus it is optimal (in the sense of maximizing joint surplus) to allow <span class="math inline">\(p_{mj}\)</span> to increase so as to channel customers to the low price hospital.</li>
+<li>In the extreme cases, at <span class="math inline">\(c_{id}=1\)</span> the insurer wouldn’t care about negotiating price with physicians since all of the extra cost is borne by patients. Conversely, at <span class="math inline">\(c_{id}=0\)</span> the term in parenthesis is again irrelevant as the patients do not switch to lower price hospitals.</li>
+</ul></li>
+</ul>
+</section>
+<section id="bargaining-and-prices" class="slide level2">
+<h2>Bargaining and Prices</h2>
+<p>Consider the special case of a single-hospital system, <span class="math display">\[p_{mj} - mc_{mj} = -q_{mj} \left(\frac{d q_{mj}}{d p_{mj}} + q_{mj} \times \frac{b_{m(j)}}{b_{j(m)}} \times \frac{\frac{d V_{m}}{d p_{mj}}}{\triangle V_{m}} \right)^{-1}\]</span></p>
+<ul>
+<li>The term <span class="math inline">\(\triangle V_{m}\)</span> is positive by construction. With some work, we can find that <span class="math inline">\(\frac{d V_{m}}{d p_{mj}}&lt;0\)</span> under most conditions. This means that the presence of bargaining tends to increase the ``effective’’ price sensitivity and reduce hospital margins relative to standard pricing conditions.</li>
+<li>However, note that this result does not always hold. In cases where some hospitals are particularly higher priced than others, then the insurer may allow a given hospital to increase its margins (relative to standard pricing conditions) so as to steer patients away from the very high priced hospital.</li>
+</ul>
 <div class="footer footer-default">
 
 </div>
@@ -415,20 +488,20 @@ Ian McCarthy | Emory University
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="hospitals-04_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="hospitals-05_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="hospitals-04_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="hospitals-04_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="hospitals-04_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="hospitals-04_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="hospitals-04_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
-  <script src="hospitals-04_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="hospitals-05_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="hospitals-05_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="hospitals-05_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="hospitals-05_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="hospitals-05_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="hospitals-05_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="hospitals-04_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="hospitals-04_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="hospitals-04_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="hospitals-04_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="hospitals-05_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="hospitals-05_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="hospitals-05_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="hospitals-05_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>

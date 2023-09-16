@@ -39,6 +39,7 @@ How does $p_{m}$ affect $p_{n}$?
 ## Two price market and FP
 
 Because the hospital is a profit maximizing firm, it will choose the quantity that maximizes profits, $q^{*}$, where:
+
 - Sell to "private" market as long as marginal revenue exceeds the public price
 - Switch to "public'" market otherwise, and sell to the point where price equals marginal cost
 
@@ -48,6 +49,8 @@ Because the hospital is a profit maximizing firm, it will choose the quantity th
 ## Two-price market in pictures
 
 ```{tikz}
+#| echo: false
+
 \usetikzlibrary{calc}
 \begin{tikzpicture}[scale=0.40, every node/.style={black,opacity=1, transform shape}]
 \draw [thick](0,9) node [left,align=center] {\small Costs and\\ \small Revenue} -- (0,0) node [below left] {$0$} -- (10,0) node [below, align=center] {\small Quantity};
