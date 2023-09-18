@@ -212,6 +212,7 @@ Assume that the insurer's cost function is given by $C=100q - 2q^{2}$, where $q$
 ---
 
 ![spend](../figures/aca-premiums.png){align="center"}
+
 ::: {.aside}
 [https://www.kff.org/health-costs/issue-brief/how-aca-marketplace-premiums-are-changing-by-county-in-2020](Kaiser Family Foundation)
 :::
@@ -238,7 +239,7 @@ Standard & Poor's writes: “The ACA individual market is not in a 'death spiral
 
 ::: {.fragment}
 Can you examine each of these policies graphically? How do they differ from the patient's or government's point of view?
-::
+:::
 
 # Other related issues
 
