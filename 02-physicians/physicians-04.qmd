@@ -105,8 +105,8 @@ P(\theta|y) &= \frac{P(y|\theta) \times P(\theta)}{P(y)} \\
 
 - The Beta distribution is governed by its "shape" parameters, $\alpha$ and $\beta$
 
-$$P(θ) = \frac{\theta^{\alpha-1} (1 - \theta)^{\beta-1} }{B(\alpha, \beta)},$$
-where $B(\alpha, \beta)$ is a normalization constant to ensure the PDF integrates to 1.
+$$P(θ) = \frac{\theta^{\alpha-1} (1 - \theta)^{\beta-1} }{\tilde{B}(\alpha, \beta)},$$
+where $\tilde{B}(\alpha, \beta)$ is a normalization constant to ensure the PDF integrates to 1.
 
 - Binomial outcome, $y\sim B(n,\theta)$, where $n$ is the number of trials and $\theta$ is the probability of success for any single case
 
@@ -120,12 +120,12 @@ $$ P(y|n, \theta) = {n \choose s} \theta^{s} (1-\theta)^{n-s}$$
 
 $$\begin{align}
 P(\theta | y) &= \frac{P(y| \theta) P(\theta)}{P(y)} \\
- & \propto \frac{ {n \choose s} \theta^{s} (1 - \theta)^{n - s} \theta^{\alpha-1} (1 - \theta)^{\beta-1} } { B(\alpha, \beta) } \\
- & \propto \frac{ {n \choose s} \theta^{\alpha+s-1} (1 - \theta)^{\beta+n-s-1} } { B(\alpha, \beta) } \\
- & \propto B(\alpha+s, \beta + n - s)
+ & \propto \frac{ {n \choose s} \theta^{s} (1 - \theta)^{n - s} \theta^{\alpha-1} (1 - \theta)^{\beta-1} } { \tilde{B}(\alpha, \beta) } \\
+ & \propto \frac{ {n \choose s} \theta^{\alpha+s-1} (1 - \theta)^{\beta+n-s-1} } { \tilde{B}(\alpha, \beta) } \\
+ & \propto Beta(\alpha+s, \beta + n - s)
 \end{align}$$
 
-- ${n \choose s}$ and $B(\alpha, \beta)$ are just normalization constants, so we can ignore them
+- ${n \choose s}$ and $\tilde{B}(\alpha, \beta)$ are just normalization constants, so we can ignore them
 - reduces to a Beta distribution with shape parameters $\alpha+s$ and $\beta + n - s$.
 
 

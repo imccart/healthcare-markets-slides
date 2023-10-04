@@ -8,7 +8,7 @@
 <link href="physicians-04_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="physicians-04_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="physicians-04_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.290">
+  <meta name="generator" content="quarto-1.3.450">
 
   <meta name="author" content="Ian McCarthy | Emory University">
   <title>Physician Learning</title>
@@ -30,7 +30,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="physicians-04_files/libs/revealjs/dist/theme/quarto.css" id="theme">
+  <link rel="stylesheet" href="physicians-04_files/libs/revealjs/dist/theme/quarto.css">
   <link href="physicians-04_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="physicians-04_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="physicians-04_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -425,7 +425,7 @@ P(\theta|y) &amp;= \frac{P(y|\theta) \times P(\theta)}{P(y)} \\
 <ul>
 <li>The Beta distribution is governed by its “shape” parameters, <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span></li>
 </ul>
-<p><span class="math display">\[P(θ) = \frac{\theta^{\alpha-1} (1 - \theta)^{\beta-1} }{B(\alpha, \beta)},\]</span> where <span class="math inline">\(B(\alpha, \beta)\)</span> is a normalization constant to ensure the PDF integrates to 1.</p>
+<p><span class="math display">\[P(θ) = \frac{\theta^{\alpha-1} (1 - \theta)^{\beta-1} }{\tilde{B}(\alpha, \beta)},\]</span> where <span class="math inline">\(\tilde{B}(\alpha, \beta)\)</span> is a normalization constant to ensure the PDF integrates to 1.</p>
 <ul>
 <li>Binomial outcome, <span class="math inline">\(y\sim B(n,\theta)\)</span>, where <span class="math inline">\(n\)</span> is the number of trials and <span class="math inline">\(\theta\)</span> is the probability of success for any single case</li>
 </ul>
@@ -438,12 +438,12 @@ P(\theta|y) &amp;= \frac{P(y|\theta) \times P(\theta)}{P(y)} \\
 <h2>Posterior distribution</h2>
 <p><span class="math display">\[\begin{align}
 P(\theta | y) &amp;= \frac{P(y| \theta) P(\theta)}{P(y)} \\
-&amp; \propto \frac{ {n \choose s} \theta^{s} (1 - \theta)^{n - s} \theta^{\alpha-1} (1 - \theta)^{\beta-1} } { B(\alpha, \beta) } \\
-&amp; \propto \frac{ {n \choose s} \theta^{\alpha+s-1} (1 - \theta)^{\beta+n-s-1} } { B(\alpha, \beta) } \\
-&amp; \propto B(\alpha+s, \beta + n - s)
+&amp; \propto \frac{ {n \choose s} \theta^{s} (1 - \theta)^{n - s} \theta^{\alpha-1} (1 - \theta)^{\beta-1} } { \tilde{B}(\alpha, \beta) } \\
+&amp; \propto \frac{ {n \choose s} \theta^{\alpha+s-1} (1 - \theta)^{\beta+n-s-1} } { \tilde{B}(\alpha, \beta) } \\
+&amp; \propto Beta(\alpha+s, \beta + n - s)
 \end{align}\]</span></p>
 <ul>
-<li><span class="math inline">\({n \choose s}\)</span> and <span class="math inline">\(B(\alpha, \beta)\)</span> are just normalization constants, so we can ignore them</li>
+<li><span class="math inline">\({n \choose s}\)</span> and <span class="math inline">\(\tilde{B}(\alpha, \beta)\)</span> are just normalization constants, so we can ignore them</li>
 <li>reduces to a Beta distribution with shape parameters <span class="math inline">\(\alpha+s\)</span> and <span class="math inline">\(\beta + n - s\)</span>.</li>
 </ul>
 </section></section>

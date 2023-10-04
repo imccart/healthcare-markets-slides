@@ -1,5 +1,5 @@
 ---
-title: "Price Controls and Innovation"
+title: "Regulation and Innovation"
 author: "Ian McCarthy | Emory University"
 format: 
   revealjs:
@@ -22,3 +22,26 @@ if (!require("pacman")) install.packages("pacman")
 pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 ```
 
+# Regulation
+
+---
+
+## Types of regulation in this market
+
+
+
+# Innovation
+
+---
+
+## What governs innovation?
+
+- Strong empirical evidence that firms internalize future profits of a drug when making R&D decisions
+
+
+---
+
+## What IS innovation?
+
+- Should not just mean a new drug, but a new drug that is better than existing treatments
+- Not clear this is always the argument made in the media

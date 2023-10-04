@@ -22,3 +22,105 @@ if (!require("pacman")) install.packages("pacman")
 pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 ```
 
+# Pricing for Brand Name Drugs
+
+---
+
+## Price?
+
+- Recall, "price" is confusing in pharma
+- Price to wholesaler, to pharmacy, to insurer, to patient
+- Significant (and opaque) rebates throughout the supply chain
+
+---
+
+## From Manufacturer's Perspective
+
+Economics of pricing for brand name drugs:
+
+1. Unique, patent-protected drug with no close substitutes (Monopoly)
+2. Many products with patent protection and imperfect substitutes (Bertrand differentiated products)
+
+# Monopoly Pricing
+
+---
+
+## Some examples
+
+- Lipitor (lifetime revenue of over $130 billion)
+- Humira (lifetime revenue of over $100 billion)
+- Advair (lifetime revenue of over $90 billion)
+
+---
+
+## Monopoly pricing without insurance
+
+- Inverse demand, $p=a-b*q$
+- Costs, $FC + d*q$
+- Profits, $\pi = (a-c)q - bq^2 - FC$
+
+::: {.fragment}
+
+Profit maximizing choice of $p, q$:
+
+- $q^* = \frac{a-c}{2b}$
+- $p^* = \frac{a+c}{2}$
+:::
+
+---
+
+```{tikz}
+#| echo: false
+#| fig.cap: "Depiction of monopoly pricing"
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\begin{tikzpicture}
+    % Parameters
+    \def\a{10} % Intercept of the demand curve
+    \def\b{1}  % Slope of the demand curve
+    \def\FC{30} % Fixed Cost
+    \def\c{2}  % Marginal cost
+
+    % Demand curve
+    \begin{axis}[
+        axis lines=left,
+        xlabel=Quantity ($q$),
+        ylabel=Price ($p$),
+        xmin=0, xmax=10,
+        ymin=0, ymax=12,
+        xtick={0, 5},
+        ytick={0, 10},
+        xticklabels={0, $Q_m$},
+        yticklabels={0, $P_m$},
+        axis line style={->},
+        legend pos=north west,
+    ]
+    \addplot[blue, domain=0:8, samples=100]{\a - \b*x} node[pos=0.7, above] {Demand Curve};
+    \legend{Demand Curve};
+    \end{axis}
+
+    % Cost curve
+    \begin{axis}[
+        axis lines=right,
+        hide x axis,
+        ylabel=Cost,
+        ymin=0, ymax=40,
+        ytick={\FC},
+        yticklabels={$FC$},
+        legend pos=north east,
+    ]
+    \addplot[red, domain=0:10, samples=100]{\FC - \c*x} node[pos=0.7, above] {Cost Curve};
+    \legend{Cost Curve};
+    \end{axis}
+
+    % Monopoly price and quantity
+    \draw[dashed] (5, 0) -- (5, {int(\a - \b*5)});
+    \node[below] at (5, 0) {$Q_m$};
+    \node[left] at (0, {int(\a - \b*5)}) {$P_m$};
+\end{tikzpicture}
+```
+
+
+
+

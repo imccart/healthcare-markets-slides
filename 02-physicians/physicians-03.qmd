@@ -102,7 +102,7 @@ $$\frac{B'(x) - p_{d}}{NB} \frac{R + (p_{s} - c)x}{p_{s}-c} = - \frac{1}{\vareps
 
 ## Takeaways
 
-Excessive treatment may arise because physicians can choose a level of care, and this choice may derive from incentives that are not perfectly aligned with those of the patients. From this section, you should be able to:<br>
+Excessive treatment may arise because physicians can choose a level of care, and this choice may derive from incentives that are not perfectly aligned with those of the patients. From this section, you should be able to:
 
 1. Set up and solve the physician's optimization problem and compare the solution to that of the patient's optimum.
 2. Show mathematically how the design of an insurance contract (namely, capitated payments versus fee-for-service payments) may determine the extent to which physicians overprovide care.
@@ -115,6 +115,7 @@ Excessive treatment may arise because physicians can choose a level of care, and
 ## Capitated Payments
 
 There are two forms of capitated payments in Medicare now:
+
 1. [Bundled Payments](https://innovation.cms.gov/initiatives/bundled-payments/)
 2. [Accountable Care Organizations](https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ACO/)
 
@@ -123,6 +124,7 @@ There are two forms of capitated payments in Medicare now:
 ## Pay for performance
 
 There are three main pay for performance programs employed in Medicare right now:
+
 1. Hospital Readmission Reduction Program
 2. [Value-based Purchasing](https://www.cms.gov/Medicare/Quality-Initiatives-Patient-Assessment-Instruments/Value-Based-Programs/HVBP/Hospital-Value-Based-Purchasing)
 3. [Quality Payment Program](https://qpp.cms.gov/about/qpp-overview) for physicians: Merit-based Incentive Payment System (MIPS) and Advanced Alternative Payment Models (APMs)

@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="physicians-03_files/libs/clipboard/clipboard.min.js"></script>
-<script src="physicians-03_files/libs/quarto-html/tabby.min.js"></script>
-<script src="physicians-03_files/libs/quarto-html/popper.min.js"></script>
-<script src="physicians-03_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="physicians-03_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="physicians-03_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="physicians-03_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="physicians-03_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="pharma-02_files/libs/clipboard/clipboard.min.js"></script>
+<script src="pharma-02_files/libs/quarto-html/tabby.min.js"></script>
+<script src="pharma-02_files/libs/quarto-html/popper.min.js"></script>
+<script src="pharma-02_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="pharma-02_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="pharma-02_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="pharma-02_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="pharma-02_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.3.450">
 
   <meta name="author" content="Ian McCarthy | Emory University">
-  <title>Physician Agency and Payment Models</title>
+  <title>Brand Name Drugs</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="physicians-03_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="physicians-03_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="pharma-02_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="pharma-02_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -30,13 +30,13 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="physicians-03_files/libs/revealjs/dist/theme/quarto.css">
-  <link href="physicians-03_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="physicians-03_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="physicians-03_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="physicians-03_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
-  <link href="physicians-03_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
-  <link href="physicians-03_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="pharma-02_files/libs/revealjs/dist/theme/quarto.css">
+  <link href="pharma-02_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="pharma-02_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="pharma-02_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="pharma-02_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="pharma-02_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="pharma-02_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -327,7 +327,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Physician Agency and Payment Models</h1>
+  <h1 class="title">Brand Name Drugs</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -338,131 +338,49 @@ Ian McCarthy | Emory University
 </div>
 
 </section>
-<section id="fee-for-service-versus-capitated-payments" class="slide level2">
-<h2>Fee-for-Service versus Capitated Payments</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Fee-for-Service (FFS) payments</strong></p>
-<ul>
-<li>Separate payment for each service</li>
-<li>More care means more revenue</li>
-<li>Example: Traditional Medicare</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<p><strong>Capitated payments</strong></p>
-<ul>
-<li>Set amount intended to cover all expenses for a given person/group</li>
-<li>If expenses exceed that amount, the providers lose money</li>
-<li>If expenses fall below that amount, the providers make a profit</li>
-<li>Examples in U.S.: Accountable Care Organizations, Kaiser System</li>
-</ul>
-</div>
-</div>
-</section>
-<section id="incentives" class="slide level2">
-<h2>Incentives</h2>
-<p>Thinking about FFS versus capitated payments…</p>
-<ul>
-<li>What are the incentives in a FFS model if the goal is to make more money?</li>
-<li>Are those incentives different in a capitated payment model? How?</li>
-</ul>
-</section>
-<section id="agency-and-payment-models" class="slide level2">
-<h2>Agency and payment models</h2>
-<ul>
-<li>Physician receives fixed (“capitated”) amount for each patient, <span class="math inline">\(R\)</span>, along with some price per unit of service, <span class="math inline">\(p_{s}\)</span></li>
-<li>Physician therefore paid <span class="math inline">\(R + (p_{s} - c)x\)</span> for each patient</li>
-<li>Number of patients for each physician expressed as a positive function of the net benefit offered, <span class="math inline">\(n(NB)\)</span>, where <span class="math inline">\(NB=B(x) - p_{d}x\)</span>. Here, we assume that the insurer sets <span class="math inline">\(p_{d}\)</span> and <span class="math inline">\(p_{s}\)</span> separately (the demand and supply price, respectively).</li>
-<li>Physician again aims to maximize profits, <span class="math inline">\(\pi=n(NB)\left[R+(p_{s}-c)x\right]\)</span>.</li>
-</ul>
-</section>
-<section id="solution" class="slide level2">
-<h2>Solution</h2>
-<ul>
-<li><p>Maximizing the profit function yields: <span class="math display">\[n'(NB)(B'(x) - p_{d}) \left[R + (p_{s} - c)x \right] + n(NB)(p_{s}-c) = 0.\]</span></p></li>
-<li><p>Rearranging terms and multiplying both sides by <span class="math inline">\(\frac{1}{NB}\)</span>, we get: <span class="math display">\[\frac{B'(x) - p_{d}}{NB} \frac{R + (p_{s} - c)x}{p_{s}-c} = - \frac{1}{\varepsilon_{n,NB}}.\]</span></p></li>
-</ul>
-<div class="fragment">
-<ol type="1">
-<li>What happens for <span class="math inline">\(R=0\)</span>?</li>
-<li>What about <span class="math inline">\(R&gt;0\)</span>, assuming <span class="math inline">\(p_{s}&lt;c\)</span>?</li>
-</ol>
-</div>
-</section>
-<section id="in-class-problem-agency-and-payment-models" class="slide level2">
-<h2>In-class problem: Agency and payment models</h2>
-<ul>
-<li>Assume that the physician’s number of patients in the practice depends on the net benefit offered, <span class="math inline">\(NB=B(x) - p_{d}x\)</span>, where <span class="math inline">\(x\)</span> denotes the amount of care and <span class="math inline">\(p_{d}\)</span> denotes the prices that the patient must pay. For simplicity, we’ll assume that the number of patients is the same as the net benefit, <span class="math inline">\(n(NB) = NB\)</span>.</li>
-<li>Assume that patients are fully insured so that <span class="math inline">\(p_{d}=0\)</span>.</li>
-<li>Assume that the benefit function is <span class="math inline">\(B(x) = 16x-2x^{2}\)</span>.</li>
-<li>Assume that the physician is paid a fixed amount, <span class="math inline">\(R\)</span>, for each patient, and earns some profit, <span class="math inline">\(p_{s}-c\)</span>, on each unit of care.</li>
-</ul>
-</section>
-<section class="slide level2">
-
-<ol type="1">
-<li>Solve for the patient’s optimal amount of care (if they could choose the amount on their own).</li>
-<li>Write out the physician’s profit function based on the information provided.</li>
-<li>Find the physician’s optimal <span class="math inline">\(x\)</span> if <span class="math inline">\(R=0\)</span> and <span class="math inline">\(p_{s}-c=1\)</span>.</li>
-<li>Find the physician’s optimal <span class="math inline">\(x\)</span> if <span class="math inline">\(R=1\)</span> and <span class="math inline">\(p_{s}-c=1\)</span>. How does this differ from part (3)?</li>
-<li>Find the physician’s optimal <span class="math inline">\(x\)</span> if <span class="math inline">\(R=1\)</span> and <span class="math inline">\(p_{s}-c=0\)</span>.</li>
-</ol>
-</section>
-<section id="takeaways" class="slide level2">
-<h2>Takeaways</h2>
-<p>Excessive treatment may arise because physicians can choose a level of care, and this choice may derive from incentives that are not perfectly aligned with those of the patients. From this section, you should be able to:</p>
-<ol type="1">
-<li>Set up and solve the physician’s optimization problem and compare the solution to that of the patient’s optimum.</li>
-<li>Show mathematically how the design of an insurance contract (namely, capitated payments versus fee-for-service payments) may determine the extent to which physicians overprovide care.</li>
-</ol>
-</section>
 <section>
-<section id="capitation-in-practice" class="title-slide slide level1 center">
-<h1>“Capitation” in practice</h1>
+<section id="pricing-for-brand-name-drugs" class="title-slide slide level1 center">
+<h1>Pricing for Brand Name Drugs</h1>
 
 </section>
-<section id="capitated-payments" class="slide level2">
-<h2>Capitated Payments</h2>
-<p>There are two forms of capitated payments in Medicare now:</p>
-<ol type="1">
-<li><a href="https://innovation.cms.gov/initiatives/bundled-payments/">Bundled Payments</a></li>
-<li><a href="https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ACO/">Accountable Care Organizations</a></li>
-</ol>
+<section id="price" class="slide level2">
+<h2>Price?</h2>
+<ul>
+<li>Recall, “price” is confusing in pharma</li>
+<li>Price to wholesaler, to pharmacy, to insurer, to patient</li>
+<li>Significant (and opaque) rebates throughout the supply chain</li>
+</ul>
 </section>
-<section id="pay-for-performance" class="slide level2">
-<h2>Pay for performance</h2>
-<p>There are three main pay for performance programs employed in Medicare right now:</p>
-<ol type="1">
-<li>Hospital Readmission Reduction Program</li>
-<li><a href="https://www.cms.gov/Medicare/Quality-Initiatives-Patient-Assessment-Instruments/Value-Based-Programs/HVBP/Hospital-Value-Based-Purchasing">Value-based Purchasing</a></li>
-<li><a href="https://qpp.cms.gov/about/qpp-overview">Quality Payment Program</a> for physicians: Merit-based Incentive Payment System (MIPS) and Advanced Alternative Payment Models (APMs)</li>
-</ol>
+<section id="from-manufacturers-perspective" class="slide level2">
+<h2>From Manufacturer’s Perspective</h2>
+<p>Economics of pricing for brand name drugs: 1. Unique, patent-protected drug with no close substitutes (Monopoly) 2. Many products with patent protection and imperfect substitutes (Bertrand differentiated products)</p>
 </section></section>
 <section>
-<section id="physician-agency-and-financial-incentives-irl" class="title-slide slide level1 center">
-<h1>Physician Agency and Financial Incentives IRL</h1>
+<section id="monopoly-pricing" class="title-slide slide level1 center">
+<h1>Monopoly Pricing</h1>
 
 </section>
-<section id="more-general-setup" class="slide level2">
-<h2>More general setup</h2>
+<section id="some-examples" class="slide level2">
+<h2>Some examples</h2>
 <ul>
-<li>Physicians choose <span class="math inline">\(x\)</span>, incorporating their own profit, the benefit to the patient, and some disutility of work <span class="math display">\[u(x) = V(\pi) -e(x) + \alpha B(x)\]</span></li>
-<li><span class="math inline">\(x\)</span> need not be “quantity of care”</li>
-<li>Agency more reasonably applies to which types of treatment physicians choose rather than “how much”</li>
+<li>Lipitor (lifetime revenue of over $130 billion)</li>
+<li>Humira (lifetime revenue of over $100 billion)</li>
+<li>Advair (lifetime revenue of over $90 billion)</li>
 </ul>
 </section>
-<section id="evidence-on-financial-incentives-and-treatment-decisions" class="slide level2">
-<h2>Evidence on Financial Incentives and Treatment Decisions</h2>
-<p>Effects of financial incentives on…</p>
+<section id="monopoly-pricing-without-insurance" class="slide level2">
+<h2>Monopoly pricing without insurance</h2>
 <ul>
-<li>treatment patterns, <a href="https://www.aeaweb.org/articles?id=10.1257/aer.104.4.1320">Clemens and Gottlieb, 2014</a></li>
-<li>discharge patterns, <a href="https://onlinelibrary.wiley.com/doi/abs/10.3982/ECTA15022">Einav et al., 2018</a> and <a href="https://www.aeaweb.org/articles?id=10.1257/aer.20170092">Eliason et al., 2018</a></li>
-<li>types of patients seen, <a href="https://www.nber.org/papers/w29471">Cabral et al., 2023</a></li>
-<li>location of care, <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3845073">Munnich et al., 2023</a> and <a href="https://www.sciencedirect.com/science/article/abs/pii/S0167629616301679">Baker et al., 2016</a></li>
-<li>spillovers to other patients, <a href="https://www.aeaweb.org/articles?id=10.1257/pol.20200553">Barnett et al., 2023</a></li>
+<li>Inverse demand, <span class="math inline">\(p=a-b*q\)</span></li>
+<li>Costs, <span class="math inline">\(FC + d*q\)</span></li>
+<li>Profits, <span class="math inline">\(\pi = (a-c)q - bq^2 - FC\)</span></li>
 </ul>
 <div class="fragment">
-<p><strong>The Takeaway</strong>: On the margin, financial incentives <em>do</em> affect treatment decisions. Some responses may negatively affect patients, but typically this probably involves more money for similar-quality care.</p>
+<p>Profit maximizing choice of <span class="math inline">\(p, q\)</span>:</p>
+<ul>
+<li><span class="math inline">\(q^* = \frac{a-c}{2b}\)</span></li>
+<li><span class="math inline">\(p^* = \frac{a+c}{2}\)</span></li>
+</ul>
 </div>
 <div class="footer footer-default">
 
@@ -472,20 +390,20 @@ Ian McCarthy | Emory University
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="physicians-03_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="pharma-02_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="physicians-03_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="physicians-03_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="physicians-03_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="physicians-03_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="physicians-03_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
-  <script src="physicians-03_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="pharma-02_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="pharma-02_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="pharma-02_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="pharma-02_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="pharma-02_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="pharma-02_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="physicians-03_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="physicians-03_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="physicians-03_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="physicians-03_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="pharma-02_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="pharma-02_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="pharma-02_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="pharma-02_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
