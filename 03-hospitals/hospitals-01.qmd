@@ -69,6 +69,8 @@ pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 ---
 
 In practice, it's a negotiation with insurers
+
+
 - Hospitals can't set price on their own
 - Bargaining problem where insurer and hospital split some total amount
 - Agent/entity with higher bargaining position will get larger share
@@ -79,7 +81,7 @@ In practice, it's a negotiation with insurers
 Defining characteristic of hospital prices and services: *it's complicated!*
 
 ::: {layout="[[-1], [1], [-1]]"}
-![](../figures/BillExample.jpg){fig-align="center"}
+![](../figures/BillExample.jpg){fig-align="center" width="5in"}
 :::
 
 ::: aside
@@ -90,6 +92,7 @@ Brill, Steven. 2013. "Bitter Pill: Why Medical Bills are Killing Us." *Time Maga
 ---
 
 Lots of different payers paying lots of different prices:
+
 - [Medicare fee-for-service prices](https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/Downloads/AcutePaymtSysfctsht.pdf)
 - [Medicaid payments](https://www.kff.org/report-section/understanding-medicaid-hospital-payments-and-the-impact-of-recent-policy-changes-issue-brief/)
 - Private insurance negotiations (including Medicare Advantage)
@@ -120,6 +123,7 @@ Source: [Health Care Pricing Project](https://healthcarepricingproject.org/)
 
 ::: {.column width="50%"}
 **Fee-for-service**
+
 - price per procedure
 - percentage of charges
 - markup over Medicare rates
@@ -128,6 +132,7 @@ Source: [Health Care Pricing Project](https://healthcarepricingproject.org/)
 
 ::: {.column width="50%"}
 **Capitation**
+
 - payment per patient
 - pay-for-performance
 - shared savings
