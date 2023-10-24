@@ -353,7 +353,11 @@ Ian McCarthy | Emory University
 </section>
 <section id="from-manufacturers-perspective" class="slide level2">
 <h2>From Manufacturer’s Perspective</h2>
-<p>Economics of pricing for brand name drugs: 1. Unique, patent-protected drug with no close substitutes (Monopoly) 2. Many products with patent protection and imperfect substitutes (Bertrand differentiated products)</p>
+<p>Economics of pricing for brand name drugs:</p>
+<ol type="1">
+<li>Unique, patent-protected drug with no close substitutes (Monopoly)</li>
+<li>Many products with patent protection and imperfect substitutes (Bertrand differentiated products)</li>
+</ol>
 </section></section>
 <section>
 <section id="monopoly-pricing" class="title-slide slide level1 center">
@@ -372,7 +376,7 @@ Ian McCarthy | Emory University
 <h2>Monopoly pricing without insurance</h2>
 <ul>
 <li>Inverse demand, <span class="math inline">\(p=a-b*q\)</span></li>
-<li>Costs, <span class="math inline">\(FC + d*q\)</span></li>
+<li>Costs, <span class="math inline">\(FC + c*q\)</span></li>
 <li>Profits, <span class="math inline">\(\pi = (a-c)q - bq^2 - FC\)</span></li>
 </ul>
 <div class="fragment">
@@ -382,6 +386,157 @@ Ian McCarthy | Emory University
 <li><span class="math inline">\(p^* = \frac{a+c}{2}\)</span></li>
 </ul>
 </div>
+</section>
+<section class="slide level2">
+
+
+<img data-src="pharma-02_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch quarto-figure-center"><p class="caption">Depiction of monopoly pricing</p></section>
+<section id="monopoly-pricing-with-insurance" class="slide level2">
+<h2>Monopoly pricing with insurance</h2>
+<ul>
+<li>If insurers set co-insurance rates and copays based on a fixed price, then it wouldn’t matter much</li>
+<li>But…the supply price will vary depending on the form of cost sharing</li>
+<li>Need to consider pricing under coinsurance versus copayments separately</li>
+</ul>
+</section>
+<section id="monopoly-pricing-with-coinsurance" class="slide level2">
+<h2>Monopoly pricing with coinsurance</h2>
+<ul>
+<li>Denote coinsurance by <span class="math inline">\(\alpha\)</span>, with <span class="math inline">\(\alpha \in (0,1)\)</span></li>
+<li>For price <span class="math inline">\(p\)</span>, patient pays <span class="math inline">\(\alpha \times p\)</span> and insurer pays <span class="math inline">\((1-\alpha) \times p\)</span></li>
+<li>Willingness to pay is unchanged, so new inverse demand curve is <span class="math inline">\(p = \frac{1}{\alpha}*(a - b*q)\)</span></li>
+<li>Acts as a rotation of demand, with new slope <span class="math inline">\(\frac{1}{\alpha} \times b\)</span> (steeper demand curve, less elastic)</li>
+</ul>
+</section>
+<section id="monopoly-pricing-with-coinsurance-1" class="slide level2">
+<h2>Monopoly pricing with coinsurance</h2>
+<p>New profit maximizing choice of <span class="math inline">\(p, q\)</span>:</p>
+<ul>
+<li><span class="math inline">\(q^{*} = \frac{a-\alpha c}{2b}\)</span></li>
+<li><span class="math inline">\(p^{*} = \frac{1}{2} (\frac{a}{\alpha}+c)\)</span></li>
+</ul>
+</section>
+<section id="comparison-of-monopoly-pricing" class="slide level2">
+<h2>Comparison of monopoly pricing</h2>
+<ul>
+<li>Monopoly price is higher with coinsurance than without</li>
+<li>To see this, let’s take the ratio of prices with and without coinsurance:</li>
+</ul>
+<p><span class="math display">\[\frac{p^{*}_{c}}{p^{*}_{nc}} = \frac{\frac{1}{2} (\frac{a}{\alpha}+c)}{\frac{a+c}{2}} = \frac{1}{\alpha}\]</span></p>
+</section>
+<section id="monopoly-pricing-with-copayments" class="slide level2">
+<h2>Monopoly pricing with copayments</h2>
+<ul>
+<li>Recall copayment is a fixed amount paid by the patient</li>
+<li>With demand price fixed and independent of supply price, seller can set any price to insurer</li>
+<li>Coinsurance penalizes high prices by working down demand curve, but copayments do not</li>
+<li>Coinsurance shifts burden of price increases directly onto patients and confers downward price pressure relative to case of copayments</li>
+</ul>
+</section>
+<section id="real-world-example" class="slide level2">
+<h2>Real world example</h2>
+<ul>
+<li>Speciality drugs more likely to be unique, with few close substitutes</li>
+<li>Theoretical prediction: coinsurance should be more common with specialty drugs versus more common drugs</li>
+<li>Empirical evidence: coinsurance rates increasing for specialty drugs over time, 25% in 2006 to 33% in 2009</li>
+</ul>
+</section></section>
+<section>
+<section id="bertrand-differentiated-products" class="title-slide slide level1 center">
+<h1>Bertrand Differentiated Products</h1>
+
+</section>
+<section id="setup" class="slide level2">
+<h2>Setup</h2>
+<ul>
+<li>Many partial (but imperfect) substitute products with market power</li>
+<li>Akin to brand name drug (i.e., with patent protection) with some substitutes</li>
+<li>Simplify to 2 drugs from two companies:
+<ul>
+<li>Denote demand for drug 1 by <span class="math inline">\(q_{1}(p_{1},p_{2})\)</span></li>
+<li>Denote demand for drug 2 by <span class="math inline">\(q_{2}(p_{1},p_{2})\)</span></li>
+<li><span class="math inline">\(\frac{d q_{i}}{d p_{j}} &gt; 0\)</span>, so that products are substitutes</li>
+<li><span class="math inline">\(\frac{d q_{i}}{d p_{i}} &lt; 0\)</span>, as usual (downward sloping demand)</li>
+</ul></li>
+</ul>
+</section>
+<section id="specific-bertrand-setup" class="slide level2">
+<h2>Specific Bertrand Setup</h2>
+<ul>
+<li><strong>Players:</strong> Firm 1 and Firm 2</li>
+<li><strong>Actions:</strong> Each firm chooses a price <span class="math inline">\(p_{i}\)</span> for its product.</li>
+<li><strong>Demand:</strong> The demand for firm <span class="math inline">\(i\)</span>’s product: <span class="math display">\[q_{i} = a - bp_{i} + cp_{j}\]</span></li>
+<li><strong>Profits:</strong> Each firm’s profit: <span class="math display">\[\pi_{i} = (p_{i} - mc_{i})q_{i}\]</span></li>
+</ul>
+<p><strong>Key Points:</strong></p>
+<ul>
+<li><span class="math inline">\(a\)</span> is the maximum quantity when the price is zero</li>
+<li><span class="math inline">\(b\)</span> represents how quantity demanded changes with the product’s price</li>
+<li><span class="math inline">\(c\)</span> captures the effect of the rival firm’s price on demand</li>
+</ul>
+</section>
+<section id="best-response-functions" class="slide level2">
+<h2>Best Response Functions</h2>
+<p><strong>Firm 1:</strong> <span class="math display">\[p_{1}^*(p_{2}) = \frac{a + cp_{2} + mc_{1}}{2b + 1}\]</span> <strong>Firm 2:</strong> <span class="math display">\[p_{2}^*(p_{1}) = \frac{a + cp_{1} + mc_{2}}{2b + 1}\]</span></p>
+<p><strong>Key Points:</strong></p>
+<ul>
+<li>Each firm’s price is a function of the other firm’s price</li>
+<li>Best response functions represent the optimal price choice in response to the rival’s price</li>
+</ul>
+</section>
+<section id="nash-equilibrium" class="slide level2">
+<h2>Nash Equilibrium</h2>
+<p>Equating the two best response functions to solve for equilibrium prices:</p>
+<p><span class="math display">\[\begin{align*} p_{1}^* &amp;= \frac{a(2b+1) + c(a + mc_{2}) + mc_{1}(2b+1)}{2b+1 - c^2} \\
+p_{2}^* &amp;= \frac{a(2b+1) + c(a + mc_{1}) + mc_{2}(2b+1)}{2b+1 - c^2} \end{align*}\]</span></p>
+<p><strong>Key Points:</strong></p>
+<ul>
+<li>Nash equilibrium prices are where neither firm has an incentive to change its price unilaterally</li>
+<li>Both firms maximize their profit given the other firm’s price</li>
+</ul>
+</section>
+<section class="slide level2">
+
+
+<img data-src="../figures/paper-figure-bertrand.png" class="r-stretch"></section>
+<section id="comparison-to-monopoly-pricing" class="slide level2">
+<h2>Comparison to Monopoly Pricing</h2>
+<p><strong>Monopoly Price (previously derived):</strong> <span class="math display">\[p_{m} = \frac{a + mc_{m}}{2b}\]</span></p>
+<p><strong>Comparison:</strong></p>
+<ul>
+<li>Classical Monopoly vs.&nbsp;Competition: Monopolists set higher prices than competitive firms</li>
+<li>Differentiation: In Bertrand, differentiation can lead to prices closer to monopoly levels, depending on the substitution effect (parameter <span class="math inline">\(c\)</span>)</li>
+<li>Cost Structures: Bertrand prices depend on both firms’ costs; monopoly price only depends on its own cost</li>
+</ul>
+</section>
+<section id="bertrand-pricing-with-insurance" class="slide level2">
+<h2>Bertrand Pricing with Insurance</h2>
+<ol type="1">
+<li><strong>Stage 1:</strong> Insurer chooses one drug with copayment <span class="math inline">\(c\)</span> to be on formulary. Other drug will not be covered at all</li>
+<li><strong>Stage 2:</strong> Bertrand pricing with “bids” to insurer</li>
+<li><strong>Stage 3:</strong> Insurer selects drug to be on formulary</li>
+</ol>
+</section>
+<section id="solution-idea" class="slide level2">
+<h2>Solution Idea</h2>
+<ul>
+<li>Imagine firm 1 set price to original bertrand price, <span class="math inline">\(p_{1}^{b}\)</span></li>
+<li>Firm 2 can then set price to <span class="math inline">\(p_{2}^{b}=p_{1}^{b}-\epsilon\)</span> and get most or all of the market</li>
+<li>So, <span class="math inline">\(p_{1}^{b}, p_{2}^{b}\)</span> is not an equilibrium</li>
+<li>Firms lower price until extra sales on formularly are less than profit of drug off formulary</li>
+<li><strong>Final prediction:</strong> Insurers used tiered formularies and copayments for differentiated (but substitutable) on-patent drugs</li>
+</ul>
+</section>
+<section id="summary-from-joint-hearings-in-ftc-and-doj" class="slide level2">
+<h2>Summary from joint hearings in FTC and DOJ</h2>
+<p><strong>Unique drugs with patent protection:</strong></p>
+<blockquote>
+<p>Under these circumstances, there is little opportunity for a purchaser to stimulate competition among manufacturers. Manufacturers are roughly free to set launch prices, they rarely discount those prices, and purchasers and price takers.</p>
+</blockquote>
+<p><strong>Differentiated drugs with imperfect substitutes:</strong></p>
+<blockquote>
+<p>This stage represents the lion’s share of the market at any given time…Depending on how similar the drugs are…organized purchasers have the ability to either switch patients in a medially appropriate way…or at least start new patients on a preferred drug…This is the area where formularies can be applied for the greatest effect on overall costs.</p>
+</blockquote>
 <div class="footer footer-default">
 
 </div>

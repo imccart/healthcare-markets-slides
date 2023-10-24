@@ -56,7 +56,7 @@ Economics of pricing for brand name drugs:
 ## Monopoly pricing without insurance
 
 - Inverse demand, $p=a-b*q$
-- Costs, $FC + d*q$
+- Costs, $FC + c*q$
 - Profits, $\pi = (a-c)q - bq^2 - FC$
 
 ::: {.fragment}
@@ -73,54 +73,175 @@ Profit maximizing choice of $p, q$:
 #| echo: false
 #| fig.cap: "Depiction of monopoly pricing"
 
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.17}
-\begin{tikzpicture}
-    % Parameters
-    \def\a{10} % Intercept of the demand curve
-    \def\b{1}  % Slope of the demand curve
-    \def\FC{30} % Fixed Cost
-    \def\c{2}  % Marginal cost
-
-    % Demand curve
-    \begin{axis}[
-        axis lines=left,
-        xlabel=Quantity ($q$),
-        ylabel=Price ($p$),
-        xmin=0, xmax=10,
-        ymin=0, ymax=12,
-        xtick={0, 5},
-        ytick={0, 10},
-        xticklabels={0, $Q_m$},
-        yticklabels={0, $P_m$},
-        axis line style={->},
-        legend pos=north west,
-    ]
-    \addplot[blue, domain=0:8, samples=100]{\a - \b*x} node[pos=0.7, above] {Demand Curve};
-    \legend{Demand Curve};
-    \end{axis}
-
-    % Cost curve
-    \begin{axis}[
-        axis lines=right,
-        hide x axis,
-        ylabel=Cost,
-        ymin=0, ymax=40,
-        ytick={\FC},
-        yticklabels={$FC$},
-        legend pos=north east,
-    ]
-    \addplot[red, domain=0:10, samples=100]{\FC - \c*x} node[pos=0.7, above] {Cost Curve};
-    \legend{Cost Curve};
-    \end{axis}
-
-    % Monopoly price and quantity
-    \draw[dashed] (5, 0) -- (5, {int(\a - \b*5)});
-    \node[below] at (5, 0) {$Q_m$};
-    \node[left] at (0, {int(\a - \b*5)}) {$P_m$};
+\usetikzlibrary{calc}
+\begin{tikzpicture}[scale=0.40, every node/.style={black,opacity=1, transform shape}]
+\draw [thick](0,9) node [left,align=center] {\small Costs and\\ \small Revenue} -- (0,0) node [below left] {$0$} -- (10,0) node [below, align=center] {\small Quantity};
+\draw [thick, blue!90](0,7)-- (8,2)node[right, black, align=center]{\small Demand};
+\draw [thick, purple!90](0,7)-- (6,1)node[black, right]{\small Marginal Revenue};
+\draw [thick, purple!90](2,1) node[black, left, align=center]{\small Marginal \\cost}--(5.25, 6);
+\draw[fill] (3.6,3.4) node[right] {$A$} circle [radius=0.1];
+\draw[fill] (3.6,4.75) node[above] {$B$} circle [radius=0.1];
+\draw[dashed](0,4.75) node[left, align=center]{\small Monopoly\\ \small price}--(3.6,4.75)--(3.6,0)node[below]{$q^{*}$};
 \end{tikzpicture}
 ```
 
 
 
+---
+
+## Monopoly pricing with insurance
+
+- If insurers set co-insurance rates and copays based on a fixed price, then it wouldn't matter much
+- But...the supply price will vary depending on the form of cost sharing
+- Need to consider pricing under coinsurance versus copayments separately
+
+---
+
+## Monopoly pricing with coinsurance
+
+- Denote coinsurance by $\alpha$, with $\alpha \in (0,1)$
+- For price $p$, patient pays $\alpha \times p$ and insurer pays $(1-\alpha) \times p$
+- Willingness to pay is unchanged, so new inverse demand curve is $p = \frac{1}{\alpha}*(a - b*q)$
+- Acts as a rotation of demand, with new slope $\frac{1}{\alpha} \times b$ (steeper demand curve, less elastic)
+
+---
+
+## Monopoly pricing with coinsurance
+
+New profit maximizing choice of $p, q$:
+
+- $q^{*} = \frac{a-\alpha c}{2b}$
+- $p^{*} = \frac{1}{2} (\frac{a}{\alpha}+c)$
+
+---
+
+## Comparison of monopoly pricing
+
+- Monopoly price is higher with coinsurance than without
+- To see this, let's take the ratio of prices with and without coinsurance:
+
+$$\frac{p^{*}_{c}}{p^{*}_{nc}} = \frac{\frac{1}{2} (\frac{a}{\alpha}+c)}{\frac{a+c}{2}} = \frac{1}{\alpha}$$
+
+
+---
+
+## Monopoly pricing with copayments
+
+- Recall copayment is a fixed amount paid by the patient
+- With demand price fixed and independent of supply price, seller can set any price to insurer
+- Coinsurance penalizes high prices by working down demand curve, but copayments do not
+- Coinsurance shifts burden of price increases directly onto patients and confers downward price pressure relative to case of copayments
+
+---
+
+## Real world example
+
+- Speciality drugs more likely to be unique, with few close substitutes
+- Theoretical prediction: coinsurance should be more common with specialty drugs versus more common drugs
+- Empirical evidence: coinsurance rates increasing for specialty drugs over time, 25% in 2006 to 33% in 2009
+
+# Bertrand Differentiated Products
+
+---
+
+## Setup
+
+- Many partial (but imperfect) substitute products with market power
+- Akin to brand name drug (i.e., with patent protection) with some substitutes
+- Simplify to 2 drugs from two companies:
+  - Denote demand for drug 1 by $q_{1}(p_{1},p_{2})$
+  - Denote demand for drug 2 by $q_{2}(p_{1},p_{2})$
+  - $\frac{d q_{i}}{d p_{j}} > 0$, so that products are substitutes
+  - $\frac{d q_{i}}{d p_{i}} < 0$, as usual (downward sloping demand)
+
+
+---
+
+
+## Specific Bertrand Setup
+
+- **Players:** Firm 1 and Firm 2
+- **Actions:** Each firm chooses a price $p_{i}$ for its product.
+- **Demand:** The demand for firm $i$’s product: $$q_{i} = a - bp_{i} + cp_{j}$$
+- **Profits:** Each firm's profit: $$\pi_{i} = (p_{i} - mc_{i})q_{i}$$
+
+**Key Points:**
+
+  - $a$ is the maximum quantity when the price is zero
+  - $b$ represents how quantity demanded changes with the product's price
+  - $c$ captures the effect of the rival firm's price on demand
+
+---
+
+## Best Response Functions
+
+**Firm 1:** $$p_{1}^*(p_{2}) = \frac{a + cp_{2} + mc_{1}}{2b + 1}$$
+**Firm 2:** $$p_{2}^*(p_{1}) = \frac{a + cp_{1} + mc_{2}}{2b + 1}$$
+
+**Key Points:**
+
+- Each firm's price is a function of the other firm's price
+- Best response functions represent the optimal price choice in response to the rival's price
+
+---
+
+## Nash Equilibrium
+
+Equating the two best response functions to solve for equilibrium prices:
+
+$$\begin{align*} p_{1}^* &= \frac{a(2b+1) + c(a + mc_{2}) + mc_{1}(2b+1)}{2b+1 - c^2} \\
+p_{2}^* &= \frac{a(2b+1) + c(a + mc_{1}) + mc_{2}(2b+1)}{2b+1 - c^2} \end{align*}$$
+
+**Key Points:**
+
+- Nash equilibrium prices are where neither firm has an incentive to change its price unilaterally
+- Both firms maximize their profit given the other firm's price
+
+
+---
+
+![](../figures/paper-figure-bertrand.png)
+
+---
+
+## Comparison to Monopoly Pricing
+
+**Monopoly Price (previously derived):**
+$$p_{m} = \frac{a + mc_{m}}{2b}$$
+
+**Comparison:**
+
+- Classical Monopoly vs. Competition: Monopolists set higher prices than competitive firms
+- Differentiation: In Bertrand, differentiation can lead to prices closer to monopoly levels, depending on the substitution effect (parameter $c$)
+- Cost Structures: Bertrand prices depend on both firms' costs; monopoly price only depends on its own cost
+
+---
+
+## Bertrand Pricing with Insurance
+
+1. **Stage 1:** Insurer chooses one drug with copayment $c$ to be on formulary. Other drug will not be covered at all
+2. **Stage 2:** Bertrand pricing with "bids" to insurer
+3. **Stage 3:** Insurer selects drug to be on formulary
+
+---
+
+## Solution Idea
+
+- Imagine firm 1 set price to original bertrand price, $p_{1}^{b}$
+- Firm 2 can then set price to $p_{2}^{b}=p_{1}^{b}-\epsilon$ and get most or all of the market
+- So, $p_{1}^{b}, p_{2}^{b}$ is not an equilibrium
+- Firms lower price until extra sales on formularly are less than profit of drug off formulary
+- **Final prediction:** Insurers used tiered formularies and copayments for differentiated (but substitutable) on-patent drugs
+
+---
+
+## Summary from joint hearings in FTC and DOJ
+
+**Unique drugs with patent protection:**
+
+> Under these circumstances, there is little opportunity for a purchaser to stimulate competition among manufacturers. Manufacturers are roughly free to set launch prices, they rarely discount those prices, and purchasers and price takers.
+
+**Differentiated drugs with imperfect substitutes:**
+
+> This stage represents the lion's share of the market at any given time...Depending on how similar the drugs are...organized purchasers have the ability to either switch patients in a medially appropriate way...or at least start new patients on a preferred drug...This is the area where formularies can be applied for the greatest effect on overall costs.
 
