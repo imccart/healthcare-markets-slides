@@ -93,6 +93,8 @@ Source: [CBO Report on Pharma Spending](https://www.cbo.gov/publication/57772)
 
 ---
 
+## R&D Spending
+
 ::: {layout="[[-1], [1], [-1]]"}
 ![](../figures/57025-fig4_spending-drug-approvals.png){fig-align="center"}
 :::
@@ -102,6 +104,8 @@ Source: [CBO Report on R&D Spending](https://www.cbo.gov/publication/57126)
 :::
 
 ---
+
+## New Drug Approvals
 
 ::: {layout="[[-1], [1], [-1]]"}
 ![](../figures/57025-fig3_new-drug-approvals.png){fig-align="center"}
