@@ -101,7 +101,7 @@ Source: [CBO Report on R&D Spending](https://www.cbo.gov/publication/57126)
 
 ## New Drug Approvals
 
-![Count of New Drug Approvals](../figures/57025-fig3_new-drug_approvals.png){style="background: #FFFFFF; width=300px;"}
+![Count of New Drug Approvals](../figures/57025-fig3_new-drug_approvals.png){style="background: #FFFFFF;" width=4in}
 
 ::: {.aside}
 Source: [CBO Report on R&D Spending](https://www.cbo.gov/publication/57126)
@@ -114,7 +114,7 @@ Source: [CBO Report on R&D Spending](https://www.cbo.gov/publication/57126)
 
 ## Marketing Expenditures
 
-![](../figures/cbo-promotional-spending.png){style="width=500px;"}
+![Spending on Promotional Activity](../figures/cbo-promotional-spending.png){width=4in}
 
 ::: {.aside}
 Source: [CBO Report on Pharma Promotional Spending](https://www.cbo.gov/sites/default/files/111th-congress-2009-2010/reports/12-02-drugpromo_brief.pdf)
