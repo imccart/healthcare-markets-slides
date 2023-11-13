@@ -101,7 +101,7 @@ Source: [CBO Report on R&D Spending](https://www.cbo.gov/publication/57126)
 
 ## New Drug Approvals
 
-![](../figures/57025-fig3_new-drug_approvals.png){style="background: #2780e3; width=300px}
+![](../figures/57025-fig3_new-drug_approvals.png){style="background: #2780e3; width=300px;"}
 
 ::: {.aside}
 Source: [CBO Report on R&D Spending](https://www.cbo.gov/publication/57126)
