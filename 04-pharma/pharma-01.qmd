@@ -28,9 +28,7 @@ pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 
 ## High spending per person
 
-::: {layout="[[-1], [1], [-1]]"}
 ![](../figures/57050-plot_1.png){fig-align="center"}
-:::
 
 ::: {.aside}
 Source: [CBO Report on Pharma Spending](https://www.cbo.gov/publication/57772)
@@ -40,9 +38,7 @@ Source: [CBO Report on Pharma Spending](https://www.cbo.gov/publication/57772)
 
 ## Relatively small share of health care
 
-::: {layout="[[-1], [1], [-1]]"}
 ![](../figures/57050-plot.png){fig-align="center"}
-:::
 
 ::: {.aside}
 Source: [CBO Report on Pharma Spending](https://www.cbo.gov/publication/57772)
@@ -95,9 +91,7 @@ Source: [CBO Report on Pharma Spending](https://www.cbo.gov/publication/57772)
 
 ## R&D Spending
 
-::: {layout="[[-1], [1], [-1]]"}
 ![](../figures/57025-fig4_spending-drug-approvals.png){fig-align="center"}
-:::
 
 ::: {.aside}
 Source: [CBO Report on R&D Spending](https://www.cbo.gov/publication/57126)
@@ -107,9 +101,7 @@ Source: [CBO Report on R&D Spending](https://www.cbo.gov/publication/57126)
 
 ## New Drug Approvals
 
-::: {layout="[[-1], [1], [-1]]"}
 ![](../figures/57025-fig3_new-drug-approvals.png){fig-align="center"}
-:::
 
 ::: {.aside}
 Source: [CBO Report on R&D Spending](https://www.cbo.gov/publication/57126)
@@ -122,9 +114,7 @@ Source: [CBO Report on R&D Spending](https://www.cbo.gov/publication/57126)
 
 ## Marketing Expenditures
 
-::: {layout="[[-1], [1], [-1]]"}
 ![](../figures/cbo-promotional-spending.png){fig-align="center"}
-:::
 
 ::: {.aside}
 Source: [CBO Report on Pharma Promotional Spending](https://www.cbo.gov/sites/default/files/111th-congress-2009-2010/reports/12-02-drugpromo_brief.pdf)
