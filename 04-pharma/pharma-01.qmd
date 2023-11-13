@@ -28,7 +28,7 @@ pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 
 ## High spending per person
 
-![Prescription Drug Spending per Person](../figures/57050-plot_1.png){style="background: #FFFFFF; width=300px;"}
+![](../figures/57050-plot_1.png){style="background: #FFFFFF;" width=4in}
 
 ::: {.aside}
 Source: [CBO Report on Pharma Spending](https://www.cbo.gov/publication/57772)
@@ -38,7 +38,7 @@ Source: [CBO Report on Pharma Spending](https://www.cbo.gov/publication/57772)
 
 ## Relatively small share of health care
 
-![Prescription Drug Spending as a Share of Total Health Care](../figures/57050-plot.png){style="background: #FFFFFF; width=300px;"}
+![](../figures/57050-plot.png){style="background: #FFFFFF;" width=4in}
 
 ::: {.aside}
 Source: [CBO Report on Pharma Spending](https://www.cbo.gov/publication/57772)
