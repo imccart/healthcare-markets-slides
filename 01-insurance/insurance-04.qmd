@@ -25,6 +25,7 @@ pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 # Describing risk
 
 We need three things to define risk in this class:
+
 1. Probability
 2. Expected value
 3. Preferences (i.e., a utility function)
@@ -57,6 +58,7 @@ $E[x] = p_{1}x_{1} + p_{2}x_{2}$
 
 ## Example
 What is my expected cost?
+
 - Two possible outcomes: heart attack or no heart attack
 - 10% chance of having a heart attack
 - Cost of <span>&#36;</span>100,000 if I have a heart attack (but I will survive and recover)<br>
