@@ -1,0 +1,81 @@
+---
+title: "Generic Drugs"
+author: "Ian McCarthy | Emory University"
+format: 
+  revealjs:
+    theme: [moon]
+    preview-links: auto
+    chalkboard:
+      boardmarker-width: 5
+    slide-number: true
+    width: 1600
+    height: 900    
+#    embed-resources: true
+from: markdown+emoji
+execute: 
+  echo: true
+---
+
+```{r}
+#| include: false
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
+```
+
+# Generic Drug Entry
+
+---
+
+## Application and Entry
+
+- Hatch-Waxman Act of 1984: generic drugs can be approved by FDA if they are bioequivalent to a brand-name drug
+- Drug manufacturer submits Abbreviated New Drug Application (ANDA) to FDA, possibly before patent expiration
+  - Must show bioequivalence and appropriate manufacturing practices
+- Tentative approval after ANDA review, full approval after patent expiration
+
+---
+
+## Effects of Generic Entry
+
+- Signifcant reduction in prices, over 70% reduction from brand-name price after a few years
+- Generic drug market effectively acts as a competitive market
+- But there are some exceptions...
+
+---
+
+## Exception 1: Paragraph IV certification
+  
+- Generic manufacturer can challenge patent validity
+- If successful, 180-day exclusivity period
+- If unsuccessful, 30-month stay on FDA approval
+
+---
+
+## Exception 2: Branded Generics
+  
+- Brand-name manufacturer can produce generic version of drug
+- Relies on brand-name reputation
+- Prices somewhere between original brand-name price and generic price
+
+---
+
+## Exception 3: Biologics
+
+- Biologics are drugs made from living organisms
+  - More complex than traditional drugs
+  - More difficult to replicate
+  - Longer patent protection after coming to market (12 years versus 5 years)
+- ACA created a pathway for biosimilar approval
+  - Similar to generic approval, but not identical
+  - FDA must determine biosimilar is "interchangeable" with original biologic
+
+---
+
+## Other barriers to sufficient competition
+
+- Upstream generic drug manufacturers eventually face an approximately competitive market, but...
+- Distribution of generic drugs remains subject to market power of pharmacy benefit managers (PBMs)
+  - Incentives to favor higher-priced drugs (to extract higher rebates, which is a big revenue source)
+  - PBM market dominated by just a few firms (Express Scripts, Medco, and CVS Caremark)
+- Sale of final drugs also subject to retail pharmacy market power 
+  - Also dominated by a few large chains (CVS, Walgreens, Walmart, Rite Aid)

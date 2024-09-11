@@ -1,0 +1,116 @@
+---
+title: "Two-Price Market"
+author: "Ian McCarthy | Emory University"
+format: 
+  revealjs:
+    theme: [moon]
+    preview-links: auto
+    chalkboard:
+      boardmarker-width: 5
+    slide-number: true
+    width: 1600
+    height: 900    
+#    embed-resources: true
+from: markdown+emoji
+execute: 
+  echo: true
+---
+
+```{r}
+#| include: false
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
+```
+
+
+## Motivation
+
+In health care, providers usually face two prices:
+
+1. A price fixed by Medicare and Medicaid, $p_{m}$.
+2. A price that is negotiated with insurers, $p_{n}$.
+
+How does $p_{m}$ affect $p_{n}$? 
+
+# Profit maximizing hospital
+
+---
+
+## Two price market and FP
+
+Because the hospital is a profit maximizing firm, it will choose the quantity that maximizes profits, $q^{*}$, where:
+
+- Sell to "private" market as long as marginal revenue exceeds the public price
+- Switch to "public'" market otherwise, and sell to the point where price equals marginal cost
+
+
+---
+
+## Two-price market in pictures
+
+```{tikz}
+#| echo: false
+
+\usetikzlibrary{calc}
+\begin{tikzpicture}[scale=0.40, every node/.style={black,opacity=1, transform shape}]
+\draw [thick](0,9) node [left,align=center] {\small Costs and\\ \small Revenue} -- (0,0) node [below left] {$0$} -- (10,0) node [below, align=center] {\small Quantity};
+\draw [thick, blue!90](0,7)-- (8,2)node[right, black, align=center]{\small Demand};
+\draw [thick, purple!90](0,7)-- (4,1)node[black, right]{\small Marginal Revenue};
+\draw [thick, purple!90](1.5,1) node[black, left, align=center]{\small Marginal \\cost}--(5.75, 6.5);
+\draw (0,4) node[black, left]{$p_{m}$} -- (7,4);
+\draw[fill] (2,4) node[above right] {$m$} circle [radius=0.1];
+\draw[fill] (2,5.8) node[above right] {$n$} circle [radius=0.1];
+\draw[fill] (3.8,4) node[below right] {$t$} circle [radius=0.1];
+\draw[dashed](0,5.8) node[left, align=center]{$p_{n}$}--(2,5.8)--(2,0)node[below]{$q^{n}$};
+\draw[dashed](3.8,0) node[below]{$q_{tot}$} -- (3.8,4);
+\end{tikzpicture}
+```
+
+---
+
+## In-class problem (two-price market)
+Consider the firm's demand curve in the private insurance market, $d=16-q$, and costs, $c(q)=5+q^{2}$. Assume that there exists a public insurer that pays a fixed price of $\bar{p}=10$.<br>
+
+1. How many private patients will the provider serve? 
+2. How many public patients? 
+3. What if $\bar{p}$ drops to \$9.
+
+
+# Not-for-profit objectives
+
+---
+
+## Two price market and NFP
+Although we don't know the general solution for the private price, we can find how it varies with the public price...
+
+::: {.fragment}
+$$\frac{\mathrm{d}p_{i}}{\mathrm{d}p_{j}} = - \frac{U_{11}\pi_{1}^{i}\pi_{1}^{j} + \frac{\mathrm{d}D_{i}}{\mathrm{d}p_{i}}U_{12}\pi_{1}^{j}}{\frac{\mathrm{d}^{2}U}{\mathrm{d}p_{i}^{2}}}$$
+:::
+
+---
+
+## Cost-shifting
+
+- Relationship between public and private price is important
+- Speaks to anticipated effects of a change in Medicaid or Medicare rates
+- Do hospitals "make up" the difference?
+
+::: {.fragment}
+The idea that hospitals will increase private prices following a decrease in the public price is called **cost shifting**. 
+:::
+
+---
+
+## How does cost-shifting work?
+
+
+Assumes that hospitals could have increased private prices earlier but chose not too. This is technically possible if, for example:
+
+- Hospital has very low margins (maybe negative with a lower public price)
+- Insurer wants to prop up the hospital for competitive reasons
+- Hospital has diminishing returns to profits<br>
+
+::: {.fragment}
+but economists usually see this as a smaller effect than most policy makers
+:::
+

@@ -1,0 +1,158 @@
+---
+title: "Physician Agency and Payment Models"
+author: "Ian McCarthy | Emory University"
+format: 
+  revealjs:
+    theme: [moon]
+    preview-links: auto
+    chalkboard:
+      boardmarker-width: 5
+    slide-number: true
+    width: 1600
+    height: 900    
+#    embed-resources: true
+from: markdown+emoji
+execute: 
+  echo: true
+---
+
+```{r}
+#| include: false
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
+```
+
+## Fee-for-Service versus Capitated Payments
+
+:::: {.columns}
+
+::: {.column width="50%"}
+**Fee-for-Service (FFS) payments**
+
+- Separate payment for each service
+- More care means more revenue
+- Example: Traditional Medicare
+:::
+
+::: {.column width="50%"}
+**Capitated payments**
+
+- Set amount intended to cover all expenses for a given person/group
+- If expenses exceed that amount, the providers lose money
+- If expenses fall below that amount, the providers make a profit
+- Examples in U.S.: Accountable Care Organizations, Kaiser System
+:::
+
+::::
+
+---
+
+## Incentives
+
+Thinking about FFS versus capitated payments...
+
+- What are the incentives in a FFS model if the goal is to make more money?
+- Are those incentives different in a capitated payment model? How?
+
+---
+
+## Agency and payment models
+
+- Physician receives fixed ("capitated") amount for each patient, $R$, along with some price per unit of service, $p_{s}$
+- Physician therefore paid $R + (p_{s} - c)x$ for each patient
+- Number of patients for each physician expressed as a positive function of the net benefit offered, $n(NB)$, where $NB=B(x) - p_{d}x$. Here, we assume that the insurer sets $p_{d}$ and $p_{s}$ separately (the demand and supply price, respectively).
+- Physician again aims to maximize profits, $\pi=n(NB)\left[R+(p_{s}-c)x\right]$.
+
+
+---
+
+## Solution
+
+- Maximizing the profit function yields:
+$$n'(NB)(B'(x) - p_{d}) \left[R + (p_{s} - c)x \right] + n(NB)(p_{s}-c) = 0.$$
+
+- Rearranging terms and multiplying both sides by $\frac{1}{NB}$, we get:
+$$\frac{B'(x) - p_{d}}{NB} \frac{R + (p_{s} - c)x}{p_{s}-c} = - \frac{1}{\varepsilon_{n,NB}}.$$
+
+::: {.fragment}
+1. What happens for $R=0$?
+2. What about $R>0$, assuming $p_{s}<c$?
+:::
+
+---
+
+## In-class problem: Agency and payment models
+
+- Assume that the physician's number of patients in the practice depends on the net benefit offered, $NB=B(x) - p_{d}x$, where $x$ denotes the amount of care and $p_{d}$ denotes the prices that the patient must pay. For simplicity, we'll assume that the number of patients is the same as the net benefit, $n(NB) = NB$.
+- Assume that patients are fully insured so that $p_{d}=0$. 
+- Assume that the benefit function is $B(x) = 16x-2x^{2}$. 
+- Assume that the physician is paid a fixed amount, $R$, for each patient, and earns some profit, $p_{s}-c$, on each unit of care.
+
+---
+
+1. Solve for the patient's optimal amount of care (if they could choose the amount on their own).
+2. Write out the physician's profit function based on the information provided.
+3. Find the physician's optimal $x$ if $R=0$ and $p_{s}-c=1$.
+4. Find the physician's optimal $x$ if $R=1$ and $p_{s}-c=1$. How does this differ from part (3)?
+5. Find the physician's optimal $x$ if $R=1$ and $p_{s}-c=0$.
+
+
+
+---
+
+## Takeaways
+
+Excessive treatment may arise because physicians can choose a level of care, and this choice may derive from incentives that are not perfectly aligned with those of the patients. From this section, you should be able to:
+
+1. Set up and solve the physician's optimization problem and compare the solution to that of the patient's optimum.
+2. Show mathematically how the design of an insurance contract (namely, capitated payments versus fee-for-service payments) may determine the extent to which physicians overprovide care.
+
+
+# "Capitation" in practice
+
+---
+
+## Capitated Payments
+
+There are two forms of capitated payments in Medicare now:
+
+1. [Bundled Payments](https://innovation.cms.gov/initiatives/bundled-payments/)
+2. [Accountable Care Organizations](https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ACO/)
+
+---
+
+## Pay for performance
+
+There are three main pay for performance programs employed in Medicare right now:
+
+1. Hospital Readmission Reduction Program
+2. [Value-based Purchasing](https://www.cms.gov/Medicare/Quality-Initiatives-Patient-Assessment-Instruments/Value-Based-Programs/HVBP/Hospital-Value-Based-Purchasing)
+3. [Quality Payment Program](https://qpp.cms.gov/about/qpp-overview) for physicians: Merit-based Incentive Payment System (MIPS) and Advanced Alternative Payment Models (APMs)
+
+
+# Physician Agency and Financial Incentives IRL
+
+---
+
+## More general setup
+
+- Physicians choose $x$, incorporating their own profit, the benefit to the patient, and some disutility of work
+$$u(x) = V(\pi) -e(x) + \alpha B(x)$$
+- $x$ need not be "quantity of care"
+- Agency more reasonably applies to which types of treatment physicians choose rather than "how much"
+
+---
+
+## Evidence on Financial Incentives and Treatment Decisions
+
+Effects of financial incentives on...
+
+- treatment patterns, [Clemens and Gottlieb, 2014](https://www.aeaweb.org/articles?id=10.1257/aer.104.4.1320)
+- discharge patterns, [Einav et al., 2018](https://onlinelibrary.wiley.com/doi/abs/10.3982/ECTA15022) and [Eliason et al., 2018](https://www.aeaweb.org/articles?id=10.1257/aer.20170092)
+- types of patients seen, [Cabral et al., 2023](https://www.nber.org/papers/w29471)
+- location of care, [Munnich et al., 2023](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3845073) and [Baker et al., 2016](https://www.sciencedirect.com/science/article/abs/pii/S0167629616301679)
+- spillovers to other patients, [Barnett et al., 2023](https://www.aeaweb.org/articles?id=10.1257/pol.20200553)
+
+::: {.fragment}
+**The Takeaway**: On the margin, financial incentives *do* affect treatment decisions. Some responses may negatively affect patients, but typically this probably involves more money for similar-quality care.
+:::

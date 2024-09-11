@@ -1,0 +1,175 @@
+---
+title: "Introduction to Prescription Drugs"
+author: "Ian McCarthy | Emory University"
+format: 
+  revealjs:
+    theme: [moon]
+    preview-links: auto
+    chalkboard:
+      boardmarker-width: 5
+    slide-number: true
+    width: 1600
+    height: 900    
+#    embed-resources: true
+from: markdown+emoji
+execute: 
+  echo: true
+---
+
+```{r}
+#| include: false
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
+```
+
+# Pharmaceutical Spending
+
+---
+
+## High spending per person
+
+![](../figures/57050-plot_1.png){style="background: #FFFFFF;" width=10in}
+
+::: {.aside}
+Source: [CBO Report on Pharma Spending](https://www.cbo.gov/publication/57772)
+:::
+
+---
+
+## Relatively small share of health care
+
+![](../figures/57050-plot.png){style="background: #FFFFFF;" width=10in}
+
+::: {.aside}
+Source: [CBO Report on Pharma Spending](https://www.cbo.gov/publication/57772)
+:::
+
+
+# Prescription Drug Life Cycle
+
+---
+
+## Three Broad Stages
+
+- Research and Development
+- Marketing
+- Sales
+
+
+# Research and Development
+
+---
+
+## R&D Timeline
+
+- 10-15 years from discovery to manufacturing
+- Discovery: screening, target identification, pre-clinical testing
+  - < 5% of candidate compounds make it to pre-clinical testing
+- Clinical Trials: official testing for FDA approval (up to 10 years total)
+
+---
+
+## Clinical Trials
+
+- 20% of drugs in pre-clinical discovery make it to clinical trials
+- Pre-clinical: submission of investigational new drug application (IND)
+- Phase I: testing on healthy, human volunteers, focus on side effects
+- Phase II: testing on relevant patient population, focus on efficacy
+- Phase III: testing on large patient population, focus on safety and efficacy
+- FDA review and approval, submission of new drug application (NDA)
+
+---
+
+## FDA Approval
+
+- Physicians *can* prescribe drugs for off-label uses, without FDA approval
+- FDA approval is required for marketing and insurance coverage
+- FDA approval can be narrow, and generally does not cover all uses
+- Companies often continue clinical trials after approval to expand uses
+
+---
+
+## R&D Spending
+
+![](../figures/57025-fig4_spending-drug-approvals.png){style="background: #FFFFFF;" width=40%}
+
+::: {.aside}
+Source: [CBO Report on R&D Spending](https://www.cbo.gov/publication/57126)
+:::
+
+---
+
+## New Drug Approvals
+
+![](../figures/57025-fig3_new-drug_approvals.png){style="background: #FFFFFF;"}
+
+::: {.aside}
+Source: [CBO Report on R&D Spending](https://www.cbo.gov/publication/57126)
+:::
+
+
+# Marketing
+
+---
+
+## Marketing Expenditures
+
+![](../figures/cbo-promotional-spending.png){width=40%}
+
+::: {.aside}
+Source: [CBO Report on Pharma Promotional Spending](https://www.cbo.gov/sites/default/files/111th-congress-2009-2010/reports/12-02-drugpromo_brief.pdf)
+:::
+
+
+---
+
+## Marketing Expenditures
+
+- About \$6 billion per year on direct-to-consumer advertising (primarily TV and magazine), based on 2018 data
+- Nearly 3x that on detailing (sales reps visiting physicians), based on 2008 data
+- Over \$20 billion per year on free samples, based on 2005 data
+
+
+::: {.aside}
+Source: [GAO Report on DTC Pharma Advertising](https://www.gao.gov/assets/gao-21-380.pdf)
+:::
+
+# Sales
+
+---
+
+## Supply chain (relatively standard)
+
+- Manufacturers (that's easy)
+- Sell to wholesalers (e.g., McKesson, Cardinal Health, AmerisourceBergen) in most cases (60-70%) or directly to pharmacies (mainly large chains)
+- Sell to retail and non-retail (e.g, hospitals, nursing homes, home health care) pharmacies
+- Sell to patients
+
+---
+
+## Flow of money (non-standard)
+
+- Manufacturers set list prices
+- Wholesalers negotiate discounts and rebates, sell to pharmacies at a markup
+- Pharmacy benefit managers (PBMs) administer formularies and negotiate discounts and rebates with manufacturers and insurers
+- Pharmacies sell to patients at a markup
+
+---
+
+## What is the price?
+
+- Insurers pay PBMs to manage drug benefits
+- Manufacturers pay rebates to insurers and pharmacy benefit managers (PBMs)
+- Medicaid has mandatory rebates (over 20% of wholesale price)
+- For brand name drugs, rebates are sizeable and opaque. **Hard to know what the price is.**
+
+---
+
+## Factors affecting price
+
+1. Manufacturer market power
+   - Patent protection provides monopoly power for 20 years, applied for during discovery period
+   - 10 years of effective monopoly power given R&D and approval time
+   - Product differentiation
+2. Regulation and price controls
+3. Physician agency (already covered)

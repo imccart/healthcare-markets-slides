@@ -1,0 +1,235 @@
+---
+title: "Introduction: Why Supply-side Health?"
+author: "Ian McCarthy | Emory University"
+format: 
+  revealjs:
+    theme: [moon]
+    preview-links: auto
+#    chalkboard:
+#      boardmarker-width: 5
+    slide-number: true
+    width: 1600
+    height: 900    
+    embed-resources: true
+from: markdown+emoji
+execute: 
+  echo: true
+---
+
+```{r}
+#| include: false
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales,
+               hrbrthemes, gganimate, OECD)
+```
+
+# Table of contents
+
+1. [Health and Health Care](#health)
+
+2. [Why Study Health Care](#why)
+
+3. [Class Overview](#class)
+
+
+# Health Improvements
+
+
+---
+
+
+*Major* improvements in life expectancy (and many other measures of health) across the world
+
+- Poverty reduction
+- Technology development and innovation
+- Technology diffusion and adoption
+- Access to better services, including health care
+
+
+---
+
+
+```{r}
+#| code-fold: true
+#| code-summary: "R Code"
+#| fig-align: center
+gapminder %>%
+  group_by(year) %>%
+  summarize(lifeExp = median(lifeExp),
+            gdpMed = median(gdpPercap)) %>%
+  ggplot(aes(year,lifeExp)) + geom_line(alpha = 1/3) + theme_bw() +
+    labs(x = "Year",
+         y = "Life Expectancy (years)",
+         title = "Median life expectancy across the world")
+```
+
+
+# Health and Wealth
+
+---
+
+```{r}
+#| code-fold: true
+#| code-summary: "R Code"
+#| fig-align: center
+ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp)) + 
+  geom_point(size = 1) + theme_bw() + scale_x_continuous(label = comma) +
+  labs(x = "GDP Per Capita ($US)",
+       y = "Life Expectancy (years)",
+       title = "Life expectancy and GDP")
+```
+
+
+
+---
+
+
+```{r}
+#| code-fold: true
+#| code-summary: "R Code"
+#| fig-align: center
+ggplot(gapminder, aes(gdpPercap, lifeExp, size = pop)) +
+  geom_point(alpha = 0.5, show.legend = FALSE) +
+  scale_colour_manual(values = country_colors) +
+  scale_size(range = c(2, 12)) +
+  scale_x_log10() +
+  facet_wrap(~continent) +
+  labs(title = 'Year: {frame_time}', x = 'Log GDP Per Capita ($US)', y = 'Life Expectancy (years)') +
+  transition_time(year) +
+  ease_aes('linear') +
+  theme_bw()
+```
+
+
+
+
+---
+
+## But the U.S. is unique
+
+```{r}
+#| code-fold: true
+#| code-summary: "R Code"
+#| fig-align: center
+mycolors <- c("US" = "red", "other" = "grey50")
+gapminder %>% filter(country %in% c("Canada", "France", "Germany", "Italy", "Japan", "United Kingdom", "United States")) %>%
+  mutate(highlight = ifelse(country=="United States", "US", "other")) %>%
+  ggplot(aes(gdpPercap, lifeExp, size = pop)) +
+  geom_point(alpha = 0.5, show.legend = FALSE, aes(color=highlight)) +
+  scale_color_manual("U.S.", values = mycolors) +
+  scale_size(range = c(2, 12)) +
+  scale_x_comma(limits=c(0,55000)) + 
+  labs(title = 'Year: {frame_time}', x = 'GDP Per Capita ($US)', y = 'Life Expectancy (years)') +
+  transition_time(year) +
+  ease_aes('linear') +
+  theme_bw()
+```
+
+
+
+# Health Care Spending and Outcomes
+
+
+
+---
+
+::: {layout="[[-1], [1], [-1]]"}
+![](../figures/hcspend-maternal-mortality.gif){fig-align="center"}
+:::
+
+---
+
+::: {layout="[[-1], [1], [-1]]"}
+![](../figures/hcspend-infant-mortality.gif){fig-align="center"}
+:::
+
+
+---
+
+## What does that mean?
+
+- Are we just woefully inefficient?
+- The right answer is probably more complicated
+  - U.S. very good in some areas (breast cancer treatment, interventional cardiology)
+  - Let's look at some more graphs from the [Commonwealth Fund](https://www.commonwealthfund.org/publications/issue-briefs/2020/jan/us-health-care-global-perspective-2019)
+
+
+---
+
+## Rephrasing of the Problem
+
+We have an "access" problem in the U.S. In many ways, we "overprovide" care to some people and underprovide care to lots of other people. We are particularly bad at helping the least healthy among us. These issues are, of course, very closely related to other economic problems and inequality in general.
+
+
+
+# Why Study Economics of Health Care?
+
+
+---
+
+
+1. Health and health care are constantly changing
+
+2. Health expenditures in 2020: <span>&#36;</span>4.1 trillion, 19.7% of GDP, <span>&#36;</span>12,530 per person (from [NHE Fact Sheet](https://www.cms.gov/Research-Statistics-Data-and-Systems/Statistics-Trends-and-Reports/NationalHealthExpendData/NHE-Fact-Sheet))
+
+3. U.S. health care is uniquely inefficient in many ways
+
+
+---
+
+Lots of interesting economic issues in health care, not all unique to the US.
+
+:::{.fragment}
+1. Extremely heterogeneous products
+2. Asymmetric information between patients and physicians
+3. Unobservable quality (experience good)
+4. Unpredictable need (inability to shop in many cases)
+5. Distortion of incentives due to insurance
+6. Adverse selection (asymmetric information between patients and insurers)
+:::
+
+
+---
+
+- These factors exist in other markets and in other countries, but...
+- Health care is unique in the combination of these issues
+- U.S. is unique in the extent of these issues in health care (policy problems)
+
+
+# Why is the US so different?
+
+---
+
+Some common arguments:
+
+- Poor health
+- Overutilization
+- High physician salaries
+- Fraud
+- Administrative waste
+
+
+---
+
+The real culprit(s):
+
+- Administrative waste
+- Prices!
+- Some fraud
+
+---
+
+## Fragmentation
+
+A frustrating feature of U.S. health care is that it is extremely fragmented:
+
+- different ways to get insurance
+- different entities providing health care
+- separate billing (for the most part)
+
+---
+
+## Complicated bills
+
+Incredibly complex and convoluted billing process
+

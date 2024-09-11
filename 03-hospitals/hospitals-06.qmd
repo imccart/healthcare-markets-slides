@@ -1,0 +1,171 @@
+---
+title: "Hospital Mergers"
+author: "Ian McCarthy | Emory University"
+format: 
+  revealjs:
+    theme: [moon]
+    preview-links: auto
+    chalkboard:
+      boardmarker-width: 5
+    slide-number: true
+    width: 1600
+    height: 900    
+#    embed-resources: true
+from: markdown+emoji
+execute: 
+  echo: true
+---
+
+```{r}
+#| include: false
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
+```
+
+
+## Types of hospitals involved in mergers
+
+![](../figures/nihcm-hospital-types.jpg)
+
+
+---
+
+## Types of hospitals involved in mergers
+
+- Ascension-Presence: Largest non-profit system in US adds 10 hospitals to existing 9 hospitals in Chicago
+- Fairview-HealthEast: 11 hospital system becomes largest in Twin Cities area
+- Hospital corporation of america (HCA) adds 4 hospitals to the 10 existing HCA hospitals in Houston
+- Northwestern-Centegra: Forms 10 hospital system in Chicago
+- Emory-DeKalb: Forms 10 hospital system in Atlanta
+- Jefferson-Einstein: Forms 18 hospital system in Philadelphia area
+
+
+::: {.aside}
+Source: NIHCM Hospital Consolidation Trends
+:::
+
+
+
+# Merger "Types"
+
+---
+
+Essentially two types of mergers:
+
+1. "Within-market"
+2. "Out-of-market"
+
+
+---
+
+## Within-market mergers
+
+- Most well-understood merger type
+- Established tools for examination in anti-trust
+- Defining the market is still a contentious issue
+
+---
+
+## Within-market mergers
+
+- Listed previously (Emory-DeKalb, etc.)
+- **Big** price effects
+  - 20 to 40% in many studies
+  - Up to 60% in some studies
+  - Bigger increases the closer are the hospitals
+  - Price increases spillover to other hospitals too
+- Account for about 50% of all mergers since 2000
+
+
+---
+
+## Out-of-market mergers
+
+- Less understood
+- No formal structure for analyzing in court
+- These types of mergers are essentially permitted without risk of DOJ/FTC challenge
+
+---
+
+## Out-of-market mergers
+
+- Involve larger systems spanning different isolated markets
+  - Advocate-Aurora: 27 hospital system in IL and WI
+  - Baptist Memorial-Mississippi Baptist: 22 hospitals in TN, AR, and MS
+  - UPMC-Pinnacle: 24 hospital system recently added 8 in central PA
+  - Catholic Health Initiatives-Dignity Health: 142 hospitals in 21 states
+  - HCA: 177 hospitals in 21 states
+  - RCCH HealthCare Partners: 89 hospitals in 30 states, focusing on non-urban areas
+- About 35% of all mergers are out-of-market but in same state, 15% out-of-state
+- Smaller but meaningful price increases, 5 to 10%
+
+
+
+# Effects of Mergers on Prices
+
+---
+
+## How do mergers increase prices?
+
+- Already discussed within-market mergers, outside options, and bargaining power
+- What about out-of-market mergers?
+
+---
+
+## OOM mergers and prices
+
+Two ways this can happen theoretically:
+
+1. Common customers (hospital markets are local, but insurance markets are more broad)
+2. Multi-market contact (particularly relevant for understanding out-of-state mergers)
+
+---
+
+## 1. Common customers
+
+![](../figures/nihcm-common-customer.png)
+
+
+---
+
+## 2. Multimarket contact
+
+![](../figures/nihcm-mmc.png)
+
+
+# What Next?
+
+---
+
+## Where do we go frome here?
+
+1. Adopt sensible policies
+  - Certificate of need laws
+  - Certificate of public advantage
+  - Scope of practice laws
+  - Any willing provider laws
+  - Site-based payment differentials (encourage vertical integration)
+2. Antitrust enforcement
+
+---
+
+## A note on surprise billing
+
+Some hope here following the **No Surprises Act** (in effect January 2022):
+
+- Emergency care (excluding ground ambulances?)
+- In-network facilities
+- New process...
+  - OON provider bills health plan
+  - Health plan communicates median in-network amount
+  - Provider bills cost-sharing to patient
+
+::: {.fragment}
+**But** patient can be asked to waive rights
+:::
+
+---
+
+## Final thought
+
+- Please review the Brookings Report, [Making health care markets work](https://www.brookings.edu/research/making-health-care-markets-work-competition-policy-for-health-care/) 

@@ -1,0 +1,231 @@
+---
+title: "Regulation and Innovation"
+author: "Ian McCarthy | Emory University"
+format: 
+  revealjs:
+    theme: [moon]
+    preview-links: auto
+    chalkboard:
+      boardmarker-width: 5
+    slide-number: true
+    width: 1600
+    height: 900    
+#    embed-resources: true
+from: markdown+emoji
+execute: 
+  echo: true
+---
+
+```{r}
+#| include: false
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
+```
+
+# Innovation
+
+---
+
+## What is innovation?
+
+How would you define "innovation" in pharma?
+
+::: {.fragment}
+- Should not just mean a new drug, but a new drug that is better than existing treatments
+- Not clear this is always the argument made in the media
+:::
+
+---
+
+## What governs innovation?
+
+- Strong empirical evidence that firms internalize future profits of a drug when making R&D decisions
+- Investment decision can be modeled as:
+  1. Ranking of expected returns to potential new drugs, including costs of manufacturing, packaging, marketing, and distribution. This is the Marginal Efficiency of Investment (MEI)
+  2. Comparison of MEI to cost of capital
+  3. Investment in the drugs to the point where MEI=cost of capital
+
+---
+
+## How to influence innovation?
+
+- If firms are maximizing profits, then the only way to influence innovation is to change the MEI or the cost of capital
+- Shift MEI outward via:
+  - Changing marketing regulations (DTC advertising)
+  - Increasing demand for a drug (market exclusivity, coverage under public insurance)
+- Shift cost of capital down via:
+  - Easier access to funding (tax credits, grants, etc.)
+
+---
+
+## How to influence innovation?
+
+- Which approach is "best"?
+
+::: {.fragment}
+- Politically, these are NOT identical policies
+  - Pull incentives require no up-front costs
+  - Pull incentives tend to place R&D burden onto pharma customers
+  - Push incentives require up-front government investment
+  - Push incentives place burden on taxpayers
+:::
+
+# Regulation
+
+---
+
+## Key areas of regulation in this market
+
+- Price regulation (reference pricing, direct price caps, etc.)
+- In general, lower prices discourages innovation by shifting MEI inward
+- How much? Some estimates of price elasticity of R&D at 0.6
+  - 10% price cut reduces R&D by 6%
+- But what innovations are "lost"? Hard to say
+
+---
+
+## Paper Discussion 1
+
+[The High Cost of Prescription Drugs in the United States: Origins and Prospects for Reform](https://pubmed.ncbi.nlm.nih.gov/27552619/)
+
+---
+
+## 1. High Spending
+
+::: {layout="[[-1], [1], [-1]]"}
+![](../figures/pharma-spending-fig1.png){fig-align="center"}
+:::
+
+---
+
+::: {layout="[[-1], [1], [-1]]"}
+![](../figures/pharma-spending-tab1.png){fig-align="center"}
+:::
+
+---
+
+- Higher spending in the U.S. compared to peer countries
+- Faster spending growth in the U.S. compared to peer countries
+
+::: {.fragment}
+But...
+
+- Spending on even very high cost drugs can still be cost-effective
+- Sovaldi (hepatitis C) found to be cost-effective despite \$84,000 per 12-week course
+:::
+
+---
+
+## Research Questions
+
+- What factors seem to contribute to pharma price increases?
+- What policies can help ensure prices match value and that drugs are available in an equitable way?
+
+---
+
+## Brand name vs generic
+
+- Annual cost of highly specialized brand name drugs exceeds \$250,000 per patient!
+- High brand-name prices now extend to drugs with some substitutes (not just rare conditions)
+- Generic drugs generally lower priced, but some examples of high price increases
+  - Daraprim, 63-year old treatment for toxoplasmosis, increases 5500% (from \$13.50 to \$750) in 2015
+  - A few hundred generic drugs experienced price increases of more than 1000% from 2008 to 2015
+  - Why? Monopoly products, despite no patent protection
+
+---
+
+## Why such high prices?
+
+- Prices set by manufacturers, PBMs, insurers, and pharmacies
+- Little direct price regulation
+- Conversely, the UK specifically requires cost-effectiveness thresholds before allowing coverage
+
+---
+
+## Competition
+
+- Patent protection usually lasts around 20 years (starts before drug is officially approved)
+- Companies can apply for extended patent protection for 5 years (max of 14 years in the market)
+- Additional 6 months if testing products in children
+- On average, 12.5 years of post-market exclusivity for widely used drugs and 14.5 years for highly innovative drugs (first-in-class)
+
+---
+
+Limited competition even for brand name drugs with some substitutes. Why?
+
+- Fragmentation
+- Information problems
+- Physician agency
+
+---
+
+Firms can also deter generic entry, via:
+
+- Additional patents on coating, method of administration, etc.
+  - Example: Nexium is derivative of Prilosec (omeprazole), sold for 600% markup over generic omeprazole
+- Significant settlements to generic drug companies
+- Delays in approval for generic drugs (FDA delays of 3-4 years, now closer to 1-2 years) 
+
+---
+
+Barriers to substituting brand name drugs with generic drugs even after generic entry:
+
+- Drug product selection laws in 30 states that allow but do not require pharmacists to substitute generics
+- 26 states that require patient consent when replacing brand name with generic drugs
+- All states allow "dispense-as-written", which restricts pharmacists' ability to substitute brand name drugs
+
+---
+
+Other barriers to competition in among generics and brand name:
+
+- PBMs often paid based on insurer spending on specific drugs, therefore little incentive to intensely negotiate prices
+- From US House Committee on Oversight and Government reform:
+  
+> "The investigation revealed, for example, that Turing received 'no pushback from payors' when it increased 'Chenodal price 5x... [Thiola] price 21x... [and Daraprim] price 43x.'
+
+
+---
+
+## Justification for high prices
+
+Industry argument that significant R&D costs necessitate higher prices
+
+::: {.fragment}
+But...
+
+  - Half of the "most transformative drugs" developed (or started) in academic centers
+  - Many drugs also started in small companies later acquired by larger manufacturer
+  - "Innovation" means more than just another drug
+  - Current price growth simply not sustainable
+:::
+
+---
+
+## What can we do?
+
+Federal Policies:
+
+- Limit secondary patents for minor changes
+- Combat anticompetitive practices like pay-for-delay
+- Allow negotiation of prices and formulary exclusions by Medicare
+- Faster time to market for generics
+
+State Policies:
+
+- Drug product selection laws
+- Allow negotiation of prices and formulary exclusions by Medicaid
+
+---
+
+## Paper Discussion 2
+
+[PHARMACEUTICAL PRICING AND R&D AS A GLOBAL PUBLIC GOOD](https://www-nber-org.proxy.library.emory.edu/papers/w31272)
+
+---
+
+## US Subsidizing ROW
+
+- US clearly pays higher prices than other countries
+- Strong evidence that US contribution to profit for future innovation is higher than it should be
+- That said, the ROW contribution is meaningful (all other countries do not force prices to marginal costs)
+- Authors urge a more international view of spending, suggesting better policy is to advocate for higher prices elsewhere rather than directly for lower prices in the US
