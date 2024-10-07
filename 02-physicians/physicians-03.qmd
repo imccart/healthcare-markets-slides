@@ -94,7 +94,6 @@ $$\frac{B'(x) - p_{d}}{NB} \frac{R + (p_{s} - c)x}{p_{s}-c} = - \frac{1}{\vareps
 2. Write out the physician's profit function based on the information provided.
 3. Find the physician's optimal $x$ if $R=0$ and $p_{s}-c=1$.
 4. Find the physician's optimal $x$ if $R=1$ and $p_{s}-c=1$. How does this differ from part (3)?
-5. Find the physician's optimal $x$ if $R=1$ and $p_{s}-c=0$.
 
 
 
