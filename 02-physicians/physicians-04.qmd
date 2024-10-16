@@ -93,7 +93,7 @@ P(\theta|y) &= \frac{P(y|\theta) \times P(\theta)}{P(y)} \\
 
 ## Bayes' Rule and Posterior Distributions
 
-- Exploits the usual Bayes' rule, $$P(B|A) = \frac{P(A|B)*P(B)}{P(A)}$$
+- Exploits the usual Bayes' rule, $$P(B|A) = \frac{P(A|B)*P(B)}{P(A)}$$ (see class [review sheet](https://econ372f24.classes.ianmccarthyecon.com/resources/))
 - In general, solving model requires integration of the posterior distribution
 - With specific assumptions, there are "closed-form" solutions to the posterior distribution
   - We call these "conjugate" distributions
