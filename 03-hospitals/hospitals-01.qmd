@@ -81,7 +81,7 @@ In practice, it's a negotiation with insurers
 Defining characteristic of hospital prices and services: *it's complicated!*
 
 ::: {layout="[[-1], [1], [-1]]"}
-![](../figures/BillExample.jpg){fig-align="center" width="5in"}
+![](../figures/BillExample.jpg){fig-align="center" width="7in"}
 :::
 
 ::: aside
