@@ -22,6 +22,14 @@ if (!require("pacman")) install.packages("pacman")
 pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 ```
 
+## Outline for today:
+
+- History of hospitals in the US
+- Definition of hospital "price"
+- Key facts about US hospital prices
+
+---
+
 # Some History
 
 ---
@@ -143,7 +151,7 @@ Source: [Health Care Pricing Project](https://healthcarepricingproject.org/)
 
 ---
 
-## Hospital prices in real life
+# Key Facts on Hospital Prices
 
 We'll get into the real data later in this module, but for now...a few facts:
 
@@ -168,3 +176,10 @@ We'll get into the real data later in this module, but for now...a few facts:
 ::: aside
 Source: [Health Care Pricing Project](https://healthcarepricingproject.org)
 :::
+
+---
+
+## Case study
+
+- Parkview Health in Fort Wayne, IN offers a good case study of high prices and lack of hospital competition
+- See article from [The Guardian](https://www.theguardian.com/us-news/2024/oct/17/indiana-medical-debt-parkview-hospital)
