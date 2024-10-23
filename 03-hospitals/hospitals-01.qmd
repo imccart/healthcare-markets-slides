@@ -148,21 +148,27 @@ Source: [Health Care Pricing Project](https://healthcarepricingproject.org/)
 
 ::::
 
----
 
 # Key Facts on Hospital Prices
 
 We'll get into the real data later in this module, but for now...a few facts:
 
-1. Hospital services are expensive
+1. Hospital services are expensive and vary across/within areas
 
-2. Prices vary dramatically across different areas
+2. Hospital markets are NOT competitive
 
-3. Lack of competition is a major reason for high prices
+3. Hospital prices are NOT transparent
 
 ---
 
-## Hospital prices in real life
+## Hospital prices in US
+
+- Recall the high spending on healthcare in US relative to other countries. [Health System Tracker](https://www.healthsystemtracker.org/brief/what-drives-health-spending-in-the-u-s-compared-to-other-countries/#Healthcare%20spending%20per%20capita,%20by%20spending%20category,%202021)
+- This is largely driven by higher prices. [Health System Tracker](https://www.healthsystemtracker.org/chart-collection/how-do-healthcare-prices-and-use-in-the-u-s-compare-to-other-countries/)
+
+---
+
+## [Price variation](https://healthcostinstitute.org/hcci-originals-dropdown/all-hcci-reports/hmi-2019-service-prices)
 
 ::: {layout-ncol=2}
 
@@ -178,7 +184,30 @@ Source: [Health Care Pricing Project](https://healthcarepricingproject.org)
 
 ---
 
-## Case study
+## Discussion questions
+
+- Why are hospital prices so high?
+- Why do they vary so much? 
+- How do factors like market competition, price transparency, or hospital ownership (non-profit vs. for-profit) play a role.?
+
+
+---
+
+## Role of competition
 
 - Parkview Health in Fort Wayne, IN offers a good case study of high prices and lack of hospital competition
 - See article from [The Guardian](https://www.theguardian.com/us-news/2024/oct/17/indiana-medical-debt-parkview-hospital)
+
+
+---
+
+## Role of price transparency
+
+- How does the lack of price transparency impact patient behavior and healthcare costs?
+- Would making hospital prices more transparent reduce healthcare spending, or would it lead to unintended consequences?
+
+---
+
+## Role of price transparency
+
+Price transparency can increase prices essentially by facilitating collusion. In markets where firms observe each other’s prices, they may adjust to match higher competitors' prices rather than competing to lower them. This dynamic undermines competition, as firms coordinate tacitly by setting prices at similar, often higher, levels. Hospitals may follow similar patterns, especially in concentrated markets, choosing not to undercut one another to maintain higher profit margins.
