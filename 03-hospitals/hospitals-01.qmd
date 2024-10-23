@@ -28,7 +28,6 @@ pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 - Definition of hospital "price"
 - Key facts about US hospital prices
 
----
 
 # Some History
 

@@ -204,3 +204,10 @@ These are easier to study theoretically...just a standard profit maximizing firm
 - Firm has some market power and so faces a downward sloping demand curve
 - Will discuss bargaining power and price negotiations later in this module
 
+# Why do we care?
+
+---
+
+- Significant benefits conferred to hospitals based on not-for-profit status
+- Do consumers receive any benefit from this status?
+- Let's discuss this article: [Why are nonprofit hospitals focused more on dollars than patients?](https://www.nytimes.com/2023/11/30/opinion/hospitals-nonprofit-community.html)
