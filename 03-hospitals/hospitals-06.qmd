@@ -37,6 +37,54 @@ pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 
 ---
 
+
+## Cournot Competition Model
+
+- **Objective**: Firms $i = 1, \dots, N$ choose quantities $q_{i}$ to maximize profits.
+- **Profit function**: 
+  $$\pi_{i} = q_{i} (P(Q) - c)$$
+
+  where:
+
+  - $Q = \sum_{i=1}^{N} q_{i}$: Total market output
+  - $P(Q) = a - bQ$: Inverse demand function
+  - $c$: Marginal cost (assumed identical for all firms)
+
+---
+
+## First-Order Condition for Profit Maximization
+
+- Each firm maximizes profit by choosing $q_{i}$ such that:
+  $$\frac{\partial \pi_{i}}{\partial q_{i}} = P(Q) + q_{i} \frac{\partial P}{\partial Q} - c = 0$$
+
+- Substitute $P(Q) = a - bQ$ and $\frac{\partial P}{\partial Q} = -b$:
+  $$P(Q) - c = b q_{i}$$
+  
+  This leads to a Cournot-Nash equilibrium in quantities.
+
+---
+
+## Deriving the Markup Over Marginal Cost
+
+- Rearrange to express the **markup** of price over marginal cost for firm $i$:
+  $$\frac{P(Q) - c}{P(Q)} = \frac{b q_{i}}{P(Q)}$$
+
+- Using market share $s_{i} = \frac{q_{i}}{Q}$:
+  $$\frac{P(Q) - c}{P(Q)} = \frac{s_{i}}{\epsilon}$$
+  
+  where $\epsilon = \frac{P}{Q} \cdot \frac{dQ}{dP}$ is the market demand elasticity.
+
+---
+
+## Connecting Markup to HHI
+
+- Define the **Herfindahl-Hirschman Index (HHI)** as:
+  $$\text{HHI} = \sum_{i=1}^{N} s_{i}^2$$
+
+- **Conclusion**: Higher market concentration (higher HHI) leads to higher markups over marginal cost, linking market power (HHI) to markup in Cournot competition.
+
+---
+
 ## Defining the market
 
 Lots of subjectivity...
