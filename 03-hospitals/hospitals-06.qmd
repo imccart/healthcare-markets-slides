@@ -1,5 +1,5 @@
 ---
-title: "Hospital Mergers"
+title: "Hospital Mergers and Competitiveness"
 author: "Ian McCarthy | Emory University"
 format: 
   revealjs:
@@ -23,6 +23,74 @@ pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 ```
 
 
+# Measuring competitiveness
+
+---
+
+## Measuring competitiveness
+
+- Common measure is Herfindahl-Hirschman Index (HHI), $\sum_{i=1}^{N} s_{i}^{2}$.
+  - 2,500 is considered **highly concentrated**
+  - 1,800 is considered **unconcentrated**
+- "Willingness to pay" is more recent measure (theoretically supported)
+- Both require a measure of the geographic market
+
+---
+
+## Defining the market
+
+Lots of subjectivity...
+
+- Radius around a hospital?
+- Concentric circles to define "catchment" areas?
+- Patient/physician referrals?
+- At what product-level do hospitals compete?
+
+---
+
+## Trends in competitiveness
+
+Almost any way you define it, hospital markets are more and more concentrated (less competitive) in recent decades.
+
+- 1990: 65% of MSAs highlgy concentrated, 23% unconcentrated
+- 2006: 77% highly concentrated, 11% unconcentrated
+
+
+---
+
+## Hospital concentration over time
+
+![](../figures/GHT1.png)
+
+
+---
+
+## Hospital concentration over time
+
+![](../figures/GHT2.png)
+
+
+---
+
+## Hospital concentration over time
+
+- More data and [interactive report](https://healthcostinstitute.org/hcci-originals/healthy-marketplace-index/hmi) from the Health Care Cost Institute.
+- [Presentation](https://nihcm.org/publications/hospital-consolidation-trends-impacts-outlook) from the National Institute for Health Care Management
+
+---
+
+## Why?
+
+Historical perception of hospital competition as "wasteful" and assumption that more capacity means more (unnecessary) care:
+
+- Limit public spending by limiting competition
+- Prevalence of certificate of need (CON) laws...more odd policies to discuss later
+
+
+# Hospital mergers (horizontal)
+
+---
+
 ## Types of hospitals involved in mergers
 
 ![](../figures/nihcm-hospital-types.jpg)
@@ -44,13 +112,9 @@ pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 Source: NIHCM Hospital Consolidation Trends
 :::
 
-
-
-# Merger "Types"
-
 ---
 
-Essentially two types of mergers:
+## Merger "types"
 
 1. "Within-market"
 2. "Out-of-market"
