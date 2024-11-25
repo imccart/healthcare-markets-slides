@@ -38,7 +38,7 @@ pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 ## Effects of Generic Entry
 
 - Signifcant reduction in prices, over 70% reduction from brand-name price after a few years
-- Generic drug market effectively acts as a competitive market
+- Generic drug market *can* act as a competitive market, particularly among generic suppliers
 - But there are some exceptions...
 
 ---
@@ -79,3 +79,87 @@ pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
   - PBM market dominated by just a few firms (Express Scripts, Medco, and CVS Caremark)
 - Sale of final drugs also subject to retail pharmacy market power 
   - Also dominated by a few large chains (CVS, Walgreens, Walmart, Rite Aid)
+
+
+# A Quantity Conundrum
+
+---
+
+## Generic Entry
+
+![](../figures/pharma-generics.png){style="background: #FFFFFF;" width=10in}
+
+
+# Avoiding Competition
+
+---
+
+## The Case of Allergan
+
+- Drug: Restasis
+- Treatment: Dry Eyes
+- Many patents filed over time, and validity of those patents challenged in court
+- Allergen sold its drug to the Saint Regis Mohawk Tribe
+  - Licensed drug back to Allergen
+  - Difficult to sue Native American tribes
+  - Didn't work, but demonstrates uniqueness of pharma, "life-cycle management", and why people dislike pharma so much!
+
+---
+
+## The Generic Paradox
+
+Suppose a patent expires for a popular, small-molecule drug. Generic producers enter the market, and the volume of sales for the branded producer plummets. All else equal, what should the original producer do to the price of the branded drug?
+
+---
+
+## The Generic Paradox
+
+Suppose a patent expires for a popular, small-molecule drug. Generic producers enter the market, and the volume of sales for the branded producer plummets. All else equal, what should the original producer do to the price of the branded drug?
+
+- Work down the more elastic demand curve?
+- Exploit remaining "loyal" consumers?
+  - perhaps allergic to some element of the generic drug, or require some specific administration
+  - moral hazard effect from insurance
+  - review monopoly pricing with more inelastic demand
+
+---
+
+## Killer Acquisitions
+
+- Circa 2010, Questcor's "Acthar Gel" is the only therapeutic adrenocorticotropic hormone (ACTH) product sold in the United States. ACTH is the standard of care for several rare, serious conditions, including infantile spasms. Questcor priced Acthar very aggressively
+- In other countries, doctors treat patients suffering from these same conditions with Synacthen, a synthetic ACTH drug. Although Acthar is a natural ACTH drug derived from the pituitary glands of pigs, Acthar and Synacthen have very similar biological activities and pharmacological effects.
+- Novartis marketed and sold Synacthen abroad. In 2011, Novartis decided to sell the rights to market Synacthen in the United States via an auction. Three companies submitted bids to Novartis.
+
+What should Quescor do and how?
+
+---
+
+## Killer Acquisitions
+
+- Questcor bid and won the auction, and never produced Synacthen
+- Bidding from a more advantageous position (maintaining monopoly power) versus competiting to become a duopolist
+- More about Killer Acquisitions [here](https://microeconomicinsights.org/killer-acquisitions/)
+
+---
+
+## Product Hopping (evergreening)
+
+- Actavis produced a medication called "Namenda" for Alzheimer's patients. Patients would swallow a pill twice a day. 
+- Patent was set to expire in July of 2015
+- Fall of 2014, Actavis stopped producing Namenda and sent letter to all prescribers.
+- Instead only produced Namenda XR, an extended release version that only requires a pill once a day.
+
+Why did Actavis stop producing Namenda?
+
+
+---
+
+## Product Hopping (evergreening)
+
+Perhaps some dates might be helpful...Namenda was about to lose its patent in July of 2015. Namenda XR was covered by patents that weren't going to expire until the mid-2020s.
+
+- This is called "product hopping" or evergreening
+- Is this "good" or "bad"?
+  - Bad: keeps prices high
+  - Good: the new products are sometimes valuable
+- In this case, courts actually stopped Actavis from doing this
