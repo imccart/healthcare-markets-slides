@@ -90,6 +90,13 @@ pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 ![](../figures/pharma-generics.png){style="background: #FFFFFF;" width=10in}
 
 
+---
+
+## Generic Entry
+
+![](../figures/pharma-generics2.png){style="background: #FFFFFF;" width=10in}
+
+
 # Avoiding Competition
 
 ---
