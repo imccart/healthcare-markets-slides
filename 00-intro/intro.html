@@ -8,7 +8,7 @@
 <link href="intro_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="intro_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="intro_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.450">
+  <meta name="generator" content="quarto-1.5.57">
 
   <meta name="author" content="Ian McCarthy | Emory University">
   <title>Introduction: Why Supply-side Health?</title>
@@ -31,7 +31,7 @@
     }
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span { line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -42,7 +42,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -223,7 +223,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -406,19 +407,27 @@ Ian McCarthy | Emory University
 <section id="table-of-contents" class="title-slide slide level1 center">
 <h1>Table of contents</h1>
 <ol type="1">
-<li><p><a href="#/health">Health and Health Care</a></p></li>
-<li><p><a href="#/why">Why Study Health Care</a></p></li>
-<li><p><a href="#/class">Class Overview</a></p></li>
+<li><p>Motivation</p></li>
+<li><p>Course Overview</p></li>
+</ol>
+</section>
+
+<section id="class-goals" class="title-slide slide level1 center">
+<h1>Class Goals</h1>
+<p>I have two goals for today’s class:</p>
+<ol type="1">
+<li>Motivate the course: Why the U.S. health care system is an interesting case and why people should study it</li>
+<li>Overview of course structure and broad content</li>
 </ol>
 </section>
 
 <section>
-<section id="health-improvements" class="title-slide slide level1 center">
-<h1>Health Improvements</h1>
+<section id="motivation-the-u.s.-paradox" class="title-slide slide level1 center">
+<h1>Motivation: The U.S. Paradox</h1>
 
 </section>
-<section class="slide level2">
-
+<section id="health-improvements" class="slide level2">
+<h2>Health Improvements</h2>
 <p><em>Major</em> improvements in life expectancy (and many other measures of health) across the world</p>
 <ul>
 <li>Poverty reduction</li>
@@ -427,119 +436,123 @@ Ian McCarthy | Emory University
 <li>Access to better services, including health care</li>
 </ul>
 </section>
-<section class="slide level2">
-
+<section id="health-improvements-1" class="slide level2">
+<h2>Health Improvements</h2>
 <div class="cell" data-layout-align="center">
-<details>
+<details class="code-fold">
 <summary>R Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>gapminder <span class="sc">%&gt;%</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a>  <span class="fu">summarize</span>(<span class="at">lifeExp =</span> <span class="fu">median</span>(lifeExp),</span>
-<span id="cb1-4"><a href="#cb1-4"></a>            <span class="at">gdpMed =</span> <span class="fu">median</span>(gdpPercap)) <span class="sc">%&gt;%</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(year,lifeExp)) <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="at">alpha =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>) <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Year"</span>,</span>
-<span id="cb1-7"><a href="#cb1-7"></a>         <span class="at">y =</span> <span class="st">"Life Expectancy (years)"</span>,</span>
-<span id="cb1-8"><a href="#cb1-8"></a>         <span class="at">title =</span> <span class="st">"Median life expectancy across the world"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a>gapminder <span class="sc">%&gt;%</span></span>
+<span id="cb1-2"><a href=""></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span></span>
+<span id="cb1-3"><a href=""></a>  <span class="fu">summarize</span>(<span class="at">lifeExp =</span> <span class="fu">median</span>(lifeExp),</span>
+<span id="cb1-4"><a href=""></a>            <span class="at">gdpMed =</span> <span class="fu">median</span>(gdpPercap)) <span class="sc">%&gt;%</span></span>
+<span id="cb1-5"><a href=""></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(year,lifeExp)) <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="at">alpha =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>) <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb1-6"><a href=""></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb1-7"><a href=""></a>         <span class="at">y =</span> <span class="st">"Life Expectancy (years)"</span>,</span>
+<span id="cb1-8"><a href=""></a>         <span class="at">title =</span> <span class="st">"Median life expectancy across the world"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
-<img data-src="intro_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch quarto-figure-center"></section></section>
-<section>
-<section id="health-and-wealth" class="title-slide slide level1 center">
-<h1>Health and Wealth</h1>
-
-</section>
-<section class="slide level2">
-
+<img data-src="intro_files/figure-revealjs/unnamed-chunk-2-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="health-and-wealth" class="slide level2">
+<h2>Health and Wealth</h2>
 <div class="cell" data-layout-align="center">
-<details>
+<details class="code-fold">
 <summary>R Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> gapminder, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp)) <span class="sc">+</span> </span>
-<span id="cb2-2"><a href="#cb2-2"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">scale_x_continuous</span>(<span class="at">label =</span> comma) <span class="sc">+</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"GDP Per Capita ($US)"</span>,</span>
-<span id="cb2-4"><a href="#cb2-4"></a>       <span class="at">y =</span> <span class="st">"Life Expectancy (years)"</span>,</span>
-<span id="cb2-5"><a href="#cb2-5"></a>       <span class="at">title =</span> <span class="st">"Life expectancy and GDP"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="fu">ggplot</span>(<span class="at">data =</span> gapminder, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp)) <span class="sc">+</span> </span>
+<span id="cb2-2"><a href=""></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">scale_x_continuous</span>(<span class="at">label =</span> comma) <span class="sc">+</span></span>
+<span id="cb2-3"><a href=""></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"GDP Per Capita ($US)"</span>,</span>
+<span id="cb2-4"><a href=""></a>       <span class="at">y =</span> <span class="st">"Life Expectancy (years)"</span>,</span>
+<span id="cb2-5"><a href=""></a>       <span class="at">title =</span> <span class="st">"Life expectancy and GDP"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
-<img data-src="intro_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch quarto-figure-center"></section>
-<section class="slide level2">
-
+<img data-src="intro_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="health-and-wealth-1" class="slide level2">
+<h2>Health and Wealth</h2>
 <div class="cell" data-layout-align="center">
-<details>
+<details class="code-fold">
 <summary>R Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">ggplot</span>(gapminder, <span class="fu">aes</span>(gdpPercap, lifeExp, <span class="at">size =</span> pop)) <span class="sc">+</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> country_colors) <span class="sc">+</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a>  <span class="fu">scale_size</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">12</span>)) <span class="sc">+</span></span>
-<span id="cb3-5"><a href="#cb3-5"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
-<span id="cb3-6"><a href="#cb3-6"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>continent) <span class="sc">+</span></span>
-<span id="cb3-7"><a href="#cb3-7"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">'Year: {frame_time}'</span>, <span class="at">x =</span> <span class="st">'Log GDP Per Capita ($US)'</span>, <span class="at">y =</span> <span class="st">'Life Expectancy (years)'</span>) <span class="sc">+</span></span>
-<span id="cb3-8"><a href="#cb3-8"></a>  <span class="fu">transition_time</span>(year) <span class="sc">+</span></span>
-<span id="cb3-9"><a href="#cb3-9"></a>  <span class="fu">ease_aes</span>(<span class="st">'linear'</span>) <span class="sc">+</span></span>
-<span id="cb3-10"><a href="#cb3-10"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="fu">ggplot</span>(gapminder, <span class="fu">aes</span>(gdpPercap, lifeExp, <span class="at">size =</span> pop)) <span class="sc">+</span></span>
+<span id="cb3-2"><a href=""></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb3-3"><a href=""></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> country_colors) <span class="sc">+</span></span>
+<span id="cb3-4"><a href=""></a>  <span class="fu">scale_size</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">12</span>)) <span class="sc">+</span></span>
+<span id="cb3-5"><a href=""></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
+<span id="cb3-6"><a href=""></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>continent) <span class="sc">+</span></span>
+<span id="cb3-7"><a href=""></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">'Year: {frame_time}'</span>, <span class="at">x =</span> <span class="st">'Log GDP Per Capita ($US)'</span>, <span class="at">y =</span> <span class="st">'Life Expectancy (years)'</span>) <span class="sc">+</span></span>
+<span id="cb3-8"><a href=""></a>  <span class="fu">transition_time</span>(year) <span class="sc">+</span></span>
+<span id="cb3-9"><a href=""></a>  <span class="fu">ease_aes</span>(<span class="st">'linear'</span>) <span class="sc">+</span></span>
+<span id="cb3-10"><a href=""></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
-<img data-src="intro_files/figure-revealjs/unnamed-chunk-4-1.gif" class="r-stretch quarto-figure-center"></section>
+<img data-src="intro_files/figure-revealjs/unnamed-chunk-4-1.gif" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="but-the-u.s.-is-unique" class="slide level2">
 <h2>But the U.S. is unique</h2>
 <div class="cell" data-layout-align="center">
-<details>
+<details class="code-fold">
 <summary>R Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>mycolors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"US"</span> <span class="ot">=</span> <span class="st">"red"</span>, <span class="st">"other"</span> <span class="ot">=</span> <span class="st">"grey50"</span>)</span>
-<span id="cb4-2"><a href="#cb4-2"></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">filter</span>(country <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Canada"</span>, <span class="st">"France"</span>, <span class="st">"Germany"</span>, <span class="st">"Italy"</span>, <span class="st">"Japan"</span>, <span class="st">"United Kingdom"</span>, <span class="st">"United States"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a>  <span class="fu">mutate</span>(<span class="at">highlight =</span> <span class="fu">ifelse</span>(country<span class="sc">==</span><span class="st">"United States"</span>, <span class="st">"US"</span>, <span class="st">"other"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(gdpPercap, lifeExp, <span class="at">size =</span> pop)) <span class="sc">+</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>, <span class="fu">aes</span>(<span class="at">color=</span>highlight)) <span class="sc">+</span></span>
-<span id="cb4-6"><a href="#cb4-6"></a>  <span class="fu">scale_color_manual</span>(<span class="st">"U.S."</span>, <span class="at">values =</span> mycolors) <span class="sc">+</span></span>
-<span id="cb4-7"><a href="#cb4-7"></a>  <span class="fu">scale_size</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">12</span>)) <span class="sc">+</span></span>
-<span id="cb4-8"><a href="#cb4-8"></a>  <span class="fu">scale_x_comma</span>(<span class="at">limits=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">55000</span>)) <span class="sc">+</span> </span>
-<span id="cb4-9"><a href="#cb4-9"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">'Year: {frame_time}'</span>, <span class="at">x =</span> <span class="st">'GDP Per Capita ($US)'</span>, <span class="at">y =</span> <span class="st">'Life Expectancy (years)'</span>) <span class="sc">+</span></span>
-<span id="cb4-10"><a href="#cb4-10"></a>  <span class="fu">transition_time</span>(year) <span class="sc">+</span></span>
-<span id="cb4-11"><a href="#cb4-11"></a>  <span class="fu">ease_aes</span>(<span class="st">'linear'</span>) <span class="sc">+</span></span>
-<span id="cb4-12"><a href="#cb4-12"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a>mycolors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"US"</span> <span class="ot">=</span> <span class="st">"red"</span>, <span class="st">"other"</span> <span class="ot">=</span> <span class="st">"grey50"</span>)</span>
+<span id="cb4-2"><a href=""></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">filter</span>(country <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Canada"</span>, <span class="st">"France"</span>, <span class="st">"Germany"</span>, <span class="st">"Italy"</span>, <span class="st">"Japan"</span>, <span class="st">"United Kingdom"</span>, <span class="st">"United States"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb4-3"><a href=""></a>  <span class="fu">mutate</span>(<span class="at">highlight =</span> <span class="fu">ifelse</span>(country<span class="sc">==</span><span class="st">"United States"</span>, <span class="st">"US"</span>, <span class="st">"other"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb4-4"><a href=""></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(gdpPercap, lifeExp, <span class="at">size =</span> pop)) <span class="sc">+</span></span>
+<span id="cb4-5"><a href=""></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>, <span class="fu">aes</span>(<span class="at">color=</span>highlight)) <span class="sc">+</span></span>
+<span id="cb4-6"><a href=""></a>  <span class="fu">scale_color_manual</span>(<span class="st">"U.S."</span>, <span class="at">values =</span> mycolors) <span class="sc">+</span></span>
+<span id="cb4-7"><a href=""></a>  <span class="fu">scale_size</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">12</span>)) <span class="sc">+</span></span>
+<span id="cb4-8"><a href=""></a>  <span class="fu">scale_x_comma</span>(<span class="at">limits=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">55000</span>)) <span class="sc">+</span> </span>
+<span id="cb4-9"><a href=""></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">'Year: {frame_time}'</span>, <span class="at">x =</span> <span class="st">'GDP Per Capita ($US)'</span>, <span class="at">y =</span> <span class="st">'Life Expectancy (years)'</span>) <span class="sc">+</span></span>
+<span id="cb4-10"><a href=""></a>  <span class="fu">transition_time</span>(year) <span class="sc">+</span></span>
+<span id="cb4-11"><a href=""></a>  <span class="fu">ease_aes</span>(<span class="st">'linear'</span>) <span class="sc">+</span></span>
+<span id="cb4-12"><a href=""></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
-<img data-src="intro_files/figure-revealjs/unnamed-chunk-5-1.gif" class="r-stretch quarto-figure-center"></section></section>
-<section>
-<section id="health-care-spending-and-outcomes" class="title-slide slide level1 center">
-<h1>Health Care Spending and Outcomes</h1>
-
+<img data-src="intro_files/figure-revealjs/unnamed-chunk-5-1.gif" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="the-u.s.-paradox" class="slide level2">
+<h2>The U.S. “Paradox”</h2>
+<ol type="1">
+<li>World leader in health care spending</li>
+<li>World leader in medical innovation</li>
+<li>Poor health outcomes on average</li>
+</ol>
 </section>
-<section class="slide level2">
+<section id="health-care-spending-and-outcomes" class="slide level2">
+<h2>Health Care Spending and Outcomes</h2>
+<div>
 
-<div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+</div>
+<div class="quarto-layout-panel" data-layout="[[-1], [1], [-1]]">
+<div class="quarto-layout-row">
+<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
 <p>&nbsp;</p>
 </div>
 </div>
-<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../figures/hcspend-maternal-mortality.gif"></p>
+<p><img data-src="../figures/hcspend-maternal-mortality.gif" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section class="slide level2">
+<section id="health-care-spending-and-outcomes-1" class="slide level2">
+<h2>Health Care Spending and Outcomes</h2>
+<div>
 
-<div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+</div>
+<div class="quarto-layout-panel" data-layout="[[-1], [1], [-1]]">
+<div class="quarto-layout-row">
+<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
 <p>&nbsp;</p>
 </div>
 </div>
-<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../figures/hcspend-infant-mortality.gif"></p>
+<p><img data-src="../figures/hcspend-infant-mortality.gif" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
 </div>
@@ -557,25 +570,37 @@ Ian McCarthy | Emory University
 </ul></li>
 </ul>
 </section>
+<section id="so-why-is-the-us-so-different" class="slide level2">
+<h2>So why is the US so different?</h2>
+<p>Some common arguments:</p>
+<ul>
+<li>Poor health</li>
+<li>Overutilization</li>
+<li>High physician salaries</li>
+<li>Fraud</li>
+<li>Administrative waste</li>
+</ul>
+</section>
+<section id="so-why-is-the-us-so-different-1" class="slide level2">
+<h2>So why is the US so different?</h2>
+<p>The real culprit(s):</p>
+<ul>
+<li>Administrative waste</li>
+<li>Prices! (outcome of many underlying factors including information problems, fragmentation, policy, etc.)</li>
+<li>Some fraud</li>
+</ul>
+</section>
 <section id="rephrasing-of-the-problem" class="slide level2">
 <h2>Rephrasing of the Problem</h2>
 <p>We have an “access” problem in the U.S. In many ways, we “overprovide” care to some people and underprovide care to lots of other people. We are particularly bad at helping the least healthy among us. These issues are, of course, very closely related to other economic problems and inequality in general.</p>
 </section></section>
 <section>
-<section id="why-study-economics-of-health-care" class="title-slide slide level1 center">
-<h1>Why Study Economics of Health Care?</h1>
+<section id="turning-to-this-course" class="title-slide slide level1 center">
+<h1>Turning to this course…</h1>
 
 </section>
-<section class="slide level2">
-
-<ol type="1">
-<li><p>Health and health care are constantly changing</p></li>
-<li><p>Health expenditures in 2020: <span>$</span>4.1 trillion, 19.7% of GDP, <span>$</span>12,530 per person (from <a href="https://www.cms.gov/Research-Statistics-Data-and-Systems/Statistics-Trends-and-Reports/NationalHealthExpendData/NHE-Fact-Sheet">NHE Fact Sheet</a>)</p></li>
-<li><p>U.S. health care is uniquely inefficient in many ways</p></li>
-</ol>
-</section>
-<section class="slide level2">
-
+<section id="why-economics" class="slide level2">
+<h2>Why economics?</h2>
 <p>Lots of interesting economic issues in health care, not all unique to the US.</p>
 <div class="fragment">
 <ol type="1">
@@ -588,53 +613,97 @@ Ian McCarthy | Emory University
 </ol>
 </div>
 </section>
-<section class="slide level2">
-
+<section id="why-economics-1" class="slide level2">
+<h2>Why economics?</h2>
 <ul>
 <li>These factors exist in other markets and in other countries, but…</li>
 <li>Health care is unique in the combination of these issues</li>
 <li>U.S. is unique in the extent of these issues in health care (policy problems)</li>
 </ul>
+</section>
+<section id="course-overview" class="slide level2">
+<h2>Course Overview</h2>
+<p>We study U.S. health care through the patient’s journey:</p>
+<ol type="1">
+<li><strong>Insurance</strong> – choosing a plan
+<ul>
+<li>Adverse selection, moral hazard, market design</li>
+</ul></li>
+<li><strong>Physicians</strong> – visiting a doctor
+<ul>
+<li>Agency problems, financial incentives, quality of care</li>
+</ul></li>
+<li><strong>Hospitals</strong> – receiving care
+<ul>
+<li>Pricing, insurer negotiations, consolidation</li>
+</ul></li>
+<li><strong>Prescription Drugs</strong> – patents, generics, FDA regulation, innovation</li>
+</ol>
+</section>
+<section id="learning-goals" class="slide level2">
+<h2>Learning Goals</h2>
+<p>By the end of this course, you will be able to:</p>
+<ol type="1">
+<li>Explain the structure and history of the U.S. health care system<br>
+</li>
+<li>Model adverse selection in insurance and connect to data<br>
+</li>
+<li>Analyze physician incentives and agency problems<br>
+</li>
+<li>Describe hospital pricing and insurer negotiations<br>
+</li>
+<li>Summarize key features of prescription drug markets<br>
+</li>
+<li>Apply data to assess hospital policies in practice</li>
+</ol>
+</section>
+<section id="assignments-logistics" class="slide level2">
+<h2>Assignments &amp; Logistics</h2>
+<ul>
+<li><strong>Participation</strong> – in-class and Canvas activities<br>
+</li>
+<li><strong>Homework (3)</strong> – mix of theory and data, ~60 pts each<br>
+</li>
+<li><strong>Midterm Exam</strong> – 60 pts (Tuesday, 10/21)<br>
+</li>
+<li><strong>Final Project</strong> – group-based, 140 pts</li>
+</ul>
+<p>Total = <strong>400 points</strong> → standard grading scale</p>
+<p>Class meets: <strong>Tues/Thurs, 8:30–9:45am, White Hall 103</strong><br>
+Office Hours: <strong>Tues/Thurs, 10–11am, RRR 418</strong> (or by appointment)</p>
+</section>
+<section id="nuts-and-bolts" class="slide level2">
+<h2>Nuts and Bolts</h2>
+<ul>
+<li><strong>Class Website</strong> – slides, notes, assignments, data<br>
+</li>
+<li><strong>Canvas</strong> – readings, grades, announcements, private info (e.g., Zoom links)<br>
+</li>
+<li><strong>Teaching Assistant</strong> – Katerina Katsimpri (Office Hours: Fri 4–6pm, RRR 4th floor)<br>
+</li>
+<li><strong>Data &amp; Software</strong> – R (recommended), Python, Excel, or Google Sheets all acceptable<br>
+</li>
+<li><strong>Office Hours</strong> – Prof.&nbsp;McCarthy, Tues/Thurs 10–11am, RRR 418 (sign up online)</li>
+</ul>
 </section></section>
 <section>
-<section id="why-is-the-us-so-different" class="title-slide slide level1 center">
-<h1>Why is the US so different?</h1>
+<section id="closing" class="title-slide slide level1 center">
+<h1>Closing</h1>
 
 </section>
-<section class="slide level2">
-
-<p>Some common arguments:</p>
+<section id="takeaways-from-today" class="slide level2">
+<h2>Takeaways from Today</h2>
 <ul>
-<li>Poor health</li>
-<li>Overutilization</li>
-<li>High physician salaries</li>
-<li>Fraud</li>
-<li>Administrative waste</li>
+<li>The U.S. spends the most on health care yet underperforms on many outcomes.<br>
+</li>
+<li>Economics explains this paradox: incentives, information, and market structure matter.<br>
+</li>
+<li>This course equips you with the tools to analyze these problems and evaluate policy solutions.</li>
 </ul>
-</section>
-<section class="slide level2">
-
-<p>The real culprit(s):</p>
-<ul>
-<li>Administrative waste</li>
-<li>Prices!</li>
-<li>Some fraud</li>
-</ul>
-</section>
-<section id="fragmentation" class="slide level2">
-<h2>Fragmentation</h2>
-<p>A frustrating feature of U.S. health care is that it is extremely fragmented:</p>
-<ul>
-<li>different ways to get insurance</li>
-<li>different entities providing health care</li>
-<li>separate billing (for the most part)</li>
-</ul>
-</section>
-<section id="complicated-bills" class="slide level2">
-<h2>Complicated bills</h2>
-<p>Incredibly complex and convoluted billing process</p>
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
+</div>
 </div>
 </section></section>
     </div>
@@ -664,7 +733,6 @@ Ian McCarthy | Emory University
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': true,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -851,42 +919,80 @@ Ian McCarthy | Emory University
       });
     </script>
     
+
     <script>
+
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
       // slide changes (different for each slide format).
+
       (function () {
+
         // dispatch for htmlwidgets
+
         function fireSlideEnter() {
+
           const event = window.document.createEvent("Event");
+
           event.initEvent("slideenter", true, true);
+
           window.document.dispatchEvent(event);
+
         }
+
+    
 
         function fireSlideChanged(previousSlide, currentSlide) {
+
           fireSlideEnter();
 
+    
+
           // dispatch for shiny
+
           if (window.jQuery) {
+
             if (previousSlide) {
+
               window.jQuery(previousSlide).trigger("hidden");
+
             }
+
             if (currentSlide) {
+
               window.jQuery(currentSlide).trigger("shown");
+
             }
+
           }
+
         }
+
+    
 
         // hookup for slidy
+
         if (window.w3c_slidy) {
+
           window.w3c_slidy.add_observer(function (slide_num) {
+
             // slide_num starts at position 1
+
             fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
           });
+
         }
 
+    
+
       })();
+
     </script>
+
+    
 
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -920,18 +1026,7 @@ Ian McCarthy | Emory University
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -963,11 +1058,50 @@ Ian McCarthy | Emory University
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
-      function tippyHover(el, contentFn) {
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -977,8 +1111,17 @@ Ian McCarthy | Emory University
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -992,7 +1135,11 @@ Ian McCarthy | Emory University
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {
@@ -1013,27 +1160,4 @@ Ian McCarthy | Emory University
       };
       var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
       for (var i=0; i<bibliorefs.length; i++) {
-        const ref = bibliorefs[i];
-        const citeInfo = findCites(ref);
-        if (citeInfo) {
-          tippyHover(citeInfo.el, function() {
-            var popup = window.document.createElement('div');
-            citeInfo.cites.forEach(function(cite) {
-              var citeDiv = window.document.createElement('div');
-              citeDiv.classList.add('hanging-indent');
-              citeDiv.classList.add('csl-entry');
-              var biblioDiv = window.document.getElementById('ref-' + cite);
-              if (biblioDiv) {
-                citeDiv.innerHTML = biblioDiv.innerHTML;
-              }
-              popup.appendChild(citeDiv);
-            });
-            return popup.innerHTML;
-          });
-        }
-      }
-    });
-    </script>
     
-
-</body></html>

@@ -5,21 +5,12 @@ format:
   revealjs:
     theme: [moon]
     preview-links: auto
-<<<<<<< HEAD
-#    chalkboard:
-#      boardmarker-width: 5
-    slide-number: true
-    width: 1600
-    height: 900    
-    embed-resources: true
-=======
     chalkboard:
       boardmarker-width: 5
     slide-number: true
     width: 1600
     height: 900    
 #    embed-resources: true
->>>>>>> ca1b97c4ce997a2871c1f4bff8bc80ea530a1641
 from: markdown+emoji
 execute: 
   echo: true
@@ -34,17 +25,26 @@ pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales,
 
 # Table of contents
 
-1. [Health and Health Care](#health)
+1. Motivation
 
-2. [Why Study Health Care](#why)
-
-3. [Class Overview](#class)
+2. Course Overview
 
 
-# Health Improvements
+
+# Class Goals
+
+I have two goals for today's class:
+
+1. Motivate the course: Why the U.S. health care system is an interesting case and why people should study it
+2. Overview of course structure and broad content
+
+
+# Motivation: The U.S. Paradox
 
 
 ---
+
+## Health Improvements
 
 
 *Major* improvements in life expectancy (and many other measures of health) across the world
@@ -57,6 +57,7 @@ pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales,
 
 ---
 
+## Health Improvements
 
 ```{r}
 #| code-fold: true
@@ -72,10 +73,9 @@ gapminder %>%
          title = "Median life expectancy across the world")
 ```
 
-
-# Health and Wealth
-
 ---
+
+## Health and Wealth
 
 ```{r}
 #| code-fold: true
@@ -92,6 +92,7 @@ ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp)) +
 
 ---
 
+## Health and Wealth
 
 ```{r}
 #| code-fold: true
@@ -134,19 +135,27 @@ gapminder %>% filter(country %in% c("Canada", "France", "Germany", "Italy", "Jap
   theme_bw()
 ```
 
+---
 
+## The U.S. "Paradox"
 
-# Health Care Spending and Outcomes
-
+1. World leader in health care spending
+2. World leader in medical innovation
+3. Poor health outcomes on average
 
 
 ---
+
+## Health Care Spending and Outcomes
+
 
 ::: {layout="[[-1], [1], [-1]]"}
 ![](../figures/hcspend-maternal-mortality.gif){fig-align="center"}
 :::
 
 ---
+
+## Health Care Spending and Outcomes
 
 ::: {layout="[[-1], [1], [-1]]"}
 ![](../figures/hcspend-infant-mortality.gif){fig-align="center"}
@@ -162,6 +171,29 @@ gapminder %>% filter(country %in% c("Canada", "France", "Germany", "Italy", "Jap
   - U.S. very good in some areas (breast cancer treatment, interventional cardiology)
   - Let's look at some more graphs from the [Commonwealth Fund](https://www.commonwealthfund.org/publications/issue-briefs/2020/jan/us-health-care-global-perspective-2019)
 
+---
+
+## So why is the US so different?
+
+
+Some common arguments:
+
+- Poor health
+- Overutilization
+- High physician salaries
+- Fraud
+- Administrative waste
+
+---
+
+## So why is the US so different?
+
+The real culprit(s):
+
+- Administrative waste
+- Prices! (outcome of many underlying factors including information problems, fragmentation, policy, etc.)
+- Some fraud
+
 
 ---
 
@@ -171,20 +203,11 @@ We have an "access" problem in the U.S. In many ways, we "overprovide" care to s
 
 
 
-# Why Study Economics of Health Care?
-
-
----
-
-
-1. Health and health care are constantly changing
-
-2. Health expenditures in 2020: <span>&#36;</span>4.1 trillion, 19.7% of GDP, <span>&#36;</span>12,530 per person (from [NHE Fact Sheet](https://www.cms.gov/Research-Statistics-Data-and-Systems/Statistics-Trends-and-Reports/NationalHealthExpendData/NHE-Fact-Sheet))
-
-3. U.S. health care is uniquely inefficient in many ways
-
+# Turning to this course...
 
 ---
+
+## Why economics?
 
 Lots of interesting economic issues in health care, not all unique to the US.
 
@@ -200,45 +223,80 @@ Lots of interesting economic issues in health care, not all unique to the US.
 
 ---
 
+## Why economics?
+
 - These factors exist in other markets and in other countries, but...
 - Health care is unique in the combination of these issues
 - U.S. is unique in the extent of these issues in health care (policy problems)
 
 
-# Why is the US so different?
+---
+
+## Course Overview
+
+We study U.S. health care through the patient’s journey:
+
+1. **Insurance** – choosing a plan  
+   - Adverse selection, moral hazard, market design  
+
+2. **Physicians** – visiting a doctor  
+   - Agency problems, financial incentives, quality of care  
+
+3. **Hospitals** – receiving care  
+   - Pricing, insurer negotiations, consolidation  
+
+4. **Prescription Drugs** – patents, generics, FDA regulation, innovation  
+
 
 ---
 
-Some common arguments:
+## Learning Goals
 
-- Poor health
-- Overutilization
-- High physician salaries
-- Fraud
-- Administrative waste
+By the end of this course, you will be able to:
 
-
----
-
-The real culprit(s):
-
-- Administrative waste
-- Prices!
-- Some fraud
+1. Explain the structure and history of the U.S. health care system  
+2. Model adverse selection in insurance and connect to data  
+3. Analyze physician incentives and agency problems  
+4. Describe hospital pricing and insurer negotiations  
+5. Summarize key features of prescription drug markets  
+6. Apply data to assess hospital policies in practice  
 
 ---
 
-## Fragmentation
+## Assignments & Logistics
 
-A frustrating feature of U.S. health care is that it is extremely fragmented:
+- **Participation** – in-class and Canvas activities  
+- **Homework (3)** – mix of theory and data, ~60 pts each  
+- **Midterm Exam** – 60 pts (Tuesday, 10/21)  
+- **Final Project** – group-based, 140 pts  
 
-- different ways to get insurance
-- different entities providing health care
-- separate billing (for the most part)
+Total = **400 points** → standard grading scale  
+
+Class meets: **Tues/Thurs, 8:30–9:45am, White Hall 103**  
+Office Hours: **Tues/Thurs, 10–11am, RRR 418** (or by appointment)  
 
 ---
 
-## Complicated bills
+## Nuts and Bolts
 
-Incredibly complex and convoluted billing process
+- **Class Website** – slides, notes, assignments, data  
+- **Canvas** – readings, grades, announcements, private info (e.g., Zoom links)  
+- **Teaching Assistant** – Katerina Katsimpri (Office Hours: Fri 4–6pm, RRR 4th floor)  
+- **Data & Software** – R (recommended), Python, Excel, or Google Sheets all acceptable  
+- **Office Hours** – Prof. McCarthy, Tues/Thurs 10–11am, RRR 418 (sign up online)  
+
+
+# Closing
+
+---
+
+## Takeaways from Today
+
+- The U.S. spends the most on health care yet underperforms on many outcomes.  
+- Economics explains this paradox: incentives, information, and market structure matter.  
+- This course equips you with the tools to analyze these problems and evaluate policy solutions.
+
+
+
+
 
