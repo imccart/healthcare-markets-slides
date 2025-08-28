@@ -10,7 +10,6 @@ format:
     slide-number: true
     width: 1600
     height: 900    
-#    embed-resources: true
 from: markdown+emoji
 execute: 
   echo: true
@@ -24,130 +23,131 @@ pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 
 # Table of contents
 
-1. Motivation
-
-2. Terminology
-
-3. Real life example
+1. Motivation  
+2. How insurers shape coverage  
+3. How patients pay for coverage  
+4. Real-life example  
 
 
 # Motivation
 
----
 
-## What is health insurance
+## What is health insurance?
 
-Why do people buy health insurance? What are they "insuring"?
+Why do people buy health insurance? What are they **insuring**?
 
----
+
+
+## What is health insurance?
 
 Health insurance can still improve health by:
 
-- improving affordability of care (by paying for some part of care when needed)
-- facilitating availability of care (providers receive lower payments for "cash" patients)
+- improving affordability of care (by paying for some part of care when needed)  
+- facilitating availability of care (providers receive lower payments for "cash" patients)  
 
 ::: {.fragment}
-Made more important due to extremely high healthcare prices
+Made more important due to extremely high healthcare prices  
 :::
 
----
 
 ## How does health insurance work?
 
-- Enrollees pay the insurer
-    - Fixed amount per month (premium)
-    - Some amount for care provided (cost-sharing)
-- Insurer pays provider
-    - Negotiated prices
-    - Pays share of bill depending on cost-sharing terms
-
----
-
-- Modern health insurance is very complicated!
-- Need to work through some basic terminology before we go much further
+- Enrollees pay the insurer  
+  - Fixed amount per month (**premium**)  
+  - Some amount for care provided (**cost-sharing**)  
+- Insurer pays provider  
+  - Negotiated prices  
+  - Pays share of bill depending on cost-sharing terms  
 
 
-# Terminology
 
----
+## How does health insurance work?
+
+- Modern health insurance is very complicated!  
+- Need to work through some basic terminology before we go much further  
+
+
+
+# How insurers shape coverage
 
 ## Managed care
 
-- Health insurance product that encompasses some attempt to manage utilization of health care among its enrollees, often via assigning providers (physicians, hospitals, etc.) into tiers separated based on pricing
-- Insurers "manage" care through the use of insurance "networks"
+- Health insurance product that encompasses some attempt to manage utilization of care  
+- Insurers "manage" care through the use of **networks** of providers  
 
----
 
 ## Insurance networks
 
-Set of providers for which the insurer has agreed to pay some amount of care received at those providers, conditional on other cost-sharing terms of the insurance contract
-  
-  - Preferred Provider Organizations (PPOs): tiered network structure, where patients will be responsible for less of the total cost of care when going to a higher tiered provider
-  - Health Maintenance Organizations (HMOs): more discrete network structure, with some providers in-network and other providers out-of-network
+Set of providers with whom the insurer has agreed to terms of payment  
 
----
+- **PPOs**: tiered network structure → patients pay less at higher-tier providers  
+- **HMOs**: discrete structure → some providers in-network, others entirely out-of-network  
+
+
+## Benefit design
+
+Insurers also decide:  
+
+- **What services are covered**  
+  - hospital visits, prescription drugs, mental health services, etc.  
+- **How patients share costs**  
+  - deductible, co-payment, co-insurance  
+
+This “benefit design” sets the rules for patient payments.  
+
+
+
+# How patients pay for coverage
 
 ## Premiums
 
-What enrollees pay every month regardless of whether they use any health care
-
----
+Fixed monthly amount paid for coverage, regardless of whether care is used  
 
 ![](../figures/kff-premiums.webp){fig-align="center"}
 
----
+
 
 ## Cost-sharing
 
-Generally refers to the amount of health care expenses that must be paid directly by the patient (as opposed to their insurance plan)
+Patient payments **when care is used**  
 
-- Dictates how much a patient must pay out-of-pocket for any care received
-- Encompasses a **deductible**, **co-insurance**, and **co-payment**
+- Deductible  
+- Co-insurance  
+- Co-payment  
 
-
----
 
 ## Deductible
 
-The amount of money that a patient must pay out-of-pocket before the insurance company will pay **anything**
-
----
+The amount the patient must pay out-of-pocket before insurance pays **anything**  
 
 ![](../figures/kff-deductibles.png){fig-align="center"}
 
----
 
 ## Copayment
 
-A fixed dollar amount for which the patient is responsible **after meeting their deductible.** 
+A fixed dollar amount for a service (after deductible is met)  
 
-- More common for low-cost, predictable health care services like physician office visits
-- Example: \$20 co-pay for office visits, which means patients must pay \$20 for the visit and the insurance company will pay the rest (after the deductible is met)
+- Common for low-cost, predictable care (e.g., office visits, prescriptions)  
+- Example: \$20 co-pay for an office visit  
 
-
----
 
 ## Coinsurance
 
-A percentage of costs for which the patient is responsible **after meeting their deductible.** 
+A percentage of costs (after deductible is met)  
 
-- Example: assume you have a 20% co-insurance rate (and you've met your deductible)
-- Hospital visit with a \$5,000 bill
-- Patient would pay \$1,000 (20% of \$5,000) to the hospital as co-insurance
-- Insurer pays the remaining 80%
-- Co-insurance is common for more complicated or less predictable services, like hospital stays or emergency department visits
+- Example: 20% coinsurance rate on a \$5,000 hospital bill  
+  - Patient pays \$1,000  
+  - Insurer pays \$4,000  
+- Common for larger, less predictable services (hospital stays, ER visits)  
 
----
 
 ## Cost-sharing over time
 
 ![](../figures/kff-cost-sharing.png){fig-align="center"}
 
 
+
 # Real-life example
 
----
-
-- Let's look at some real-life health insurance options and descriptions
-- Emory's [health insurance plans](https://hr.emory.edu/eu/benefits/faculty-staff/medical/index.html) for its employees
-
+- Let’s look at some real-life health insurance options and descriptions  
+- Emory’s [health insurance plans](https://hr.emory.edu/eu/benefits/faculty-staff/medical/index.html) for its employees  

@@ -8,7 +8,7 @@
 <link href="insurance-01_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="insurance-01_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="insurance-01_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.450">
+  <meta name="generator" content="quarto-1.5.57">
 
   <meta name="author" content="Ian McCarthy | Emory University">
   <title>Health Insurance: A New Language</title>
@@ -158,7 +158,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -341,9 +342,13 @@ Ian McCarthy | Emory University
 <section id="table-of-contents" class="title-slide slide level1 center">
 <h1>Table of contents</h1>
 <ol type="1">
-<li><p>Motivation</p></li>
-<li><p>Terminology</p></li>
-<li><p>Real life example</p></li>
+<li>Motivation<br>
+</li>
+<li>How insurers shape coverage<br>
+</li>
+<li>How patients pay for coverage<br>
+</li>
+<li>Real-life example</li>
 </ol>
 </section>
 
@@ -353,14 +358,15 @@ Ian McCarthy | Emory University
 
 </section>
 <section id="what-is-health-insurance" class="slide level2">
-<h2>What is health insurance</h2>
-<p>Why do people buy health insurance? What are they “insuring”?</p>
+<h2>What is health insurance?</h2>
+<p>Why do people buy health insurance? What are they <strong>insuring</strong>?</p>
 </section>
-<section class="slide level2">
-
+<section id="what-is-health-insurance-1" class="slide level2">
+<h2>What is health insurance?</h2>
 <p>Health insurance can still improve health by:</p>
 <ul>
-<li>improving affordability of care (by paying for some part of care when needed)</li>
+<li>improving affordability of care (by paying for some part of care when needed)<br>
+</li>
 <li>facilitating availability of care (providers receive lower payments for “cash” patients)</li>
 </ul>
 <div class="fragment">
@@ -372,105 +378,131 @@ Ian McCarthy | Emory University
 <ul>
 <li>Enrollees pay the insurer
 <ul>
-<li>Fixed amount per month (premium)</li>
-<li>Some amount for care provided (cost-sharing)</li>
+<li>Fixed amount per month (<strong>premium</strong>)<br>
+</li>
+<li>Some amount for care provided (<strong>cost-sharing</strong>)<br>
+</li>
 </ul></li>
 <li>Insurer pays provider
 <ul>
-<li>Negotiated prices</li>
+<li>Negotiated prices<br>
+</li>
 <li>Pays share of bill depending on cost-sharing terms</li>
 </ul></li>
 </ul>
 </section>
-<section class="slide level2">
-
+<section id="how-does-health-insurance-work-1" class="slide level2">
+<h2>How does health insurance work?</h2>
 <ul>
-<li>Modern health insurance is very complicated!</li>
+<li>Modern health insurance is very complicated!<br>
+</li>
 <li>Need to work through some basic terminology before we go much further</li>
 </ul>
 </section></section>
 <section>
-<section id="terminology" class="title-slide slide level1 center">
-<h1>Terminology</h1>
+<section id="how-insurers-shape-coverage" class="title-slide slide level1 center">
+<h1>How insurers shape coverage</h1>
 
 </section>
 <section id="managed-care" class="slide level2">
 <h2>Managed care</h2>
 <ul>
-<li>Health insurance product that encompasses some attempt to manage utilization of health care among its enrollees, often via assigning providers (physicians, hospitals, etc.) into tiers separated based on pricing</li>
-<li>Insurers “manage” care through the use of insurance “networks”</li>
+<li>Health insurance product that encompasses some attempt to manage utilization of care<br>
+</li>
+<li>Insurers “manage” care through the use of <strong>networks</strong> of providers</li>
 </ul>
 </section>
 <section id="insurance-networks" class="slide level2">
 <h2>Insurance networks</h2>
-<p>Set of providers for which the insurer has agreed to pay some amount of care received at those providers, conditional on other cost-sharing terms of the insurance contract</p>
+<p>Set of providers with whom the insurer has agreed to terms of payment</p>
 <ul>
-<li>Preferred Provider Organizations (PPOs): tiered network structure, where patients will be responsible for less of the total cost of care when going to a higher tiered provider</li>
-<li>Health Maintenance Organizations (HMOs): more discrete network structure, with some providers in-network and other providers out-of-network</li>
+<li><strong>PPOs</strong>: tiered network structure → patients pay less at higher-tier providers<br>
+</li>
+<li><strong>HMOs</strong>: discrete structure → some providers in-network, others entirely out-of-network</li>
 </ul>
+</section>
+<section id="benefit-design" class="slide level2">
+<h2>Benefit design</h2>
+<p>Insurers also decide:</p>
+<ul>
+<li><strong>What services are covered</strong>
+<ul>
+<li>hospital visits, prescription drugs, mental health services, etc.<br>
+</li>
+</ul></li>
+<li><strong>How patients share costs</strong>
+<ul>
+<li>deductible, co-payment, co-insurance</li>
+</ul></li>
+</ul>
+<p>This “benefit design” sets the rules for patient payments.</p>
+</section></section>
+<section>
+<section id="how-patients-pay-for-coverage" class="title-slide slide level1 center">
+<h1>How patients pay for coverage</h1>
+
 </section>
 <section id="premiums" class="slide level2">
 <h2>Premiums</h2>
-<p>What enrollees pay every month regardless of whether they use any health care</p>
-</section>
-<section class="slide level2">
+<p>Fixed monthly amount paid for coverage, regardless of whether care is used</p>
 
-
-<img data-src="../figures/kff-premiums.webp" class="r-stretch quarto-figure-center"></section>
+<img data-src="../figures/kff-premiums.webp" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="cost-sharing" class="slide level2">
 <h2>Cost-sharing</h2>
-<p>Generally refers to the amount of health care expenses that must be paid directly by the patient (as opposed to their insurance plan)</p>
+<p>Patient payments <strong>when care is used</strong></p>
 <ul>
-<li>Dictates how much a patient must pay out-of-pocket for any care received</li>
-<li>Encompasses a <strong>deductible</strong>, <strong>co-insurance</strong>, and <strong>co-payment</strong></li>
+<li>Deductible<br>
+</li>
+<li>Co-insurance<br>
+</li>
+<li>Co-payment</li>
 </ul>
 </section>
 <section id="deductible" class="slide level2">
 <h2>Deductible</h2>
-<p>The amount of money that a patient must pay out-of-pocket before the insurance company will pay <strong>anything</strong></p>
-</section>
-<section class="slide level2">
+<p>The amount the patient must pay out-of-pocket before insurance pays <strong>anything</strong></p>
 
-
-<img data-src="../figures/kff-deductibles.png" class="r-stretch quarto-figure-center"></section>
+<img data-src="../figures/kff-deductibles.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="copayment" class="slide level2">
 <h2>Copayment</h2>
-<p>A fixed dollar amount for which the patient is responsible <strong>after meeting their deductible.</strong></p>
+<p>A fixed dollar amount for a service (after deductible is met)</p>
 <ul>
-<li>More common for low-cost, predictable health care services like physician office visits</li>
-<li>Example: $20 co-pay for office visits, which means patients must pay $20 for the visit and the insurance company will pay the rest (after the deductible is met)</li>
+<li>Common for low-cost, predictable care (e.g., office visits, prescriptions)<br>
+</li>
+<li>Example: $20 co-pay for an office visit</li>
 </ul>
 </section>
 <section id="coinsurance" class="slide level2">
 <h2>Coinsurance</h2>
-<p>A percentage of costs for which the patient is responsible <strong>after meeting their deductible.</strong></p>
+<p>A percentage of costs (after deductible is met)</p>
 <ul>
-<li>Example: assume you have a 20% co-insurance rate (and you’ve met your deductible)</li>
-<li>Hospital visit with a $5,000 bill</li>
-<li>Patient would pay $1,000 (20% of $5,000) to the hospital as co-insurance</li>
-<li>Insurer pays the remaining 80%</li>
-<li>Co-insurance is common for more complicated or less predictable services, like hospital stays or emergency department visits</li>
+<li>Example: 20% coinsurance rate on a $5,000 hospital bill
+<ul>
+<li>Patient pays $1,000<br>
+</li>
+<li>Insurer pays $4,000<br>
+</li>
+</ul></li>
+<li>Common for larger, less predictable services (hospital stays, ER visits)</li>
 </ul>
 </section>
 <section id="cost-sharing-over-time" class="slide level2">
 <h2>Cost-sharing over time</h2>
 
-<img data-src="../figures/kff-cost-sharing.png" class="r-stretch quarto-figure-center"></section></section>
-<section>
+<img data-src="../figures/kff-cost-sharing.png" class="quarto-figure quarto-figure-center r-stretch"></section></section>
 <section id="real-life-example" class="title-slide slide level1 center">
 <h1>Real-life example</h1>
-
-</section>
-<section class="slide level2">
-
 <ul>
-<li>Let’s look at some real-life health insurance options and descriptions</li>
+<li>Let’s look at some real-life health insurance options and descriptions<br>
+</li>
 <li>Emory’s <a href="https://hr.emory.edu/eu/benefits/faculty-staff/medical/index.html">health insurance plans</a> for its employees</li>
 </ul>
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
-</section></section>
+</div>
+</section>
     </div>
   </div>
 
@@ -498,7 +530,6 @@ Ian McCarthy | Emory University
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': true,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -685,42 +716,80 @@ Ian McCarthy | Emory University
       });
     </script>
     
+
     <script>
+
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
       // slide changes (different for each slide format).
+
       (function () {
+
         // dispatch for htmlwidgets
+
         function fireSlideEnter() {
+
           const event = window.document.createEvent("Event");
+
           event.initEvent("slideenter", true, true);
+
           window.document.dispatchEvent(event);
+
         }
+
+    
 
         function fireSlideChanged(previousSlide, currentSlide) {
+
           fireSlideEnter();
 
+    
+
           // dispatch for shiny
+
           if (window.jQuery) {
+
             if (previousSlide) {
+
               window.jQuery(previousSlide).trigger("hidden");
+
             }
+
             if (currentSlide) {
+
               window.jQuery(currentSlide).trigger("shown");
+
             }
+
           }
+
         }
+
+    
 
         // hookup for slidy
+
         if (window.w3c_slidy) {
+
           window.w3c_slidy.add_observer(function (slide_num) {
+
             // slide_num starts at position 1
+
             fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
           });
+
         }
 
+    
+
       })();
+
     </script>
+
+    
 
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -754,18 +823,7 @@ Ian McCarthy | Emory University
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -797,11 +855,50 @@ Ian McCarthy | Emory University
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
-      function tippyHover(el, contentFn) {
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -811,8 +908,17 @@ Ian McCarthy | Emory University
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -826,7 +932,11 @@ Ian McCarthy | Emory University
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {
