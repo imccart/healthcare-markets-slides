@@ -430,9 +430,9 @@ Ian McCarthy | Emory University
 <li>hospital visits, prescription drugs, mental health services, etc.<br>
 </li>
 </ul></li>
-<li><strong>How patients share costs</strong>
+<li><strong>What patients pay</strong>
 <ul>
-<li>deductible, co-payment, co-insurance</li>
+<li>premium, deductible, co-payment, co-insurance</li>
 </ul></li>
 </ul>
 <p>This “benefit design” sets the rules for patient payments.</p>
@@ -490,6 +490,42 @@ Ian McCarthy | Emory University
 <h2>Cost-sharing over time</h2>
 
 <img data-src="../figures/kff-cost-sharing.png" class="quarto-figure quarto-figure-center r-stretch"></section></section>
+<section id="summary" class="title-slide slide level1 center">
+<h1>Summary</h1>
+<div class="columns">
+<div class="column">
+<p><strong>How insurers shape coverage</strong></p>
+<ul>
+<li><strong>Managed care</strong> (steerage via networks)
+<ul>
+<li><strong>PPO</strong>: tiered coverage; out-of-network covered but less generous</li>
+<li><strong>HMO</strong>: coverage limited to in-network providers</li>
+</ul></li>
+<li><strong>Benefit design</strong>
+<ul>
+<li><strong>Covered services</strong> (e.g., hospital, prescriptions, mental health)</li>
+<li><strong>Premiums and cost-sharing rules</strong> (deductible, co-payment, co-insurance)</li>
+</ul></li>
+</ul>
+</div><div class="column">
+<p><strong>How patients pay for coverage</strong></p>
+<ul>
+<li><strong>Premiums</strong>: fixed monthly payment for coverage</li>
+<li><strong>When care is used</strong>
+<ul>
+<li><strong>Deductible</strong>: amount paid before insurer pays anything</li>
+<li><strong>Co-payment</strong>: fixed $ per service</li>
+<li><strong>Co-insurance</strong>: % of allowed amount</li>
+</ul></li>
+<li><strong>Network choice matters</strong>
+<ul>
+<li><strong>In-network</strong>: negotiated <strong>allowed amounts</strong></li>
+<li><strong>Out-of-network</strong>: provider <strong>charges</strong> (often much higher)</li>
+</ul></li>
+</ul>
+</div></div>
+</section>
+
 <section id="real-life-example" class="title-slide slide level1 center">
 <h1>Real-life example</h1>
 <ul>
@@ -938,46 +974,3 @@ Ian McCarthy | Emory University
             return "";
           }
         });
-      }
-      const findCites = (el) => {
-        const parentEl = el.parentElement;
-        if (parentEl) {
-          const cites = parentEl.dataset.cites;
-          if (cites) {
-            return {
-              el,
-              cites: cites.split(' ')
-            };
-          } else {
-            return findCites(el.parentElement)
-          }
-        } else {
-          return undefined;
-        }
-      };
-      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-      for (var i=0; i<bibliorefs.length; i++) {
-        const ref = bibliorefs[i];
-        const citeInfo = findCites(ref);
-        if (citeInfo) {
-          tippyHover(citeInfo.el, function() {
-            var popup = window.document.createElement('div');
-            citeInfo.cites.forEach(function(cite) {
-              var citeDiv = window.document.createElement('div');
-              citeDiv.classList.add('hanging-indent');
-              citeDiv.classList.add('csl-entry');
-              var biblioDiv = window.document.getElementById('ref-' + cite);
-              if (biblioDiv) {
-                citeDiv.innerHTML = biblioDiv.innerHTML;
-              }
-              popup.appendChild(citeDiv);
-            });
-            return popup.innerHTML;
-          });
-        }
-      }
-    });
-    </script>
-    
-
-</body></html>

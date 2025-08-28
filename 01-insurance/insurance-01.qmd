@@ -90,8 +90,8 @@ Insurers also decide:
 
 - **What services are covered**  
   - hospital visits, prescription drugs, mental health services, etc.  
-- **How patients share costs**  
-  - deductible, co-payment, co-insurance  
+- **What patients pay**  
+  - premium, deductible, co-payment, co-insurance  
 
 This “benefit design” sets the rules for patient payments.  
 
@@ -145,6 +145,37 @@ A percentage of costs (after deductible is met)
 
 ![](../figures/kff-cost-sharing.png){fig-align="center"}
 
+
+
+# Summary
+
+::: columns
+::: column
+**How insurers shape coverage**
+
+- **Managed care** (steerage via networks)
+  - **PPO**: tiered coverage; out-of-network covered but less generous
+  - **HMO**: coverage limited to in-network providers
+- **Benefit design**
+  - **Covered services** (e.g., hospital, prescriptions, mental health)
+  - **Premiums and cost-sharing rules** (deductible, co-payment, co-insurance)
+
+:::
+
+::: column
+**How patients pay for coverage**
+
+- **Premiums**: fixed monthly payment for coverage
+- **When care is used**
+  - **Deductible**: amount paid before insurer pays anything
+  - **Co-payment**: fixed \$ per service
+  - **Co-insurance**: % of allowed amount
+- **Network choice matters**
+  - **In-network**: negotiated **allowed amounts**
+  - **Out-of-network**: provider **charges** (often much higher)
+
+:::
+:::
 
 
 # Real-life example
