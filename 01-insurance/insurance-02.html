@@ -8,7 +8,7 @@
 <link href="insurance-02_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="insurance-02_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="insurance-02_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.290">
+  <meta name="generator" content="quarto-1.5.57">
 
   <meta name="author" content="Ian McCarthy | Emory University">
   <title>Private Health Insurance</title>
@@ -30,7 +30,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="insurance-02_files/libs/revealjs/dist/theme/quarto.css" id="theme">
+  <link rel="stylesheet" href="insurance-02_files/libs/revealjs/dist/theme/quarto.css">
   <link href="insurance-02_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="insurance-02_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="insurance-02_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -158,7 +158,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -341,8 +342,10 @@ Ian McCarthy | Emory University
 <section id="table-of-contents" class="title-slide slide level1 center">
 <h1>Table of contents</h1>
 <ol type="1">
-<li>History of Health Insurance</li>
-<li>Employer Sponsored Insurance</li>
+<li>History of Health Insurance<br>
+</li>
+<li>Employer Sponsored Insurance<br>
+</li>
 <li>Non-group Coverage</li>
 </ol>
 </section>
@@ -355,73 +358,108 @@ Ian McCarthy | Emory University
 <section id="early-history-of-health-insurance" class="slide level2">
 <h2>Early history of health insurance</h2>
 <ul>
-<li>1929: “Hospital insurance” for schoolteachers to receive care from Baylor University Hospital in Dallas, TX</li>
-<li>Essentially pre-paid medical care for about 1,500 schoolteachers in the area</li>
-<li>Annual fee (or “premium”) of $6 per year, $104 in 2023, for up to 21 days of hospital care</li>
+<li>1929: “Hospital insurance” for schoolteachers to receive care from Baylor University Hospital in Dallas, TX<br>
+</li>
+<li>Essentially pre-paid medical care for about 1,500 schoolteachers in the area<br>
+</li>
+<li>Annual fee (or “premium”) of $6 per year, $104 in 2023, for up to 21 days of hospital care<br>
+</li>
 <li>Subscription model offered regular cash flow for hospitals</li>
 </ul>
 </section>
-<section class="slide level2">
-
+<section id="early-history-of-health-insurance-1" class="slide level2">
+<h2>Early history of health insurance</h2>
 <ul>
-<li>Popular revenue model for hospitals</li>
-<li>Network of hospitals grew to be Blue Cross, first established in Sacramento, CA in 1932</li>
+<li>Popular revenue model for hospitals<br>
+</li>
+<li>Network of hospitals grew to be Blue Cross, first established in Sacramento, CA in 1932<br>
+</li>
 <li>Structure introduces a few distortions:
 <ul>
-<li>Care concentrated in hospitals, even if other settings could provide care at lower cost</li>
-<li>No price competition</li>
+<li>Care concentrated in hospitals, even if other settings could provide care at lower cost<br>
+</li>
+<li>No price competition<br>
+</li>
 </ul></li>
 <li>Blue Cross plans grew in the 1930s
 <ul>
-<li>Operated as a not-for-profit</li>
+<li>Operated as a not-for-profit<br>
+</li>
 <li>Exempt from typical regulations on insurance markets</li>
 </ul></li>
 </ul>
 </section>
-<section class="slide level2">
-
+<section id="early-history-of-health-insurance-2" class="slide level2">
+<h2>Early history of health insurance</h2>
 <ul>
-<li>Expansion into prepaid physician services (Blue Shield), combined to be Blue Cross and Blue Shield</li>
-<li>By 1940, half of all health insurance plans were Blue Cross and Blue Shield plans</li>
-<li>Hospitals paid on a cost-plus basis (more on this later)</li>
+<li>Expansion into prepaid physician services (Blue Shield), combined to be Blue Cross and Blue Shield<br>
+</li>
+<li>By 1940, half of all health insurance plans were Blue Cross and Blue Shield plans<br>
+</li>
+<li>Hospitals paid on a cost-plus basis (more on this later)<br>
+</li>
 <li>Any competing insurance plans had to offer the same structure</li>
+</ul>
+</section>
+<section id="what-if" class="slide level2">
+<h2>What if?</h2>
+<p>Imagine Congress had created a <strong>national program</strong> in the 1930s instead of leaving insurance to Blue Cross/Blue Shield.</p>
+<ul>
+<li>How might U.S. health insurance look different today?<br>
+</li>
+<li>Would employers play the same role?</li>
 </ul>
 </section>
 <section id="modern-health-insurance" class="slide level2">
 <h2>Modern health insurance</h2>
-<ul>
-<li>Primarily through employers</li>
-<li>Only developed country to rely on employer-sponsored insurance</li>
-</ul>
-</section></section>
+<p>Where do you think most non-elderly Americans get their insurance today?</p>
+<ol type="1">
+<li>Employers<br>
+</li>
+<li>Direct purchase<br>
+</li>
+<li>Medicaid<br>
+</li>
+<li>Uninsured</li>
+</ol>
+</section>
+<section class="slide level2">
+
+
+<img data-src="insurance-02_files/figure-revealjs/fig-insurance-type-1.png" width="960" class="r-stretch quarto-figure-center"><p class="caption">
+Figure&nbsp;1: Source of Health Insurance (2012)
+</p></section></section>
 <section>
 <section id="employer-sponsored-insurance" class="title-slide slide level1 center">
 <h1>Employer-sponsored Insurance</h1>
 
 </section>
-<section class="slide level2">
-
-
-<img data-src="insurance-02_files/figure-revealjs/fig-insurance-type-1.png" class="quarto-discovered-preview-image r-stretch quarto-figure-center" width="960"><p class="caption">Figure&nbsp;1: Source of Health Insurance (2012)</p></section>
 <section id="why-dependent-on-esi" class="slide level2">
 <h2>Why dependent on ESI?</h2>
 <ul>
-<li>Stabalization act of 1942 (wages frozen but not benefits)</li>
+<li>Stabilization act of 1942 (wages frozen but not benefits)<br>
+</li>
 <li>Tax exemption for insurance expenditures (1954)</li>
 </ul>
 </section>
 <section id="how-does-esi-work" class="slide level2">
 <h2>How does ESI work?</h2>
 <ul>
-<li>Employer pays large share of premium</li>
-<li>Employee pays smaller share “pre-tax”</li>
-<li>Often only a few plan options</li>
+<li>Employer pays large share of premium<br>
+</li>
+<li>Employee pays smaller share “pre-tax”<br>
+</li>
+<li>Often only a few plan options<br>
+</li>
 <li>Many large employers are “self-funded”
 <ul>
-<li>Employer actually pays for the health care</li>
-<li>Insurer is an administrator and negotiator</li>
-<li>Avoids state mandated benefits and state premium taxes (ERISA laws)</li>
-<li>Maybe useful for employers across state lines</li>
+<li>Employer actually pays for the health care<br>
+</li>
+<li>Insurer is an administrator and negotiator<br>
+</li>
+<li>Avoids state mandated benefits and state premium taxes (ERISA laws)<br>
+</li>
+<li>Useful for employers across state lines</li>
 </ul></li>
 </ul>
 </section></section>
@@ -433,27 +471,46 @@ Ian McCarthy | Emory University
 <section id="what-is-non-group-coverage" class="slide level2">
 <h2>What is “non-group” coverage?</h2>
 <ul>
-<li>Health insurance plans purchased by individuals directly from insurers, rather than being obtained through employers or government programs</li>
-<li>Possibly more choices, depending on where you live</li>
-<li>Premiums vary based on factors such as age, location, and (historically) pre-existing conditions</li>
+<li>Health insurance plans purchased by individuals directly from insurers, rather than being obtained through employers or government programs<br>
+</li>
+<li>Possibly more choices, depending on where you live<br>
+</li>
+<li>Premiums vary based on factors such as age, location, and (historically) pre-existing conditions<br>
+</li>
 <li>Significant changes with the implementation of the Affordable Care Act (ACA) in the United States, which introduced marketplaces where individuals can compare and purchase health insurance plans, along with subsidies to help lower-income individuals afford coverage</li>
 </ul>
 </section>
 <section id="big-changes-in-non-group-options-from-the-aca" class="slide level2">
 <h2>Big changes in non-group options from the ACA</h2>
 <ul>
-<li><a href="https://www.healthcare.gov/">Health insurance marketplaces</a></li>
-<li>Essential health benefits</li>
-<li>Pre-existing condition protections</li>
-<li>Subsidies and financial assistance</li>
+<li><a href="https://www.healthcare.gov/">Health insurance marketplaces</a><br>
+</li>
+<li>Essential health benefits<br>
+</li>
+<li>Pre-existing condition protections<br>
+</li>
+<li>Subsidies and financial assistance<br>
+</li>
 <li>Coverage requirements and individual mandate
 <ul>
-<li>Mandate challenged in Supreme Court and upheld at first</li>
+<li>Mandate challenged in Supreme Court and upheld at first<br>
+</li>
 <li>Effectively removed in 2019 when penalty was set to $0</li>
 </ul></li>
 </ul>
+</section>
+<section id="imagine-yourself" class="slide level2">
+<h2>Imagine yourself</h2>
+<p>You are 28, self-employed, and living in Georgia</p>
+<ul>
+<li>What insurance options do you have before the ACA?<br>
+</li>
+<li>What changed in 2014?</li>
+</ul>
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
+</div>
 </div>
 </section></section>
     </div>
@@ -483,7 +540,6 @@ Ian McCarthy | Emory University
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': true,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -670,42 +726,80 @@ Ian McCarthy | Emory University
       });
     </script>
     
+
     <script>
+
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
       // slide changes (different for each slide format).
+
       (function () {
+
         // dispatch for htmlwidgets
+
         function fireSlideEnter() {
+
           const event = window.document.createEvent("Event");
+
           event.initEvent("slideenter", true, true);
+
           window.document.dispatchEvent(event);
+
         }
+
+    
 
         function fireSlideChanged(previousSlide, currentSlide) {
+
           fireSlideEnter();
 
+    
+
           // dispatch for shiny
+
           if (window.jQuery) {
+
             if (previousSlide) {
+
               window.jQuery(previousSlide).trigger("hidden");
+
             }
+
             if (currentSlide) {
+
               window.jQuery(currentSlide).trigger("shown");
+
             }
+
           }
+
         }
+
+    
 
         // hookup for slidy
+
         if (window.w3c_slidy) {
+
           window.w3c_slidy.add_observer(function (slide_num) {
+
             // slide_num starts at position 1
+
             fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
           });
+
         }
 
+    
+
       })();
+
     </script>
+
+    
 
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -739,18 +833,7 @@ Ian McCarthy | Emory University
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -782,11 +865,50 @@ Ian McCarthy | Emory University
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
-      function tippyHover(el, contentFn) {
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -796,8 +918,17 @@ Ian McCarthy | Emory University
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -811,7 +942,11 @@ Ian McCarthy | Emory University
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {
@@ -820,39 +955,4 @@ Ian McCarthy | Emory University
           const cites = parentEl.dataset.cites;
           if (cites) {
             return {
-              el,
-              cites: cites.split(' ')
-            };
-          } else {
-            return findCites(el.parentElement)
-          }
-        } else {
-          return undefined;
-        }
-      };
-      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-      for (var i=0; i<bibliorefs.length; i++) {
-        const ref = bibliorefs[i];
-        const citeInfo = findCites(ref);
-        if (citeInfo) {
-          tippyHover(citeInfo.el, function() {
-            var popup = window.document.createElement('div');
-            citeInfo.cites.forEach(function(cite) {
-              var citeDiv = window.document.createElement('div');
-              citeDiv.classList.add('hanging-indent');
-              citeDiv.classList.add('csl-entry');
-              var biblioDiv = window.document.getElementById('ref-' + cite);
-              if (biblioDiv) {
-                citeDiv.innerHTML = biblioDiv.innerHTML;
-              }
-              popup.appendChild(citeDiv);
-            });
-            return popup.innerHTML;
-          });
-        }
-      }
-    });
-    </script>
-    
-
-</body></html>
+            

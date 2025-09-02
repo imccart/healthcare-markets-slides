@@ -10,7 +10,6 @@ format:
     slide-number: true
     width: 1600
     height: 900    
-#    embed-resources: true
 from: markdown+emoji
 execute: 
   echo: true
@@ -24,168 +23,213 @@ pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 
 # Table of contents
 
-1. Medicare
-2. Medicaid
-3. Veterans Administration
+1. Medicare  
+2. Medicaid  
+3. Veterans Health Administration and TRICARE  
 
+
+# Framing
+
+- Public programs insure tens of millions of people in the United States  
+- Programs differ in who they cover, how they are financed, and how they pay providers  
+- We focus on Medicare, Medicaid, and the Veterans Health Administration, with a note on TRICARE  
 
 # Medicare
 
----
-
 ## Basics of Medicare
 
-- Created by the Social Security Act in 1965
-- Originally health insurance to those 65 years of age and older
-- Expanded to include certain disabilities (20% now below age 65)
+- Created by the Social Security Amendments of 1965  
+- Covers people age 65 and older and certain younger adults with disabilities  
+- A meaningful share of beneficiaries are under 65 due to disability eligibility  
 
----
+## The four parts of Medicare
 
-Medicare consists of four parts:
+- **Part A**: Hospital insurance  
+- **Part B**: Medical insurance for physician and outpatient care  
+- **Part C**: Medicare Advantage, private plans that deliver Parts A and B benefits  
+- **Part D**: Prescription drug coverage, offered by private plans
 
-  - Part A: Hospital Insurance
-  - Part B: "Medical" Insurance (physician visits and outpatient care)
-  - Part C: Private supplemental care (Medicare plus Choice, now Medicare Advantage)
-  - Part D: Prescription Drug Coverage
-
----
 
 ## Medicare Part A
 
-- Automatic enrollment for anyone 65 and older who worked over their lifetime
-- Financed with combination of payroll tax (current workers) and cost-sharing (deductibles, etc.)
-- Funds exist as part of "Federal Hospital Insurance Trust Fund"...can't finance through debt
+- Automatic for most people at 65 with sufficient work history  
+- Financed by payroll taxes and beneficiary cost sharing  
+- Funds flow through the Hospital Insurance Trust Fund, which cannot borrow  
+- Benefit design:
+  - Strong coverage for short inpatient stays  
+  - Much weaker protection for very long stays  
+  - Limited skilled nursing facility coverage and no long term custodial care
 
----
-
-Part A benefit structure:
-
-  - Very good for short inpatient stays
-  - Very bad for major problems with long stays
-  - Doesn't cover nursing home care beyond 30 days
-
----
 
 ## Medicare Part B
 
-- Voluntary, but almost everyone enrolls
-- Requires monthly premium ($144 in 2020)
-- Small deductible and 20% co-insurance
+- Voluntary but most beneficiaries enroll  
+- Monthly premium is required  
+- Small annual deductible and coinsurance that is typically 20 percent for many services
 
 
----
+## Medicare Part C: Medicare Advantage
 
-## Medicare Part C
+- Private insurers provide Medicare benefits under contract with the federal government  
+- Plans receive risk adjusted payments per enrollee  
+- Often include extra benefits and integrated Part D coverage  
+- Networks and utilization management are common, which can lower premiums but limit provider choice
 
-- Private insurance provision of Medicare benefits
-- Formally created under Balanced Budget Act in 1997 (existed informally before)
-- Heavily revised in Medicare Modernization Act in 2003
-- Medicare pays insurers a risk-adjusted amount to enroll a given beneficiary
-- Broader benefits than Part A and B, often with $0 additional premiums, but restrictive networks
 
----
+## Quick poll
+
+🤔 What share of Medicare beneficiaries do you think are enrolled in Medicare Advantage today?  
+
+1. About one quarter  
+2. About one third  
+3. About one half  
+4. More than two thirds  
+
+*(We’ll check the answer against the KFF data on the next slide.)*
+
+
+## Medicare Part C: Medicare Advantage
+
+![](../figures/kff-ma-enrollment.png){fig-align="center"}
+
 
 ## Medicare Part D
 
-- Created under the Medicare Modernization Act in 2003
-- Private insurance for prescription drugs
-- Insurers receive payments from Medicare to enroll a given beneificiary (much like Part C)
-- Many insurers offer a combined Part C+D plan
+- Prescription drug coverage offered by private plans  
+- Plans receive payments to enroll beneficiaries, with additional low income subsidies  
+- Many plans are offered as combined Medicare Advantage plus Part D options
 
----
 
-## Privatization of Medicare
+## Case study
 
-- Medicare Advantage (both Parts C and D) has been well-received and generally thought to be a success story for Medicare benefits
-- Accounts for nearly **half** of total Medicare enrollees
-- Some early difficulties with adverse selection and risk-adjustment
-- Still slightly sicker people staying in traditional Medicare
-- Could be a **big** part of any future "Medicare-for-all" type program
+Mary is 67 and newly eligible for Medicare. She has diabetes and uses several prescription drugs.  
 
----
+- Option 1: Traditional Medicare + Part D + Medigap  
+- Option 2: Medicare Advantage plan with prescription coverage  
+
+👉 Which do you think might cost less out of pocket for Mary?  
+👉 Which option might limit her choice of providers more?
+
+
+## Privatization and enrollment trends
+
+- Medicare Advantage enrollment has grown and now accounts for a large share of beneficiaries  
+- Risk adjustment reduced but did not fully remove selection concerns  
+- Traditional Medicare remains important for beneficiaries who prefer broad provider choice
+
 
 ## Medicare payments for inpatient services
 
-- Prospective payment system
-- Begin with two "base" rates:
-  - Operating base payment rates, \$5,797 in 2020
-  - Capital base payment rates, \$462 in 2020
-- Adjustments:
-  - Diagnosis Related Group (higher adjustments for more complicated things)
-  - Academic Medical Center
-  - Disproportionate Share
+- Prospective payment under Diagnosis Related Groups  
+- Payment begins with standardized base rates for operating and capital costs  
+- Case mix and hospital characteristics adjust the base payment  
+  - Examples: DRG weight, teaching status, disproportionate share adjustments
 
----
 
-More recently:
+## Recent payment directions
 
-- Introduction of quality incentives through...
-  - Value Based Purchasing (VBP)
-  - Hospital Readmission Reduction Program (HRRP)
-  - Quality Payment Program for physicians (choose between merit based payment system or advanced alternative payment models)
-- Introduction of capitated payments through...
-  - Bundled Payments
+- Quality incentives for hospitals  
+  - Value Based Purchasing  
+  - Hospital Readmission Reduction Program  
+- Physician payment reform  
+  - Quality Payment Program with a choice between a merit based pathway and advanced alternative payment models  
+- Experiments with population or episode based payments  
+  - Bundled payments  
   - Accountable Care Organizations
+
 
 # Medicaid
 
----
+## Background
 
-## Background on Medicaid
+- Created in 1965 as a joint federal and state program  
+- Covers low income adults and children, pregnant people, people with disabilities, and many older adults needing long term services and supports  
+- Program rules vary by state within federal guidelines  
+- A large share of births are covered by Medicaid or CHIP
 
-- Also created by the Social Security Act in 1965
-- Originally provided health insurance to people receiving "Aid to Families with Dependent Children", mainly extremely poor families
-- Expanded over time with different rules by state
-- Huge program: about 40% of births are covered by Medicaid/CHIP
 
----
+## Medicaid expansion under the ACA
 
-## ACA and Medicaid Expansion
+- The ACA offered states the option to expand coverage to adults under 65 with incomes up to 138 percent of the federal poverty level  
+- The Supreme Court made expansion optional for states  
+- Expansion increased coverage for adults without dependent children in many states
 
-- Big part of ACA was Medicaid expansion
-- Originally mandatory but made voluntary by Supreme Court
-- Expansion covers all adults (with or without children) below age 65 and with incomes below 138% of the federal poverty line ($35,535 for family of 4 in 2020)
-  
----
 
-## Medicaid Funding
+## Predict the map
 
-- Paid for by states and federal funding
-- State funding is matched by federal funds, and the match amount depends on the state's per capita income
-- Incentivizes services to be provided by Medicaid that historically may not be
+How many states do you think have adopted the ACA Medicaid expansion?  
 
----
+- Less than half?  
+- About two thirds?  
+- Nearly all?  
 
-## Medicaid Benefits
+*(Let’s see the actual map next.)*
 
-- Pretty generous coverage
-- Low to no copayments, deductibles, co-insurance
-- Usually covers dental, vision, hospitals, and physician services
-- Covers long term care (unlike Medicare), with about 40% of all long term care paid for by Medicaid
+## Medicaid Expansion
 
----
+![](../figures/kff-medicaid-expansion.png){fig-align="center"}
 
-## Medicaid Payments
 
-- Works similarly to Medicare with a base rate plus adjustments
-- Base rates vary by state Medicaid agencies
-- Adjustments (or supplemental payments) consist of:
-  - Disproportionate share adjustments 
-  - Other (non-DSH) adjustments
-  - Account for a little less than half of total Medicaid payments on average
+## Medicaid financing
 
----
+- States and the federal government share costs  
+- The federal match rate depends on state per capita income  
+- The match structure creates strong budget incentives for states
 
-## Privatization in Medicaid
 
-- Increasing reliance on Medicaid managed care (80% of Medicaid enrollees)
-- States outsource Medicaid benefits to private insurers, with oversight
+## Medicaid benefits
 
-# Veterans Administration
+- Broad coverage of hospital, physician, and prescription services  
+- Low to no cost sharing for many enrollees  
+- Coverage of long term services and supports is a key feature that distinguishes Medicaid from Medicare
 
----
 
-- "Integrated" healthcare provider and insurer
-- Comprehensive medical services without out-of-pocket payments or insurance claims
-- Operates its own healthcare facilities and employs healthcare providers directly, covering the costs of care provided to veterans
-- Funding for VA healthcare comes from the federal government's budget allocated to the VA, which covers staffing, facilities, equipment, medications, and other necessary resources for delivering healthcare services to veterans
+## Medicaid payments
+
+- Traditional fee schedules set by states pay providers directly  
+- States also use supplemental payments such as disproportionate share adjustments
+- Today: ~80% of enrollees are in **Medicaid Managed Care Organizations (MCOs)**  
+
+## Medicaid managed care
+
+![](../figures/kff-medicaid-managed-care.png){fig-align="center"}
+
+
+## Medicaid managed care
+
+- States pay private insurers a capitated amount per enrollee  
+- Insurers then build networks, negotiate rates, and manage utilization  
+- Reasons for shift:  
+  - Cost control  
+  - Better coordination of care  
+  - Access to broader provider networks  
+
+👉 Raises questions: does privatization improve outcomes, or just shift who manages the dollars?
+
+
+# Veterans Health Administration and TRICARE
+
+## Veterans Health Administration
+
+- Integrated insurer and provider that operates its own hospitals and clinics  
+- Clinicians are employed by the VA and care is funded through congressional appropriations  
+- Focus on services that address the needs of veterans, including mental health and rehabilitation  
+- Eligible veterans face modest or no cost sharing for many services
+
+
+## TRICARE
+
+- Department of Defense program for active duty service members, retirees, and their families  
+- Functions more like traditional insurance with private provider networks  
+- Exists alongside the VA, which operates its own delivery system focused on veterans
+- **Key distinction**: TRICARE primarily covers active duty personnel and dependents, while the VA primarily serves veterans after discharge, though some individuals may have access to both
+
+
+# Putting it together
+
+## Compare payment approaches
+
+- **Medicare**: administratively set prices, prospective payment for hospitals, fee schedules for clinicians  
+- **Medicaid**: state fee schedules or capitated managed care payments, with generally lower rates than Medicare or commercial insurance  
+- **VA**: budget funded and vertically integrated delivery system, with limited use of outside networks for certain services
+
