@@ -22,81 +22,138 @@ if (!require("pacman")) install.packages("pacman")
 pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 ```
 
-# Describing risk
+# Motivation
 
-We need three things to define risk in this class:
+- Health insurance is valuable because it reduces uncertainty.  
+- But **how much is it worth** to someone?  
+- Willingness to pay depends on:  
+  - The size and likelihood of potential losses  
+  - How people feel about risk (their preferences)  
 
-1. Probability
-2. Expected value
-3. Preferences (i.e., a utility function)
+::: {.fragment}
+Our goal: build the tools (probability, expected value, utility) that explain **why people pay more than expected costs for insurance**.
+:::
 
----
+
+# Today’s Roadmap
+
+1. **Describing Risk**
+   - Probability  
+   - Payoffs  
+   - Expected value  
+   - Preferences (utility)
+
+2. **Risk Preferences**
+   - Averse, neutral, loving  
+   - Concavity & expected utility (graphic)
+
+3. **Why This Matters**
+   - Intuition behind paying for insurance  
+   - Foreshadow: the risk premium & WTP (next time)
+
+
+# Describing Risk
+
+To understand risk in this class, we need four building blocks:
+
+1. **Probability** – how likely different outcomes are  
+2. **Payoffs** – the monetary consequences of those outcomes  
+3. **Expected value** – the probability-weighted average outcome  
+4. **Preferences** – how people evaluate outcomes, often with a utility function
+   
 
 ## 1. Probability
-Definition: The likelihood that a given outcome will occur.<br>
 
+Definition: The likelihood that a given outcome will occur  
 
-::: {.fragment}
-Important to note the timing here...probability applies to an uncertain event that may have several possible outcomes. For example, I may have a heart attack or I may not. [Risk Calculator](http://www.cvriskcalculator.com/).
-:::
-
----
-
-## 2. Expected value
-Definition: The probability weighted average of the payoffs (or costs) associated with all possible outcomes.<br>
-
+Examples:  
+- 10% chance of heart disease in 10 years → 100 of 1,000 people like me will get sick  
+- 5% chance of a car accident in a year → 50 of 1,000 drivers will file a claim  
 
 ::: {.fragment}
-
-For two potential outcomes, $x_{1}$ and $x_{2}$, with probabilities $p_{1}$ and $p_{2}$:<br>
-
-$E[x] = p_{1}x_{1} + p_{2}x_{2}$
-
+In this class: two outcomes only — **sick** (probability $p_s$) or **healthy** (probability $p_h = 1 - p_s$).
 :::
 
----
+## 2. Payoffs
+
+Definition: the monetary value of each possible outcome  
+
+Example:  
+- Start with \$1,000 in wealth  
+- If sick → pay \$500 for care → $w_s = 500$  
+- If healthy → pay nothing → $w_h = 1000$  
+
+
+## 3. Expected Value
+
+Definition: The probability-weighted average of possible payoffs  
+
+For two outcomes, $x_1$ and $x_2$, with probabilities $p_1$ and $p_2$:  
+
+$$E[x] = p_1 x_1 + p_2 x_2$$  
+
+::: {.fragment}
+Example: With 90% chance of $w_h = 1000$ and 10% chance of $w_s = 500$:  
+
+$$E[w] = 0.9 \times 1000 + 0.1 \times 500 = 950.$$
+:::
+
 
 ## Example
+
 What is my expected cost?
 
 - Two possible outcomes: heart attack or no heart attack
 - 10% chance of having a heart attack
-- Cost of <span>&#36;</span>100,000 if I have a heart attack (but I will survive and recover)<br>
-
-
----
+- Cost of \$100,000 if I have a heart attack (but I will survive and recover)
 
 ## Answer
 
-I will incur a cost of \$100,000 with 10% probability. So my expected cost is just $E[cost]=0.1*100,000 =$ `r format(0.1*100000,digits=5,big.mark=",")`.
+I will incur a cost of \$100,000 with 10\% probability. So my expected cost is just $E[cost]=0.1*100,000 =$ `r format(0.1*100000,digits=5,big.mark=",")`.
 
----
 
-## 3. Preferences
-Definition: Preferences take the form of a utility function, $u(x)$, which tells us how much we benefit get from some consumption bundle, $x$.<br>
+## 4. Preferences
 
-::: {.fragment}
+Definition: How individuals value different outcomes, often with a utility function $u(w)$  
 
-Expected utility combines expected value and utility...<br>
-$E[u(x)] = p_{1}u(x_{1}) + p_{2}u(x_{2})$
-
-:::
-
----
-
-## Risk preferences
-With probabilities, expected values, and utilities/preferences, we can now measure preferences toward risk.
+- Captures the **benefit** of wealth, not just the dollar amount  
+- Key idea: **diminishing marginal utility**  
+  - Each extra dollar matters less when you already have more  
 
 ::: {.fragment}
-- **Risk averse:** We prefer to avoid the risky situation. You would rather have the same (or slightly less) with certainty than a lottery over two risky outcomes.
-- **Risk neutral:** Indifferent between the risky situation or that of certainty.
-- **Risk loving:** Prefer the risky situation. 
+Expected utility combines probabilities and utilities:  
+
+$$E[u(w)] = p_h u(w_h) + p_s u(w_s)$$
 :::
 
----
+
+## In-class Problem: Expected values and expected utility
+
+An individual starts with a wealth of \$100,000. With probability 0.3, they will get sick and incur a cost of \$40,000.
+
+::: {.fragment}
+1. What is this person's expected cost of illness?
+2. Assume this individual has a utility function of the form, $u(w) = w^{0.20}$. What is this person's expected utility?
+3. Calculate this person's utility if they were to incur the expected cost of illness. Is this utility higher or lower than what you found in part (2)?
+:::
+
+
+# Risk preferences
+
+With probabilities, payoffs, expected values, and utilities/preferences, we can now measure preferences toward risk (i.e., how people feel about uncertain outcomes).
+
+- **Risk averse:** Prefer certainty to a risky gamble with the same expected value  
+- **Risk neutral:** Indifferent between the gamble and certainty  
+- **Risk loving:** Prefer the gamble to certainty  
+
+::: {.fragment}
+In economics, we usually assume people are **risk averse**.
+:::
+
 
 ## Risk aversion
-Most common assumption is that individuals are risk averse. Mathematically, this follows from diminishing marginal utility.
+
+Risk aversion follows from diminishing marginal utility.
 
 ::: {.fragment}
 $u'(x_{1}) > u'(x_{2})$ for $x_{1} < x_{2}$
@@ -107,9 +164,6 @@ What does this mean in words?
 :::
 
 ---
-
-## Risk aversion
-
 
 ```{tikz}
 #| echo: false
@@ -141,33 +195,20 @@ What does this mean in words?
 ```
 
 
----
-
-## In-class Problem: Expected values
-An individual starts with a wealth of \$100,000. With probability 0.3, they will get sick and incur a cost of \$40,000.
-
-::: {.fragment}
-1. What is this person's expected cost of illness?
-2. Assume this individual has a utility function of the form, $u(w) = w^{0.20}$. What is this person's expected utility?
-3. Calculate this person's utility if they were to incur the expected cost of illness. Is this utility higher or lower than what you found in part (2)?
-:::
 
 
----
+# Why this matters
 
-## Why purchase health insurance?
 Say your utility function is $u(w)=\sqrt{w}$ and that you're starting with $w=$ \$100. I propose a lottery in which I flip a coin...heads you win \$20 and tails you lose \$20.
 
 ::: {.fragment}
 
-1. What is the expected monetary value of this lottery? 
-
-2. What is your utility at this expected value? 
-
-3. What is the expected utility from this lottery?
+1. What is the **expected wealth** in this lottery? 
+2. What is your **utility at expected wealth**? 
+3. What is the **expected utility** from this lottery?
+4. Which is higher: utility at expected wealth, or expected utility?
 :::
 
----
 
 ## Answer
 ```{r include=FALSE}
@@ -175,5 +216,13 @@ ew <- .5*80+.5*120
 eu <- .5*sqrt(80) + .5*sqrt(120)
 
 ```
-Expected wealth is simply $\frac{1}{2} \times 80 + \frac{1}{2} \times 120 =$ `r format(ew,digits=3)`, which yields a utility of $u(w)=$ `r format(sqrt(ew),digits=3)`. But your expected utility is $\frac{1}{2} \times u(w_{heads}) + \frac{1}{2} \times u(w_{tails}) = \frac{1}{2} \times \sqrt{80} + \frac{1}{2} \times \sqrt{120} =$ `r format(eu, digits=3)`.
 
+- Expected wealth is simply $\frac{1}{2} \times 80 + \frac{1}{2} \times 120 =$ `r format(ew,digits=3)`, which yields a utility of $u(w)=$ `r format(sqrt(ew),digits=3)`
+  
+- But your expected utility is $\frac{1}{2} \times u(w_{heads}) + \frac{1}{2} \times u(w_{tails}) = \frac{1}{2} \times \sqrt{80} + \frac{1}{2} \times \sqrt{120} =$ `r format(eu, digits=3)`.
+
+::: {.fragment}
+- Because expected utility < utility at expected wealth, the lottery is less attractive than a sure outcome of the same expected value. 
+  
+- This gap is what we’ll later call the risk premium — and it’s the reason people are willing to pay extra for insurance.
+:::

@@ -120,10 +120,24 @@ Mary is 67 and newly eligible for Medicare. She has diabetes and uses several pr
 
 ## Medicare payments for inpatient services
 
-- Prospective payment under Diagnosis Related Groups  
-- Payment begins with standardized base rates for operating and capital costs  
-- Case mix and hospital characteristics adjust the base payment  
-  - Examples: DRG weight, teaching status, disproportionate share adjustments
+- **Prospective payment** under Diagnosis Related Groups (DRGs)  
+- Payment begins with standardized **base rates** for operating and capital costs  
+
+  - **Operating base rate (FY 2025):** \$6,624  
+  - **Capital base rate (FY 2025):** \$512  
+
+- Adjusted by:  
+  
+  - **DRG weight** (severity/case mix)  
+  - **Hospital characteristics** (teaching status, disproportionate share, rural location, wage index, etc.)  
+
+::: {.fragment}
+See CMS DRG definitions and weights:  
+
+- [CMS FY 2025 IPPS Final Rule Tables](https://www.cms.gov/medicare/acute-inpatient-pps/fy-2025-ipps-final-rule-home-page)  
+- [DRG Definitions Manual](https://www.cms.gov/icd10m/version38-fullcode-cms/fullcode_cms/P0001.html)  
+
+:::
 
 
 ## Recent payment directions

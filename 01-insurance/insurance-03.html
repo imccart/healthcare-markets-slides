@@ -481,15 +481,29 @@ Ian McCarthy | Emory University
 <section id="medicare-payments-for-inpatient-services" class="slide level2">
 <h2>Medicare payments for inpatient services</h2>
 <ul>
-<li>Prospective payment under Diagnosis Related Groups<br>
-</li>
-<li>Payment begins with standardized base rates for operating and capital costs<br>
-</li>
-<li>Case mix and hospital characteristics adjust the base payment
+<li><p><strong>Prospective payment</strong> under Diagnosis Related Groups (DRGs)<br>
+</p></li>
+<li><p>Payment begins with standardized <strong>base rates</strong> for operating and capital costs</p>
 <ul>
-<li>Examples: DRG weight, teaching status, disproportionate share adjustments</li>
+<li><strong>Operating base rate (FY 2025):</strong> $6,624<br>
+</li>
+<li><strong>Capital base rate (FY 2025):</strong> $512</li>
+</ul></li>
+<li><p>Adjusted by:</p>
+<ul>
+<li><strong>DRG weight</strong> (severity/case mix)<br>
+</li>
+<li><strong>Hospital characteristics</strong> (teaching status, disproportionate share, rural location, wage index, etc.)</li>
 </ul></li>
 </ul>
+<div class="fragment">
+<p>See CMS DRG definitions and weights:</p>
+<ul>
+<li><a href="https://www.cms.gov/medicare/acute-inpatient-pps/fy-2025-ipps-final-rule-home-page">CMS FY 2025 IPPS Final Rule Tables</a><br>
+</li>
+<li><a href="https://www.cms.gov/icd10m/version38-fullcode-cms/fullcode_cms/P0001.html">DRG Definitions Manual</a></li>
+</ul>
+</div>
 </section>
 <section id="recent-payment-directions" class="slide level2">
 <h2>Recent payment directions</h2>
@@ -1097,4 +1111,40 @@ Ian McCarthy | Emory University
         if (parentEl) {
           const cites = parentEl.dataset.cites;
           if (cites) {
-            ret
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>
