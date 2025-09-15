@@ -8,7 +8,7 @@
 <link href="insurance-05_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="insurance-05_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="insurance-05_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.290">
+  <meta name="generator" content="quarto-1.5.57">
 
   <meta name="author" content="Ian McCarthy | Emory University">
   <title>Risk Premium and Willingness to Pay</title>
@@ -30,7 +30,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="insurance-05_files/libs/revealjs/dist/theme/quarto.css" id="theme">
+  <link rel="stylesheet" href="insurance-05_files/libs/revealjs/dist/theme/quarto.css">
   <link href="insurance-05_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="insurance-05_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="insurance-05_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -158,7 +158,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -338,67 +339,136 @@ Ian McCarthy | Emory University
 </div>
 
 </section>
-<section>
-<section id="table-of-contents" class="title-slide slide level1 center">
-<h1>Table of contents</h1>
-<ol type="1">
-<li>Motivation</li>
-<li>Risk Premium and WTP</li>
-<li>Determinants of WTP</li>
-</ol>
-</section>
-<section id="an-example-from-real-life" class="slide level2">
-<h2>An Example from Real Life</h2>
+<section id="motivation" class="title-slide slide level1 center">
+<h1>Motivation</h1>
 <p>In 2018, Humana exited the ACA exchanges due to an “unbalanced risk pool based on the results of the 2017 open enrollment period”. <a href="https://money.cnn.com/2017/02/14/news/economy/humana-obamacare-insurer">CNN Money Article</a><br></p>
 <div class="fragment">
 <p>Fun fact: Humana and Aetna’s merger deal had just been blocked. <a href="https://www.npr.org/sections/thetwo-way/2017/02/14/515167491/aetna-and-humana-call-off-merger-after-court-decision">NPR Article</a></p>
 </div>
 </section>
-<section id="managing-risk-is-really-important" class="slide level2">
-<h2>Managing risk is really important</h2>
-<div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+
+<section id="motivation-1" class="title-slide slide level1 center">
+<h1>Motivation</h1>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../figures/meps-expenditure.png" class="quarto-discovered-preview-image"></p>
-<p></p><figcaption>spend</figcaption><p></p>
+<p><img data-src="../figures/meps-expenditure.png"></p>
+<figcaption>spend</figcaption>
 </figure>
 </div>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="../figures/meps-visits.png"></p>
-<p></p><figcaption>visits</figcaption><p></p>
+<figcaption>visits</figcaption>
 </figure>
 </div>
 </div>
 </div>
 </div>
+</section>
+
+<section id="todays-roadmap" class="title-slide slide level1 center">
+<h1>Today’s Roadmap</h1>
+<ol type="1">
+<li>Certainty Equivalent</li>
+<li>Risk Premium</li>
+<li>Willingness to Pay for Health Insurance</li>
+<li>Examples</li>
+<li>Determinants of Risk Premium and WTP</li>
+</ol>
+</section>
+
+<section>
+<section id="certainty-equivalent" class="title-slide slide level1 center">
+<h1>Certainty Equivalent</h1>
+<ul>
+<li>The guaranteed wealth level that yields the same utility as a risky prospect<br>
+</li>
+<li>Defined by <span class="math inline">\(U(CE) = E[U(w)]\)</span><br>
+</li>
+<li>For risk-averse individuals: <span class="math inline">\(CE &lt; E[w]\)</span></li>
+</ul>
+
+<img data-src="insurance-05_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
+<section id="certainty-equivalent-as-a-welfare-measure" class="slide level2">
+<h2>Certainty Equivalent as a Welfare Measure</h2>
+<ul>
+<li><p>Expected utility is not directly comparable across individuals or policies</p>
+<ul>
+<li>“Utility” has no dollar units<br>
+</li>
+<li>Hard to report welfare changes in $</li>
+</ul></li>
+<li><p>The <strong>certainty equivalent (CE)</strong> translates expected utility into <strong>money</strong></p></li>
+<li><p>How CE enters formal analyses (intuition):</p>
+<div class="fragment">
+<p><strong>utility in plan choice:</strong> <span class="math display">\[U_{ij} = V_{ij} - \alpha_i\,\text{prem}_j + \varepsilon_{ij}.\]</span> A $1 increase in any premium changes utility by <span class="math inline">\(-\alpha_i\)</span> utils <span class="math inline">\(\Rightarrow\)</span> <strong>1$ <span class="math inline">\(\equiv \alpha_i\)</span> utils</strong>.</p>
+</div>
+<div class="fragment">
+<p><strong>money-metric welfare change:</strong> for policy <span class="math inline">\(\mathbf p \to \mathbf p'\)</span> <span class="math display">\[
+\Delta CE_i \;=\; \frac{1}{\alpha_i}\Big[\Lambda_i(\mathbf p') - \Lambda_i(\mathbf p)\Big],
+\quad
+\Lambda_i(\mathbf p) \equiv \log\!\sum_{j}\exp\!\big(V_{ij}-\alpha_i\,\text{prem}_j\big).
+\]</span> Divide by <span class="math inline">\(\alpha_i\)</span> to convert “utils” to <strong>dollars</strong>.</p>
+</div></li>
+</ul>
+</section>
+<section id="certainty-equivalent-in-practice" class="slide level2">
+<h2>Certainty Equivalent in Practice</h2>
+<ul>
+<li><strong>Applications in counterfactuals</strong> (reported in $):
+<ul>
+<li>IO: consumer surplus under alternative market structures<br>
+</li>
+<li>Health: welfare from premium subsidies/benefit changes across plans<br>
+</li>
+<li>Labor: risky jobs, wage contracts, or policy reforms</li>
+</ul></li>
+</ul>
 </section></section>
 <section>
-<section id="risk-premium-and-wtp" class="title-slide slide level1 center">
-<h1>Risk Premium and WTP</h1>
+<section id="risk-premium" class="title-slide slide level1 center">
+<h1>Risk Premium</h1>
 
 </section>
-<section id="risk-premium" class="slide level2">
-<h2>Risk premium</h2>
-<p>The maximum amount of money that a risk-averse person is willing to pay to avoid the risky scenario. In other words, the amount of money that makes a person indifferent between the certain and uncertain situations.</p>
+<section id="risk-premium-definition" class="slide level2">
+<h2>Risk premium definition</h2>
+<p>The <strong>risk premium</strong> is the difference between expected wealth and the certainty equivalent (CE). It measures the <strong>cost of risk</strong> for a risk-averse individual: <span class="math display">\[
+\pi \;=\; \mathbb{E}[w]\;-\;CE.
+\]</span></p>
 <div class="fragment">
-<p>This is part of how we measure willingness-to-pay for health insurance.</p>
+<p>This concept is distinct from willingness to pay for insurance; we use it as one component of WTP.</p>
 </div>
 </section>
-<section class="slide level2">
+<section id="depiction-of-risk-premium" class="slide level2">
+<h2>Depiction of Risk Premium</h2>
 
+<img data-src="insurance-05_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section></section>
+<section>
+<section id="willingness-to-pay" class="title-slide slide level1 center">
+<h1>Willingness to Pay</h1>
 
-<img data-src="insurance-05_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch quarto-figure-center"><p class="caption">Depiction of risk premium</p></section>
-<section id="example" class="slide level2">
-<h2>Example</h2>
-<p>Consider the utility function, <span class="math inline">\(u(w)=\ln(w)\)</span>. An individual starts with a wealth of $100,000. With probability 0.25, this person will get sick and incur a cost of $20,000. Their wealth in the sick state is therefore $80,000. What is the maximum amount this person is willing to pay for health insurance?</p>
 </section>
-<section class="slide level2">
-
+<section id="wtp-definition" class="slide level2">
+<h2>WTP definition</h2>
+<p>The <strong>willingness to pay (WTP)</strong> for health insurance equals the <strong>actuarially fair premium</strong> (expected cost of illness) <strong>plus</strong> the <strong>risk premium</strong>: <span class="math display">\[
+\text{WTP} = \mathbb{E}[\text{cost}] + \pi.
+\]</span></p>
+<div class="fragment">
+<p><strong>Interpretation:</strong> people pay their expected costs <strong>plus</strong> an extra amount to remove uncertainty.</p>
+</div>
+</section></section>
+<section>
+<section id="example" class="title-slide slide level1 center">
+<h1>Example</h1>
+<p>Consider the utility function, <span class="math inline">\(u(w)=\ln(w)\)</span>. An individual starts with a wealth of $100,000. With probability 0.25, this person will get sick and incur a cost of $20,000.</p>
 <ol type="1">
 <li>Calculate expected wealth, <span class="math inline">\(E[w]\)</span>.</li>
 <li>Calculate expected utility, <span class="math inline">\(E[U(w)]\)</span>.</li>
@@ -410,11 +480,13 @@ Ian McCarthy | Emory University
 <section id="answer" class="slide level2">
 <h2>Answer</h2>
 <p>We’re asked to find some wealth level, <span class="math inline">\(y\)</span>, such that the person is indifferent between <span class="math inline">\(y\)</span> with certainty versus the risky wealth levels, <span class="math inline">\(w_{h}=\)</span> $100,000 with probability 0.75 or <span class="math inline">\(w_{s}=\)</span> $80,000 with probability 0.25.<br></p>
-<p>The person’s expected utility with uncertainty is: <span class="math inline">\(E[u]=0.75\times \ln (100000) + 0.25 \times \ln (80000) =\)</span> 11.4571396. We therefore need to find <span class="math inline">\(y\)</span> such that <span class="math inline">\(u(y)=\)</span> 11.4571396. Given our utility function, this is satisfied for <span class="math inline">\(y=\)</span> $94,574. Since the person starts with $100,000, they are willing to pay a maximum of $100,000 <span class="math inline">\(-\)</span> $94,574 <span class="math inline">\(=\)</span> $5,425.8 for health insurance.</p>
-</section>
-<section class="slide level2">
-
-<p>Finally, since the expected cost of care is <span>$</span>5,000, we can break this $5,425.8 into its actuarily fair premium of $5,000 plus the loading factor or risk premium of $425.84.</p>
+<ul>
+<li><p>Expected wealth is: <span class="math inline">\(E[u]=0.75\times 100,000 + 0.25 \times 80,000 =\)</span> 95,000</p></li>
+<li><p>The person’s expected utility is: <span class="math inline">\(E[u]=0.75\times \ln (100000) + 0.25 \times \ln (80000) =\)</span> 11.4571396.</p></li>
+<li><p>We need <span class="math inline">\(y\)</span> such that <span class="math inline">\(u(y)=\)</span> 11.4571396. Given our utility function, this is satisfied for <span class="math inline">\(y=\)</span> $94,574. This is the <strong>certainty equivalent</strong>.</p></li>
+<li><p>The risk premium is then the expected wealth less the CE, or $ 425.84.</p></li>
+<li><p>Since the person starts with $100,000, the full WTP for health insurance is $100,000 <span class="math inline">\(-\)</span> $94,574 <span class="math inline">\(=\)</span> $5,425.8, which is also the sum of the actuarily fair premium of $5,000 and the risk premium of $425.84.</p></li>
+</ul>
 </section>
 <section id="in-class-problem-demand-for-insurance" class="slide level2">
 <h2>In-class Problem: Demand for insurance</h2>
@@ -464,22 +536,19 @@ Ian McCarthy | Emory University
 <li><p>Manage where care is delivered (due to information problems in health care decisions)</p></li>
 </ol>
 </section></section>
-<section>
 <section id="main-takeaways" class="title-slide slide level1 center">
 <h1>Main takeaways</h1>
-
-</section>
-<section class="slide level2">
-
 <ol type="1">
-<li><p>Calculate risk premium and maximum willingness to pay for health insurance</p></li>
-<li><p>Explain and show graphically how changes in the utility function, probability of illness, and the cost of illness affect the risk premium</p></li>
-<li><p>Discuss how these factors (preferences, probability of illness, and cost of illness) help us in understanding the effects of real-world health insurance policy.</p></li>
+<li>Calculate risk premium and maximum willingness to pay for health insurance</li>
+<li>Explain and show graphically how changes in the utility function, probability of illness, and the cost of illness affect the risk premium</li>
+<li>Discuss how these factors (preferences, probability of illness, and cost of illness) help us in understanding the effects of real-world health insurance policy.</li>
 </ol>
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
-</section></section>
+</div>
+</section>
     </div>
   </div>
 
@@ -507,7 +576,6 @@ Ian McCarthy | Emory University
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': true,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -694,42 +762,80 @@ Ian McCarthy | Emory University
       });
     </script>
     
+
     <script>
+
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
       // slide changes (different for each slide format).
+
       (function () {
+
         // dispatch for htmlwidgets
+
         function fireSlideEnter() {
+
           const event = window.document.createEvent("Event");
+
           event.initEvent("slideenter", true, true);
+
           window.document.dispatchEvent(event);
+
         }
+
+    
 
         function fireSlideChanged(previousSlide, currentSlide) {
+
           fireSlideEnter();
 
+    
+
           // dispatch for shiny
+
           if (window.jQuery) {
+
             if (previousSlide) {
+
               window.jQuery(previousSlide).trigger("hidden");
+
             }
+
             if (currentSlide) {
+
               window.jQuery(currentSlide).trigger("shown");
+
             }
+
           }
+
         }
+
+    
 
         // hookup for slidy
+
         if (window.w3c_slidy) {
+
           window.w3c_slidy.add_observer(function (slide_num) {
+
             // slide_num starts at position 1
+
             fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
           });
+
         }
 
+    
+
       })();
+
     </script>
+
+    
 
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -763,18 +869,7 @@ Ian McCarthy | Emory University
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -806,11 +901,50 @@ Ian McCarthy | Emory University
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
-      function tippyHover(el, contentFn) {
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -820,8 +954,17 @@ Ian McCarthy | Emory University
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -835,48 +978,5 @@ Ian McCarthy | Emory University
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
-        });
-      }
-      const findCites = (el) => {
-        const parentEl = el.parentElement;
-        if (parentEl) {
-          const cites = parentEl.dataset.cites;
-          if (cites) {
-            return {
-              el,
-              cites: cites.split(' ')
-            };
-          } else {
-            return findCites(el.parentElement)
-          }
-        } else {
-          return undefined;
-        }
-      };
-      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-      for (var i=0; i<bibliorefs.length; i++) {
-        const ref = bibliorefs[i];
-        const citeInfo = findCites(ref);
-        if (citeInfo) {
-          tippyHover(citeInfo.el, function() {
-            var popup = window.document.createElement('div');
-            citeInfo.cites.forEach(function(cite) {
-              var citeDiv = window.document.createElement('div');
-              citeDiv.classList.add('hanging-indent');
-              citeDiv.classList.add('csl-entry');
-              var biblioDiv = window.document.getElementById('ref-' + cite);
-              if (biblioDiv) {
-                citeDiv.innerHTML = biblioDiv.innerHTML;
-              }
-              popup.appendChild(citeDiv);
-            });
-            return popup.innerHTML;
-          });
-        }
-      }
-    });
-    </script>
-    
-
-</body></html>
+          if (note) {
+            return note.innerHT

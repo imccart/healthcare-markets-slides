@@ -22,15 +22,8 @@ if (!require("pacman")) install.packages("pacman")
 pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 ```
 
-# Table of contents
 
-1. Motivation
-2. Risk Premium and WTP
-3. Determinants of WTP
-
----
-
-## An Example from Real Life
+# Motivation
 
 In 2018, Humana exited the ACA exchanges due to an "unbalanced risk pool based on the results of the 2017 open enrollment period". [CNN Money Article](https://money.cnn.com/2017/02/14/news/economy/humana-obamacare-insurer)<br>
 
@@ -39,9 +32,7 @@ Fun fact: Humana and Aetna's merger deal had just been blocked. [NPR Article](ht
 :::
 
 
----
-
-## Managing risk is really important
+# Motivation
 
 ::: {layout-ncol=2}
 
@@ -52,24 +43,126 @@ Fun fact: Humana and Aetna's merger deal had just been blocked. [NPR Article](ht
 :::
 
 
-# Risk Premium and WTP
 
----
+# Today's Roadmap
 
-## Risk premium
+1. Certainty Equivalent 
+2. Risk Premium
+3. Willingness to Pay for Health Insurance
+4. Examples
+5. Determinants of Risk Premium and WTP
 
-The maximum amount of money that a risk-averse person is willing to pay to avoid the risky scenario. In other words, the amount of money that makes a person indifferent between the certain and uncertain situations.
 
+# Certainty Equivalent
 
-::: {.fragment}
-This is part of how we measure willingness-to-pay for health insurance.
-:::
+- The guaranteed wealth level that yields the same utility as a risky prospect  
+- Defined by $U(CE) = E[U(w)]$  
+- For risk-averse individuals: $CE < E[w]$  
 
----
 
 ```{tikz}
 #| echo: false
-#| fig.cap: "Depiction of risk premium"
+
+\usetikzlibrary{calc}
+\begin{tikzpicture}[my plot/.style={
+                        thick,
+                        smooth,
+                        samples=100,
+                        domain=0.1:5},
+                    scale=0.75,
+                    my grid/.style={dashed,opacity=0.5, every node/.style={black,opacity=1}, transform shape},
+                    my axis/.style={latex-latex}]
+% utility curve
+\draw[my plot] (0,0) plot (\x,{ln(\x)});
+
+% axes and origin handle
+\coordinate (start plot) at (0.1,{ln(0.1)});
+\coordinate (end plot)   at (5,{ln(5)});
+\draw[my axis] ([shift={(-0.5cm,0.5cm)}]start plot |- end plot) |- node[coordinate](origin){} ([shift={(0.5cm,-0.5cm)}]start plot -| end plot);
+
+% risky wealth levels and probability
+\def\xone{0.5}
+\def\xtwo{4}
+\def\pp{0.55}
+
+% points on the utility curve
+\coordinate (Ux) at (\xone,{ln(\xone)});
+\coordinate (Uy) at (\xtwo,{ln(\xtwo)});
+
+% expected utility and certainty equivalent (compute analytically)
+\pgfmathsetmacro{\EU}{\pp*ln(\xone) + (1-\pp)*ln(\xtwo)}
+\pgfmathsetmacro{\CE}{exp(\EU)}
+\coordinate (CEpt) at (\CE,{\EU});
+
+% draw guides for x1 and x2
+\draw[my grid] (Ux) |- node[below]{$x_{1}$} (origin) |- node[left]{$u(x_{1})$} cycle;
+\draw[my grid] (Uy) |- node[below]{$x_{2}$} (origin) |- node[left]{$u(x_{2})$} cycle;
+
+% chord between (x1,u(x1)) and (x2,u(x2)) to visualize E[u(x)]
+\draw (Ux) -- (Uy);
+
+% CE: project EU level back to x-axis and label
+\draw[my grid] (CEpt) |- node[below]{CE} (origin) |- node[left,font=\scriptsize]{$E[u(x)]$} cycle;
+\fill (CEpt) circle (2pt);
+
+\end{tikzpicture}
+```
+
+
+## Certainty Equivalent as a Welfare Measure
+
+- Expected utility is not directly comparable across individuals or policies  
+  - “Utility” has no dollar units  
+  - Hard to report welfare changes in \$  
+
+- The **certainty equivalent (CE)** translates expected utility into **money**  
+
+- How CE enters formal analyses (intuition):
+
+  ::: {.fragment}
+  **utility in plan choice:**
+  $$U_{ij} = V_{ij} - \alpha_i\,\text{prem}_j + \varepsilon_{ij}.$$
+  A \$1 increase in any premium changes utility by $-\alpha_i$ utils $\Rightarrow$ **1\$ $\equiv \alpha_i$ utils**.
+  :::
+
+  ::: {.fragment}
+  **money-metric welfare change:** for policy $\mathbf p \to \mathbf p'$
+  $$
+  \Delta CE_i \;=\; \frac{1}{\alpha_i}\Big[\Lambda_i(\mathbf p') - \Lambda_i(\mathbf p)\Big],
+  \quad
+  \Lambda_i(\mathbf p) \equiv \log\!\sum_{j}\exp\!\big(V_{ij}-\alpha_i\,\text{prem}_j\big).
+  $$
+  Divide by $\alpha_i$ to convert “utils” to **dollars**.
+  :::
+
+## Certainty Equivalent in Practice
+
+- **Applications in counterfactuals** (reported in \$):
+  - IO: consumer surplus under alternative market structures  
+  - Health: welfare from premium subsidies/benefit changes across plans  
+  - Labor: risky jobs, wage contracts, or policy reforms
+
+
+# Risk Premium
+
+## Risk premium definition
+
+The **risk premium** is the difference between expected wealth and the certainty equivalent (CE). It measures the **cost of risk** for a risk-averse individual:
+$$
+\pi \;=\; \mathbb{E}[w]\;-\;CE.
+$$
+
+::: {.fragment}
+This concept is distinct from willingness to pay for insurance; we use it as one component of WTP.
+:::
+
+
+---
+
+## Depiction of Risk Premium
+
+```{tikz}
+#| echo: false
 
 \usetikzlibrary{calc}
 \begin{tikzpicture}[my plot/.style={
@@ -101,12 +194,23 @@ This is part of how we measure willingness-to-pay for health insurance.
 ```
 
 
----
+# Willingness to Pay
 
-## Example
-Consider the utility function, $u(w)=\ln(w)$. An individual starts with a wealth of \$100,000. With probability 0.25, this person will get sick and incur a cost of \$20,000. Their wealth in the sick state is therefore \$80,000. What is the maximum amount this person is willing to pay for health insurance?
+## WTP definition
 
----
+The **willingness to pay (WTP)** for health insurance equals the **actuarially fair premium** (expected cost of illness) **plus** the **risk premium**:
+$$
+\text{WTP} = \mathbb{E}[\text{cost}] + \pi.
+$$
+
+::: {.fragment}
+**Interpretation:** people pay their expected costs **plus** an extra amount to remove uncertainty. 
+:::
+
+
+# Example
+
+Consider the utility function, $u(w)=\ln(w)$. An individual starts with a wealth of \$100,000. With probability 0.25, this person will get sick and incur a cost of \$20,000. 
 
 1. Calculate expected wealth, $E[w]$.
 2. Calculate expected utility, $E[U(w)]$.
@@ -115,8 +219,6 @@ Consider the utility function, $u(w)=\ln(w)$. An individual starts with a wealth
 5. Calculate maximum willingness to pay by adding the risk premium and the expected cost.
 
 
----
-
 ## Answer
 ```{r}
 #| echo: false
@@ -124,17 +226,21 @@ Consider the utility function, $u(w)=\ln(w)$. An individual starts with a wealth
 ecost <- .25*20000
 eu <- .75*log(100000) + .25*log(80000)
 inv.u <- exp(eu)
+ewealth <- .75*100000 + .25*80000
 wtp <- 100000-inv.u
 ```
 We're asked to find some wealth level, $y$, such that the person is indifferent between $y$ with certainty versus the risky wealth levels, $w_{h}=$ \$100,000 with probability 0.75 or $w_{s}=$ \$80,000 with probability 0.25.<br>
 
-The person's expected utility with uncertainty is: $E[u]=0.75\times \ln (100000) + 0.25 \times \ln (80000) =$ `r eu`. We therefore need to find $y$ such that $u(y)=$ `r eu`. Given our utility function, this is satisfied for $y=$ \$`r format(inv.u,digits=5,big.mark=",")`. Since the person starts with \$100,000, they are willing to pay a maximum of \$100,000 $-$ \$`r format(inv.u,digits=5,big.mark=",")` $=$ \$`r format(wtp,digits=5,big.mark=",")` for health insurance.
+- Expected wealth is: $E[u]=0.75\times 100,000 + 0.25 \times 80,000 =$ `r format(ewealth, digits=5, big.mark=",")`
 
----
+- The person's expected utility is: $E[u]=0.75\times \ln (100000) + 0.25 \times \ln (80000) =$ `r eu`. 
+  
+- We need $y$ such that $u(y)=$ `r eu`. Given our utility function, this is satisfied for $y=$ \$`r format(inv.u,digits=5,big.mark=",")`. This is the **certainty equivalent**.
 
-Finally, since the expected cost of care is <span>&#36;</span>`r format(ecost,digits=5,big.mark=",")`, we can break this \$`r format(wtp,digits=5,big.mark=",")` into its actuarily fair premium of \$`r format(ecost,digits=5,big.mark=",")` plus the loading factor or risk premium of \$`r format(wtp-ecost,digits=5,big.mark=",")`.
+- The risk premium is then the expected wealth less the CE, or \$ `r format(ewealth-inv.u, digits=5, big.mark=",")`.
 
----
+- Since the person starts with \$100,000, the full WTP for health insurance is \$100,000 $-$ \$`r format(inv.u,digits=5,big.mark=",")` $=$ \$`r format(wtp,digits=5,big.mark=",")`, which is also the sum of the actuarily fair premium of \$`r format(ecost,digits=5,big.mark=",")` and the risk premium of \$`r format(wtp-ecost,digits=5,big.mark=",")`.
+
 
 ## In-class Problem: Demand for insurance
 Assume that utility takes the log form, $u(x)=ln(x)$. If someone is healthy, they maintain their current wealth of \$100, and if they become ill, they must incur a cost of \$50. Answer the following questions based on this setup.
@@ -144,9 +250,10 @@ Assume that utility takes the log form, $u(x)=ln(x)$. If someone is healthy, the
 3. Repeat part (1) using a probability of illness of 0.5.
 4. Explain how these values differ and why. What might this say about the profitability of insurance in a market with many sick people?
 
+
+
 # Determinants of Risk Premium and WTP
 
----
 
 ## What affects the risk premium?
 
@@ -161,7 +268,6 @@ Based on the graph, what do you think are some things that might affect the risk
 
 # Other issues
 
----
 
 ## High risk pools
 
@@ -172,7 +278,6 @@ Based on the graph, what do you think are some things that might affect the risk
 Let's look at this in practice, [KFF High-risk Pools](https://www.kff.org/health-reform/issue-brief/high-risk-pools-for-uninsurable-individuals/)
 :::
 
----
 
 ## Other reasons to buy health insurance
 
@@ -183,11 +288,7 @@ Let's look at this in practice, [KFF High-risk Pools](https://www.kff.org/health
 
 # Main takeaways
 
----
-
 1. Calculate risk premium and maximum willingness to pay for health insurance
-
 2. Explain and show graphically how changes in the utility function, probability of illness, and the cost of illness affect the risk premium
-
 3. Discuss how these factors (preferences, probability of illness, and cost of illness) help us in understanding the effects of real-world health insurance policy.
 
