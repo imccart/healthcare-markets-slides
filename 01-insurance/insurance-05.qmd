@@ -117,6 +117,8 @@ Fun fact: Humana and Aetna's merger deal had just been blocked. [NPR Article](ht
 
 - The **certainty equivalent (CE)** translates expected utility into **money**  
 
+## Certainty Equivalent as a Welfare Measure
+
 - How CE enters formal analyses (intuition):
 
   ::: {.fragment}
