@@ -8,7 +8,7 @@
 <link href="insurance-06_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="insurance-06_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="insurance-06_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.450">
+  <meta name="generator" content="quarto-1.5.57">
 
   <meta name="author" content="Ian McCarthy | Emory University">
   <title>Adverse Selection and Pricing</title>
@@ -158,7 +158,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -338,84 +339,107 @@ Ian McCarthy | Emory University
 </div>
 
 </section>
-<section>
-<section id="adverse-selection" class="title-slide slide level1 center">
-<h1>Adverse selection</h1>
+<section id="motivation" class="title-slide slide level1 center">
+<h1>Motivation</h1>
 <p>In practice, people know more about their health than insurers. This is a form of <strong>asymmetric information</strong>.</p>
 <div class="fragment">
 <p>Here’s a good example, <a href="https://www.healthaffairs.org/doi/full/10.1377/hlthaff.2019.01155">Costs during special enrollment periods</a>.</p>
 </div>
 </section>
-<section class="slide level2">
 
+<section id="motivation-1" class="title-slide slide level1 center">
+<h1>Motivation</h1>
+<ul>
+<li>This creates <strong>adverse selection</strong>: higher-risk individuals are more likely to buy/keep insurance than lower-risk individuals.<br>
+</li>
+<li>Consequences: risk pool becomes sicker on average → higher costs and potential market instability.<br>
+</li>
+<li>Intuition: enrollment decisions reflect private expectations about future costs (e.g., sign-ups during special enrollment periods often follow new health needs).</li>
+</ul>
+</section>
 
-<img data-src="insurance-06_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch quarto-figure-center"><p class="caption">Textbook depiction of adverse selection</p></section>
+<section id="todays-roadmap" class="title-slide slide level1 center">
+<h1>Today’s Roadmap</h1>
+<ol type="1">
+<li>Adverse Selection</li>
+<li>Partial vs Full Unraveling</li>
+<li>Adverse Selection in Practice</li>
+</ol>
+</section>
+
+<section>
+<section id="adverse-selection" class="title-slide slide level1 center">
+<h1>Adverse Selection</h1>
+
+<img data-src="insurance-06_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
 <section id="description-of-graph" class="slide level2">
 <h2>Description of graph</h2>
 <ul>
-<li>Demand (willingness to pay) for health insurance</li>
+<li>Demand (willingness to pay) for health insurance (downward sloping)</li>
 <li>Average cost (AC): average healthcare costs incurred by all enrollees</li>
 <li>Marginal cost (MC): additional healthcare costs incurred by one more enrollee</li>
 <li>Downward sloping because healthier individuals (lower cost) are willing to pay less for health insurance</li>
 </ul>
-<div class="fragment">
+</section>
+<section id="description-of-graph-1" class="slide level2">
+<h2>Description of graph</h2>
 <ul>
 <li><span class="math inline">\(D&gt;MC\)</span> because willingness to pay is expected costs plus risk premium</li>
-<li>Relationship between demand and AC reflects problems due to adverse selection</li>
+<li>As price falls, additional—typically healthier—individuals enroll (move downward along demand).<br>
+</li>
+<li>AC declines as healthier entrants join.</li>
+<li>MC tracks the cost of the next (healthiest) entrant and lies below AC.</li>
 </ul>
-</div>
 </section>
-<section id="assumed-equilibrium" class="slide level2">
-<h2>Assumed equilibrium</h2>
+<section id="competitive-equilibrium-with-community-rating" class="slide level2">
+<h2>Competitive Equilibrium with Community Rating</h2>
 <ul>
-<li>Simplifying assumption that insurers earn 0 profit (at least approximately)</li>
-<li>Equilibrium point where <span class="math inline">\(D=AC\)</span></li>
-<li>Clearly not true, but it helps us focus on adverse selection and avoid everything else</li>
+<li>With sufficient competition and a single premium for all (community rating), equilibrium occurs where <strong>Demand = AC</strong>.<br>
+</li>
+<li>At this point the premium exactly covers expected costs → <strong>zero-profit</strong> condition.<br>
+</li>
+<li>Use this stylized benchmark to isolate the role of adverse selection (abstracting from imperfect competition, risk adjustment, etc.).</li>
 </ul>
+</section></section>
+<section>
+<section id="types-of-equilibria" class="title-slide slide level1 center">
+<h1>Types of Equilibria</h1>
+<ol type="1">
+<li>Full Insurance</li>
+<li>Under-insurance (Partial Unraveling)</li>
+<li>Full Unraveling</li>
+</ol>
 </section>
 <section id="full-insurance" class="slide level2">
 <h2>1. Full insurance</h2>
 
-<img data-src="insurance-06_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch quarto-figure-center"><p class="caption">Demand always above AC</p></section>
-<section id="under-insurance-partial-unravelling" class="slide level2">
-<h2>2. Under-insurance (partial unravelling)</h2>
+<img data-src="insurance-06_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
+<section id="under-insurance-partial-unraveling" class="slide level2">
+<h2>2. Under-insurance (partial unraveling)</h2>
 
-<img data-src="insurance-06_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch quarto-figure-center"><p class="caption">Demand intersects with AC somewhere</p></section>
-<section id="full-unravelling" class="slide level2">
-<h2>3. Full unravelling</h2>
+<img data-src="insurance-06_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
+<section id="full-unraveling" class="slide level2">
+<h2>3. Full unraveling</h2>
 
-<img data-src="insurance-06_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch quarto-figure-center"><p class="caption">Demand always below AC</p></section>
-<section class="slide level2">
-
-<p>For any amount of unravelling, we need at least two features in the market:</p>
+<img data-src="insurance-06_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
+<section id="understanding-unraveling" class="slide level2">
+<h2>Understanding Unraveling</h2>
+<p>For any amount of unraveling, we need at least two features in the market:</p>
 <ol type="1">
 <li>Individuals select plans based on health needs (which is private information)</li>
 <li>Common price to all enrollees of a given plan (community rating)</li>
 </ol>
 </section>
-<section class="slide level2">
-
-<p>To think about unravelling, we need to think of this graph in stages or periods.</p>
+<section id="understanding-unraveling-1" class="slide level2">
+<h2>Understanding Unraveling</h2>
+<p>Think in periods: if initially <span class="math inline">\(AC &gt; p\)</span>, insurers incur losses and raise <span class="math inline">\(p\)</span>.</p>
 <ul>
-<li>In the initial period, insurers set prices, unsure about who will enroll because healthcare needs are private information</li>
-<li>Upon setting premiums, insurers will know who enrolled and they will know the costs they incurred by the end of the year</li>
-<li>Insurers can then update their premiums if needed (we will again assume zero profits to keep things simple)</li>
+<li>Higher <span class="math inline">\(p\)</span> moves the market up the demand curve; healthier enrollees drop coverage.<br>
+</li>
+<li>The pool becomes sicker → <strong>AC rises</strong>, prompting further premium increases.<br>
+</li>
+<li>Process converges to a smaller, high-cost pool (<strong>partial unraveling</strong>) or collapses altogether (<strong>full unraveling</strong>).</li>
 </ul>
-</section>
-<section id="conceptual-example" class="slide level2">
-<h2>Conceptual Example</h2>
-<ul>
-<li>Assume the demand curve is below AC at least beyond some point (not necessarily always below AC)</li>
-<li>In the initial period, assume an insurer sets the premium at a point such that <span class="math inline">\(AC&gt;D\)</span></li>
-<li>In the subsequent period, knowing that costs were too high relative to premiums, the insurer increases their premium</li>
-<li>Increase in price means a movement up the demand curve, but who leaves the market?</li>
-</ul>
-<div class="fragment">
-<ul>
-<li>the relatively healthy or low cost individuals!</li>
-<li>so AC is now higher, and the insurer will need to continue raising premiums until they reach equilibrium</li>
-</ul>
-</div>
 </section>
 <section id="numerical-example" class="slide level2">
 <h2>Numerical Example</h2>
@@ -427,7 +451,13 @@ Ian McCarthy | Emory University
 </section>
 <section id="answer" class="slide level2">
 <h2>Answer</h2>
-<p>To solve this, we need to first calculate the marginal cost curve, <span class="math inline">\(mc=100-4q\)</span>, and the average cost curve, <span class="math inline">\(ac=100-2q\)</span>. At a price of <span class="math inline">\(p=40\)</span>, we know that quantity demanded will be <span class="math inline">\(q=25\)</span>. At that point, the average cost is then $50. Since <span class="math inline">\(AC&gt;p\)</span>, the firm is losing money. If they set prices to break-even, then next period’s price would be set to their observed AC, <span class="math inline">\(p_{2}=\)</span> $50. We can find the equilibrium price as the point where the AC and D curves intersect, which occurs at <span class="math inline">\(q\)</span> of 20 and price of $60.</p>
+<ul>
+<li>To solve this, we need to first calculate the marginal cost curve, <span class="math inline">\(mc=100-4q\)</span>, and the average cost curve, <span class="math inline">\(ac=100-2q\)</span>.</li>
+<li>At a price of <span class="math inline">\(p=40\)</span>, we know that quantity demanded will be <span class="math inline">\(q=25\)</span>. At that point, the average cost is then $50</li>
+<li>Since <span class="math inline">\(AC&gt;p\)</span>, the firm is losing money.</li>
+<li>If they set prices to break-even, then next period’s price would be set to their observed AC, <span class="math inline">\(p_{2}=\)</span> $50.</li>
+<li>We can find the equilibrium price as the point where the AC and D curves intersect, which occurs at <span class="math inline">\(q\)</span> of 20 and price of $60.</li>
+</ul>
 </section>
 <section id="in-class-problem-adverse-selection" class="slide level2">
 <h2>In-class Problem: Adverse selection</h2>
@@ -438,6 +468,14 @@ Ian McCarthy | Emory University
 <li>What is the equilibrium price in this market?</li>
 <li>What if there is a $10 penalty imposed for those that do not purchase health insurance?</li>
 </ol>
+</section></section>
+<section>
+<section id="adverse-selection-in-practice" class="title-slide slide level1 center">
+<h1>Adverse Selection in Practice</h1>
+<ul>
+<li>How does adverse selection in real-life environments?</li>
+<li>How might we help curb its effects?</li>
+</ul>
 </section>
 <section id="death-spiral" class="slide level2">
 <h2>Death spiral!</h2>
@@ -467,7 +505,7 @@ Ian McCarthy | Emory University
 <ol type="1">
 <li>Subsidize consumers</li>
 <li>Subsidize insurers</li>
-<li>Mandate purchases<br></li>
+<li>Mandate purchases</li>
 </ol>
 <div class="fragment">
 <p>Can you examine each of these policies graphically? How do they differ from the patient’s or government’s point of view?</p>
@@ -489,11 +527,13 @@ Ian McCarthy | Emory University
 <section id="main-takeaways" class="title-slide slide level1 center">
 <h1>Main takeaways</h1>
 <ol type="1">
-<li><p>Explain, using a graph, how unravelling could occur in a market with adverse selection.</p></li>
+<li><p>Explain, using a graph, how unraveling could occur in a market with adverse selection.</p></li>
 <li><p>Discuss and show graphically how an individual mandate or subsidies could help to alleviate or minimize the adverse selection problem.</p></li>
 </ol>
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
+</div>
 </div>
 </section>
     </div>
@@ -523,7 +563,6 @@ Ian McCarthy | Emory University
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': true,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -710,42 +749,80 @@ Ian McCarthy | Emory University
       });
     </script>
     
+
     <script>
+
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
       // slide changes (different for each slide format).
+
       (function () {
+
         // dispatch for htmlwidgets
+
         function fireSlideEnter() {
+
           const event = window.document.createEvent("Event");
+
           event.initEvent("slideenter", true, true);
+
           window.document.dispatchEvent(event);
+
         }
+
+    
 
         function fireSlideChanged(previousSlide, currentSlide) {
+
           fireSlideEnter();
 
+    
+
           // dispatch for shiny
+
           if (window.jQuery) {
+
             if (previousSlide) {
+
               window.jQuery(previousSlide).trigger("hidden");
+
             }
+
             if (currentSlide) {
+
               window.jQuery(currentSlide).trigger("shown");
+
             }
+
           }
+
         }
+
+    
 
         // hookup for slidy
+
         if (window.w3c_slidy) {
+
           window.w3c_slidy.add_observer(function (slide_num) {
+
             // slide_num starts at position 1
+
             fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
           });
+
         }
 
+    
+
       })();
+
     </script>
+
+    
 
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -779,18 +856,7 @@ Ian McCarthy | Emory University
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -822,11 +888,50 @@ Ian McCarthy | Emory University
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
-      function tippyHover(el, contentFn) {
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -836,8 +941,17 @@ Ian McCarthy | Emory University
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -851,48 +965,14 @@ Ian McCarthy | Emory University
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {
         const parentEl = el.parentElement;
         if (parentEl) {
-          const cites = parentEl.dataset.cites;
-          if (cites) {
-            return {
-              el,
-              cites: cites.split(' ')
-            };
-          } else {
-            return findCites(el.parentElement)
-          }
-        } else {
-          return undefined;
-        }
-      };
-      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-      for (var i=0; i<bibliorefs.length; i++) {
-        const ref = bibliorefs[i];
-        const citeInfo = findCites(ref);
-        if (citeInfo) {
-          tippyHover(citeInfo.el, function() {
-            var popup = window.document.createElement('div');
-            citeInfo.cites.forEach(function(cite) {
-              var citeDiv = window.document.createElement('div');
-              citeDiv.classList.add('hanging-indent');
-              citeDiv.classList.add('csl-entry');
-              var biblioDiv = window.document.getElementById('ref-' + cite);
-              if (biblioDiv) {
-                citeDiv.innerHTML = biblioDiv.innerHTML;
-              }
-              popup.appendChild(citeDiv);
-            });
-            return popup.innerHTML;
-          });
-        }
-      }
-    });
-    </script>
-    
-
-</body></html>
+          c

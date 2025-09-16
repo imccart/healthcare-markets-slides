@@ -23,7 +23,7 @@ pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 ```
 
 
-# Adverse selection
+# Motivation
 
 In practice, people know more about their health than insurers. This is a form of **asymmetric information**.
 
@@ -31,12 +31,25 @@ In practice, people know more about their health than insurers. This is a form o
 Here's a good example, [Costs during special enrollment periods](https://www.healthaffairs.org/doi/full/10.1377/hlthaff.2019.01155).
 :::
 
+# Motivation
 
----
+- This creates **adverse selection**: higher-risk individuals are more likely to buy/keep insurance than lower-risk individuals.  
+- Consequences: risk pool becomes sicker on average → higher costs and potential market instability.  
+- Intuition: enrollment decisions reflect private expectations about future costs (e.g., sign-ups during special enrollment periods often follow new health needs).
+
+
+# Today's Roadmap
+
+1. Adverse Selection
+2. Partial vs Full Unraveling
+3. Adverse Selection in Practice
+
+
+# Adverse Selection
+
 
 ```{tikz}
 #| echo: false
-#| fig.cap: "Textbook depiction of adverse selection"
 
 \usetikzlibrary{calc}
 \usetikzlibrary{arrows}
@@ -52,38 +65,40 @@ Here's a good example, [Costs during special enrollment periods](https://www.hea
 ```
 
 
-
----
-
 ## Description of graph
 
-- Demand (willingness to pay) for health insurance
+- Demand (willingness to pay) for health insurance (downward sloping)
 - Average cost (AC): average healthcare costs incurred by all enrollees
 - Marginal cost (MC): additional healthcare costs incurred by one more enrollee
 - Downward sloping because healthier individuals (lower cost) are willing to pay less for health insurance
 
-::: {.fragment}
+## Description of graph
+
 - $D>MC$ because willingness to pay is expected costs plus risk premium
-- Relationship between demand and AC reflects problems due to adverse selection
-:::
-
----
-
-## Assumed equilibrium
-
-- Simplifying assumption that insurers earn 0 profit (at least approximately)
-- Equilibrium point where $D=AC$
-- Clearly not true, but it helps us focus on adverse selection and avoid everything else
+- As price falls, additional—typically healthier—individuals enroll (move downward along demand).  
+- AC declines as healthier entrants join.
+- MC tracks the cost of the next (healthiest) entrant and lies below AC.
 
 
----
+## Competitive Equilibrium with Community Rating
+
+- With sufficient competition and a single premium for all (community rating), equilibrium occurs where **Demand = AC**.  
+- At this point the premium exactly covers expected costs → **zero-profit** condition.  
+- Use this stylized benchmark to isolate the role of adverse selection (abstracting from imperfect competition, risk adjustment, etc.).
+
+
+# Types of Equilibria
+
+1. Full Insurance
+2. Under-insurance (Partial Unraveling)
+3. Full Unraveling
+
 
 ## 1. Full insurance
 
 
 ```{tikz}
 #| echo: false
-#| fig.cap: "Demand always above AC"
 
 \usetikzlibrary{calc}
 \usetikzlibrary{arrows}
@@ -99,14 +114,10 @@ Here's a good example, [Costs during special enrollment periods](https://www.hea
 ```
 
 
-
----
-
-## 2. Under-insurance (partial unravelling)
+## 2. Under-insurance (partial unraveling)
 
 ```{tikz}
 #| echo: false
-#| fig.cap: "Demand intersects with AC somewhere"
 
 \usetikzlibrary{calc}
 \usetikzlibrary{arrows}
@@ -123,59 +134,40 @@ Here's a good example, [Costs during special enrollment periods](https://www.hea
 
 
 
----
-
-## 3. Full unravelling
+## 3. Full unraveling
 
 ```{tikz}
 #| echo: false
-#| fig.cap: "Demand always below AC"
 
 \usetikzlibrary{calc}
 \usetikzlibrary{arrows}
 \begin{tikzpicture}[scale=1, every node/.style={transform shape}]
 \draw[thick,->] (0,0) -- (0,6) node[anchor=north west] {$p$};
 \draw[thick,->] (0,0) -- (8,0) node[anchor=south east] {$q$};
-\draw (0,3) -- (6,1) node[anchor=west]{Demand};
-\draw (0,3) node[anchor=south west]{AC} -- (6,2);
-\draw (0,3) -- (6,0.5) node[anchor=east]{MC};
+\draw (0,3) node[anchor=north east]{Demand} -- (6,1);
+\draw (0,3) -- (6,2) node[anchor=west]{AC};
+\draw (0,3) -- (6,0.5) node[anchor=west]{MC};
 \draw (6,0) -- (6,6);
 \draw (6,-.5) node[anchor=south] {$\bar{q}$};
 \end{tikzpicture}
 ```
 
 
----
+## Understanding Unraveling
 
-For any amount of unravelling, we need at least two features in the market:
+For any amount of unraveling, we need at least two features in the market:
 
 1. Individuals select plans based on health needs (which is private information)
 2. Common price to all enrollees of a given plan (community rating)
 
----
+## Understanding Unraveling
 
-To think about unravelling, we need to think of this graph in stages or periods.
+Think in periods: if initially $AC > p$, insurers incur losses and raise $p$. 
 
-- In the initial period, insurers set prices, unsure about who will enroll because healthcare needs are private information
-- Upon setting premiums, insurers will know who enrolled and they will know the costs they incurred by the end of the year
-- Insurers can then update their premiums if needed (we will again assume zero profits to keep things simple)
+- Higher $p$ moves the market up the demand curve; healthier enrollees drop coverage.  
+- The pool becomes sicker → **AC rises**, prompting further premium increases.  
+- Process converges to a smaller, high-cost pool (**partial unraveling**) or collapses altogether (**full unraveling**).
 
-
----
-
-## Conceptual Example
-
-- Assume the demand curve is below AC at least beyond some point (not necessarily always below AC)
-- In the initial period, assume an insurer sets the premium at a point such that $AC>D$
-- In the subsequent period, knowing that costs were too high relative to premiums, the insurer increases their premium
-- Increase in price means a movement up the demand curve, but who leaves the market?
-
-::: {.fragment}
-  - the relatively healthy or low cost individuals!
-  - so AC is now higher, and the insurer will need to continue raising premiums until they reach equilibrium
-:::
-
----
 
 ## Numerical Example
 
@@ -185,14 +177,14 @@ Assume the insurer's cost function is $C=100q - 2q^{2}$, where $q$ denotes the n
 2. What is the equilibrium price?
 
 
----
-
 ## Answer
 
-To solve this, we need to first calculate the marginal cost curve, $mc=100-4q$, and the average cost curve, $ac=100-2q$. At a price of $p=40$, we know that quantity demanded will be $q=25$. At that point, the average cost is then \$50. Since $AC>p$, the firm is losing money. If they set prices to break-even, then next period's price would be set to their observed AC, $p_{2}=$ \$50. We can find the equilibrium price as the point where the AC and D curves intersect, which occurs at $q$ of 20 and price of \$60.
+- To solve this, we need to first calculate the marginal cost curve, $mc=100-4q$, and the average cost curve, $ac=100-2q$. 
+- At a price of $p=40$, we know that quantity demanded will be $q=25$. At that point, the average cost is then \$50
+- Since $AC>p$, the firm is losing money. 
+- If they set prices to break-even, then next period's price would be set to their observed AC, $p_{2}=$ \$50. 
+- We can find the equilibrium price as the point where the AC and D curves intersect, which occurs at $q$ of 20 and price of \$60.
 
-
----
 
 ## In-class Problem: Adverse selection
 
@@ -203,7 +195,12 @@ Assume that the insurer's cost function is given by $C=100q - 2q^{2}$, where $q$
 3. What is the equilibrium price in this market?
 4. What if there is a \$10 penalty imposed for those that do not purchase health insurance?
 
----
+
+# Adverse Selection in Practice
+
+- How does adverse selection in real-life environments?
+- How might we help curb its effects?
+
 
 ## Death spiral!
 
@@ -235,30 +232,30 @@ Standard & Poor's writes: “The ACA individual market is not in a 'death spiral
 
 1. Subsidize consumers
 2. Subsidize insurers
-3. Mandate purchases<br>
+3. Mandate purchases
 
 ::: {.fragment}
 Can you examine each of these policies graphically? How do they differ from the patient's or government's point of view?
 :::
 
+
 # Other related issues
 
----
 
 ## Effects from other insurance markets
+
 Based on our discussion of adverse selection and health insurance markets, what would you expect to happen if we increased the Medicare age from 65 to 70 years old? 
 
 
----
-
 ## Advantageous selection
+
 What if individuals who are high risk are also less risk-averse? In this case, individuals who are willing to pay the most for health insurance (the most risk averse) are actually less risky and therefore the cheapest to insure. Very different policy implications (e.g., individual mandate is bad in this case). 
 
 
 
 # Main takeaways
 
-1. Explain, using a graph, how unravelling could occur in a market with adverse selection.
+1. Explain, using a graph, how unraveling could occur in a market with adverse selection.
 
 2. Discuss and show graphically how an individual mandate or subsidies could help to alleviate or minimize the adverse selection problem.
 
