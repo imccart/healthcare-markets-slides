@@ -23,17 +23,12 @@ pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 ```
 
 
-# Table of Contents
+# Do we want competition in health insurance?
 
-1. Nuance of "competition" in health insurance
-2. Risk adjustment
-3. Managed competition
+Health insurance isn’t a standard market: the buyer is often an employer or the government, and the product bundles risk pooling, networks, and admin services. This begs the question, do we want to rely on standard market-based competition for health insurance?
 
-# "Competition" in health insurance
 
----
-
-## Do we want competition in health insurance?
+::: {.fragment}
 
 :::: {.columns}
 
@@ -56,163 +51,174 @@ pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 
 ::::
 
+:::
+
+# Today's Roadmap
+
+1. What “competition” means in health insurance  
+   - Intermediated buyers; product = risk pooling + networks + admin
+
+2. Why risk adjustment?  
+   - Mechanics, limits, and coding incentives
+
+3. Managed competition (Medicare Advantage)  
+   - Bid/benchmark pricing → elasticity & markups → evidence
+
+4. What counts as success?  
+   - Efficiency, equity, and fiscal cost tradeoffs
+
+
+# "Competition" in Health Insurance
+
+## Employer-Sponsored: Small Employers
+
+- Employer is the purchaser, based on the risk of a **small pool**  
+- Insurers must compete directly for each firm’s business  
+- Competition here means multiple small-group insurers vying to cover one employer’s workforce  
 
 ---
 
-## Employer-sponsored Health Insurance, Small Employers
+## Employer-Sponsored: Large Employers
 
-- Small employers select an insurance plan(s)
-- Employees choose from available set of plans
-- "Buyer" of the insurance product is the employer
-- Insurer sells to employer with some expectation of the risk profile and health care needs of its employees
-
----
-
-## Employer-sponsored Health Insurance, Large Employers
-
-- Large employers typically "self-insure"
-- Insurance plan is more administrative, facilitating claims processing and network structure
-- Employer actually pays out all costs of health care
-- Risk profile less important to insurer (more important to employer)
+- Large firms typically **self-insure**  
+- Insurers mainly administer claims and negotiate provider networks  
+- Insurers compete for the employer’s contract, but do **not bear risk**  
+- Creates an odd dynamic: insurers bargain over prices and networks without directly facing the financial consequences  
 
 ---
 
 ## Managed Competition
 
-Examples of "managed competition" in health insurance include:
+- The model most relevant for studying health insurance markets  
+- Private insurers operate under standardized, heavily regulated rules  
+- Examples: ACA exchanges, Medicaid managed care, Medicare Advantage  
+- Competition is “managed” because policy defines the terms of rivalry (risk adjustment, open enrollment, network rules)
 
-- Fully private insurers in exchanges
-- Fully private insurers replacing Medicaid (i.e., Medicaid managed care)
-- Private insurers alongside public insurers in Medicare Advantage
-- All operate with significant federal and state regulations
 
 # Risk Adjustment
 
----
-
 ## Adverse Selection
 
-Those with higher expected health care needs self-select into more generous insurance coverage
+Those with higher expected health care needs self-select into more generous coverage
 
-- Insurers price generous policies accordingly, leaving healthier individuals out of the market (underinsurance)
-- Insurers design plans for healthier individuals or attempt to restrict products for high-cost, sicker individuals
+- Insurers price generous policies accordingly → healthier individuals drop out (underinsurance)  
+- Insurers design benefits to appeal to healthy enrollees or discourage high-cost patients  
 
----
 
 ## Solving the problem of adverse selection
 
-- The "easy" way: let insurers set prices individually, but this is not good for equity or access
-- How else? Managed competition employs **risk adjustment**, essentially introducing a wedge between prices paid by enrollees versus fees received by insurers
-- Example: Medicare Advantage, where enrollees pay uniform premiums but CMS pays insurers different amounts based on enrollee characteristics
-- Other solutions: plan lock-in and open enrollment periods
+- The "easy" way: let insurers charge higher prices to sicker people → inequitable, limits access  
+- Managed competition instead uses **risk adjustment**:  
+  - Enrollees pay uniform premiums  
+  - Insurers receive risk-adjusted payments from CMS (or the exchange)  
+- Other safeguards: plan lock-in, open enrollment periods  
 
----
 
 ## Risk adjustment in Medicare Advantage
 
-- Medicare FFS historically had much less healthy enrollees than MA
-  - Pre-2000: MA enrollees used 60% as much care as traditional Medicare
-  - Pre-2000: "Switchers" into traditional Medicare used 160% more care than average beneficiary
-- New risk-adjustment system implemented from 2003-2006
-  - Health differences declined to less than 5%
-  - [New Risk-Adjustment System Was Associated With Reduced Favorable Selection in Medicare Advantage](https://www.healthaffairs.org/doi/full/10.1377/hlthaff.2011.1344)
+- Before 2000, MA attracted healthier enrollees:  
+  - MA enrollees used ~60% as much care as FFS beneficiaries  
+  - “Switchers” back to FFS used ~160% of average FFS spending  
+- CMS phased in a new risk adjustment system (2003–2006)  
+  - Health differences between MA and FFS fell to <5%  
+  - [Health Affairs: New Risk-Adjustment System](https://www.healthaffairs.org/doi/full/10.1377/hlthaff.2011.1344)
 
 
----
+## Challenges of risk adjustment
 
-## Challenge of risk adjustment
-
-- Hard to predict who will need the most care
-- MA risk-adjustment predicts less than 15% of observed variation in health care utilization
-- Mean predictions are pretty close though
-- Other barriers: should be interpretable and relatively difficult to manipulate by insurers
-- Goal: reduce incentive to disproportionately target healthy individuals without encouraging insurers to manipulate the risk score of their enrollees
+- Predictive power is limited (<15% of individual spending variation explained)  
+- But mean predictions are close → enough to reduce *systematic* selection  
+- Strong incentives for **coding manipulation** (“upcoding” diagnoses to raise payments)  
+- Design goal: reduce selection without rewarding insurers for coding intensity  
 
 
 # Managed Competition
 
----
+## Why "managed" competition?
 
-## Need for "managing" competition
+- Insurance markets are highly concentrated  
+- Demand is relatively price-inelastic  
+- Little natural pressure for lower prices or higher quality  
+- → Government sets the rules of competition (benchmarks, rebates, network requirements)
 
-- Insurance markets typically highly concentrated
-- Demand for insurance is relatively price-inelastic
-- Little pressure for more efficient, higher quality "products"
+## Sources of market power
 
----
+In Medicare Advantage (MA), 3 or fewer insurers often hold ≥95% of local market share
 
-## Reasons for market power
+- High fixed entry costs (building networks, regulatory compliance)  
+- CMS network adequacy requirements  
+- Brand recognition and switching frictions  
 
-In MA, almost all markets are dominated ($\geq$ 95% market share) by no more than 3 insurers. Why?
+## How plans are paid in MA
 
-- High fixed costs of entry (network structure, price negotiations, regulatory requirements)
-- Network restrictions from CMS necessitate some network structure
+- Plan submits a **bid**, $b$  
+- CMS sets a risk-adjusted benchmark, $B$, based on FFS spending  
+- If $b < B$: plan receives $b$ + a share of $(B-b)$ as a rebate  
+- If $b > B$: plan receives $B$ and enrollee pays $(b-B)$ as a premium  
 
----
+## Plan pricing problem
 
-## Market power and pricing in MA
+Plans choose price/benefit generosity to maximize profit:
 
-Basic structure:
+$$
+\max_{p_{j}} \left(p_{j} + B - c_{j} \right) Q_{j}(p_{j}, p_{-j})
+$$
 
-- Plan sets "bid", $b$
-- CMS sets a risk adjusted benchmark rate, $B$, based on Medicare FFS costs
-- If $b<B$, plan receives $b$ plus some percentage of $B-b$ from CMS as a rebate
-- If $b>B$, plan receives $B$ from CMS and $b-B$ is premium
-
----
-
-## Market power and pricing in MA
-
-Putting profit function in terms of risk units, the plan's problem is:
-
-$$\max_{p_{j}} \left(p_{j} + B - c_{j} \right) Q_{j}(p_{j}, p_{-j}),$$
-
-where $p_{j}$ is the plan's price, $c_{j}$ is their cost per enrollee, and $Q_{j}$ is plan j's quantity (in risk units)
-
----
+- $p_{j}$: plan’s “price” (premium/benefit generosity)  
+- $c_{j}$: cost per enrollee  
+- $Q_{j}$: demand (in risk-adjusted units)
 
 ## Solution
 
-$$\begin{align}
-\frac{d \pi}{d p_{j}} = Q_{j}(p_{j}, p_{-j}) + \frac{d Q_{j}}{d p_{j}} ( p_{j} + B - c_{j}) &= 0 \\
-  p_{j} + B - c_{j} = \frac{ - Q_{j} }{ \frac{d Q_{j}}{d p_{j}}} &= \left(\frac{d \ln Q_{j}}{d p_{j}}\right)^{-1} \\
-  p_{j}  &= c_{j} - B + \left(\frac{d \ln Q_{j}}{d p_{j}}\right)^{-1} \\
-  b_{j}  &= c_{j} + \left(\frac{d \ln Q_{j}}{d p_{j}}\right)^{-1} \\
-\end{align}$$
+$$
+b_{j} = c_{j} + \left(\frac{d \ln Q_{j}}{d p_{j}}\right)^{-1}
+$$
 
----
+- Bid = marginal cost + markup  
+- Markup is inversely related to demand elasticity  
 
 ## Interpretation
 
-- Price/bid depends on sensitivity of enrollment to benefits
-- More competitive means larger response to changes in plan benefits
-- Empirical evidence of price elasticity show 10% increase in enrollment from \$10 reduction in bid
-- Suggest markups of 10-25% over costs
+- If enrollment is **sensitive** to benefits (elastic demand) → smaller markups  
+- If enrollment is **insensitive** (inelastic demand) → larger markups  
+- Evidence: a $10 bid reduction → 10% higher enrollment  
+- Implies markups of 10–25% above costs  
 
----
+## Evidence from Medicare Advantage
 
-## And?
+@curto2021 study the MA market in detail:
 
-Curto et al. (2021) study this in great detail...some key findings:
-
-- MA plans provide care at lower cost than traditional Medicare FFS
-- But, bids are above what Medicare would otherwise have paid in FFS
-- Nearly 15% more expensive to taxpayer
-- 40% of "excess" payments go to enrollees in the form of additional consumer surplus
-- 60% go to insurers
-
----
+- MA delivers care at lower resource cost than FFS Medicare  
+- But bids are **higher** than FFS costs → ~15% more expensive to taxpayers  
+- Distribution of “excess” payments:  
+  - 40% → enrollees (extra benefits, lower out-of-pocket)  
+  - 60% → retained by insurers  
 
 ## Key takeaway
 
-- Market design is really important
-- Changes in rebate calculation
-- Changes in benchmark rates (being implemented now)
+- Market design is critical: rebates and benchmark rules shape billions in transfers  
+- Reforms underway: new rebate formulas, benchmark adjustments  
+- Bigger question: *what counts as success?*  
 
----
 
-## Final question - how to measure success?
+## How to measure success?
 
-- Same product at lower cost than public insurer?
-- Better product at same cost?
-- Larger cost savings with "good enough" product, maybe worse than public insurer?
+- Same product at lower cost than public insurer?  
+- Better product at the same cost?  
+- Costlier product, but “good enough” with higher enrollee surplus?  
+
+
+# Conclusion: Do we want competition?
+
+- Competition in health insurance looks very different across settings  
+  - Small groups: insurers compete for tiny risk pools  
+  - Large employers: insurers compete as administrators, not risk-bearers  
+  - Managed competition: the main model, but heavily shaped by regulation  
+
+# Conclusion: Do we want competition?
+
+- Risk adjustment and managed competition can make private markets viable  
+- But both are fragile: selection, market power, and coding incentives remain  
+- Public provision avoids some problems but brings others (bureaucracy, politics)  
+
+**Bottom line:** Whether we *want* competition depends less on theory and more on how well policy design channels insurer incentives toward efficiency, equity, and fiscal sustainability.

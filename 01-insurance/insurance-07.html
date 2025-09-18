@@ -8,7 +8,7 @@
 <link href="insurance-07_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="insurance-07_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="insurance-07_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.290">
+  <meta name="generator" content="quarto-1.5.57">
 
   <meta name="author" content="Ian McCarthy | Emory University">
   <title>Health Insurance Competition</title>
@@ -30,7 +30,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="insurance-07_files/libs/revealjs/dist/theme/quarto.css" id="theme">
+  <link rel="stylesheet" href="insurance-07_files/libs/revealjs/dist/theme/quarto.css">
   <link href="insurance-07_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="insurance-07_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="insurance-07_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -158,7 +158,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -338,22 +339,10 @@ Ian McCarthy | Emory University
 </div>
 
 </section>
-<section id="table-of-contents" class="title-slide slide level1 center">
-<h1>Table of Contents</h1>
-<ol type="1">
-<li>Nuance of “competition” in health insurance</li>
-<li>Risk adjustment</li>
-<li>Managed competition</li>
-</ol>
-</section>
-
-<section>
-<section id="competition-in-health-insurance" class="title-slide slide level1 center">
-<h1>“Competition” in health insurance</h1>
-
-</section>
-<section id="do-we-want-competition-in-health-insurance" class="slide level2">
-<h2>Do we want competition in health insurance?</h2>
+<section id="do-we-want-competition-in-health-insurance" class="title-slide slide level1 center">
+<h1>Do we want competition in health insurance?</h1>
+<p>Health insurance isn’t a standard market: the buyer is often an employer or the government, and the product bundles risk pooling, networks, and admin services. This begs the question, do we want to rely on standard market-based competition for health insurance?</p>
+<div class="fragment">
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Public Insurance:</strong></p>
@@ -370,35 +359,69 @@ Ian McCarthy | Emory University
 <li>Exposure to problem of adverse selection</li>
 <li>Less equitable</li>
 </ul>
-</div>
+</div></div>
 </div>
 </section>
-<section id="employer-sponsored-health-insurance-small-employers" class="slide level2">
-<h2>Employer-sponsored Health Insurance, Small Employers</h2>
+
+<section id="todays-roadmap" class="title-slide slide level1 center">
+<h1>Today’s Roadmap</h1>
+<ol type="1">
+<li>What “competition” means in health insurance
 <ul>
-<li>Small employers select an insurance plan(s)</li>
-<li>Employees choose from available set of plans</li>
-<li>“Buyer” of the insurance product is the employer</li>
-<li>Insurer sells to employer with some expectation of the risk profile and health care needs of its employees</li>
+<li>Intermediated buyers; product = risk pooling + networks + admin</li>
+</ul></li>
+<li>Why risk adjustment?
+<ul>
+<li>Mechanics, limits, and coding incentives</li>
+</ul></li>
+<li>Managed competition (Medicare Advantage)
+<ul>
+<li>Bid/benchmark pricing → elasticity &amp; markups → evidence</li>
+</ul></li>
+<li>What counts as success?
+<ul>
+<li>Efficiency, equity, and fiscal cost tradeoffs</li>
+</ul></li>
+</ol>
+</section>
+
+<section>
+<section id="competition-in-health-insurance" class="title-slide slide level1 center">
+<h1>“Competition” in Health Insurance</h1>
+
+</section>
+<section id="employer-sponsored-small-employers" class="slide level2">
+<h2>Employer-Sponsored: Small Employers</h2>
+<ul>
+<li>Employer is the purchaser, based on the risk of a <strong>small pool</strong><br>
+</li>
+<li>Insurers must compete directly for each firm’s business<br>
+</li>
+<li>Competition here means multiple small-group insurers vying to cover one employer’s workforce</li>
 </ul>
 </section>
-<section id="employer-sponsored-health-insurance-large-employers" class="slide level2">
-<h2>Employer-sponsored Health Insurance, Large Employers</h2>
+<section id="employer-sponsored-large-employers" class="slide level2">
+<h2>Employer-Sponsored: Large Employers</h2>
 <ul>
-<li>Large employers typically “self-insure”</li>
-<li>Insurance plan is more administrative, facilitating claims processing and network structure</li>
-<li>Employer actually pays out all costs of health care</li>
-<li>Risk profile less important to insurer (more important to employer)</li>
+<li>Large firms typically <strong>self-insure</strong><br>
+</li>
+<li>Insurers mainly administer claims and negotiate provider networks<br>
+</li>
+<li>Insurers compete for the employer’s contract, but do <strong>not bear risk</strong><br>
+</li>
+<li>Creates an odd dynamic: insurers bargain over prices and networks without directly facing the financial consequences</li>
 </ul>
 </section>
 <section id="managed-competition" class="slide level2">
 <h2>Managed Competition</h2>
-<p>Examples of “managed competition” in health insurance include:</p>
 <ul>
-<li>Fully private insurers in exchanges</li>
-<li>Fully private insurers replacing Medicaid (i.e., Medicaid managed care)</li>
-<li>Private insurers alongside public insurers in Medicare Advantage</li>
-<li>All operate with significant federal and state regulations</li>
+<li>The model most relevant for studying health insurance markets<br>
+</li>
+<li>Private insurers operate under standardized, heavily regulated rules<br>
+</li>
+<li>Examples: ACA exchanges, Medicaid managed care, Medicare Advantage<br>
+</li>
+<li>Competition is “managed” because policy defines the terms of rivalry (risk adjustment, open enrollment, network rules)</li>
 </ul>
 </section></section>
 <section>
@@ -408,44 +431,56 @@ Ian McCarthy | Emory University
 </section>
 <section id="adverse-selection" class="slide level2">
 <h2>Adverse Selection</h2>
-<p>Those with higher expected health care needs self-select into more generous insurance coverage</p>
+<p>Those with higher expected health care needs self-select into more generous coverage</p>
 <ul>
-<li>Insurers price generous policies accordingly, leaving healthier individuals out of the market (underinsurance)</li>
-<li>Insurers design plans for healthier individuals or attempt to restrict products for high-cost, sicker individuals</li>
+<li>Insurers price generous policies accordingly → healthier individuals drop out (underinsurance)<br>
+</li>
+<li>Insurers design benefits to appeal to healthy enrollees or discourage high-cost patients</li>
 </ul>
 </section>
 <section id="solving-the-problem-of-adverse-selection" class="slide level2">
 <h2>Solving the problem of adverse selection</h2>
 <ul>
-<li>The “easy” way: let insurers set prices individually, but this is not good for equity or access</li>
-<li>How else? Managed competition employs <strong>risk adjustment</strong>, essentially introducing a wedge between prices paid by enrollees versus fees received by insurers</li>
-<li>Example: Medicare Advantage, where enrollees pay uniform premiums but CMS pays insurers different amounts based on enrollee characteristics</li>
-<li>Other solutions: plan lock-in and open enrollment periods</li>
+<li>The “easy” way: let insurers charge higher prices to sicker people → inequitable, limits access<br>
+</li>
+<li>Managed competition instead uses <strong>risk adjustment</strong>:
+<ul>
+<li>Enrollees pay uniform premiums<br>
+</li>
+<li>Insurers receive risk-adjusted payments from CMS (or the exchange)<br>
+</li>
+</ul></li>
+<li>Other safeguards: plan lock-in, open enrollment periods</li>
 </ul>
 </section>
 <section id="risk-adjustment-in-medicare-advantage" class="slide level2">
 <h2>Risk adjustment in Medicare Advantage</h2>
 <ul>
-<li>Medicare FFS historically had much less healthy enrollees than MA
+<li>Before 2000, MA attracted healthier enrollees:
 <ul>
-<li>Pre-2000: MA enrollees used 60% as much care as traditional Medicare</li>
-<li>Pre-2000: “Switchers” into traditional Medicare used 160% more care than average beneficiary</li>
+<li>MA enrollees used ~60% as much care as FFS beneficiaries<br>
+</li>
+<li>“Switchers” back to FFS used ~160% of average FFS spending<br>
+</li>
 </ul></li>
-<li>New risk-adjustment system implemented from 2003-2006
+<li>CMS phased in a new risk adjustment system (2003–2006)
 <ul>
-<li>Health differences declined to less than 5%</li>
-<li><a href="https://www.healthaffairs.org/doi/full/10.1377/hlthaff.2011.1344">New Risk-Adjustment System Was Associated With Reduced Favorable Selection in Medicare Advantage</a></li>
+<li>Health differences between MA and FFS fell to &lt;5%<br>
+</li>
+<li><a href="https://www.healthaffairs.org/doi/full/10.1377/hlthaff.2011.1344">Health Affairs: New Risk-Adjustment System</a></li>
 </ul></li>
 </ul>
 </section>
-<section id="challenge-of-risk-adjustment" class="slide level2">
-<h2>Challenge of risk adjustment</h2>
+<section id="challenges-of-risk-adjustment" class="slide level2">
+<h2>Challenges of risk adjustment</h2>
 <ul>
-<li>Hard to predict who will need the most care</li>
-<li>MA risk-adjustment predicts less than 15% of observed variation in health care utilization</li>
-<li>Mean predictions are pretty close though</li>
-<li>Other barriers: should be interpretable and relatively difficult to manipulate by insurers</li>
-<li>Goal: reduce incentive to disproportionately target healthy individuals without encouraging insurers to manipulate the risk score of their enrollees</li>
+<li>Predictive power is limited (&lt;15% of individual spending variation explained)<br>
+</li>
+<li>But mean predictions are close → enough to reduce <em>systematic</em> selection<br>
+</li>
+<li>Strong incentives for <strong>coding manipulation</strong> (“upcoding” diagnoses to raise payments)<br>
+</li>
+<li>Design goal: reduce selection without rewarding insurers for coding intensity</li>
 </ul>
 </section></section>
 <section>
@@ -453,86 +488,144 @@ Ian McCarthy | Emory University
 <h1>Managed Competition</h1>
 
 </section>
-<section id="need-for-managing-competition" class="slide level2">
-<h2>Need for “managing” competition</h2>
+<section id="why-managed-competition" class="slide level2">
+<h2>Why “managed” competition?</h2>
 <ul>
-<li>Insurance markets typically highly concentrated</li>
-<li>Demand for insurance is relatively price-inelastic</li>
-<li>Little pressure for more efficient, higher quality “products”</li>
+<li>Insurance markets are highly concentrated<br>
+</li>
+<li>Demand is relatively price-inelastic<br>
+</li>
+<li>Little natural pressure for lower prices or higher quality<br>
+</li>
+<li>→ Government sets the rules of competition (benchmarks, rebates, network requirements)</li>
 </ul>
 </section>
-<section id="reasons-for-market-power" class="slide level2">
-<h2>Reasons for market power</h2>
-<p>In MA, almost all markets are dominated (<span class="math inline">\(\geq\)</span> 95% market share) by no more than 3 insurers. Why?</p>
+<section id="sources-of-market-power" class="slide level2">
+<h2>Sources of market power</h2>
+<p>In Medicare Advantage (MA), 3 or fewer insurers often hold ≥95% of local market share</p>
 <ul>
-<li>High fixed costs of entry (network structure, price negotiations, regulatory requirements)</li>
-<li>Network restrictions from CMS necessitate some network structure</li>
+<li>High fixed entry costs (building networks, regulatory compliance)<br>
+</li>
+<li>CMS network adequacy requirements<br>
+</li>
+<li>Brand recognition and switching frictions</li>
 </ul>
 </section>
-<section id="market-power-and-pricing-in-ma" class="slide level2">
-<h2>Market power and pricing in MA</h2>
-<p>Basic structure:</p>
+<section id="how-plans-are-paid-in-ma" class="slide level2">
+<h2>How plans are paid in MA</h2>
 <ul>
-<li>Plan sets “bid”, <span class="math inline">\(b\)</span></li>
-<li>CMS sets a risk adjusted benchmark rate, <span class="math inline">\(B\)</span>, based on Medicare FFS costs</li>
-<li>If <span class="math inline">\(b&lt;B\)</span>, plan receives <span class="math inline">\(b\)</span> plus some percentage of <span class="math inline">\(B-b\)</span> from CMS as a rebate</li>
-<li>If <span class="math inline">\(b&gt;B\)</span>, plan receives <span class="math inline">\(B\)</span> from CMS and <span class="math inline">\(b-B\)</span> is premium</li>
+<li>Plan submits a <strong>bid</strong>, <span class="math inline">\(b\)</span><br>
+</li>
+<li>CMS sets a risk-adjusted benchmark, <span class="math inline">\(B\)</span>, based on FFS spending<br>
+</li>
+<li>If <span class="math inline">\(b &lt; B\)</span>: plan receives <span class="math inline">\(b\)</span> + a share of <span class="math inline">\((B-b)\)</span> as a rebate<br>
+</li>
+<li>If <span class="math inline">\(b &gt; B\)</span>: plan receives <span class="math inline">\(B\)</span> and enrollee pays <span class="math inline">\((b-B)\)</span> as a premium</li>
 </ul>
 </section>
-<section id="market-power-and-pricing-in-ma-1" class="slide level2">
-<h2>Market power and pricing in MA</h2>
-<p>Putting profit function in terms of risk units, the plan’s problem is:</p>
-<p><span class="math display">\[\max_{p_{j}} \left(p_{j} + B - c_{j} \right) Q_{j}(p_{j}, p_{-j}),\]</span></p>
-<p>where <span class="math inline">\(p_{j}\)</span> is the plan’s price, <span class="math inline">\(c_{j}\)</span> is their cost per enrollee, and <span class="math inline">\(Q_{j}\)</span> is plan j’s quantity (in risk units)</p>
+<section id="plan-pricing-problem" class="slide level2">
+<h2>Plan pricing problem</h2>
+<p>Plans choose price/benefit generosity to maximize profit:</p>
+<p><span class="math display">\[
+\max_{p_{j}} \left(p_{j} + B - c_{j} \right) Q_{j}(p_{j}, p_{-j})
+\]</span></p>
+<ul>
+<li><span class="math inline">\(p_{j}\)</span>: plan’s “price” (premium/benefit generosity)<br>
+</li>
+<li><span class="math inline">\(c_{j}\)</span>: cost per enrollee<br>
+</li>
+<li><span class="math inline">\(Q_{j}\)</span>: demand (in risk-adjusted units)</li>
+</ul>
 </section>
 <section id="solution" class="slide level2">
 <h2>Solution</h2>
-<p><span class="math display">\[\begin{align}
-\frac{d \pi}{d p_{j}} = Q_{j}(p_{j}, p_{-j}) + \frac{d Q_{j}}{d p_{j}} ( p_{j} + B - c_{j}) &amp;= 0 \\
-  p_{j} + B - c_{j} = \frac{ - Q_{j} }{ \frac{d Q_{j}}{d p_{j}}} &amp;= \left(\frac{d \ln Q_{j}}{d p_{j}}\right)^{-1} \\
-  p_{j}  &amp;= c_{j} - B + \left(\frac{d \ln Q_{j}}{d p_{j}}\right)^{-1} \\
-  b_{j}  &amp;= c_{j} + \left(\frac{d \ln Q_{j}}{d p_{j}}\right)^{-1} \\
-\end{align}\]</span></p>
+<p><span class="math display">\[
+b_{j} = c_{j} + \left(\frac{d \ln Q_{j}}{d p_{j}}\right)^{-1}
+\]</span></p>
+<ul>
+<li>Bid = marginal cost + markup<br>
+</li>
+<li>Markup is inversely related to demand elasticity</li>
+</ul>
 </section>
 <section id="interpretation" class="slide level2">
 <h2>Interpretation</h2>
 <ul>
-<li>Price/bid depends on sensitivity of enrollment to benefits</li>
-<li>More competitive means larger response to changes in plan benefits</li>
-<li>Empirical evidence of price elasticity show 10% increase in enrollment from $10 reduction in bid</li>
-<li>Suggest markups of 10-25% over costs</li>
+<li>If enrollment is <strong>sensitive</strong> to benefits (elastic demand) → smaller markups<br>
+</li>
+<li>If enrollment is <strong>insensitive</strong> (inelastic demand) → larger markups<br>
+</li>
+<li>Evidence: a $10 bid reduction → 10% higher enrollment<br>
+</li>
+<li>Implies markups of 10–25% above costs</li>
 </ul>
 </section>
-<section id="and" class="slide level2">
-<h2>And?</h2>
-<p>Curto et al.&nbsp;(2021) study this in great detail…some key findings:</p>
+<section id="evidence-from-medicare-advantage" class="slide level2">
+<h2>Evidence from Medicare Advantage</h2>
+<p><span class="citation" data-cites="curto2021">@curto2021</span> study the MA market in detail:</p>
 <ul>
-<li>MA plans provide care at lower cost than traditional Medicare FFS</li>
-<li>But, bids are above what Medicare would otherwise have paid in FFS</li>
-<li>Nearly 15% more expensive to taxpayer</li>
-<li>40% of “excess” payments go to enrollees in the form of additional consumer surplus</li>
-<li>60% go to insurers</li>
+<li>MA delivers care at lower resource cost than FFS Medicare<br>
+</li>
+<li>But bids are <strong>higher</strong> than FFS costs → ~15% more expensive to taxpayers<br>
+</li>
+<li>Distribution of “excess” payments:
+<ul>
+<li>40% → enrollees (extra benefits, lower out-of-pocket)<br>
+</li>
+<li>60% → retained by insurers</li>
+</ul></li>
 </ul>
 </section>
 <section id="key-takeaway" class="slide level2">
 <h2>Key takeaway</h2>
 <ul>
-<li>Market design is really important</li>
-<li>Changes in rebate calculation</li>
-<li>Changes in benchmark rates (being implemented now)</li>
+<li>Market design is critical: rebates and benchmark rules shape billions in transfers<br>
+</li>
+<li>Reforms underway: new rebate formulas, benchmark adjustments<br>
+</li>
+<li>Bigger question: <em>what counts as success?</em></li>
 </ul>
 </section>
-<section id="final-question---how-to-measure-success" class="slide level2">
-<h2>Final question - how to measure success?</h2>
+<section id="how-to-measure-success" class="slide level2">
+<h2>How to measure success?</h2>
 <ul>
-<li>Same product at lower cost than public insurer?</li>
-<li>Better product at same cost?</li>
-<li>Larger cost savings with “good enough” product, maybe worse than public insurer?</li>
+<li>Same product at lower cost than public insurer?<br>
+</li>
+<li>Better product at the same cost?<br>
+</li>
+<li>Costlier product, but “good enough” with higher enrollee surplus?</li>
 </ul>
+</section></section>
+<section id="conclusion-do-we-want-competition" class="title-slide slide level1 center">
+<h1>Conclusion: Do we want competition?</h1>
+<ul>
+<li>Competition in health insurance looks very different across settings
+<ul>
+<li>Small groups: insurers compete for tiny risk pools<br>
+</li>
+<li>Large employers: insurers compete as administrators, not risk-bearers<br>
+</li>
+<li>Managed competition: the main model, but heavily shaped by regulation</li>
+</ul></li>
+</ul>
+</section>
+
+<section id="conclusion-do-we-want-competition-1" class="title-slide slide level1 center">
+<h1>Conclusion: Do we want competition?</h1>
+<ul>
+<li>Risk adjustment and managed competition can make private markets viable<br>
+</li>
+<li>But both are fragile: selection, market power, and coding incentives remain<br>
+</li>
+<li>Public provision avoids some problems but brings others (bureaucracy, politics)</li>
+</ul>
+<p><strong>Bottom line:</strong> Whether we <em>want</em> competition depends less on theory and more on how well policy design channels insurer incentives toward efficiency, equity, and fiscal sustainability.</p>
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
-</section></section>
+</div>
+</section>
     </div>
   </div>
 
@@ -560,7 +653,6 @@ Ian McCarthy | Emory University
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': true,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -747,42 +839,80 @@ Ian McCarthy | Emory University
       });
     </script>
     
+
     <script>
+
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
       // slide changes (different for each slide format).
+
       (function () {
+
         // dispatch for htmlwidgets
+
         function fireSlideEnter() {
+
           const event = window.document.createEvent("Event");
+
           event.initEvent("slideenter", true, true);
+
           window.document.dispatchEvent(event);
+
         }
+
+    
 
         function fireSlideChanged(previousSlide, currentSlide) {
+
           fireSlideEnter();
 
+    
+
           // dispatch for shiny
+
           if (window.jQuery) {
+
             if (previousSlide) {
+
               window.jQuery(previousSlide).trigger("hidden");
+
             }
+
             if (currentSlide) {
+
               window.jQuery(currentSlide).trigger("shown");
+
             }
+
           }
+
         }
+
+    
 
         // hookup for slidy
+
         if (window.w3c_slidy) {
+
           window.w3c_slidy.add_observer(function (slide_num) {
+
             // slide_num starts at position 1
+
             fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
           });
+
         }
 
+    
+
       })();
+
     </script>
+
+    
 
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -816,18 +946,7 @@ Ian McCarthy | Emory University
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -859,11 +978,50 @@ Ian McCarthy | Emory University
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
-      function tippyHover(el, contentFn) {
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -873,8 +1031,17 @@ Ian McCarthy | Emory University
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -888,48 +1055,4 @@ Ian McCarthy | Emory University
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
-        });
-      }
-      const findCites = (el) => {
-        const parentEl = el.parentElement;
-        if (parentEl) {
-          const cites = parentEl.dataset.cites;
-          if (cites) {
-            return {
-              el,
-              cites: cites.split(' ')
-            };
-          } else {
-            return findCites(el.parentElement)
-          }
-        } else {
-          return undefined;
-        }
-      };
-      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-      for (var i=0; i<bibliorefs.length; i++) {
-        const ref = bibliorefs[i];
-        const citeInfo = findCites(ref);
-        if (citeInfo) {
-          tippyHover(citeInfo.el, function() {
-            var popup = window.document.createElement('div');
-            citeInfo.cites.forEach(function(cite) {
-              var citeDiv = window.document.createElement('div');
-              citeDiv.classList.add('hanging-indent');
-              citeDiv.classList.add('csl-entry');
-              var biblioDiv = window.document.getElementById('ref-' + cite);
-              if (biblioDiv) {
-                citeDiv.innerHTML = biblioDiv.innerHTML;
-              }
-              popup.appendChild(citeDiv);
-            });
-            return popup.innerHTML;
-          });
-        }
-      }
-    });
-    </script>
-    
-
-</body></html>
+          if (note) {
