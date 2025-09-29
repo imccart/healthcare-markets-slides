@@ -22,6 +22,31 @@ if (!require("pacman")) install.packages("pacman")
 pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 ```
 
+
+# Motivation
+
+Physicians are trusted to act in patients’ best interests.  Yet financial incentives mean they may provide more (or less) care than patients would choose themselves.  
+
+::: {.fragment}
+How do simple models help us understand when these incentives lead to overuse, underuse, or efficient care?
+:::
+
+
+# Today's Roadmap
+
+1. Physician agency IRL  
+   - Empirical evidence from C-sections and Medicare fees  
+
+2. A simple model with price-setting physicians  
+   - Patient vs. physician optima  
+
+3. A simple model with fixed prices  
+   - Participation constraint and comparative statics  
+
+4. Policy implications  
+   - Payment reforms, utilization, and unintended consequences
+
+
 # Physician Agency
 
 - Basic idea: physicians strongly influence health care decisions, acting as agents on behalf of patients
@@ -31,7 +56,7 @@ pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 For the next couple of classes, we're going to focus on the role of financial incentives. We'll turn to the role of information barriers/heterogeneities at the end of this module
 :::
 
----
+
 
 ## Do financial incentives matter?
 
@@ -41,47 +66,39 @@ Well...**yes!**
 - Clemens and Gottlieb, 2014. [Do Physician's Financial Incentives Affect Medical Treatment and Patient Health](https://www.aeaweb.org/articles?id=10.1257/aer.104.4.1320).
 
 
-# With price setting power...
+# A model with price-setting physicians
 
 
----
 
 ## Setup
 
-- Denote quantity of physician services by $x$
-- Denote benefit of services to patient by $B(x)$
-- Patients pay (and physicians receive) a price of $p$ for each unit of service $x$
-- Physicians incur cost $c$ for each unit of care
-- Net benefit to patients is $NB(x)=B(x)-px$
-- Physicians must choose quantity of care at least better than the patient's outside option, $NB(x)= B(x)-px \geq NB^{0}$.
+- Denote quantity of services by $x$  
+- Patient benefit: $B(x)$ with $B'(x)>0$, $B''(x)<0$  
+- Patients pay $p$ per unit; physicians incur cost $c$  
+- Net benefit to patients: $NB(x) = B(x) - px$  
+- Participation constraint: $NB(x) \ge NB^0$  
 
-
----
 
 ## Solving the model
 
-- With this framework, how much care will be provided? (i.e., what is the optimal value of $x$)
+- Question: how much care will be provided?  
 
 ::: {.fragment}
-- Solve the model in two steps:
-  1. Physician will provide minimum surplus to keep the patient, $NB(x) = B(x)-px = NB^{0}$
-  2. Substitute into physician profit function, $\pi=(p-c)x = B(x)-NB^{0} - cx$, and solve for $x$
+- Solve in two steps:  
+  1. Participation: $B(x) - px = NB^0$  
+  2. Substitute into physician profit $\pi = (p-c)x = B(x) - NB^0 - cx$ and solve for $x$
 :::
 
 
----
-
 ## In-class Problem: Physician agency
 
-Denote the quantity of care consumed by $x$, and denote by $B(x)$ the function that determines the benefit of care to the patient. Assume that the patient must pay the full price of care, $px$, so that their net benefit is $NB=B(x)−px$. Further assume that the physician can choose both $x$ and $p$.  
+Denote the quantity of care consumed by $x$, and denote by $B(x)$ the function that determines the benefit of care to the patient. Assume that the patient must pay the full price of care, $px$, so that their net benefit is $NB = B(x) − px$. Further assume that the physician can choose both $x$ and $p$.  
 
-1. Find the patient’s optimal $x$.
-2. Draw the marginal benefit function on a graph and note the price and patient's optimal quantity. Assume that $B'(x)>0$ and $B''(x)<0$ (i.e., the marginal benefit function is positive and downward sloping).
-3. Find the physician's optimal $x$ assuming $NB^{0}=0$. 
-4. Add the physician's optimal $x$ to your graph and interpret the difference.
+1. Find the patient’s optimal $x$.  
+2. Draw the marginal benefit function and note the price and patient’s optimal quantity. Assume $B'(x)>0$ and $B''(x)<0$.  
+3. Find the physician's optimal $x$ assuming $NB^{0}=0$.  
+4. Add the physician's optimal $x$ to your graph and interpret the difference.  
 
-
----
 
 ## Physician agency in a graph
 
@@ -109,7 +126,6 @@ Denote the quantity of care consumed by $x$, and denote by $B(x)$ the function t
 \end{tikzpicture}
 ```
 
----
 
 ## Example
 
@@ -120,30 +136,38 @@ Assume $B(x)=8x^{1/2}$, $NB^{0}=2$, and $c=1$:
 3. Draw this graphically.
 
 
----
 
 ## Answer
 
-First let's re-write the constraint such that $px = 8x^{1/2}$ and $\pi = 8x^{1/2} - 2 - x$. The first order condition for $x$ is then $4x^{-1/2} -1 =0$, which is satisfied at $x^{*}=16$. Substituting this into the constraint, $8x^{1/2} - px=2$ yields $p=\frac{15}{8}$. 
-
-
-But if they could choose on their own, the patient would prefer to maximize their net benefit. This would occur at $4x^{-1/2}=p$, which yields $x=(32/15)^{2} \approx 4.5$ at $p=15/8$.
-
-
-# With fixed prices...
-
----
-
-## Solving the model
-
-The two step approach applies when prices and quantity of care are variable. If the physician cannot set price, then we just work off of the constraint, $B(x)-\bar{p}x=NB^{0}$. 
+- Constraint: $px = 8x^{1/2}$  
+- Profit: $\pi = 8x^{1/2} - 2 - x$  
+- FOC: $4x^{-1/2} - 1 = 0 \;\Rightarrow\; x^{*}=16$  
+- Substituting back: $8x^{1/2} - px = 2 \;\Rightarrow\; p = \tfrac{15}{8}$  
 
 ::: {.fragment}
-Why? This is a corner solution...can't just take a derivative.
+If the patient could choose, they would maximize $NB(x)=B(x)-px$.  
+Condition: $4x^{-1/2} = p$, which yields $x = (32/15)^{2} \approx 4.5$ at $p=15/8$.  
 :::
 
 
----
+
+# A model with fixed prices
+
+
+## Solving the model
+
+## Solving the model
+
+- The two-step method applies when both price and quantity are variable.  
+- If price is fixed (e.g., by Medicare), we instead use the participation constraint:  
+
+$$B(x) - \bar{p}x = NB^{0}$$
+
+::: {.fragment}
+Why? This is a corner solution — derivatives don’t apply in the same way.
+:::
+
+
 
 ## In-class Problem: Agency and fixed prices
 
@@ -153,7 +177,6 @@ Assume $B(x)=4x^{1/2}$, $NB^{0}=0$, anc $c=1$. Further assume that prices are fi
 2. The government is considering increasing the price to $\bar{p}=3$. What are the new optimal levels of care for physicians and patients at this new price?
 3. How would the price change affect the difference between the patient and physician's optimal amounts?
 
----
 
 ## Comparative statics
 An increase in the administratively set price leads to a **decrease** in quantity of services provided. And vice versa, a reduction in price leads to an **increase** in quantity provided. Why?
@@ -165,24 +188,24 @@ b(x)\frac{\mathrm{d}x}{\mathrm{d}p} - x - p\frac{\mathrm{d}x}{\mathrm{d}p} &= 0 
 \end{align*}$$
 :::
 
----
 
-## Comparative statics
+## Comparative statics: intuition
 
-- This comes from the physician's constraint, which is essentially a reflection of demand
-- Higher $\bar{p}$ means the constraint is met at a lower value of $x$, and vice versa
-
----
+- Comes directly from the participation constraint (a demand curve condition)  
+- Higher $\bar{p}$ → constraint binds at lower $x$  
+- Lower $\bar{p}$ → constraint satisfied at higher $x$  
+  
 
 ## Why does this matter?
 
-- Say we want to reduce health care utilization, and we try to do so by cutting payments. Will this work?
-- Relevant for current policy, [Axios Article](https://www.axios.com/2023/02/16/medicare-republicans-hospitals-insurers-biden)
+- Policymakers often try to reduce utilization by cutting payments  
+- But cuts may not have the intended effect on spending or care quality  
+- Relevant case: debates over Medicare’s physician fee schedule ([Axios](https://www.axios.com/2023/02/16/medicare-republicans-hospitals-insurers-biden))  
 
-
----
 
 ## Takeaways
 
-- Basic model of physician agency and financial incentives
-- Focus on role of financial incentives, but clearly other dimensions worth studying
+- A simple framework for physician agency and financial incentives  
+- Physicians may provide more care than patients would choose under full information  
+- Incentives matter, but real-world practice also reflects altruism, norms, and malpractice risk  
+- Sets up next class: comparing **payment systems** (fee-for-service vs. capitation)  

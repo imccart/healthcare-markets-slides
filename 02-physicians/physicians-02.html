@@ -8,7 +8,7 @@
 <link href="physicians-02_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="physicians-02_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="physicians-02_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.290">
+  <meta name="generator" content="quarto-1.5.57">
 
   <meta name="author" content="Ian McCarthy | Emory University">
   <title>Physician Agency and Financial Incentives</title>
@@ -30,7 +30,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="physicians-02_files/libs/revealjs/dist/theme/quarto.css" id="theme">
+  <link rel="stylesheet" href="physicians-02_files/libs/revealjs/dist/theme/quarto.css">
   <link href="physicians-02_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="physicians-02_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="physicians-02_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -158,7 +158,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -338,6 +339,36 @@ Ian McCarthy | Emory University
 </div>
 
 </section>
+<section id="motivation" class="title-slide slide level1 center">
+<h1>Motivation</h1>
+<p>Physicians are trusted to act in patients’ best interests. Yet financial incentives mean they may provide more (or less) care than patients would choose themselves.</p>
+<div class="fragment">
+<p>How do simple models help us understand when these incentives lead to overuse, underuse, or efficient care?</p>
+</div>
+</section>
+
+<section id="todays-roadmap" class="title-slide slide level1 center">
+<h1>Today’s Roadmap</h1>
+<ol type="1">
+<li>Physician agency IRL
+<ul>
+<li>Empirical evidence from C-sections and Medicare fees</li>
+</ul></li>
+<li>A simple model with price-setting physicians
+<ul>
+<li>Patient vs.&nbsp;physician optima</li>
+</ul></li>
+<li>A simple model with fixed prices
+<ul>
+<li>Participation constraint and comparative statics</li>
+</ul></li>
+<li>Policy implications
+<ul>
+<li>Payment reforms, utilization, and unintended consequences</li>
+</ul></li>
+</ol>
+</section>
+
 <section>
 <section id="physician-agency" class="title-slide slide level1 center">
 <h1>Physician Agency</h1>
@@ -358,50 +389,57 @@ Ian McCarthy | Emory University
 </ul>
 </section></section>
 <section>
-<section id="with-price-setting-power" class="title-slide slide level1 center">
-<h1>With price setting power…</h1>
+<section id="a-model-with-price-setting-physicians" class="title-slide slide level1 center">
+<h1>A model with price-setting physicians</h1>
 
 </section>
 <section id="setup" class="slide level2">
 <h2>Setup</h2>
 <ul>
-<li>Denote quantity of physician services by <span class="math inline">\(x\)</span></li>
-<li>Denote benefit of services to patient by <span class="math inline">\(B(x)\)</span></li>
-<li>Patients pay (and physicians receive) a price of <span class="math inline">\(p\)</span> for each unit of service <span class="math inline">\(x\)</span></li>
-<li>Physicians incur cost <span class="math inline">\(c\)</span> for each unit of care</li>
-<li>Net benefit to patients is <span class="math inline">\(NB(x)=B(x)-px\)</span></li>
-<li>Physicians must choose quantity of care at least better than the patient’s outside option, <span class="math inline">\(NB(x)= B(x)-px \geq NB^{0}\)</span>.</li>
+<li>Denote quantity of services by <span class="math inline">\(x\)</span><br>
+</li>
+<li>Patient benefit: <span class="math inline">\(B(x)\)</span> with <span class="math inline">\(B'(x)&gt;0\)</span>, <span class="math inline">\(B''(x)&lt;0\)</span><br>
+</li>
+<li>Patients pay <span class="math inline">\(p\)</span> per unit; physicians incur cost <span class="math inline">\(c\)</span><br>
+</li>
+<li>Net benefit to patients: <span class="math inline">\(NB(x) = B(x) - px\)</span><br>
+</li>
+<li>Participation constraint: <span class="math inline">\(NB(x) \ge NB^0\)</span></li>
 </ul>
 </section>
 <section id="solving-the-model" class="slide level2">
 <h2>Solving the model</h2>
 <ul>
-<li>With this framework, how much care will be provided? (i.e., what is the optimal value of <span class="math inline">\(x\)</span>)</li>
+<li>Question: how much care will be provided?</li>
 </ul>
 <div class="fragment">
 <ul>
-<li>Solve the model in two steps:
+<li>Solve in two steps:
 <ol type="1">
-<li>Physician will provide minimum surplus to keep the patient, <span class="math inline">\(NB(x) = B(x)-px = NB^{0}\)</span></li>
-<li>Substitute into physician profit function, <span class="math inline">\(\pi=(p-c)x = B(x)-NB^{0} - cx\)</span>, and solve for <span class="math inline">\(x\)</span></li>
+<li>Participation: <span class="math inline">\(B(x) - px = NB^0\)</span><br>
+</li>
+<li>Substitute into physician profit <span class="math inline">\(\pi = (p-c)x = B(x) - NB^0 - cx\)</span> and solve for <span class="math inline">\(x\)</span></li>
 </ol></li>
 </ul>
 </div>
 </section>
 <section id="in-class-problem-physician-agency" class="slide level2">
 <h2>In-class Problem: Physician agency</h2>
-<p>Denote the quantity of care consumed by <span class="math inline">\(x\)</span>, and denote by <span class="math inline">\(B(x)\)</span> the function that determines the benefit of care to the patient. Assume that the patient must pay the full price of care, <span class="math inline">\(px\)</span>, so that their net benefit is <span class="math inline">\(NB=B(x)−px\)</span>. Further assume that the physician can choose both <span class="math inline">\(x\)</span> and <span class="math inline">\(p\)</span>.</p>
+<p>Denote the quantity of care consumed by <span class="math inline">\(x\)</span>, and denote by <span class="math inline">\(B(x)\)</span> the function that determines the benefit of care to the patient. Assume that the patient must pay the full price of care, <span class="math inline">\(px\)</span>, so that their net benefit is <span class="math inline">\(NB = B(x) − px\)</span>. Further assume that the physician can choose both <span class="math inline">\(x\)</span> and <span class="math inline">\(p\)</span>.</p>
 <ol type="1">
-<li>Find the patient’s optimal <span class="math inline">\(x\)</span>.</li>
-<li>Draw the marginal benefit function on a graph and note the price and patient’s optimal quantity. Assume that <span class="math inline">\(B'(x)&gt;0\)</span> and <span class="math inline">\(B''(x)&lt;0\)</span> (i.e., the marginal benefit function is positive and downward sloping).</li>
-<li>Find the physician’s optimal <span class="math inline">\(x\)</span> assuming <span class="math inline">\(NB^{0}=0\)</span>.</li>
+<li>Find the patient’s optimal <span class="math inline">\(x\)</span>.<br>
+</li>
+<li>Draw the marginal benefit function and note the price and patient’s optimal quantity. Assume <span class="math inline">\(B'(x)&gt;0\)</span> and <span class="math inline">\(B''(x)&lt;0\)</span>.<br>
+</li>
+<li>Find the physician’s optimal <span class="math inline">\(x\)</span> assuming <span class="math inline">\(NB^{0}=0\)</span>.<br>
+</li>
 <li>Add the physician’s optimal <span class="math inline">\(x\)</span> to your graph and interpret the difference.</li>
 </ol>
 </section>
 <section id="physician-agency-in-a-graph" class="slide level2">
 <h2>Physician agency in a graph</h2>
 
-<img data-src="physicians-02_files/figure-revealjs/unnamed-chunk-2-1.png" class="quarto-discovered-preview-image r-stretch quarto-figure-center" width="960"><p class="caption">Depiction of physician agency</p></section>
+<img data-src="physicians-02_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch quarto-figure-center"><p class="caption">Depiction of physician agency</p></section>
 <section id="example" class="slide level2">
 <h2>Example</h2>
 <p>Assume <span class="math inline">\(B(x)=8x^{1/2}\)</span>, <span class="math inline">\(NB^{0}=2\)</span>, and <span class="math inline">\(c=1\)</span>:</p>
@@ -413,19 +451,38 @@ Ian McCarthy | Emory University
 </section>
 <section id="answer" class="slide level2">
 <h2>Answer</h2>
-<p>First let’s re-write the constraint such that <span class="math inline">\(px = 8x^{1/2}\)</span> and <span class="math inline">\(\pi = 8x^{1/2} - 2 - x\)</span>. The first order condition for <span class="math inline">\(x\)</span> is then <span class="math inline">\(4x^{-1/2} -1 =0\)</span>, which is satisfied at <span class="math inline">\(x^{*}=16\)</span>. Substituting this into the constraint, <span class="math inline">\(8x^{1/2} - px=2\)</span> yields <span class="math inline">\(p=\frac{15}{8}\)</span>.</p>
-<p>But if they could choose on their own, the patient would prefer to maximize their net benefit. This would occur at <span class="math inline">\(4x^{-1/2}=p\)</span>, which yields <span class="math inline">\(x=(32/15)^{2} \approx 4.5\)</span> at <span class="math inline">\(p=15/8\)</span>.</p>
+<ul>
+<li>Constraint: <span class="math inline">\(px = 8x^{1/2}\)</span><br>
+</li>
+<li>Profit: <span class="math inline">\(\pi = 8x^{1/2} - 2 - x\)</span><br>
+</li>
+<li>FOC: <span class="math inline">\(4x^{-1/2} - 1 = 0 \;\Rightarrow\; x^{*}=16\)</span><br>
+</li>
+<li>Substituting back: <span class="math inline">\(8x^{1/2} - px = 2 \;\Rightarrow\; p = \tfrac{15}{8}\)</span></li>
+</ul>
+<div class="fragment">
+<p>If the patient could choose, they would maximize <span class="math inline">\(NB(x)=B(x)-px\)</span>.<br>
+Condition: <span class="math inline">\(4x^{-1/2} = p\)</span>, which yields <span class="math inline">\(x = (32/15)^{2} \approx 4.5\)</span> at <span class="math inline">\(p=15/8\)</span>.</p>
+</div>
 </section></section>
 <section>
-<section id="with-fixed-prices" class="title-slide slide level1 center">
-<h1>With fixed prices…</h1>
+<section id="a-model-with-fixed-prices" class="title-slide slide level1 center">
+<h1>A model with fixed prices</h1>
 
 </section>
 <section id="solving-the-model-1" class="slide level2">
 <h2>Solving the model</h2>
-<p>The two step approach applies when prices and quantity of care are variable. If the physician cannot set price, then we just work off of the constraint, <span class="math inline">\(B(x)-\bar{p}x=NB^{0}\)</span>.</p>
+</section>
+<section id="solving-the-model-2" class="slide level2">
+<h2>Solving the model</h2>
+<ul>
+<li>The two-step method applies when both price and quantity are variable.<br>
+</li>
+<li>If price is fixed (e.g., by Medicare), we instead use the participation constraint:</li>
+</ul>
+<p><span class="math display">\[B(x) - \bar{p}x = NB^{0}\]</span></p>
 <div class="fragment">
-<p>Why? This is a corner solution…can’t just take a derivative.</p>
+<p>Why? This is a corner solution — derivatives don’t apply in the same way.</p>
 </div>
 </section>
 <section id="in-class-problem-agency-and-fixed-prices" class="slide level2">
@@ -447,28 +504,41 @@ b(x)\frac{\mathrm{d}x}{\mathrm{d}p} - x - p\frac{\mathrm{d}x}{\mathrm{d}p} &amp;
 \end{align*}\]</span></p>
 </div>
 </section>
-<section id="comparative-statics-1" class="slide level2">
-<h2>Comparative statics</h2>
+<section id="comparative-statics-intuition" class="slide level2">
+<h2>Comparative statics: intuition</h2>
 <ul>
-<li>This comes from the physician’s constraint, which is essentially a reflection of demand</li>
-<li>Higher <span class="math inline">\(\bar{p}\)</span> means the constraint is met at a lower value of <span class="math inline">\(x\)</span>, and vice versa</li>
+<li>Comes directly from the participation constraint (a demand curve condition)<br>
+</li>
+<li>Higher <span class="math inline">\(\bar{p}\)</span> → constraint binds at lower <span class="math inline">\(x\)</span><br>
+</li>
+<li>Lower <span class="math inline">\(\bar{p}\)</span> → constraint satisfied at higher <span class="math inline">\(x\)</span></li>
 </ul>
 </section>
 <section id="why-does-this-matter" class="slide level2">
 <h2>Why does this matter?</h2>
 <ul>
-<li>Say we want to reduce health care utilization, and we try to do so by cutting payments. Will this work?</li>
-<li>Relevant for current policy, <a href="https://www.axios.com/2023/02/16/medicare-republicans-hospitals-insurers-biden">Axios Article</a></li>
+<li>Policymakers often try to reduce utilization by cutting payments<br>
+</li>
+<li>But cuts may not have the intended effect on spending or care quality<br>
+</li>
+<li>Relevant case: debates over Medicare’s physician fee schedule (<a href="https://www.axios.com/2023/02/16/medicare-republicans-hospitals-insurers-biden">Axios</a>)</li>
 </ul>
 </section>
 <section id="takeaways" class="slide level2">
 <h2>Takeaways</h2>
 <ul>
-<li>Basic model of physician agency and financial incentives</li>
-<li>Focus on role of financial incentives, but clearly other dimensions worth studying</li>
+<li>A simple framework for physician agency and financial incentives<br>
+</li>
+<li>Physicians may provide more care than patients would choose under full information<br>
+</li>
+<li>Incentives matter, but real-world practice also reflects altruism, norms, and malpractice risk<br>
+</li>
+<li>Sets up next class: comparing <strong>payment systems</strong> (fee-for-service vs.&nbsp;capitation)</li>
 </ul>
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
+</div>
 </div>
 </section></section>
     </div>
@@ -498,7 +568,6 @@ b(x)\frac{\mathrm{d}x}{\mathrm{d}p} - x - p\frac{\mathrm{d}x}{\mathrm{d}p} &amp;
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': true,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -685,42 +754,80 @@ b(x)\frac{\mathrm{d}x}{\mathrm{d}p} - x - p\frac{\mathrm{d}x}{\mathrm{d}p} &amp;
       });
     </script>
     
+
     <script>
+
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
       // slide changes (different for each slide format).
+
       (function () {
+
         // dispatch for htmlwidgets
+
         function fireSlideEnter() {
+
           const event = window.document.createEvent("Event");
+
           event.initEvent("slideenter", true, true);
+
           window.document.dispatchEvent(event);
+
         }
+
+    
 
         function fireSlideChanged(previousSlide, currentSlide) {
+
           fireSlideEnter();
 
+    
+
           // dispatch for shiny
+
           if (window.jQuery) {
+
             if (previousSlide) {
+
               window.jQuery(previousSlide).trigger("hidden");
+
             }
+
             if (currentSlide) {
+
               window.jQuery(currentSlide).trigger("shown");
+
             }
+
           }
+
         }
+
+    
 
         // hookup for slidy
+
         if (window.w3c_slidy) {
+
           window.w3c_slidy.add_observer(function (slide_num) {
+
             // slide_num starts at position 1
+
             fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
           });
+
         }
 
+    
+
       })();
+
     </script>
+
+    
 
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -754,18 +861,7 @@ b(x)\frac{\mathrm{d}x}{\mathrm{d}p} - x - p\frac{\mathrm{d}x}{\mathrm{d}p} &amp;
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -797,11 +893,50 @@ b(x)\frac{\mathrm{d}x}{\mathrm{d}p} - x - p\frac{\mathrm{d}x}{\mathrm{d}p} &amp;
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
-      function tippyHover(el, contentFn) {
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -811,8 +946,17 @@ b(x)\frac{\mathrm{d}x}{\mathrm{d}p} - x - p\frac{\mathrm{d}x}{\mathrm{d}p} &amp;
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -826,7 +970,11 @@ b(x)\frac{\mathrm{d}x}{\mathrm{d}p} - x - p\frac{\mathrm{d}x}{\mathrm{d}p} &amp;
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {
