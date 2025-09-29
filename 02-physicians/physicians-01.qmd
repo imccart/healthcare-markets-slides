@@ -22,138 +22,147 @@ if (!require("pacman")) install.packages("pacman")
 pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 ```
 
-# Overview
+# Why focus on physicians?
 
----
+The U.S. spends heavily to train and employ physicians, and patients place enormous trust in them.  
+Yet, across markets, patients with the *same* condition can receive very different treatments.  
+
+::: {.fragment}
+Why do highly skilled professionals make such different choices?  
+And what does that mean for costs, quality, and equity?  
+:::
+
+
+# Today's Roadmap
+
+1. The structure of health care delivery  
+   - How training, affiliations, and institutions shape practice  
+
+2. Physicians as gatekeepers  
+   - Why they hold outsized influence over patient care  
+
+3. Physician agency  
+   - Information, incentives, and alignment with patient interests  
+
+4. Variation and waste  
+   - Evidence from the Dartmouth Atlas and low-value care studies  
+
+# Landscape of Health Care Delivery in U.S.
 
 ## Lots of different players
-
 - Physicians
 - Nurses
 - Hospitals
 - Prescription drugs
-- Rehabilitation (home health, SNF, rehap hospitals)
-- Long-term care (home health, SNF)
+- Rehabilitation (home health, SNF, rehab hospitals)
+- Long-term care
 - Ancillary services (labs, imaging)
 
 ::: {.fragment}
-But physicians have an outsized role as they influence almost all areas of health care delivery
+But physicians have an outsized role, shaping nearly all areas of delivery.
 :::
 
 
----
+## Training and specialization
+- Medical school, residency, fellowship shape practice styles  
+- Primary care vs. specialists  
+- Referral flows determine how patients move through the system  
 
-## Physician training and interactions
 
-- Training, residency, and maybe fellowship...all influence future practice styles
-- Primary care vs specialists
-- Referrals within and across physician types
-
----
-
-## Physician organizational affiliations
-
-- Self-employed as part of own practice
-- Part of much larger group practice
-- Vertically integrated with hospital or insurer
-
----
-
-## Types of hospitals
-
-- General, acute-care, short term
-- Rehab hospitals
-- Specialty hospitals (Children's, orthopedic, cardiac, cancer centers)
-- Long-term care hospitals
-- Inpatient versus outpatient
-- Stand-alone surgery centers
-- Stand-alone EDs
-
----
-
-## Ownership type
-
-- Government owned or assisted
-- Private not-for-profit
-- Private for-profit
-- Private equity 
-
----
-
-## Why does all of this matter
-
-Physicians are often the "gatekeepers" into many other facets of health care:
-
-- Physician is entry point into health care for most patients (even in the ED)
-- PCPs refer to specialists and ancillary services
-- Specialists refer to ancillary services, other specialists, and may select where to operate (if needed)
-- Specialists or hospitalists refer patients to follow-up care after inpatient stays
-- All types of physicians help in selecting medications
-
----
-
-In making these decisions, physicians are influenced by many factors:
-
-- Patient preferences
-- Patient "need"
-- Knowledge of possible treatments and interventions
-- Skill/training in specific interventions
-- Payment for different services
-- Relationships with other physicians and institutions 
-
----
-
-## Physician agency
-
-- Physicians more informed that patients
-- Physicians can influence what care is provided and where
+## Organizational affiliations
+- Self-employed solo practice  
+- Group practices  
+- Employment by hospitals or insurers  
 
 ::: {.fragment}
-- **Physician agency** reflects the fact that physicians make/suggest health care decisions on behalf of the patient, so the physician is an "agent" of the patient
-- When is this decision more or less similar to what the patient would have made on their own?
+These affiliations influence autonomy, resources, and incentives.
 :::
 
-# Variation in Health Care Utilization
 
----
+## Physician–hospital interactions
+- General acute-care hospitals  
+- Rehabilitation hospitals  
+- Specialty centers (children’s, cardiac, cancer, orthopedic)  
+- Long-term care hospitals  
+- Outpatient vs. inpatient; stand-alone EDs and surgery centers  
 
-Consequences of physician agency:
 
-- Patients subjected to information frictions or financial incentives of physicians
-- The types of care people receive will depend on the physician
-- Potential variation in health care utilization and spending across and even within markets
-- Example, [Is Health Care Shoppable?](https://nihcm.org/publications/is-health-care-shoppable-1)
+## Ownership structures
+- Government  
+- Private not-for-profit  
+- Private for-profit  
+- Private equity  
+
+::: {.fragment}
+Ownership affects institutional priorities and the constraints physicians face.
+:::
+
+
+
+# Physicians as Gatekeepers
+
+## Scope of influence
+- Entry point for most patients (PCPs, ED)  
+- Referrals to specialists and ancillary services  
+- Specialists refer further, select surgery sites, order tests  
+- Hospitalists/specialists coordinate post-acute care  
+- All physicians help determine medications  
+
+
+## Determinants of decisions
+- Patient preferences and health needs  
+- Physician training and skillset  
+- Knowledge of available interventions  
+- Payment incentives  
+- Relationships with peers and institutions  
+
+
+## Physician agency
+- Physicians more informed than patients  
+- Physicians act as agents, making/suggesting care decisions  
+
+::: {.fragment}
+- Key question: Do these decisions align with what patients would choose under full information?  
+:::
+
+
+# Variation in Utilization
+
+## Consequences of agency
+- Patients experience physician-driven frictions and incentives  
+- Care depends on the physician’s practice style  
+- Leads to variation in utilization and spending across and within markets  
+- Example: [Is Health Care Shoppable?](https://nihcm.org/publications/is-health-care-shoppable-1)  
+
+::: {.fragment}
+Variation raises the question: When is it waste?
+:::
 
 ---
 
 :::: {.columns}
-
 ::: {.column width="50%"}
 ![](../figures/dartmouth_map.png)
 :::
-
 ::: {.column width="50%"}
 ![](../figures/dartmouth_dist.png)
 :::
-
 ::::
-  
-# Variation versus "Waste"?
 
----
 
-## What does this say about waste?
+# Variation versus Waste?
 
-- Estimates are that more than 30% of health care expenditures are "wasteful": [(The Atlantic, 2013)](https://www.theatlantic.com/health/archive/2013/12/youre-getting-too-much-healthcare/281896/)
+## How much is waste?
+- Over 30% of health care spending may be wasteful [(The Atlantic, 2013)](https://www.theatlantic.com/health/archive/2013/12/youre-getting-too-much-healthcare/281896/)  
 
-- Some clear areas of waste:
-  - Payment differentials by location of treatment (policy quirks)
-  - Better imaging with little benefit
-  - Proton treatment (for some conditions)
-  - Heart stents (for some patients)
-  - Arthroscopic knee surgery
-  
+**Examples**  
+- Payment quirks by location  
+- Advanced imaging with little benefit  
+- Proton therapy for some cancers  
+- Coronary stents for low-risk patients  
+- Arthroscopic knee surgery  
+
 ::: {.fragment}
-But...Many estimates of "waste" are after-the-fact. It's actually very hard to identify waste before-hand. [Report on End-of-life Spending](http://news.mit.edu/2018/value-late-life-health-care-spending-medicare-0628)
+But: waste is hard to identify prospectively.  
+See [MIT report on end-of-life spending](http://news.mit.edu/2018/value-late-life-health-care-spending-medicare-0628).  
 :::
-

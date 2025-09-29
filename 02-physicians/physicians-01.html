@@ -8,7 +8,7 @@
 <link href="physicians-01_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="physicians-01_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="physicians-01_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.290">
+  <meta name="generator" content="quarto-1.5.57">
 
   <meta name="author" content="Ian McCarthy | Emory University">
   <title>The Role of Physicians in Health Care Delivery</title>
@@ -30,7 +30,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="physicians-01_files/libs/revealjs/dist/theme/quarto.css" id="theme">
+  <link rel="stylesheet" href="physicians-01_files/libs/revealjs/dist/theme/quarto.css">
   <link href="physicians-01_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="physicians-01_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="physicians-01_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -158,7 +158,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -338,9 +339,41 @@ Ian McCarthy | Emory University
 </div>
 
 </section>
+<section id="why-focus-on-physicians" class="title-slide slide level1 center">
+<h1>Why focus on physicians?</h1>
+<p>The U.S. spends heavily to train and employ physicians, and patients place enormous trust in them.<br>
+Yet, across markets, patients with the <em>same</em> condition can receive very different treatments.</p>
+<div class="fragment">
+<p>Why do highly skilled professionals make such different choices?<br>
+And what does that mean for costs, quality, and equity?</p>
+</div>
+</section>
+
+<section id="todays-roadmap" class="title-slide slide level1 center">
+<h1>Today’s Roadmap</h1>
+<ol type="1">
+<li>The structure of health care delivery
+<ul>
+<li>How training, affiliations, and institutions shape practice</li>
+</ul></li>
+<li>Physicians as gatekeepers
+<ul>
+<li>Why they hold outsized influence over patient care</li>
+</ul></li>
+<li>Physician agency
+<ul>
+<li>Information, incentives, and alignment with patient interests</li>
+</ul></li>
+<li>Variation and waste
+<ul>
+<li>Evidence from the Dartmouth Atlas and low-value care studies</li>
+</ul></li>
+</ol>
+</section>
+
 <section>
-<section id="overview" class="title-slide slide level1 center">
-<h1>Overview</h1>
+<section id="landscape-of-health-care-delivery-in-u.s." class="title-slide slide level1 center">
+<h1>Landscape of Health Care Delivery in U.S.</h1>
 
 </section>
 <section id="lots-of-different-players" class="slide level2">
@@ -350,135 +383,166 @@ Ian McCarthy | Emory University
 <li>Nurses</li>
 <li>Hospitals</li>
 <li>Prescription drugs</li>
-<li>Rehabilitation (home health, SNF, rehap hospitals)</li>
-<li>Long-term care (home health, SNF)</li>
+<li>Rehabilitation (home health, SNF, rehab hospitals)</li>
+<li>Long-term care</li>
 <li>Ancillary services (labs, imaging)</li>
 </ul>
 <div class="fragment">
-<p>But physicians have an outsized role as they influence almost all areas of health care delivery</p>
+<p>But physicians have an outsized role, shaping nearly all areas of delivery.</p>
 </div>
 </section>
-<section id="physician-training-and-interactions" class="slide level2">
-<h2>Physician training and interactions</h2>
+<section id="training-and-specialization" class="slide level2">
+<h2>Training and specialization</h2>
 <ul>
-<li>Training, residency, and maybe fellowship…all influence future practice styles</li>
-<li>Primary care vs specialists</li>
-<li>Referrals within and across physician types</li>
+<li>Medical school, residency, fellowship shape practice styles<br>
+</li>
+<li>Primary care vs.&nbsp;specialists<br>
+</li>
+<li>Referral flows determine how patients move through the system</li>
 </ul>
 </section>
-<section id="physician-organizational-affiliations" class="slide level2">
-<h2>Physician organizational affiliations</h2>
+<section id="organizational-affiliations" class="slide level2">
+<h2>Organizational affiliations</h2>
 <ul>
-<li>Self-employed as part of own practice</li>
-<li>Part of much larger group practice</li>
-<li>Vertically integrated with hospital or insurer</li>
+<li>Self-employed solo practice<br>
+</li>
+<li>Group practices<br>
+</li>
+<li>Employment by hospitals or insurers</li>
+</ul>
+<div class="fragment">
+<p>These affiliations influence autonomy, resources, and incentives.</p>
+</div>
+</section>
+<section id="physicianhospital-interactions" class="slide level2">
+<h2>Physician–hospital interactions</h2>
+<ul>
+<li>General acute-care hospitals<br>
+</li>
+<li>Rehabilitation hospitals<br>
+</li>
+<li>Specialty centers (children’s, cardiac, cancer, orthopedic)<br>
+</li>
+<li>Long-term care hospitals<br>
+</li>
+<li>Outpatient vs.&nbsp;inpatient; stand-alone EDs and surgery centers</li>
 </ul>
 </section>
-<section id="types-of-hospitals" class="slide level2">
-<h2>Types of hospitals</h2>
+<section id="ownership-structures" class="slide level2">
+<h2>Ownership structures</h2>
 <ul>
-<li>General, acute-care, short term</li>
-<li>Rehab hospitals</li>
-<li>Specialty hospitals (Children’s, orthopedic, cardiac, cancer centers)</li>
-<li>Long-term care hospitals</li>
-<li>Inpatient versus outpatient</li>
-<li>Stand-alone surgery centers</li>
-<li>Stand-alone EDs</li>
-</ul>
-</section>
-<section id="ownership-type" class="slide level2">
-<h2>Ownership type</h2>
-<ul>
-<li>Government owned or assisted</li>
-<li>Private not-for-profit</li>
-<li>Private for-profit</li>
+<li>Government<br>
+</li>
+<li>Private not-for-profit<br>
+</li>
+<li>Private for-profit<br>
+</li>
 <li>Private equity</li>
 </ul>
+<div class="fragment">
+<p>Ownership affects institutional priorities and the constraints physicians face.</p>
+</div>
+</section></section>
+<section>
+<section id="physicians-as-gatekeepers" class="title-slide slide level1 center">
+<h1>Physicians as Gatekeepers</h1>
+
 </section>
-<section id="why-does-all-of-this-matter" class="slide level2">
-<h2>Why does all of this matter</h2>
-<p>Physicians are often the “gatekeepers” into many other facets of health care:</p>
+<section id="scope-of-influence" class="slide level2">
+<h2>Scope of influence</h2>
 <ul>
-<li>Physician is entry point into health care for most patients (even in the ED)</li>
-<li>PCPs refer to specialists and ancillary services</li>
-<li>Specialists refer to ancillary services, other specialists, and may select where to operate (if needed)</li>
-<li>Specialists or hospitalists refer patients to follow-up care after inpatient stays</li>
-<li>All types of physicians help in selecting medications</li>
+<li>Entry point for most patients (PCPs, ED)<br>
+</li>
+<li>Referrals to specialists and ancillary services<br>
+</li>
+<li>Specialists refer further, select surgery sites, order tests<br>
+</li>
+<li>Hospitalists/specialists coordinate post-acute care<br>
+</li>
+<li>All physicians help determine medications</li>
 </ul>
 </section>
-<section class="slide level2">
-
-<p>In making these decisions, physicians are influenced by many factors:</p>
+<section id="determinants-of-decisions" class="slide level2">
+<h2>Determinants of decisions</h2>
 <ul>
-<li>Patient preferences</li>
-<li>Patient “need”</li>
-<li>Knowledge of possible treatments and interventions</li>
-<li>Skill/training in specific interventions</li>
-<li>Payment for different services</li>
-<li>Relationships with other physicians and institutions</li>
+<li>Patient preferences and health needs<br>
+</li>
+<li>Physician training and skillset<br>
+</li>
+<li>Knowledge of available interventions<br>
+</li>
+<li>Payment incentives<br>
+</li>
+<li>Relationships with peers and institutions</li>
 </ul>
 </section>
 <section id="physician-agency" class="slide level2">
 <h2>Physician agency</h2>
 <ul>
-<li>Physicians more informed that patients</li>
-<li>Physicians can influence what care is provided and where</li>
+<li>Physicians more informed than patients<br>
+</li>
+<li>Physicians act as agents, making/suggesting care decisions</li>
 </ul>
 <div class="fragment">
 <ul>
-<li><strong>Physician agency</strong> reflects the fact that physicians make/suggest health care decisions on behalf of the patient, so the physician is an “agent” of the patient</li>
-<li>When is this decision more or less similar to what the patient would have made on their own?</li>
+<li>Key question: Do these decisions align with what patients would choose under full information?<br>
+</li>
 </ul>
 </div>
 </section></section>
 <section>
-<section id="variation-in-health-care-utilization" class="title-slide slide level1 center">
-<h1>Variation in Health Care Utilization</h1>
+<section id="variation-in-utilization" class="title-slide slide level1 center">
+<h1>Variation in Utilization</h1>
 
 </section>
-<section class="slide level2">
-
-<p>Consequences of physician agency:</p>
+<section id="consequences-of-agency" class="slide level2">
+<h2>Consequences of agency</h2>
 <ul>
-<li>Patients subjected to information frictions or financial incentives of physicians</li>
-<li>The types of care people receive will depend on the physician</li>
-<li>Potential variation in health care utilization and spending across and even within markets</li>
-<li>Example, <a href="https://nihcm.org/publications/is-health-care-shoppable-1">Is Health Care Shoppable?</a></li>
+<li>Patients experience physician-driven frictions and incentives<br>
+</li>
+<li>Care depends on the physician’s practice style<br>
+</li>
+<li>Leads to variation in utilization and spending across and within markets<br>
+</li>
+<li>Example: <a href="https://nihcm.org/publications/is-health-care-shoppable-1">Is Health Care Shoppable?</a></li>
 </ul>
+<div class="fragment">
+<p>Variation raises the question: When is it waste?</p>
+</div>
 </section>
 <section class="slide level2">
 
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><img data-src="../figures/dartmouth_map.png" class="quarto-discovered-preview-image"></p>
+<p><img data-src="../figures/dartmouth_map.png"></p>
 </div><div class="column" style="width:50%;">
 <p><img data-src="../figures/dartmouth_dist.png"></p>
-</div>
-</div>
+</div></div>
 </section></section>
 <section>
 <section id="variation-versus-waste" class="title-slide slide level1 center">
-<h1>Variation versus “Waste”?</h1>
+<h1>Variation versus Waste?</h1>
 
 </section>
-<section id="what-does-this-say-about-waste" class="slide level2">
-<h2>What does this say about waste?</h2>
+<section id="how-much-is-waste" class="slide level2">
+<h2>How much is waste?</h2>
 <ul>
-<li><p>Estimates are that more than 30% of health care expenditures are “wasteful”: <a href="https://www.theatlantic.com/health/archive/2013/12/youre-getting-too-much-healthcare/281896/">(The Atlantic, 2013)</a></p></li>
-<li><p>Some clear areas of waste:</p>
-<ul>
-<li>Payment differentials by location of treatment (policy quirks)</li>
-<li>Better imaging with little benefit</li>
-<li>Proton treatment (for some conditions)</li>
-<li>Heart stents (for some patients)</li>
-<li>Arthroscopic knee surgery</li>
-</ul></li>
+<li>Over 30% of health care spending may be wasteful <a href="https://www.theatlantic.com/health/archive/2013/12/youre-getting-too-much-healthcare/281896/">(The Atlantic, 2013)</a></li>
 </ul>
+<p><strong>Examples</strong><br>
+- Payment quirks by location<br>
+- Advanced imaging with little benefit<br>
+- Proton therapy for some cancers<br>
+- Coronary stents for low-risk patients<br>
+- Arthroscopic knee surgery</p>
 <div class="fragment">
-<p>But…Many estimates of “waste” are after-the-fact. It’s actually very hard to identify waste before-hand. <a href="http://news.mit.edu/2018/value-late-life-health-care-spending-medicare-0628">Report on End-of-life Spending</a></p>
+<p>But: waste is hard to identify prospectively.<br>
+See <a href="http://news.mit.edu/2018/value-late-life-health-care-spending-medicare-0628">MIT report on end-of-life spending</a>.</p>
 </div>
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
+</div>
 </div>
 </section></section>
     </div>
@@ -508,7 +572,6 @@ Ian McCarthy | Emory University
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': true,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -695,42 +758,80 @@ Ian McCarthy | Emory University
       });
     </script>
     
+
     <script>
+
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
       // slide changes (different for each slide format).
+
       (function () {
+
         // dispatch for htmlwidgets
+
         function fireSlideEnter() {
+
           const event = window.document.createEvent("Event");
+
           event.initEvent("slideenter", true, true);
+
           window.document.dispatchEvent(event);
+
         }
+
+    
 
         function fireSlideChanged(previousSlide, currentSlide) {
+
           fireSlideEnter();
 
+    
+
           // dispatch for shiny
+
           if (window.jQuery) {
+
             if (previousSlide) {
+
               window.jQuery(previousSlide).trigger("hidden");
+
             }
+
             if (currentSlide) {
+
               window.jQuery(currentSlide).trigger("shown");
+
             }
+
           }
+
         }
+
+    
 
         // hookup for slidy
+
         if (window.w3c_slidy) {
+
           window.w3c_slidy.add_observer(function (slide_num) {
+
             // slide_num starts at position 1
+
             fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
           });
+
         }
 
+    
+
       })();
+
     </script>
+
+    
 
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -764,18 +865,7 @@ Ian McCarthy | Emory University
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -807,11 +897,50 @@ Ian McCarthy | Emory University
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
-      function tippyHover(el, contentFn) {
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -821,8 +950,17 @@ Ian McCarthy | Emory University
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -834,50 +972,4 @@ Ian McCarthy | Emory University
           // use id or data attribute instead here
           let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
           try { href = new URL(href).hash; } catch {}
-          const id = href.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          return note.innerHTML;
-        });
-      }
-      const findCites = (el) => {
-        const parentEl = el.parentElement;
-        if (parentEl) {
-          const cites = parentEl.dataset.cites;
-          if (cites) {
-            return {
-              el,
-              cites: cites.split(' ')
-            };
-          } else {
-            return findCites(el.parentElement)
-          }
-        } else {
-          return undefined;
-        }
-      };
-      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-      for (var i=0; i<bibliorefs.length; i++) {
-        const ref = bibliorefs[i];
-        const citeInfo = findCites(ref);
-        if (citeInfo) {
-          tippyHover(citeInfo.el, function() {
-            var popup = window.document.createElement('div');
-            citeInfo.cites.forEach(function(cite) {
-              var citeDiv = window.document.createElement('div');
-              citeDiv.classList.add('hanging-indent');
-              citeDiv.classList.add('csl-entry');
-              var biblioDiv = window.document.getElementById('ref-' + cite);
-              if (biblioDiv) {
-                citeDiv.innerHTML = biblioDiv.innerHTML;
-              }
-              popup.appendChild(citeDiv);
-            });
-            return popup.innerHTML;
-          });
-        }
-      }
-    });
-    </script>
-    
-
-</body></html>
+          const id =
