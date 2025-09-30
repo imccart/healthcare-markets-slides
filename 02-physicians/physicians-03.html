@@ -339,8 +339,35 @@ Ian McCarthy | Emory University
 </div>
 
 </section>
-<section id="fee-for-service-versus-capitated-payments" class="slide level2">
-<h2>Fee-for-Service versus Capitated Payments</h2>
+<section id="motivation" class="slide level2">
+<h2>Motivation</h2>
+<ul>
+<li>Physicians face very different incentives under fee-for-service versus capitation<br>
+</li>
+<li>These incentives help explain variation in treatment intensity across systems<br>
+</li>
+<li>Understanding these models is key to understanding U.S. reforms like ACOs, bundled payments, and value-based contracts</li>
+</ul>
+</section>
+<section id="roadmap" class="slide level2">
+<h2>Roadmap</h2>
+<ol type="1">
+<li>Fee-for-Service vs.&nbsp;Capitation<br>
+</li>
+<li>Agency Model and Predictions<br>
+</li>
+<li>Beyond FFS and Capitation: Hybrids and Pay-for-Performance<br>
+</li>
+<li>Physician Agency in Practice</li>
+</ol>
+</section>
+<section>
+<section id="fee-for-service-versus-capitated-payments" class="title-slide slide level1 center">
+<h1>Fee-for-Service versus Capitated Payments</h1>
+
+</section>
+<section id="definitions" class="slide level2">
+<h2>Definitions</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Fee-for-Service (FFS) payments</strong></p>
@@ -366,9 +393,14 @@ Ian McCarthy | Emory University
 <li>What are the incentives in a FFS model if the goal is to make more money?</li>
 <li>Are those incentives different in a capitated payment model? How?</li>
 </ul>
+</section></section>
+<section>
+<section id="capitation-and-agency" class="title-slide slide level1 center">
+<h1>Capitation and Agency</h1>
+
 </section>
-<section id="agency-and-payment-models" class="slide level2">
-<h2>Agency and payment models</h2>
+<section id="a-more-general-model" class="slide level2">
+<h2>A more general model</h2>
 <ul>
 <li>Physician receives fixed (“capitated”) amount for each patient, <span class="math inline">\(R\)</span>, along with some price per unit of service, <span class="math inline">\(p_{s}\)</span></li>
 <li>Physician therefore paid <span class="math inline">\(R + (p_{s} - c)x\)</span> for each patient</li>
@@ -397,9 +429,7 @@ Ian McCarthy | Emory University
 <li>Assume that the benefit function is <span class="math inline">\(B(x) = 16x-2x^{2}\)</span>.</li>
 <li>Assume that the physician is paid a fixed amount, <span class="math inline">\(R\)</span>, for each patient, and earns some profit, <span class="math inline">\(p_{s}-c\)</span>, on each unit of care.</li>
 </ul>
-</section>
-<section class="slide level2">
-
+<p><br></p>
 <ol type="1">
 <li>Solve for the patient’s optimal amount of care (if they could choose the amount on their own).</li>
 <li>Write out the physician’s profit function based on the information provided.</li>
@@ -414,7 +444,7 @@ Ian McCarthy | Emory University
 <li>Set up and solve the physician’s optimization problem and compare the solution to that of the patient’s optimum.</li>
 <li>Show mathematically how the design of an insurance contract (namely, capitated payments versus fee-for-service payments) may determine the extent to which physicians overprovide care.</li>
 </ol>
-</section>
+</section></section>
 <section>
 <section id="capitation-in-practice" class="title-slide slide level1 center">
 <h1>“Capitation” in practice</h1>
@@ -895,55 +925,3 @@ Ian McCarthy | Emory University
         tippyHover(ref, function() {
           // use id or data attribute instead here
           let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-          try { href = new URL(href).hash; } catch {}
-          const id = href.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note) {
-            return note.innerHTML;
-          } else {
-            return "";
-          }
-        });
-      }
-      const findCites = (el) => {
-        const parentEl = el.parentElement;
-        if (parentEl) {
-          const cites = parentEl.dataset.cites;
-          if (cites) {
-            return {
-              el,
-              cites: cites.split(' ')
-            };
-          } else {
-            return findCites(el.parentElement)
-          }
-        } else {
-          return undefined;
-        }
-      };
-      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-      for (var i=0; i<bibliorefs.length; i++) {
-        const ref = bibliorefs[i];
-        const citeInfo = findCites(ref);
-        if (citeInfo) {
-          tippyHover(citeInfo.el, function() {
-            var popup = window.document.createElement('div');
-            citeInfo.cites.forEach(function(cite) {
-              var citeDiv = window.document.createElement('div');
-              citeDiv.classList.add('hanging-indent');
-              citeDiv.classList.add('csl-entry');
-              var biblioDiv = window.document.getElementById('ref-' + cite);
-              if (biblioDiv) {
-                citeDiv.innerHTML = biblioDiv.innerHTML;
-              }
-              popup.appendChild(citeDiv);
-            });
-            return popup.innerHTML;
-          });
-        }
-      }
-    });
-    </script>
-    
-
-</body></html>

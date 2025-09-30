@@ -60,9 +60,8 @@ For the next couple of classes, we're going to focus on the role of financial in
 
 ## Do financial incentives matter?
 
-Well...**yes!**
+Well...**yes!**. Let's talk about one paper in particular:
 
-- Gruber and Owings, 1996. [Physician Financial Incentives and Cesarean Section Delivery](https://www.jstor.org/stable/2555794).
 - Clemens and Gottlieb, 2014. [Do Physician's Financial Incentives Affect Medical Treatment and Patient Health](https://www.aeaweb.org/articles?id=10.1257/aer.104.4.1320).
 
 

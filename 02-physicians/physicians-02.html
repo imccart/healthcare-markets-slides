@@ -382,9 +382,8 @@ Ian McCarthy | Emory University
 </section>
 <section id="do-financial-incentives-matter" class="slide level2">
 <h2>Do financial incentives matter?</h2>
-<p>Well…<strong>yes!</strong></p>
+<p>Well…<strong>yes!</strong>. Let’s talk about one paper in particular:</p>
 <ul>
-<li>Gruber and Owings, 1996. <a href="https://www.jstor.org/stable/2555794">Physician Financial Incentives and Cesarean Section Delivery</a>.</li>
 <li>Clemens and Gottlieb, 2014. <a href="https://www.aeaweb.org/articles?id=10.1257/aer.104.4.1320">Do Physician’s Financial Incentives Affect Medical Treatment and Patient Health</a>.</li>
 </ul>
 </section></section>
@@ -971,51 +970,4 @@ b(x)\frac{\mathrm{d}x}{\mathrm{d}p} - x - p\frac{\mathrm{d}x}{\mathrm{d}p} &amp;
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
           if (note) {
-            return note.innerHTML;
-          } else {
-            return "";
-          }
-        });
-      }
-      const findCites = (el) => {
-        const parentEl = el.parentElement;
-        if (parentEl) {
-          const cites = parentEl.dataset.cites;
-          if (cites) {
-            return {
-              el,
-              cites: cites.split(' ')
-            };
-          } else {
-            return findCites(el.parentElement)
-          }
-        } else {
-          return undefined;
-        }
-      };
-      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-      for (var i=0; i<bibliorefs.length; i++) {
-        const ref = bibliorefs[i];
-        const citeInfo = findCites(ref);
-        if (citeInfo) {
-          tippyHover(citeInfo.el, function() {
-            var popup = window.document.createElement('div');
-            citeInfo.cites.forEach(function(cite) {
-              var citeDiv = window.document.createElement('div');
-              citeDiv.classList.add('hanging-indent');
-              citeDiv.classList.add('csl-entry');
-              var biblioDiv = window.document.getElementById('ref-' + cite);
-              if (biblioDiv) {
-                citeDiv.innerHTML = biblioDiv.innerHTML;
-              }
-              popup.appendChild(citeDiv);
-            });
-            return popup.innerHTML;
-          });
-        }
-      }
-    });
-    </script>
-    
-
-</body></html>
+           
