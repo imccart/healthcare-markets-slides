@@ -339,13 +339,8 @@ Ian McCarthy | Emory University
 </div>
 
 </section>
-<section>
-<section id="variation-in-health-care" class="title-slide slide level1 center">
-<h1>Variation in Health Care</h1>
-
-</section>
-<section id="variation-in-health-care-1" class="slide level2">
-<h2>Variation in Health Care</h2>
+<section id="motivation" class="slide level2">
+<h2>Motivation</h2>
 <p>Consequences of physician agency:</p>
 <ul>
 <li>Patients subjected to information frictions or financial incentives of physicians</li>
@@ -353,8 +348,8 @@ Ian McCarthy | Emory University
 <li>Potential variation in health care utilization and spending across and even within markets</li>
 </ul>
 </section>
-<section id="variation-in-health-care-2" class="slide level2">
-<h2>Variation in Health Care</h2>
+<section id="motivation-1" class="slide level2">
+<h2>Motivation</h2>
 <p>Consequences of physician agency:</p>
 <ul>
 <li>Patients subjected to <u>information frictions</u> or financial incentives of physicians</li>
@@ -362,8 +357,8 @@ Ian McCarthy | Emory University
 <li>Potential variation in health care utilization and spending across and even within markets</li>
 </ul>
 </section>
-<section id="information-frictions" class="slide level2">
-<h2>Information frictions</h2>
+<section id="motivation-2" class="slide level2">
+<h2>Motivation</h2>
 <ul>
 <li>Physicians don’t all have the exact same information</li>
 <li>May depend on…
@@ -373,14 +368,79 @@ Ian McCarthy | Emory University
 <li>Ownership structure (employee of hospital, large group, or self-employed)</li>
 </ul></li>
 </ul>
-</section></section>
+</section>
+<section id="roadmap" class="slide level2">
+<h2>Roadmap</h2>
+<ol type="1">
+<li>Bayes’ Rule</li>
+<li>Beta-Binomial learning model</li>
+<li>Illustration</li>
+<li>Application to physician learning</li>
+</ol>
+</section>
 <section>
-<section id="physician-learning" class="title-slide slide level1 center">
-<h1>Physician Learning</h1>
+<section id="bayes-rule" class="title-slide slide level1 center">
+<h1>Bayes’ Rule</h1>
 
 </section>
-<section id="basic-setup" class="slide level2">
-<h2>Basic setup</h2>
+<section id="basics" class="slide level2">
+<h2>Basics</h2>
+<ul>
+<li>Provides a systematic way to incorporate evidence to form updated beliefs</li>
+<li>Combines existing belief (i.e., prior) with new evidence (i.e., likelihood) to form an updated belief (i.e., posterior)</li>
+</ul>
+<p><span class="math display">\[P(A|B) = \frac{P(B|A) \times P(A)}{P(B)}\]</span></p>
+</section>
+<section id="simple-example" class="slide level2">
+<h2>Simple example</h2>
+<ul>
+<li>Suppose 1% of a population has a disease</li>
+<li>Diagnostic test with 99% accuracy: correctly identifies disease when it is present and correctly rules it out when it is absent</li>
+<li>If a patient tests positive, what is the probability they actually have the disease?</li>
+</ul>
+</section>
+<section id="simple-example-1" class="slide level2">
+<h2>Simple example</h2>
+<p>We know from the setup that:</p>
+<ul>
+<li><span class="math inline">\(P(\text{Disease}) = 0.01\)</span><br>
+</li>
+<li><span class="math inline">\(P(\text{No Disease}) = 0.99\)</span><br>
+</li>
+<li><span class="math inline">\(P(\text{Positive} | \text{Disease}) = 0.99\)</span> (sensitivity)<br>
+</li>
+<li><span class="math inline">\(P(\text{Negative} | \text{No Disease}) = 0.99\)</span> (specificity)</li>
+</ul>
+<div class="fragment">
+<ul>
+<li><span class="math inline">\(P(\text{Positive} | \text{No Disease}) = 0.01\)</span></li>
+<li><span class="math inline">\(P(\text{Positive}) =  Pr(P|D) Pr(D) + Pr(P | ND) Pr(ND)\)</span></li>
+<li><span class="math inline">\(P(\text{Positive}) = (0.99)(0.01) + (0.01)(0.99) = 0.0198\)</span></li>
+</ul>
+</div>
+</section>
+<section id="simple-example-2" class="slide level2">
+<h2>Simple example</h2>
+<p>We can then update according to Bayes’ rule: <span class="math display">\[Pr(D | P) =\frac{Pr(P| D) \times Pr(D)}{Pr(P)} = 0.99 * 0.01 / 0.0198 \approx 0.50\]</span></p>
+<p>So even though the test is highly accurate, the low baseline probability means that a positive result still only implies a 50% probability of actually having the illness.</p>
+</section>
+<section id="generalizing-from-events-to-distributions" class="slide level2">
+<h2>Generalizing from events to distributions</h2>
+<ul>
+<li>Often need to think about distributions of possible values (e.g., a physician’s <em>belief distribution</em> over a treatment’s effectiveness)</li>
+<li>Bayes’ rule generalizes to:</li>
+</ul>
+<p><span class="math display">\[
+P(\theta | y) = \frac{P(y | \theta) \times P(\theta)}{P(y)} \propto P(y | \theta) \times P(\theta),
+\]</span></p>
+</section></section>
+<section>
+<section id="the-beta-binomial-learning-model" class="title-slide slide level1 center">
+<h1>The Beta-Binomial Learning Model</h1>
+
+</section>
+<section id="setup" class="slide level2">
+<h2>Setup</h2>
 <ol type="1">
 <li><strong>Agent:</strong> Economic agent who is trying to learn about an uncertain parameter, denoted <span class="math inline">\(\theta\)</span> (e.g., physician wants to identify the best treatment)</li>
 <li><strong>Beliefs:</strong> Agent’s initial belief about <span class="math inline">\(\theta\)</span> is represented by a prior probability distribution, denoted <span class="math inline">\(P(\theta)\)</span> (e.g., physician’s initial belief about the quality of a given treatment)</li>
@@ -409,43 +469,75 @@ P(\theta|y) &amp;= \frac{P(y|\theta) \times P(\theta)}{P(y)} \\
 <li>As the physician treats patients and observes outcomes, they update their beliefs using Bayes’ rule</li>
 </ul>
 </section>
-<section id="bayes-rule-and-posterior-distributions" class="slide level2">
-<h2>Bayes’ Rule and Posterior Distributions</h2>
+<section id="the-binomial-distribution" class="slide level2">
+<h2>The Binomial Distribution</h2>
 <ul>
-<li>Exploits the usual Bayes’ rule, <span class="math display">\[P(B|A) = \frac{P(A|B)*P(B)}{P(A)}\]</span> (see class <a href="https://econ372f24.classes.ianmccarthyecon.com/resources/">review sheet</a>)</li>
-<li>In general, solving model requires integration of the posterior distribution</li>
-<li>With specific assumptions, there are “closed-form” solutions to the posterior distribution
-<ul>
-<li>We call these “conjugate” distributions</li>
-<li>One example: The beta distribution is the conjugate prior distribution for the Bernoulli distribution (among others)</li>
-</ul></li>
+<li>Physician treats <span class="math inline">\(n\)</span> patients with a new therapy and observes <span class="math inline">\(s\)</span> patients who improve</li>
+<li>Each case is independent and has the same probability of success <span class="math inline">\(\theta\)</span></li>
+<li>Likelihood follows a binomial distribution (series of Bernoulli trials with fixed probability of success)</li>
 </ul>
+<p><span class="math display">\[P(y = s | n, \theta) = {n \choose s} \theta^{s} (1 - \theta)^{n - s},\]</span></p>
 </section>
-<section id="working-with-the-beta-distribution" class="slide level2">
-<h2>Working with the beta distribution</h2>
+<section id="the-beta-distribution" class="slide level2">
+<h2>The Beta Distribution</h2>
 <ul>
 <li>The Beta distribution is governed by its “shape” parameters, <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span></li>
 </ul>
 <p><span class="math display">\[P(θ) = \frac{\theta^{\alpha-1} (1 - \theta)^{\beta-1} }{\tilde{B}(\alpha, \beta)},\]</span> where <span class="math inline">\(\tilde{B}(\alpha, \beta)\)</span> is a normalization constant to ensure the PDF integrates to 1.</p>
 <ul>
-<li>Binomial outcome, <span class="math inline">\(y\sim B(n,\theta)\)</span>, where <span class="math inline">\(n\)</span> is the number of trials and <span class="math inline">\(\theta\)</span> is the probability of success for any single case</li>
+<li>Mean and variance of Beta distribution:</li>
 </ul>
-<p><span class="math display">\[ P(y|n, \theta) = {n \choose s} \theta^{s} (1-\theta)^{n-s}\]</span></p>
+<p><span class="math display">\[
+E[\theta] = \frac{\alpha}{\alpha + \beta}, \quad
+Var(\theta) = \frac{\alpha \beta}{(\alpha + \beta)^2 (\alpha + \beta + 1)}.
+\]</span></p>
 <ul>
-<li>Want to find the posterior distribution for <span class="math inline">\(\theta\)</span> with prior, <span class="math inline">\(\theta \sim Beta(\alpha_{0}, \beta_{0})\)</span></li>
+<li><span class="math inline">\(\alpha = \beta = 1\)</span> reflects uniform priors; <span class="math inline">\(\alpha &gt; \beta\)</span> shifts beliefs to higher values of <span class="math inline">\(\theta\)</span> (optimism); <span class="math inline">\(\alpha &lt; \beta\)</span> shifts belief toward lower values of <span class="math inline">\(\theta\)</span> (skepticism).</li>
+<li>Beta distribution is the <em>conjugate prior</em> for the Binomial distribution</li>
 </ul>
 </section>
 <section id="posterior-distribution" class="slide level2">
 <h2>Posterior distribution</h2>
 <p><span class="math display">\[\begin{align}
 P(\theta | y) &amp;= \frac{P(y| \theta) P(\theta)}{P(y)} \\
-&amp; \propto \frac{ {n \choose s} \theta^{s} (1 - \theta)^{n - s} \theta^{\alpha-1} (1 - \theta)^{\beta-1} } { \tilde{B}(\alpha, \beta) } \\
-&amp; \propto \frac{ {n \choose s} \theta^{\alpha+s-1} (1 - \theta)^{\beta+n-s-1} } { \tilde{B}(\alpha, \beta) } \\
+&amp; = \frac{ {n \choose s} \theta^{s} (1 - \theta)^{n - s} \theta^{\alpha-1} (1 - \theta)^{\beta-1} } { \tilde{B}(\alpha, \beta) } \\
+&amp; = \frac{ {n \choose s} \theta^{\alpha+s-1} (1 - \theta)^{\beta+n-s-1} } { \tilde{B}(\alpha, \beta) } \\
 &amp; \propto Beta(\alpha+s, \beta + n - s)
 \end{align}\]</span></p>
 <ul>
 <li><span class="math inline">\({n \choose s}\)</span> and <span class="math inline">\(\tilde{B}(\alpha, \beta)\)</span> are just normalization constants, so we can ignore them</li>
 <li>reduces to a Beta distribution with shape parameters <span class="math inline">\(\alpha+s\)</span> and <span class="math inline">\(\beta + n - s\)</span>.</li>
+</ul>
+</section></section>
+<section>
+<section id="illustration" class="title-slide slide level1 center">
+<h1>Illustration</h1>
+
+</section>
+<section id="the-beta-prior" class="slide level2">
+<h2>The Beta Prior</h2>
+
+<img data-src="physicians-04_files/figure-revealjs/fig-prior-1.png" width="960" class="r-stretch quarto-figure-center"><p class="caption">
+Figure&nbsp;1: Diffuse Beta(2,2) prior distribution.
+</p></section>
+<section id="binomial-likelihood" class="slide level2">
+<h2>Binomial Likelihood</h2>
+
+<img data-src="physicians-04_files/figure-revealjs/fig-likelihood-1.png" width="960" class="r-stretch quarto-figure-center"><p class="caption">
+Figure&nbsp;2: Binomial likelihood for 14 successes out of 20 trials.
+</p></section>
+<section id="posterior" class="slide level2">
+<h2>Posterior</h2>
+<p>With <span class="math inline">\(\alpha_0 = 2\)</span> and <span class="math inline">\(\beta_0 = 2\)</span>, the posterior parameters become, <span class="math inline">\(\alpha_{1} = \alpha_{0} + s = 16\)</span> and <span class="math inline">\(\beta_{1} = \beta_{0} + n - s = 8\)</span>.</p>
+
+<img data-src="physicians-04_files/figure-revealjs/fig-posterior-1.png" width="960" class="r-stretch quarto-figure-center"><p class="caption">
+Figure&nbsp;3: Prior, likelihood, and posterior distributions.
+</p></section>
+<section id="mean-beliefs" class="slide level2">
+<h2>Mean Beliefs</h2>
+<ul>
+<li>Posterior mean becomes: <span class="math inline">\(E[\theta | y] = \frac{\alpha_1}{\alpha_1 + \beta_1} = \frac{16}{24} \approx 0.67.\)</span></li>
+<li>Moves very close to the probability of success from the data due to the diffuse prior</li>
 </ul>
 </section></section>
 <section>

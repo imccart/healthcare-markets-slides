@@ -22,11 +22,8 @@ if (!require("pacman")) install.packages("pacman")
 pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 ```
 
-# Variation in Health Care
 
----
-
-## Variation in Health Care
+## Motivation
 
 Consequences of physician agency:
 
@@ -34,9 +31,8 @@ Consequences of physician agency:
 - The types of care people receive will depend on the physician
 - Potential variation in health care utilization and spending across and even within markets
 
----
 
-## Variation in Health Care
+## Motivation
 
 Consequences of physician agency:
 
@@ -44,28 +40,84 @@ Consequences of physician agency:
 - The types of care people receive will depend on the physician
 - Potential variation in health care utilization and spending across and even within markets
 
----
 
-## Information frictions
+## Motivation
 
 - Physicians don't all have the exact same information
 - May depend on...
   - **Learning over time** (exposure to different patients and different treatment options)
   - Training and Location (peers)
   - Ownership structure (employee of hospital, large group, or self-employed)
-  
-  
-# Physician Learning
 
----
 
-## Basic setup
+## Roadmap
+
+1. Bayes' Rule
+2. Beta-Binomial learning model
+3. Illustration
+4. Application to physician learning
+
+
+# Bayes' Rule
+
+## Basics
+
+- Provides a systematic way to incorporate evidence to form updated beliefs
+- Combines existing belief (i.e., prior) with new evidence (i.e., likelihood) to form an updated belief (i.e., posterior)
+
+$$P(A|B) = \frac{P(B|A) \times P(A)}{P(B)}$$
+
+
+## Simple example
+
+- Suppose 1% of a population has a disease
+- Diagnostic test with 99% accuracy: correctly identifies disease when it is present and correctly rules it out when it is absent
+- If a patient tests positive, what is the probability they actually have the disease?
+
+## Simple example
+
+We know from the setup that:
+
+- $P(\text{Disease}) = 0.01$  
+- $P(\text{No Disease}) = 0.99$  
+- $P(\text{Positive} | \text{Disease}) = 0.99$ (sensitivity)  
+- $P(\text{Negative} | \text{No Disease}) = 0.99$ (specificity)  
+
+::: {.fragment}
+
+- $P(\text{Positive} | \text{No Disease}) = 0.01$
+- $P(\text{Positive}) =  Pr(P|D) Pr(D) + Pr(P | ND) Pr(ND)$
+- $P(\text{Positive}) = (0.99)(0.01) + (0.01)(0.99) = 0.0198$
+
+:::
+
+## Simple example
+
+We can then update according to Bayes' rule:
+$$Pr(D | P) =\frac{Pr(P| D) \times Pr(D)}{Pr(P)} = 0.99 * 0.01 / 0.0198 \approx 0.50$$
+
+So even though the test is highly accurate, the low baseline probability means that a positive result still only implies a 50% probability of actually having the illness.
+
+
+## Generalizing from events to distributions
+
+- Often need to think about distributions of possible values (e.g., a physician's *belief distribution* over a treatment's effectiveness)
+- Bayes' rule generalizes to:
+
+$$
+P(\theta | y) = \frac{P(y | \theta) \times P(\theta)}{P(y)} \propto P(y | \theta) \times P(\theta)
+$$
+
+
+
+# The Beta-Binomial Learning Model
+
+## Setup
 
 1. **Agent:** Economic agent who is trying to learn about an uncertain parameter, denoted $\theta$ (e.g., physician wants to identify the best treatment)
 2. **Beliefs:** Agent's initial belief about $\theta$ is represented by a prior probability distribution, denoted $P(\theta)$ (e.g., physician's initial belief about the quality of a given treatment)
 3. **Observation:** Agent collects new data, denoted $y$, which provides information about $\theta$ (e.g., physician observes patient outcomes from treatment)
 
----
 
 ## Bayesian updating
 
@@ -81,7 +133,6 @@ P(\theta|y) &= \frac{P(y|\theta) \times P(\theta)}{P(y)} \\
 - $P(y)$ is the marginal probability of patient outcome $y$
 - typically use "proportional to" expression, $\propto$, to focus on relative probabilities and avoid complications from the normalization $P(y)$
 
----
 
 ## Intuition
 
@@ -89,39 +140,40 @@ P(\theta|y) &= \frac{P(y|\theta) \times P(\theta)}{P(y)} \\
 - Initial belief might be "diffuse", with equal probability assigned to all possible outcomes on the $[0,1]$ interval (represented by a uniform distribution) 
 - As the physician treats patients and observes outcomes, they update their beliefs using Bayes' rule
 
----
 
-## Bayes' Rule and Posterior Distributions
+## The Binomial Distribution
 
-- Exploits the usual Bayes' rule, $$P(B|A) = \frac{P(A|B)*P(B)}{P(A)}$$ (see class [review sheet](https://econ372f24.classes.ianmccarthyecon.com/resources/))
-- In general, solving model requires integration of the posterior distribution
-- With specific assumptions, there are "closed-form" solutions to the posterior distribution
-  - We call these "conjugate" distributions
-  - One example: The beta distribution is the conjugate prior distribution for the Bernoulli distribution (among others)
+- Physician treats $n$ patients with a new therapy and observes $s$ patients who improve
+- Each case is independent and has the same probability of success $\theta$
+- Likelihood follows a binomial distribution (series of Bernoulli trials with fixed probability of success)
 
----
+$$P(y = s | n, \theta) = {n \choose s} \theta^{s} (1 - \theta)^{n - s}$$
 
-## Working with the beta distribution
+
+## The Beta Distribution
 
 - The Beta distribution is governed by its "shape" parameters, $\alpha$ and $\beta$
 
 $$P(θ) = \frac{\theta^{\alpha-1} (1 - \theta)^{\beta-1} }{\tilde{B}(\alpha, \beta)},$$
 where $\tilde{B}(\alpha, \beta)$ is a normalization constant to ensure the PDF integrates to 1.
 
-- Binomial outcome, $y\sim B(n,\theta)$, where $n$ is the number of trials and $\theta$ is the probability of success for any single case
+- Mean and variance of Beta distribution:
 
-$$ P(y|n, \theta) = {n \choose s} \theta^{s} (1-\theta)^{n-s}$$
+$$
+E[\theta] = \frac{\alpha}{\alpha + \beta}, \quad
+Var(\theta) = \frac{\alpha \beta}{(\alpha + \beta)^2 (\alpha + \beta + 1)}.
+$$
 
-- Want to find the posterior distribution for $\theta$ with prior, $\theta \sim Beta(\alpha_{0}, \beta_{0})$
-
----
+- $\alpha = \beta = 1$ reflects uniform priors; $\alpha > \beta$ shifts beliefs to higher values of $\theta$ (optimism); $\alpha < \beta$ shifts belief toward lower values of $\theta$ (skepticism).
+- Beta distribution is the *conjugate prior* for the Binomial distribution
+  
 
 ## Posterior distribution
 
 $$\begin{align}
 P(\theta | y) &= \frac{P(y| \theta) P(\theta)}{P(y)} \\
- & \propto \frac{ {n \choose s} \theta^{s} (1 - \theta)^{n - s} \theta^{\alpha-1} (1 - \theta)^{\beta-1} } { \tilde{B}(\alpha, \beta) } \\
- & \propto \frac{ {n \choose s} \theta^{\alpha+s-1} (1 - \theta)^{\beta+n-s-1} } { \tilde{B}(\alpha, \beta) } \\
+ & = \frac{ {n \choose s} \theta^{s} (1 - \theta)^{n - s} \theta^{\alpha-1} (1 - \theta)^{\beta-1} } { \tilde{B}(\alpha, \beta) } \\
+ & = \frac{ {n \choose s} \theta^{\alpha+s-1} (1 - \theta)^{\beta+n-s-1} } { \tilde{B}(\alpha, \beta) } \\
  & \propto Beta(\alpha+s, \beta + n - s)
 \end{align}$$
 
@@ -129,9 +181,82 @@ P(\theta | y) &= \frac{P(y| \theta) P(\theta)}{P(y)} \\
 - reduces to a Beta distribution with shape parameters $\alpha+s$ and $\beta + n - s$.
 
 
+# Illustration
+
+## The Beta Prior
+
+```{r}
+#| echo: false
+#| label: fig-prior
+#| fig-cap: "Diffuse Beta(2,2) prior distribution."
+#| warning: false
+#| message: false
+
+theta <- seq(0, 1, length.out = 200)
+prior <- dbeta(theta, 2, 2)
+
+tibble(theta, prior) |>
+  ggplot(aes(theta, prior)) +
+  geom_line(linewidth = 1.2) +
+  labs(x = expression(theta), y = "Density",
+       title = "Diffuse Beta(2,2) Prior for Treatment Effectiveness") +
+  theme_minimal(base_size = 14)
+```
+
+## Binomial Likelihood
+
+```{r}
+#| echo: false
+#| label: fig-likelihood
+#| fig-cap: "Binomial likelihood for 14 successes out of 20 trials."
+likelihood <- dbinom(14, size = 20, prob = theta)
+
+# Normalize for visualization (so it looks like a density)
+likelihood <- likelihood / sum(likelihood)
+
+tibble(theta, likelihood) |>
+  ggplot(aes(theta, likelihood)) +
+  geom_line(color = "steelblue", linewidth = 1.2) +
+  labs(x = expression(theta), y = "Relative likelihood",
+       title = "Likelihood of 14 Successes out of 20 Trials") +
+  theme_minimal(base_size = 14)
+```
+
+## Posterior
+
+With $\alpha_0 = 2$ and $\beta_0 = 2$, the posterior parameters become, $\alpha_{1} = \alpha_{0} + s = 16$ and $\beta_{1} = \beta_{0} + n - s = 8$.
+
+```{r}
+#| echo: false
+#| label: fig-posterior
+#| fig-cap: "Prior, likelihood, and posterior distributions."
+posterior <- dbeta(theta, 16, 8)
+
+plot_data <- tibble(
+  theta,
+  Prior = dbeta(theta, 2, 2),
+  Likelihood = dbinom(14, size = 20, prob = theta) / max(dbinom(14, size = 20, prob = theta)),
+  Posterior = posterior / max(posterior)
+) |> 
+  pivot_longer(-theta, names_to = "Distribution", values_to = "Density")
+
+ggplot(plot_data, aes(theta, Density, color = Distribution)) +
+  geom_line(linewidth = 1.2) +
+  scale_color_manual(values = c("gray50", "steelblue", "firebrick")) +
+  labs(x = expression(theta), y = "Relative Density",
+       title = "Bayesian Updating in the Beta–Binomial Model") +
+  theme_minimal(base_size = 14) +
+  theme(legend.position = "top")
+```
+
+## Mean Beliefs
+
+- Posterior mean becomes: $E[\theta | y] = \frac{\alpha_1}{\alpha_1 + \beta_1} = \frac{16}{24} \approx 0.67.$
+- Moves very close to the probability of success from the data due to the diffuse prior
+
+
 # Some Examples
 
----
 
 ## Case 1: "Diffuse" prior setup
 
@@ -143,7 +268,6 @@ A physician is evaluating the effectiveness of Treatment A for a certain medical
 
 2. **Observation**: 70 out of 100 patients showed improvement following treatment (i.e., had a successful outcome)
 
----
 
 ## Case 1: "Diffuse" prior solution
 
@@ -156,13 +280,11 @@ Given the assumptions, the physician wants to update their belief about the effe
 2. Calculate the mean of the posterior distribution using the updated parameters:
    - $\mu = \frac{\alpha_{1}}{\alpha_{1}+\beta_{1}} = \frac{71}{71+31} \approx 0.6969$
 
----
 
 ## Case 1: Discussion
 
 In this scenario, the physician's updated belief for the mean effectiveness of treatment is approximately 0.6969, which aligns more closely with the actual mean of 70% based on the observed data and the diffuse prior belief. Because the physician's initial belief (i.e., their prior) is not strong, they update their belief to almost perfectly match the observed data.
 
----
 
 ## Case 2: "Strong" prior setup
 
@@ -174,8 +296,6 @@ A physician is evaluating the effectiveness of Treatment A for a certain medical
 
 2. **Observation**: 70 out of 100 patients showed improvement following treatment (i.e., had a successful outcome)
 
-
----
 
 ## Case 2: "Strong" prior solution
 
@@ -189,15 +309,10 @@ Given the assumptions, the physician wants to update their belief about the effe
    - $\mu = \frac{\alpha_{1}}{\alpha_{1}+\beta_{1}} = \frac{71}{71+50} \approx 0.5861$
 
 
----
-
 ## Case 2: Discussion
 
 In this scenario, the physician's updated belief for the mean effectiveness of treatment is approximately 0.5861, which is much lower relative to the first case of a diffuse prior. Why is that?
 
-
-
----
 
 ## In-class problem: Physician Learning
 
@@ -206,7 +321,6 @@ In this scenario, the physician's updated belief for the mean effectiveness of t
 - Physician 1 with a diffuse prior, $P(\theta) \sim Beta(\alpha_{0}=1, \beta_{0}=1)$
 - Physician 2 is highly skeptical, with a strong negative prior, $P(\theta) \sim Beta(\alpha_{0}=0.01, \beta_{0}=100)$.
 
----
 
 ## In-class problem: Physician learning
 
