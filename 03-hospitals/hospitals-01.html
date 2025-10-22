@@ -397,10 +397,6 @@ Ian McCarthy | Emory University
 <section>
 <section id="what-is-a-hospitals-price" class="title-slide slide level1 center">
 <h1>What is a hospital’s <strong>price</strong>?</h1>
-
-</section>
-<section class="slide level2">
-
 <p>In practice, it’s a negotiation with insurers</p>
 <ul>
 <li>Hospitals can’t set price on their own</li>
@@ -532,14 +528,15 @@ Ian McCarthy | Emory University
 <ul>
 <li>Why are hospital prices so high?</li>
 <li>Why do they vary so much?</li>
-<li>How do factors like market competition, price transparency, or hospital ownership (non-profit vs.&nbsp;for-profit) play a role.?</li>
+<li>How might factors like market competition, price transparency, or hospital ownership (non-profit vs.&nbsp;for-profit) play a role?</li>
 </ul>
 </section>
-<section id="role-of-competition" class="slide level2">
-<h2>Role of competition</h2>
+<section id="role-of-hospital-ownership" class="slide level2">
+<h2>Role of Hospital Ownership</h2>
 <ul>
-<li>Parkview Health in Fort Wayne, IN offers a good case study of high prices and lack of hospital competition</li>
-<li>See article from <a href="https://www.theguardian.com/us-news/2024/oct/17/indiana-medical-debt-parkview-hospital">The Guardian</a></li>
+<li>For-profit hospitals tend to have higher prices than not-for-profit hospitals</li>
+<li>Thoughts on why?</li>
+<li>Decent evidence that not-for-profit hospitals still act with strong for-profit motives</li>
 </ul>
 </section>
 <section id="role-of-price-transparency" class="slide level2">
@@ -551,7 +548,20 @@ Ian McCarthy | Emory University
 </section>
 <section id="role-of-price-transparency-1" class="slide level2">
 <h2>Role of price transparency</h2>
-<p>Price transparency can increase prices essentially by facilitating collusion. In markets where firms observe each other’s prices, they may adjust to match higher competitors’ prices rather than competing to lower them. This dynamic undermines competition, as firms coordinate tacitly by setting prices at similar, often higher, levels. Hospitals may follow similar patterns, especially in concentrated markets, choosing not to undercut one another to maintain higher profit margins.</p>
+<ul>
+<li>Price transparency can increase prices by facilitating collusion</li>
+<li>Firms observe each other’s prices and adjust to match higher competitors’ prices rather than competing to lower them</li>
+<li>Undermines competition, as firms coordinate tacitly by setting prices at similar, often higher, levels</li>
+<li>This could play out in healthcare as well, but it’s not guaranteed</li>
+</ul>
+</section>
+<section id="role-of-competition" class="slide level2">
+<h2>Role of competition</h2>
+<ul>
+<li>Parkview Health in Fort Wayne, IN offers a good case study of high prices and lack of hospital competition</li>
+<li>See article from <a href="https://www.theguardian.com/us-news/2024/oct/17/indiana-medical-debt-parkview-hospital">The Guardian</a></li>
+<li>Listen to audio overview <a href="https://notebooklm.google.com/notebook/1c4c9e46-c37d-409a-b50b-f6c51051db7e?artifactId=cfd373e9-0f35-4549-bb1c-4d5a3f3cd859">here</a></li>
+</ul>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
@@ -984,4 +994,55 @@ Ian McCarthy | Emory University
         tippyHover(ref, function() {
           // use id or data attribute instead here
           let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-          try { href = new URL(href).hash; } catc
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>

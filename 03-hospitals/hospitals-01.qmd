@@ -31,7 +31,6 @@ pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 
 # Some History
 
----
 
 ## Timeline of hospitcal care in the U.S.
 
@@ -45,7 +44,6 @@ pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
   - Medicare and Medicaid in 1965 (Social Security Act)
   - Originally paid on a "cost-plus" basis
 
----
 
 ## How does this play out now?
 
@@ -54,7 +52,6 @@ pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 - Concentration in urban areas, limited access in rural areas
 - Opaque pricing and little or no cost management
 
----
 
 ## Recent developments
 
@@ -64,19 +61,16 @@ pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 - Significant reductions in competitiveness
 - Increasing vertical integration (hospitals owning physician practices or insurers owning hospitals)
 
----
 
 ## Why does any of this matter?
 
 - As we know, we now spend **a lot** on health care in the U.S., and a big part of that is very high health care prices (and a big part of that is hospital prices)
 - Must understand hospital markets and hospital pricing if we want to address healthcare spending
 
+
 # What is a hospital's **price**?
 
----
-
 In practice, it's a negotiation with insurers
-
 
 - Hospitals can't set price on their own
 - Bargaining problem where insurer and hospital split some total amount
@@ -109,7 +103,6 @@ Lots of different payers paying lots of different prices:
 Price $\neq$ charge $\neq$ cost $\neq$ patient out-of-pocket spending
 :::
 
----
 
 ## Different prices for different payors
 
@@ -121,8 +114,6 @@ Price $\neq$ charge $\neq$ cost $\neq$ patient out-of-pocket spending
 Source: [Health Care Pricing Project](https://healthcarepricingproject.org/)
 :::
 
-
----
 
 ## Different notions of "price"
 
@@ -159,14 +150,12 @@ We'll get into the real data later in this module, but for now...a few facts:
 
 3. Hospital prices are NOT transparent
 
----
 
 ## Hospital prices in US
 
 - Recall the high spending on healthcare in US relative to other countries. [Health System Tracker](https://www.healthsystemtracker.org/brief/what-drives-health-spending-in-the-u-s-compared-to-other-countries/#Healthcare%20spending%20per%20capita,%20by%20spending%20category,%202021)
 - This is largely driven by higher prices. [Health System Tracker](https://www.healthsystemtracker.org/chart-collection/how-do-healthcare-prices-and-use-in-the-u-s-compare-to-other-countries/)
 
----
 
 ## [Price variation](https://healthcostinstitute.org/hcci-originals-dropdown/all-hcci-reports/hmi-2019-service-prices)
 
@@ -182,32 +171,37 @@ We'll get into the real data later in this module, but for now...a few facts:
 Source: [Health Care Pricing Project](https://healthcarepricingproject.org)
 :::
 
----
 
 ## Discussion questions
 
 - Why are hospital prices so high?
 - Why do they vary so much? 
-- How do factors like market competition, price transparency, or hospital ownership (non-profit vs. for-profit) play a role.?
+- How might factors like market competition, price transparency, or hospital ownership (non-profit vs. for-profit) play a role?
 
 
----
+## Role of Hospital Ownership
 
-## Role of competition
+- For-profit hospitals tend to have higher prices than not-for-profit hospitals
+- Thoughts on why?
+- Decent evidence that not-for-profit hospitals still act with strong for-profit motives
 
-- Parkview Health in Fort Wayne, IN offers a good case study of high prices and lack of hospital competition
-- See article from [The Guardian](https://www.theguardian.com/us-news/2024/oct/17/indiana-medical-debt-parkview-hospital)
-
-
----
 
 ## Role of price transparency
 
 - How does the lack of price transparency impact patient behavior and healthcare costs?
 - Would making hospital prices more transparent reduce healthcare spending, or would it lead to unintended consequences?
 
----
 
 ## Role of price transparency
 
-Price transparency can increase prices essentially by facilitating collusion. In markets where firms observe each other’s prices, they may adjust to match higher competitors' prices rather than competing to lower them. This dynamic undermines competition, as firms coordinate tacitly by setting prices at similar, often higher, levels. Hospitals may follow similar patterns, especially in concentrated markets, choosing not to undercut one another to maintain higher profit margins.
+- Price transparency can increase prices by facilitating collusion
+- Firms observe each other’s prices and adjust to match higher competitors' prices rather than competing to lower them
+- Undermines competition, as firms coordinate tacitly by setting prices at similar, often higher, levels
+- This could play out in healthcare as well, but it's not guaranteed
+
+
+## Role of competition
+
+- Parkview Health in Fort Wayne, IN offers a good case study of high prices and lack of hospital competition
+- See article from [The Guardian](https://www.theguardian.com/us-news/2024/oct/17/indiana-medical-debt-parkview-hospital)
+- Listen to audio overview [here](https://notebooklm.google.com/notebook/1c4c9e46-c37d-409a-b50b-f6c51051db7e?artifactId=cfd373e9-0f35-4549-bb1c-4d5a3f3cd859)
