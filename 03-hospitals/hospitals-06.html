@@ -339,13 +339,21 @@ Ian McCarthy | Emory University
 </div>
 
 </section>
+<section id="outline" class="slide level2">
+<h2>Outline</h2>
+<ul>
+<li>Measuring competitiveness</li>
+<li>Hospital competition in practice</li>
+<li>Different types of mergers</li>
+</ul>
+</section>
 <section>
 <section id="measuring-competitiveness" class="title-slide slide level1 center">
 <h1>Measuring competitiveness</h1>
 
 </section>
-<section id="measuring-competitiveness-1" class="slide level2">
-<h2>Measuring competitiveness</h2>
+<section id="the-hhi" class="slide level2">
+<h2>The HHI</h2>
 <ul>
 <li>Common measure is Herfindahl-Hirschman Index (HHI), <span class="math inline">\(\sum_{i=1}^{N} s_{i}^{2}\)</span>.
 <ul>
@@ -364,7 +372,7 @@ Ian McCarthy | Emory University
 <p>where:</p>
 <ul>
 <li><span class="math inline">\(Q = \sum_{i=1}^{N} q_{i}\)</span>: Total market output</li>
-<li><span class="math inline">\(P(Q) = a - bQ\)</span>: Inverse demand function</li>
+<li><span class="math inline">\(P(Q)\)</span>: Inverse demand function</li>
 <li><span class="math inline">\(c\)</span>: Marginal cost (assumed identical for all firms)</li>
 </ul></li>
 </ul>
@@ -372,17 +380,17 @@ Ian McCarthy | Emory University
 <section id="first-order-condition-for-profit-maximization" class="slide level2">
 <h2>First-Order Condition for Profit Maximization</h2>
 <ul>
-<li><p>Each firm maximizes profit by choosing <span class="math inline">\(q_{i}\)</span> such that: <span class="math display">\[\frac{\partial \pi_{i}}{\partial q_{i}} = P(Q) + q_{i} \frac{\partial P}{\partial Q} - c = 0\]</span></p></li>
-<li><p>Substitute <span class="math inline">\(P(Q) = a - bQ\)</span> and <span class="math inline">\(\frac{\partial P}{\partial Q} = -b\)</span>: <span class="math display">\[P(Q) - c = b q_{i}\]</span></p>
-<p>This leads to a Cournot-Nash equilibrium in quantities.</p></li>
+<li><p>Each firm maximizes profit by choosing <span class="math inline">\(q_{i}\)</span> such that: <span class="math display">\[\frac{\partial \pi_{i}}{\partial q_{i}} = P(Q) + q_{i} P'(Q) - c = 0\]</span></p></li>
+<li><p>Rearrange to express the <strong>markup</strong> of price over marginal cost for firm <span class="math inline">\(i\)</span>: <span class="math display">\[\frac{P(Q) - c}{P(Q)} = \frac{P'(Q) q_{i}}{P(Q)}\]</span></p></li>
 </ul>
 </section>
 <section id="deriving-the-markup-over-marginal-cost" class="slide level2">
 <h2>Deriving the Markup Over Marginal Cost</h2>
 <ul>
-<li><p>Rearrange to express the <strong>markup</strong> of price over marginal cost for firm <span class="math inline">\(i\)</span>: <span class="math display">\[\frac{P(Q) - c}{P(Q)} = \frac{b q_{i}}{P(Q)}\]</span></p></li>
 <li><p>Using market share <span class="math inline">\(s_{i} = \frac{q_{i}}{Q}\)</span>: <span class="math display">\[\frac{P(Q) - c}{P(Q)} = \frac{s_{i}}{\epsilon}\]</span></p>
-<p>where <span class="math inline">\(\epsilon = \frac{P}{Q} \cdot \frac{dQ}{dP}\)</span> is the market demand elasticity.</p></li>
+<p>where <span class="math inline">\(\epsilon = \frac{P(Q)}{Q} \cdot \frac{dP}{dQ}\)</span> is the market demand elasticity.</p></li>
+<li><p>Denote the Lerner index by <span class="math inline">\(L_{i} = \frac{P(Q) - c}{P(Q)}\)</span> and derive weighted average:</p>
+<p><span class="math display">\[L_{avg} = \sum_{i=1}^{N} s_{i} L_{i} = \sum_{i=1}^{N} s_{i} \times \frac{s_{i}}{\epsilon} = \frac{1}{\epsilon}\times \sum_{i=1}^{N} s_{i}^{2}\]</span></p></li>
 </ul>
 </section>
 <section id="connecting-markup-to-hhi" class="slide level2">
@@ -392,8 +400,8 @@ Ian McCarthy | Emory University
 <li><p><strong>Conclusion</strong>: Higher market concentration (higher HHI) leads to higher markups over marginal cost, linking market power (HHI) to markup in Cournot competition.</p></li>
 </ul>
 </section>
-<section id="defining-the-market" class="slide level2">
-<h2>Defining the market</h2>
+<section id="key-issue-defining-the-market" class="slide level2">
+<h2>Key issue: Defining the market</h2>
 <p>Lots of subjectivity…</p>
 <ul>
 <li>Radius around a hospital?</li>
@@ -401,6 +409,11 @@ Ian McCarthy | Emory University
 <li>Patient/physician referrals?</li>
 <li>At what product-level do hospitals compete?</li>
 </ul>
+</section></section>
+<section>
+<section id="overall-competitiveness-of-hospital-markets" class="title-slide slide level1 center">
+<h1>Overall Competitiveness of Hospital Markets</h1>
+
 </section>
 <section id="trends-in-competitiveness" class="slide level2">
 <h2>Trends in competitiveness</h2>
@@ -538,14 +551,14 @@ Ian McCarthy | Emory University
 
 <img data-src="../figures/nihcm-mmc.png" class="r-stretch"></section></section>
 <section>
-<section id="what-next" class="title-slide slide level1 center">
-<h1>What Next?</h1>
+<section id="final-thoughts" class="title-slide slide level1 center">
+<h1>Final thoughts…</h1>
 
 </section>
 <section id="where-do-we-go-frome-here" class="slide level2">
 <h2>Where do we go frome here?</h2>
 <ol type="1">
-<li>Adopt sensible policies</li>
+<li>Adopt sensible policies, <a href="https://www.brookings.edu/research/making-health-care-markets-work-competition-policy-for-health-care/">making health care markets work</a></li>
 </ol>
 <ul>
 <li>Certificate of need laws</li>
@@ -574,12 +587,6 @@ Ian McCarthy | Emory University
 <div class="fragment">
 <p><strong>But</strong> patient can be asked to waive rights</p>
 </div>
-</section>
-<section id="final-thought" class="slide level2">
-<h2>Final thought</h2>
-<ul>
-<li>Please review the Brookings Report, <a href="https://www.brookings.edu/research/making-health-care-markets-work-competition-policy-for-health-care/">Making health care markets work</a></li>
-</ul>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
@@ -1012,55 +1019,4 @@ Ian McCarthy | Emory University
         tippyHover(ref, function() {
           // use id or data attribute instead here
           let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-          try { href = new URL(href).hash; } catch {}
-          const id = href.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note) {
-            return note.innerHTML;
-          } else {
-            return "";
-          }
-        });
-      }
-      const findCites = (el) => {
-        const parentEl = el.parentElement;
-        if (parentEl) {
-          const cites = parentEl.dataset.cites;
-          if (cites) {
-            return {
-              el,
-              cites: cites.split(' ')
-            };
-          } else {
-            return findCites(el.parentElement)
-          }
-        } else {
-          return undefined;
-        }
-      };
-      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-      for (var i=0; i<bibliorefs.length; i++) {
-        const ref = bibliorefs[i];
-        const citeInfo = findCites(ref);
-        if (citeInfo) {
-          tippyHover(citeInfo.el, function() {
-            var popup = window.document.createElement('div');
-            citeInfo.cites.forEach(function(cite) {
-              var citeDiv = window.document.createElement('div');
-              citeDiv.classList.add('hanging-indent');
-              citeDiv.classList.add('csl-entry');
-              var biblioDiv = window.document.getElementById('ref-' + cite);
-              if (biblioDiv) {
-                citeDiv.innerHTML = biblioDiv.innerHTML;
-              }
-              popup.appendChild(citeDiv);
-            });
-            return popup.innerHTML;
-          });
-        }
-      }
-    });
-    </script>
-    
-
-</body></html>
+          try { href = new URL(href).
