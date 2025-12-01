@@ -22,9 +22,17 @@ if (!require("pacman")) install.packages("pacman")
 pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 ```
 
-# Innovation
+## Outline for today
 
----
+1. Innovation and R&D decisions
+   - MEI, dynamic efficiency, and what gets researched 
+2. Prices, competition, and high drug spending
+   - U.S. vs peers, brand vs generic, limited competition  
+3. Policy responses and global equity
+   - Price regulation, push vs pull incentives, global public good
+
+# Innovation and R&D Decisions
+
 
 ## What is innovation?
 
@@ -35,7 +43,14 @@ How would you define "innovation" in pharma?
 - Not clear this is always the argument made in the media
 :::
 
----
+
+## Inducing Innovation
+
+- Governments often care not just about using existing technologies efficiently, but about *creating* new ones
+- Classic example: British Parliament’s 1714 Longitude Prize, which paid for a method to determine longitude at sea
+- The prize worked: it induced decades of R&D by clockmakers, eventually yielding highly accurate marine chronometers
+- Question for today: what “prizes” or incentives are we implicitly setting for pharma R&D?
+
 
 ## What governs innovation?
 
@@ -45,50 +60,98 @@ How would you define "innovation" in pharma?
   2. Comparison of MEI to cost of capital
   3. Investment in the drugs to the point where MEI=cost of capital
 
----
 
-## How to influence innovation?
+## MEI and the Cost of Capital
 
-- If firms are maximizing profits, then the only way to influence innovation is to change the MEI or the cost of capital
-- Shift MEI outward via:
-  - Changing marketing regulations (DTC advertising)
-  - Increasing demand for a drug (market exclusivity, coverage under public insurance)
-- Shift cost of capital down via:
-  - Easier access to funding (tax credits, grants, etc.)
-
----
-
-## How to influence innovation?
-
-- Which approach is "best"?
-
-::: {.fragment}
-- Politically, these are NOT identical policies
-  - Pull incentives require no up-front costs
-  - Pull incentives tend to place R&D burden onto pharma customers
-  - Push incentives require up-front government investment
-  - Push incentives place burden on taxpayers
+::: {layout="[[-1], [1], [-1]]"}
+![](../figures/mei_cost_of_capital.png){fig-align="center"}
 :::
 
-# Regulation
+- Downward-sloping MEI: diminishing returns to additional R\&D projects
+- Horizontal line: cost of capital
+- A leftward shift of MEI (e.g., from lower prices) reduces the profit-maximizing R\&D level
 
----
 
-## Key areas of regulation in this market
+## Dynamic Efficiency
 
-- Price regulation (reference pricing, direct price caps, etc.)
-- In general, lower prices discourages innovation by shifting MEI inward
-- How much? Some estimates of price elasticity of R&D at 0.6
-  - 10% price cut reduces R&D by 6%
-- But what innovations are "lost"? Hard to say
+- Policies that lower drug prices today reduce current spending but also reduce expected future profits
+- If firms internalize these future profits, lower prices → lower MEI → less R&D and fewer future drugs
+- Dynamic efficiency tradeoff: 
+  - Static gain: lower prices and better access for today’s patients
+  - Dynamic cost: potential reduction in future innovation
+- Example: debates around Medicare drug price negotiation and the Inflation Reduction Act can be viewed through this lens
 
----
+
+## What Gets Researched? Preventives vs Treatments
+
+- Even holding total market size fixed, incentives can differ sharply between:
+  - Preventive products (e.g., vaccines)
+  - Treatments after disease onset
+- Kremer & Snyder show that with heterogeneous risk, firms may earn more from treatments than preventives,
+  even when preventives generate more social surplus
+- Intuition: high-risk patients are easier to identify and treat; low-risk individuals may not buy prevention at a price
+  that fully reflects its social value
+
+
+## Kremer–Snyder Stylized Example
+
+- Suppose:
+  - Some consumers have a high probability of getting the disease; others have low risk
+  - A preventive reduces risk; a treatment cures the disease after it appears
+- With the *same* underlying health risk and willingness-to-pay:
+  - Treatment can yield higher firm revenue than prevention because only high-risk consumers are willing to pay high prices for the preventive
+- Takeaway: private R&D may tilt toward treatments over preventives, even when prevention is socially preferable
+
+## Kremer–Snyder: Visualizing Revenues
+
+::: {layout="[[-1], [1], [-1]]"}
+![](../figures/kremer_snyder_grid.png){fig-align="center"}
+:::
+
+- High-risk patients generate relatively high revenue from both prevention and treatment
+- Low-risk patients are hard to monetize with prevention, even when prevention is socially valuable
+- Private R\&D may tilt toward treatments, even if prevention yields higher social surplus
+
+
+## Stage of Disease and Trial Length
+
+- Firms also choose *which stage* of disease to target
+- Shorter clinical trials mean:
+  - Faster time to approval
+  - Longer period of effective market exclusivity
+- Empirically, cancer R&D is heavily concentrated in late-stage and recurrent disease,
+  with far fewer trials on prevention or very early-stage disease
+- This suggests underinvestment in long-term, prevention-oriented projects relative to social value
+
+
+## Evidence: Cancer Trials by Stage
+
+- Data on cancer clinical trials show:
+  - Very high numbers of trials for recurrent and metastatic disease
+  - Much smaller numbers for in situ cancers and especially for prevention trials
+- Interpretation:
+  - Market incentives favor drugs with shorter, cheaper trials and quicker payoffs
+  - Long-horizon prevention may be dynamically underprovided
+
+## Cancer Trials by Stage (Stylized)
+
+::: {layout="[[-1], [1], [-1]]"}
+![](../figures/cancer_trials_by_stage.png){fig-align="center"}
+:::
+
+- Trials are heavily concentrated in metastatic and recurrent disease
+- Far fewer trials focus on prevention or very early-stage disease
+- Suggests underinvestment in long-horizon, prevention-oriented projects
+
+
+# Prices, Competition, and High Drug Spending
+
+
 
 ## Paper Discussion 1
 
 [The High Cost of Prescription Drugs in the United States: Origins and Prospects for Reform](https://pubmed.ncbi.nlm.nih.gov/27552619/)
 
----
 
 ## 1. High Spending
 
@@ -114,14 +177,12 @@ But...
 - Sovaldi (hepatitis C) found to be cost-effective despite \$84,000 per 12-week course
 :::
 
----
 
 ## Research Questions
 
 - What factors seem to contribute to pharma price increases?
 - What policies can help ensure prices match value and that drugs are available in an equitable way?
 
----
 
 ## Brand name vs generic
 
@@ -132,7 +193,6 @@ But...
   - A few hundred generic drugs experienced price increases of more than 1000% from 2008 to 2015
   - Why? Monopoly products, despite no patent protection
 
----
 
 ## Why such high prices?
 
@@ -140,7 +200,27 @@ But...
 - Little direct price regulation
 - Conversely, the UK specifically requires cost-effectiveness thresholds before allowing coverage
 
----
+
+## Case Study: Avastin and Price Discrimination
+
+- Avastin was approved for certain cancers and priced accordingly
+- Physicians later discovered that very small doses were also effective for treating macular degeneration
+- At the cancer price, the implied price per eye injection for ophthalmology was extremely high
+- Regulatory and reimbursement rules limited Genentech’s ability to charge very different prices across indications,
+  creating tensions around off-label use and follow-on products
+- Example of how indication, dosing, and pricing regulations interact with firms’ incentives
+
+
+## Drug Life Cycle and Patent Clock
+
+::: {layout="[[-1], [1], [-1]]"}
+![](../figures/drug_lifecycle_timeline.png){fig-align="center"}
+:::
+
+- Legal patent term starts before approval; effective market exclusivity is shorter
+- Shorter clinical trials bring approval earlier and lengthen effective exclusivity
+- R\&D incentives are shaped by where projects sit on this timeline
+
 
 ## Competition
 
@@ -174,9 +254,20 @@ Barriers to substituting brand name drugs with generic drugs even after generic 
 - 26 states that require patient consent when replacing brand name with generic drugs
 - All states allow "dispense-as-written", which restricts pharmacists' ability to substitute brand name drugs
 
+
+## Drug Pricing Supply Chain
+
+::: {layout="[[-1], [1], [-1]]"}
+![](../figures/pbm_flow_diagram.png){fig-align="center"}
+:::
+
+- Manufacturers set list prices and negotiate rebates with PBMs
+- Insurers reimburse pharmacies; patients face cost sharing at the pharmacy
+- PBM payment structures can weaken incentives to push aggressively for lower net prices
+
 ---
 
-Other barriers to competition in among generics and brand name:
+Other barriers to competition among generics and brand name:
 
 - PBMs often paid based on insurer spending on specific drugs, therefore little incentive to intensely negotiate prices
 - From US House Committee on Oversight and Government reform:
@@ -184,7 +275,7 @@ Other barriers to competition in among generics and brand name:
 > "The investigation revealed, for example, that Turing received 'no pushback from payors' when it increased 'Chenodal price 5x... [Thiola] price 21x... [and Daraprim] price 43x.'
 
 
----
+
 
 ## Justification for high prices
 
@@ -199,7 +290,40 @@ But...
   - Current price growth simply not sustainable
 :::
 
----
+
+# Policy Responses and Global Equity
+
+## Price regulation and innovation
+
+- Price regulation (reference pricing, direct price caps, etc.)
+- In general, lower prices discourages innovation by shifting MEI inward
+- How much? Some estimates of price elasticity of R&D at 0.6
+  - 10% price cut reduces R&D by 6%
+- But what innovations are "lost"? Hard to say
+
+
+## How to influence innovation?
+
+- If firms are maximizing profits, then the only way to influence innovation is to change the MEI or the cost of capital
+- Shift MEI outward via:
+  - Changing marketing regulations (DTC advertising)
+  - Increasing demand for a drug (market exclusivity, coverage under public insurance)
+- Shift cost of capital down via:
+  - Easier access to funding (tax credits, grants, etc.)
+
+
+## How to influence innovation?
+
+- Which approach is "best"?
+
+::: {.fragment}
+- Politically, these are NOT identical policies
+  - Pull incentives require no up-front costs
+  - Pull incentives tend to place R&D burden onto pharma customers
+  - Push incentives require up-front government investment
+  - Push incentives place burden on taxpayers
+:::
+
 
 ## What can we do?
 
@@ -215,13 +339,43 @@ State Policies:
 - Drug product selection laws
 - Allow negotiation of prices and formulary exclusions by Medicaid
 
----
+
+## Advanced Market Commitments (AMCs)
+
+- Governments or donors commit *in advance* to buy a specified quantity of a vaccine or drug at a pre-set price
+- Goal: create a credible, profitable market for products that primarily benefit low-income countries
+- Example: AMC for pneumococcal vaccines in low-income countries
+- AMCs act like:
+  - A pull incentive (payment conditional on success)
+  - Targeted at areas where standard patent-based returns would be too low
+
+
+## Patent Buyouts and Delinking
+
+- Patent buyouts:
+  - Government buys the patent at an auction-based price plus a markup
+  - Drug is then placed in the public domain (generic competition; low prices)
+- Broader “delinkage” proposals:
+  - Replace or reduce reliance on monopoly pricing
+  - Reward firms through prizes or lump-sum payments tied to clinical and social value
+- These ideas aim to preserve dynamic incentives for R&D while reducing static monopoly distortions in prices
+
 
 ## Paper Discussion 2
 
 [PHARMACEUTICAL PRICING AND R&D AS A GLOBAL PUBLIC GOOD](https://www-nber-org.proxy.library.emory.edu/papers/w31272)
 
----
+
+## Who Pays for Pharma R&D?
+
+::: {layout="[[-1], [1], [-1]]"}
+![](../figures/global_pharma_sales_regions.png){fig-align="center"}
+:::
+
+- The U.S. accounts for a disproportionate share of global pharmaceutical sales (stylized)
+- Other high-income regions also contribute, but to a lesser extent
+- Sets up the question of whether the U.S. is over-contributing to global R\&D incentives
+
 
 ## US Subsidizing ROW
 
@@ -229,3 +383,16 @@ State Policies:
 - Strong evidence that US contribution to profit for future innovation is higher than it should be
 - That said, the ROW contribution is meaningful (all other countries do not force prices to marginal costs)
 - Authors urge a more international view of spending, suggesting better policy is to advocate for higher prices elsewhere rather than directly for lower prices in the US
+
+
+## Pulling It Together: Designing R&D Incentives
+
+- Standard patent system: strong dynamic incentives but high prices and uneven R&D portfolio
+- Distortions:
+  - Treatments vs preventives
+  - Short- vs long-horizon projects
+  - Diseases of rich vs poor countries
+- Policy menu:
+  - Adjust prices and coverage (Medicare/Medicaid negotiations, global pricing)
+  - Add targeted push and pull incentives (NIH funding, AMCs, prizes, buyouts)
+- Open question: what mix best balances current access, future innovation, and global equity?
