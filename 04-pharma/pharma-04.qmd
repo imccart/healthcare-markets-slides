@@ -64,7 +64,7 @@ How would you define "innovation" in pharma?
 ## MEI and the Cost of Capital
 
 ::: {layout="[[-1], [1], [-1]]"}
-![](../figures/mei_cost_of_capital.png){fig-align="center"}
+![](../figures/mei_cost_of_capital.png){fig-align="center" width="60%"}
 :::
 
 - Downward-sloping MEI: diminishing returns to additional R\&D projects
@@ -105,7 +105,7 @@ How would you define "innovation" in pharma?
 ## Kremer–Snyder: Visualizing Revenues
 
 ::: {layout="[[-1], [1], [-1]]"}
-![](../figures/kremer_snyder_grid.png){fig-align="center"}
+![](../figures/kremer_snyder_grid.png){fig-align="center" width="60%"}
 :::
 
 - High-risk patients generate relatively high revenue from both prevention and treatment
@@ -136,7 +136,7 @@ How would you define "innovation" in pharma?
 ## Cancer Trials by Stage (Stylized)
 
 ::: {layout="[[-1], [1], [-1]]"}
-![](../figures/cancer_trials_by_stage.png){fig-align="center"}
+![](../figures/cancer_trials_by_stage.png){fig-align="center" width="60%"}
 :::
 
 - Trials are heavily concentrated in metastatic and recurrent disease
@@ -156,7 +156,7 @@ How would you define "innovation" in pharma?
 ## 1. High Spending
 
 ::: {layout="[[-1], [1], [-1]]"}
-![](../figures/pharma-spending-fig1.png){fig-align="center"}
+![](../figures/pharma-spending-fig1.png){fig-align="center" width="60%"}
 :::
 
 ---
@@ -257,13 +257,10 @@ Barriers to substituting brand name drugs with generic drugs even after generic 
 
 ## Drug Pricing Supply Chain
 
-::: {layout="[[-1], [1], [-1]]"}
-![](../figures/pbm_flow_diagram.png){fig-align="center"}
-:::
-
-- Manufacturers set list prices and negotiate rebates with PBMs
-- Insurers reimburse pharmacies; patients face cost sharing at the pharmacy
-- PBM payment structures can weaken incentives to push aggressively for lower net prices
+- Already discussed...
+  - Manufacturers set list prices and negotiate rebates with PBMs
+  - Insurers reimburse pharmacies; patients face cost sharing at the pharmacy
+  - PBM payment structures can weaken incentives to push aggressively for lower net prices
 
 ---
 
@@ -369,7 +366,7 @@ State Policies:
 ## Who Pays for Pharma R&D?
 
 ::: {layout="[[-1], [1], [-1]]"}
-![](../figures/global_pharma_sales_regions.png){fig-align="center"}
+![](../figures/global_pharma_sales_regions.png){fig-align="center" width="60%"}
 :::
 
 - The U.S. accounts for a disproportionate share of global pharmaceutical sales (stylized)

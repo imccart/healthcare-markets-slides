@@ -715,29 +715,13 @@ Ian McCarthy | Emory University
 </section>
 <section id="drug-pricing-supply-chain" class="slide level2">
 <h2>Drug Pricing Supply Chain</h2>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[[-1], [1], [-1]]">
-<div class="quarto-layout-row">
-<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
-<p>&nbsp;</p>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../figures/pbm_flow_diagram.png" class="quarto-figure quarto-figure-center"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
+<ul>
+<li>Already discussed…
 <ul>
 <li>Manufacturers set list prices and negotiate rebates with PBMs</li>
 <li>Insurers reimburse pharmacies; patients face cost sharing at the pharmacy</li>
 <li>PBM payment structures can weaken incentives to push aggressively for lower net prices</li>
+</ul></li>
 </ul>
 </section>
 <section class="slide level2">
@@ -1359,42 +1343,4 @@ Ian McCarthy | Emory University
       const findCites = (el) => {
         const parentEl = el.parentElement;
         if (parentEl) {
-          const cites = parentEl.dataset.cites;
-          if (cites) {
-            return {
-              el,
-              cites: cites.split(' ')
-            };
-          } else {
-            return findCites(el.parentElement)
-          }
-        } else {
-          return undefined;
-        }
-      };
-      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-      for (var i=0; i<bibliorefs.length; i++) {
-        const ref = bibliorefs[i];
-        const citeInfo = findCites(ref);
-        if (citeInfo) {
-          tippyHover(citeInfo.el, function() {
-            var popup = window.document.createElement('div');
-            citeInfo.cites.forEach(function(cite) {
-              var citeDiv = window.document.createElement('div');
-              citeDiv.classList.add('hanging-indent');
-              citeDiv.classList.add('csl-entry');
-              var biblioDiv = window.document.getElementById('ref-' + cite);
-              if (biblioDiv) {
-                citeDiv.innerHTML = biblioDiv.innerHTML;
-              }
-              popup.appendChild(citeDiv);
-            });
-            return popup.innerHTML;
-          });
-        }
-      }
-    });
-    </script>
-    
-
-</body></html>
+          const cit
