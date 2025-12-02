@@ -102,25 +102,13 @@ How would you define "innovation" in pharma?
   - Treatment can yield higher firm revenue than prevention because only high-risk consumers are willing to pay high prices for the preventive
 - Takeaway: private R&D may tilt toward treatments over preventives, even when prevention is socially preferable
 
-## Kremer–Snyder: Visualizing Revenues
-
-::: {layout="[[-1], [1], [-1]]"}
-![](../figures/kremer_snyder_grid.png){fig-align="center" width="60%"}
-:::
-
-- High-risk patients generate relatively high revenue from both prevention and treatment
-- Low-risk patients are hard to monetize with prevention, even when prevention is socially valuable
-- Private R\&D may tilt toward treatments, even if prevention yields higher social surplus
-
-
 ## Stage of Disease and Trial Length
 
 - Firms also choose *which stage* of disease to target
 - Shorter clinical trials mean:
   - Faster time to approval
   - Longer period of effective market exclusivity
-- Empirically, cancer R&D is heavily concentrated in late-stage and recurrent disease,
-  with far fewer trials on prevention or very early-stage disease
+- Empirically, cancer R&D is heavily concentrated in late-stage and recurrent disease, with far fewer trials on prevention or very early-stage disease
 - This suggests underinvestment in long-term, prevention-oriented projects relative to social value
 
 
@@ -133,15 +121,6 @@ How would you define "innovation" in pharma?
   - Market incentives favor drugs with shorter, cheaper trials and quicker payoffs
   - Long-horizon prevention may be dynamically underprovided
 
-## Cancer Trials by Stage (Stylized)
-
-::: {layout="[[-1], [1], [-1]]"}
-![](../figures/cancer_trials_by_stage.png){fig-align="center" width="60%"}
-:::
-
-- Trials are heavily concentrated in metastatic and recurrent disease
-- Far fewer trials focus on prevention or very early-stage disease
-- Suggests underinvestment in long-horizon, prevention-oriented projects
 
 
 # Prices, Competition, and High Drug Spending

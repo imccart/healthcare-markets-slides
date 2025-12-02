@@ -460,33 +460,6 @@ Ian McCarthy | Emory University
 <li>Takeaway: private R&amp;D may tilt toward treatments over preventives, even when prevention is socially preferable</li>
 </ul>
 </section>
-<section id="kremersnyder-visualizing-revenues" class="slide level2">
-<h2>Kremer–Snyder: Visualizing Revenues</h2>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[[-1], [1], [-1]]">
-<div class="quarto-layout-row">
-<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
-<p>&nbsp;</p>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../figures/kremer_snyder_grid.png" class="quarto-figure quarto-figure-center"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<ul>
-<li>High-risk patients generate relatively high revenue from both prevention and treatment</li>
-<li>Low-risk patients are hard to monetize with prevention, even when prevention is socially valuable</li>
-<li>Private R&amp;D may tilt toward treatments, even if prevention yields higher social surplus</li>
-</ul>
-</section>
 <section id="stage-of-disease-and-trial-length" class="slide level2">
 <h2>Stage of Disease and Trial Length</h2>
 <ul>
@@ -513,33 +486,6 @@ Ian McCarthy | Emory University
 <li>Market incentives favor drugs with shorter, cheaper trials and quicker payoffs</li>
 <li>Long-horizon prevention may be dynamically underprovided</li>
 </ul></li>
-</ul>
-</section>
-<section id="cancer-trials-by-stage-stylized" class="slide level2">
-<h2>Cancer Trials by Stage (Stylized)</h2>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[[-1], [1], [-1]]">
-<div class="quarto-layout-row">
-<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
-<p>&nbsp;</p>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../figures/cancer_trials_by_stage.png" class="quarto-figure quarto-figure-center"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<ul>
-<li>Trials are heavily concentrated in metastatic and recurrent disease</li>
-<li>Far fewer trials focus on prevention or very early-stage disease</li>
-<li>Suggests underinvestment in long-horizon, prevention-oriented projects</li>
 </ul>
 </section></section>
 <section>
@@ -1341,44 +1287,4 @@ Ian McCarthy | Emory University
         });
       }
       const findCites = (el) => {
-        const parentEl = el.parentElement;
-        if (parentEl) {
-          const cites = parentEl.dataset.cites;
-          if (cites) {
-            return {
-              el,
-              cites: cites.split(' ')
-            };
-          } else {
-            return findCites(el.parentElement)
-          }
-        } else {
-          return undefined;
-        }
-      };
-      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-      for (var i=0; i<bibliorefs.length; i++) {
-        const ref = bibliorefs[i];
-        const citeInfo = findCites(ref);
-        if (citeInfo) {
-          tippyHover(citeInfo.el, function() {
-            var popup = window.document.createElement('div');
-            citeInfo.cites.forEach(function(cite) {
-              var citeDiv = window.document.createElement('div');
-              citeDiv.classList.add('hanging-indent');
-              citeDiv.classList.add('csl-entry');
-              var biblioDiv = window.document.getElementById('ref-' + cite);
-              if (biblioDiv) {
-                citeDiv.innerHTML = biblioDiv.innerHTML;
-              }
-              popup.appendChild(citeDiv);
-            });
-            return popup.innerHTML;
-          });
-        }
-      }
-    });
-    </script>
-    
-
-</body></html>
+        const parentEl = el.parentEl
