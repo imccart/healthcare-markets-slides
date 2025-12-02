@@ -64,7 +64,7 @@ How would you define "innovation" in pharma?
 ## MEI and the Cost of Capital
 
 ::: {layout="[[-1], [1], [-1]]"}
-![](../figures/mei_cost_of_capital.png){fig-align="center" width="60%"}
+![](../figures/mei_cost_of_capital.png){fig-align="center" width="40%"}
 :::
 
 - Downward-sloping MEI: diminishing returns to additional R\&D projects
