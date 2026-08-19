@@ -62,6 +62,12 @@ $presentation-h3-font-size: 1.1em;
 .reveal .columns { display: flex; gap: 2.2em; align-items: flex-start; }
 .reveal .columns > .column { flex: 1 1 0; width: auto !important; min-width: 0; }
 
+// figures: centered by default (block + auto margins) so a plain image without
+// fig-align doesn't get stuck at the left; honor explicit left/right alignment
+.reveal .slides section img { display: block; margin-left: auto; margin-right: auto; }
+.reveal .slides section img.quarto-figure-left { margin-left: 0; margin-right: auto; }
+.reveal .slides section img.quarto-figure-right { margin-left: auto; margin-right: 0; }
+
 // ---- section (level-1 / #) slides ----
 
 // bare dividers (only a title): full navy slide, centered white title + gold rule
