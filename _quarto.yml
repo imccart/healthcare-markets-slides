@@ -1,0 +1,34 @@
+# Shared configuration for every deck in this folder.
+# Each deck's .qmd only needs a title (and author); format lives here,
+# so the look is set once and a stray render cannot fall back to plain HTML.
+
+project:
+  type: default
+
+format:
+  revealjs:
+    theme: emory.scss
+    width: 1600
+    height: 900
+    slide-number: true
+    preview-links: auto
+    chalkboard:
+      boardmarker-width: 5
+    footer: "[← Course home](https://econ372f26.classes.ianmccarthyecon.com/)"
+    include-in-header:
+      text: |
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Libre+Franklin:wght@400;500;600;700;800&display=swap">
+
+title-slide-attributes:
+  data-background-color: "#012169"
+
+# course-info title block, shared by every deck (each deck sets only its own title)
+subtitle: "ECON 372 · Economics of Health Care Markets"
+author: "Ian McCarthy"
+institute: "Emory University"
+
+from: markdown+emoji
+execute:
+  echo: true
