@@ -71,7 +71,7 @@ Consequences of physician agency:
 
 - Team effects and influence during residency (Chan, 2021)
 - Physicians following treatment patterns of advisors in residency [(Pany, 2023)](https://ashecon.confex.com/ashecon/2023/meetingapp.cgi/Paper/14080)
-- PCP training associated with less healthcare utilization (Kravitz and Greenfield, 1995)
+- PCP training associated with less health care utilization (Kravitz and Greenfield, 1995)
 
 
 # Physician Location and Practice
@@ -114,7 +114,7 @@ Consequences of physician agency:
 
 ## The problem
 
-- Significant variation in healthcare utilization across and within markets 
+- Significant variation in health care utilization across and within markets
 - Not explained by patient need or quality of care
 - Points to clear inefficiencies (can reduce utilization without sacrificing quality)
 

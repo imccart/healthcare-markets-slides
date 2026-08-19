@@ -64,7 +64,7 @@ In general, we can't solve this directly without knowing the hospital's utility 
 ## Assuming pure profit maximization
 
 ```{tikz}
-#| echo: false
+%| echo: false
 
 \usetikzlibrary{calc}
 \begin{tikzpicture}[scale=0.40, every node/.style={black,opacity=1, transform shape}]
@@ -106,7 +106,7 @@ Consider the firm's demand curve, $d=40-2q$, and cost curve, $c(q)=5q+\frac{1}{2
 Sell at the public price to the point where marginal revenue equals marginal cost
 
 ```{tikz}
-#| echo: false
+%| echo: false
 
 \usetikzlibrary{calc}
 \begin{tikzpicture}[scale=0.40, every node/.style={black,opacity=1, transform shape}]

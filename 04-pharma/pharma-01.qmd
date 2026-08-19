@@ -142,7 +142,7 @@ Source: [GAO Report on DTC Pharma Advertising](https://www.gao.gov/assets/gao-21
 
 - Manufacturers (that's easy)
 - Sell to wholesalers (e.g., McKesson, Cardinal Health, AmerisourceBergen) in most cases (60-70%) or directly to pharmacies (mainly large chains)
-- Sell to retail and non-retail (e.g, hospitals, nursing homes, home health care) pharmacies
+- Sell to retail and non-retail (e.g., hospitals, nursing homes, home health care) pharmacies
 - Sell to patients
 
 ---

@@ -51,13 +51,13 @@ Key part of understanding effect on price is to understand the "outside option".
 
 ## In-class problem (Nash bargaining)
 
-Assume that two agents are negotiating over how best to divide their quantity of good x, which is normalized to 1. If the players reach an agreement, player 1 receives utility $u_{1} = x$, and player 2 receives utility $u_{2} = (1-x)$. If the players do not reach an agreement, player 1 receives a payoff of $t1 = 0$, and
+Assume that two agents are negotiating over how best to divide their quantity of good x, which is normalized to 1. If the players reach an agreement, player 1 receives utility $u_{1} = x$, and player 2 receives utility $u_{2} = (1-x)$. If the players do not reach an agreement, player 1 receives a payoff of $t_{1} = 0$, and
 player 2 receives payoff $t_{2} = a > 0$.<br>
 
 1. Find the Nash bargaining solution to this game.
 2. Explain how this solution varies with $a$.
 
-# Bargaining in Healthcare
+# Bargaining in Health Care
 
 ---
 
@@ -138,7 +138,7 @@ where $b_{s(m)}$ is the bargaining weight of system $s$ when facing MCO $m$, $b_
 
 ## Nash Bargaining Solution
 
-Note that taking the natural log of the objective does not change the maximum, since the natural log is a ``monotonic transformation.'' In other words, the log will change the value of some function $f(x)$, but it will not change the order, so that if $f(x_{1})>f(x_{2})$, it follows that $\ln (f(x_{1})) > \ln (f(x_{2}))$. 
+Note that taking the natural log of the objective does not change the maximum, since the natural log is a "monotonic transformation." In other words, the log will change the value of some function $f(x)$, but it will not change the order, so that if $f(x_{1})>f(x_{2})$, it follows that $\ln (f(x_{1})) > \ln (f(x_{2}))$. 
 
 The resulting first order condition yields:
 $$\begin{align*}
@@ -166,7 +166,7 @@ $$p = mc - (\omega + \lambda)^{-1} q$$
 "Reasonable assumptions" such that $$\frac{d V_{m}}{d p_{mj}}=-q_{mj}-\alpha \sum_{i}\sum_{d}\gamma_{id}c_{id}(1-c_{id}) \left(\sum_{k\in N_{m}} p_{mk}s_{ikd} - p_{mj}\right),$$ where $\gamma_{id}$ includes several terms including disease weights and probability of disease
 
 - $c_{id}\times (1-c_{id})$ captures role of insurer coinsurance rates in steering patients 
-  - If $p_{mj}$ is high relative to the weighted average price of other hospitals, then $\frac{d V_{m}}{d p_{mj}}$ is less negative due to the term in parenthesis, and thus it is optimal (in the sense of maximizing joint surplus) to allow $p_{mj}$ to increase so as to channel customers to the low price hospital.
+  - If $p_{mj}$ is high relative to the weighted average price of other hospitals, then $\frac{d V_{m}}{d p_{mj}}$ is less negative due to the term in parentheses, and thus it is optimal (in the sense of maximizing joint surplus) to allow $p_{mj}$ to increase so as to channel customers to the low price hospital.
   - In the extreme cases, at $c_{id}=1$ the insurer wouldn't care about negotiating price with physicians since all of the extra cost is borne by patients. Conversely, at $c_{id}=0$ the term in parenthesis is again irrelevant as the patients do not switch to lower price hospitals.
 
 ---
@@ -176,6 +176,6 @@ $$p = mc - (\omega + \lambda)^{-1} q$$
 Consider the special case of a single-hospital system, 
 $$p_{mj} - mc_{mj} = -q_{mj} \left(\frac{d q_{mj}}{d p_{mj}} + q_{mj} \times \frac{b_{m(j)}}{b_{j(m)}} \times \frac{\frac{d V_{m}}{d p_{mj}}}{\triangle V_{m}} \right)^{-1}$$
 
-- The term $\triangle V_{m}$ is positive by construction. With some work, we can find that $\frac{d V_{m}}{d p_{mj}}<0$ under most conditions. This means that the presence of bargaining tends to increase the ``effective'' price sensitivity and reduce hospital margins relative to standard pricing conditions. 
+- The term $\triangle V_{m}$ is positive by construction. With some work, we can find that $\frac{d V_{m}}{d p_{mj}}<0$ under most conditions. This means that the presence of bargaining tends to increase the "effective" price sensitivity and reduce hospital margins relative to standard pricing conditions. 
 - However, note that this result does not always hold. In cases where some hospitals are particularly higher priced than others, then the insurer may allow a given hospital to increase its margins (relative to standard pricing conditions) so as to steer patients away from the very high priced hospital.
 

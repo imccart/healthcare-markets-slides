@@ -162,5 +162,5 @@ Effects of financial incentives on...
 - spillovers to other patients, [Barnett et al., 2023](https://www.aeaweb.org/articles?id=10.1257/pol.20200553)
 
 ::: {.fragment}
-**The Takeaway**: On the margin, financial incentives *do* affect treatment decisions. Some responses may negatively affect patients, but typically this probably involves more money for similar-quality care.
+**The Takeaway**: On the margin, financial incentives *do* affect treatment decisions. Some responses may negatively affect patients, but this typically involves more money for similar-quality care.
 :::

@@ -61,7 +61,7 @@ Fun fact: Humana and Aetna's merger deal had just been blocked. [NPR Article](ht
 
 
 ```{tikz}
-#| echo: false
+%| echo: false
 
 \usetikzlibrary{calc}
 \begin{tikzpicture}[my plot/.style={
@@ -164,7 +164,7 @@ This concept is distinct from willingness to pay for insurance; we use it as one
 ## Depiction of Risk Premium
 
 ```{tikz}
-#| echo: false
+%| echo: false
 
 \usetikzlibrary{calc}
 \begin{tikzpicture}[my plot/.style={
@@ -233,7 +233,7 @@ wtp <- 100000-inv.u
 ```
 We're asked to find some wealth level, $y$, such that the person is indifferent between $y$ with certainty versus the risky wealth levels, $w_{h}=$ \$100,000 with probability 0.75 or $w_{s}=$ \$80,000 with probability 0.25.<br>
 
-- Expected wealth is: $E[u]=0.75\times 100,000 + 0.25 \times 80,000 =$ `r format(ewealth, digits=5, big.mark=",")`
+- Expected wealth is: $E[w] =$ `r format(ewealth, digits=5, big.mark=",")`
 
 - The person's expected utility is: $E[u]=0.75\times \ln (100000) + 0.25 \times \ln (80000) =$ `r eu`. 
   
@@ -241,7 +241,7 @@ We're asked to find some wealth level, $y$, such that the person is indifferent 
 
 - The risk premium is then the expected wealth less the CE, or \$ `r format(ewealth-inv.u, digits=5, big.mark=",")`.
 
-- Since the person starts with \$100,000, the full WTP for health insurance is \$100,000 $-$ \$`r format(inv.u,digits=5,big.mark=",")` $=$ \$`r format(wtp,digits=5,big.mark=",")`, which is also the sum of the actuarily fair premium of \$`r format(ecost,digits=5,big.mark=",")` and the risk premium of \$`r format(wtp-ecost,digits=5,big.mark=",")`.
+- Since the person starts with \$100,000, the full WTP for health insurance is \$100,000 $-$ \$`r format(inv.u,digits=5,big.mark=",")` $=$ \$`r format(wtp,digits=5,big.mark=",")`, which is also the sum of the actuarially fair premium of \$`r format(ecost,digits=5,big.mark=",")` and the risk premium of \$`r format(wtp-ecost,digits=5,big.mark=",")`.
 
 
 ## In-class Problem: Demand for insurance

@@ -25,7 +25,7 @@ pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 
 # Do we want competition in health insurance?
 
-Health insurance isn’t a standard market: the buyer is often an employer or the government, and the product bundles risk pooling, networks, and admin services. This begs the question, do we want to rely on standard market-based competition for health insurance?
+Health insurance isn’t a standard market: the buyer is often an employer or the government, and the product bundles risk pooling, networks, and admin services. This raises the question, do we want to rely on standard market-based competition for health insurance?
 
 
 ::: {.fragment}
@@ -186,7 +186,7 @@ $$
 
 ## Evidence from Medicare Advantage
 
-@curto2021 study the MA market in detail:
+Curto et al. (2021) study the MA market in detail:
 
 - MA delivers care at lower resource cost than FFS Medicare  
 - But bids are **higher** than FFS costs → ~15% more expensive to taxpayers  
@@ -221,4 +221,4 @@ $$
 - But both are fragile: selection, market power, and coding incentives remain  
 - Public provision avoids some problems but brings others (bureaucracy, politics)  
 
-**Bottom line:** Whether we *want* competition depends less on theory and more on how well policy design channels insurer incentives toward efficiency, equity, and fiscal sustainability.
+**In short,** Whether we *want* competition depends less on theory and more on how well policy design channels insurer incentives toward efficiency, equity, and fiscal sustainability.

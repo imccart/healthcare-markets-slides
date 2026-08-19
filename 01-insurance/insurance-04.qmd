@@ -166,7 +166,7 @@ What does this mean in words?
 ---
 
 ```{tikz}
-#| echo: false
+%| echo: false
 
 \usetikzlibrary{calc}
 \begin{tikzpicture}[my plot/.style={
@@ -224,5 +224,5 @@ eu <- .5*sqrt(80) + .5*sqrt(120)
 ::: {.fragment}
 - Because expected utility < utility at expected wealth, the lottery is less attractive than a sure outcome of the same expected value. 
   
-- This gap is what we’ll later call the risk premium — and it’s the reason people are willing to pay extra for insurance.
+- This gap is what we’ll later call the risk premium, and it’s the reason people are willing to pay extra for insurance.
 :::

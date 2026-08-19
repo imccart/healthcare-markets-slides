@@ -41,7 +41,7 @@ How does $p_{m}$ affect $p_{n}$?
 Because the hospital is a profit maximizing firm, it will choose the quantity that maximizes profits, $q^{*}$, where:
 
 - Sell to "private" market as long as marginal revenue exceeds the public price
-- Switch to "public'" market otherwise, and sell to the point where price equals marginal cost
+- Switch to "public" market otherwise, and sell to the point where price equals marginal cost
 
 
 ---
@@ -49,7 +49,7 @@ Because the hospital is a profit maximizing firm, it will choose the quantity th
 ## Two-price market in pictures
 
 ```{tikz}
-#| echo: false
+%| echo: false
 
 \usetikzlibrary{calc}
 \begin{tikzpicture}[scale=0.40, every node/.style={black,opacity=1, transform shape}]
@@ -104,7 +104,7 @@ The idea that hospitals will increase private prices following a decrease in the
 ## How does cost-shifting work?
 
 
-Assumes that hospitals could have increased private prices earlier but chose not too. This is technically possible if, for example:
+Assumes that hospitals could have increased private prices earlier but chose not to. This is technically possible if, for example:
 
 - Hospital has very low margins (maybe negative with a lower public price)
 - Insurer wants to prop up the hospital for competitive reasons

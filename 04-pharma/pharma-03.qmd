@@ -37,7 +37,7 @@ pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 
 ## Effects of Generic Entry
 
-- Signifcant reduction in prices, over 70% reduction from brand-name price after a few years
+- Significant reduction in prices, over 70% reduction from brand-name price after a few years
 - Generic drug market *can* act as a competitive market, particularly among generic suppliers
 - But there are some exceptions...
 
@@ -64,7 +64,7 @@ pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 - Biologics are drugs made from living organisms
   - More complex than traditional drugs
   - More difficult to replicate
-  - Longer patent protection after coming to market (12 years versus 5 years)
+  - Longer regulatory data exclusivity after coming to market (12 years versus 5 years)
 - ACA created a pathway for biosimilar approval
   - Similar to generic approval, but not identical
   - FDA must determine biosimilar is "interchangeable" with original biologic
@@ -76,7 +76,7 @@ pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 - Upstream generic drug manufacturers eventually face an approximately competitive market, but...
 - Distribution of generic drugs remains subject to market power of pharmacy benefit managers (PBMs)
   - Incentives to favor higher-priced drugs (to extract higher rebates, which is a big revenue source)
-  - PBM market dominated by just a few firms (Express Scripts, Medco, and CVS Caremark)
+  - PBM market dominated by just a few firms (Express Scripts, CVS Caremark, and OptumRx)
 - Sale of final drugs also subject to retail pharmacy market power 
   - Also dominated by a few large chains (CVS, Walgreens, Walmart, Rite Aid)
 
@@ -106,8 +106,8 @@ pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 - Drug: Restasis
 - Treatment: Dry Eyes
 - Many patents filed over time, and validity of those patents challenged in court
-- Allergen sold its drug to the Saint Regis Mohawk Tribe
-  - Licensed drug back to Allergen
+- Allergan sold its drug to the Saint Regis Mohawk Tribe
+  - Licensed drug back to Allergan
   - Difficult to sue Native American tribes
   - Didn't work, but demonstrates uniqueness of pharma, "life-cycle management", and why people dislike pharma so much!
 
@@ -137,14 +137,14 @@ Suppose a patent expires for a popular, small-molecule drug. Generic producers e
 - In other countries, doctors treat patients suffering from these same conditions with Synacthen, a synthetic ACTH drug. Although Acthar is a natural ACTH drug derived from the pituitary glands of pigs, Acthar and Synacthen have very similar biological activities and pharmacological effects.
 - Novartis marketed and sold Synacthen abroad. In 2011, Novartis decided to sell the rights to market Synacthen in the United States via an auction. Three companies submitted bids to Novartis.
 
-What should Quescor do and how?
+What should Questcor do and how?
 
 ---
 
 ## Killer Acquisitions
 
 - Questcor bid and won the auction, and never produced Synacthen
-- Bidding from a more advantageous position (maintaining monopoly power) versus competiting to become a duopolist
+- Bidding from a more advantageous position (maintaining monopoly power) versus competing to become a duopolist
 - More about Killer Acquisitions [here](https://microeconomicinsights.org/killer-acquisitions/)
 
 ---

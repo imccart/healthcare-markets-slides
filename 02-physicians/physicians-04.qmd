@@ -154,7 +154,7 @@ $$P(y = s | n, \theta) = {n \choose s} \theta^{s} (1 - \theta)^{n - s}$$
 
 - The Beta distribution is governed by its "shape" parameters, $\alpha$ and $\beta$
 
-$$P(θ) = \frac{\theta^{\alpha-1} (1 - \theta)^{\beta-1} }{\tilde{B}(\alpha, \beta)},$$
+$$P(\theta) = \frac{\theta^{\alpha-1} (1 - \theta)^{\beta-1} }{\tilde{B}(\alpha, \beta)},$$
 where $\tilde{B}(\alpha, \beta)$ is a normalization constant to ensure the PDF integrates to 1.
 
 - Mean and variance of Beta distribution:
@@ -278,12 +278,12 @@ Given the assumptions, the physician wants to update their belief about the effe
    - $\beta_{1}  = \beta_{0} + 100 - 70 = 31$
 
 2. Calculate the mean of the posterior distribution using the updated parameters:
-   - $\mu = \frac{\alpha_{1}}{\alpha_{1}+\beta_{1}} = \frac{71}{71+31} \approx 0.6969$
+   - $\mu = \frac{\alpha_{1}}{\alpha_{1}+\beta_{1}} = \frac{71}{71+31} \approx 0.6961$
 
 
 ## Case 1: Discussion
 
-In this scenario, the physician's updated belief for the mean effectiveness of treatment is approximately 0.6969, which aligns more closely with the actual mean of 70% based on the observed data and the diffuse prior belief. Because the physician's initial belief (i.e., their prior) is not strong, they update their belief to almost perfectly match the observed data.
+In this scenario, the physician's updated belief for the mean effectiveness of treatment is approximately 0.6961, which aligns more closely with the actual mean of 70% based on the observed data and the diffuse prior belief. Because the physician's initial belief (i.e., their prior) is not strong, they update their belief to almost perfectly match the observed data.
 
 
 ## Case 2: "Strong" prior setup
@@ -306,12 +306,12 @@ Given the assumptions, the physician wants to update their belief about the effe
    - $\beta_{1}  = \beta_{0} + 100 - 70 = 50$
 
 2. Calculate the mean of the posterior distribution using the updated parameters:
-   - $\mu = \frac{\alpha_{1}}{\alpha_{1}+\beta_{1}} = \frac{71}{71+50} \approx 0.5861$
+   - $\mu = \frac{\alpha_{1}}{\alpha_{1}+\beta_{1}} = \frac{71}{71+50} \approx 0.5868$
 
 
 ## Case 2: Discussion
 
-In this scenario, the physician's updated belief for the mean effectiveness of treatment is approximately 0.5861, which is much lower relative to the first case of a diffuse prior. Why is that?
+In this scenario, the physician's updated belief for the mean effectiveness of treatment is approximately 0.5868, which is much lower relative to the first case of a diffuse prior. Why is that?
 
 
 ## In-class problem: Physician Learning

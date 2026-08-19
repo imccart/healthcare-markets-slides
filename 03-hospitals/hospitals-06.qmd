@@ -35,8 +35,9 @@ pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 ## The HHI
 
 - Common measure is Herfindahl-Hirschman Index (HHI), $\sum_{i=1}^{N} s_{i}^{2}$.
-  - 2,500 is considered **highly concentrated**
-  - 1,800 is considered **unconcentrated**
+  - Above 2,500 is considered **highly concentrated**
+  - 1,500 to 2,500 is considered **moderately concentrated**
+  - Below 1,500 is considered **unconcentrated**
 - "Willingness to pay" is more recent measure (theoretically supported)
 - Both require a measure of the geographic market
 
@@ -100,7 +101,7 @@ Lots of subjectivity...
 
 Almost any way you define it, hospital markets are more and more concentrated (less competitive) in recent decades.
 
-- 1990: 65% of MSAs highlgy concentrated, 23% unconcentrated
+- 1990: 65% of MSAs highly concentrated, 23% unconcentrated
 - 2006: 77% highly concentrated, 11% unconcentrated
 
 
@@ -140,7 +141,7 @@ Historical perception of hospital competition as "wasteful" and assumption that 
 
 - Ascension-Presence: Largest non-profit system in US adds 10 hospitals to existing 9 hospitals in Chicago
 - Fairview-HealthEast: 11 hospital system becomes largest in Twin Cities area
-- Hospital corporation of america (HCA) adds 4 hospitals to the 10 existing HCA hospitals in Houston
+- Hospital Corporation of America (HCA) adds 4 hospitals to the 10 existing HCA hospitals in Houston
 - Northwestern-Centegra: Forms 10 hospital system in Chicago
 - Emory-DeKalb: Forms 10 hospital system in Atlanta
 - Jefferson-Einstein: Forms 18 hospital system in Philadelphia area
@@ -226,7 +227,7 @@ Two ways this can happen theoretically:
 
 # Final thoughts...
 
-## Where do we go frome here?
+## Where do we go from here?
 
 1. Adopt sensible policies, [making health care markets work](https://www.brookings.edu/research/making-health-care-markets-work-competition-policy-for-health-care/) 
   - Certificate of need laws

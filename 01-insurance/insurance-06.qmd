@@ -49,7 +49,7 @@ Here's a good example, [Costs during special enrollment periods](https://www.hea
 
 
 ```{tikz}
-#| echo: false
+%| echo: false
 
 \usetikzlibrary{calc}
 \usetikzlibrary{arrows}
@@ -68,8 +68,8 @@ Here's a good example, [Costs during special enrollment periods](https://www.hea
 ## Description of graph
 
 - Demand (willingness to pay) for health insurance (downward sloping)
-- Average cost (AC): average healthcare costs incurred by all enrollees
-- Marginal cost (MC): additional healthcare costs incurred by one more enrollee
+- Average cost (AC): average health care costs incurred by all enrollees
+- Marginal cost (MC): additional health care costs incurred by one more enrollee
 - Downward sloping because healthier individuals (lower cost) are willing to pay less for health insurance
 
 ## Description of graph
@@ -98,7 +98,7 @@ Here's a good example, [Costs during special enrollment periods](https://www.hea
 
 
 ```{tikz}
-#| echo: false
+%| echo: false
 
 \usetikzlibrary{calc}
 \usetikzlibrary{arrows}
@@ -117,7 +117,7 @@ Here's a good example, [Costs during special enrollment periods](https://www.hea
 ## 2. Under-insurance (partial unraveling)
 
 ```{tikz}
-#| echo: false
+%| echo: false
 
 \usetikzlibrary{calc}
 \usetikzlibrary{arrows}
@@ -137,7 +137,7 @@ Here's a good example, [Costs during special enrollment periods](https://www.hea
 ## 3. Full unraveling
 
 ```{tikz}
-#| echo: false
+%| echo: false
 
 \usetikzlibrary{calc}
 \usetikzlibrary{arrows}
@@ -198,7 +198,7 @@ Assume that the insurer's cost function is given by $C=100q - 2q^{2}$, where $q$
 
 # Adverse Selection in Practice
 
-- How does adverse selection in real-life environments?
+- How does adverse selection play out in real-life environments?
 - How might we help curb its effects?
 
 
@@ -211,7 +211,7 @@ Assume that the insurer's cost function is given by $C=100q - 2q^{2}$, where $q$
 ![spend](../figures/aca-premiums.png){align="center"}
 
 ::: {.aside}
-[https://www.kff.org/health-costs/issue-brief/how-aca-marketplace-premiums-are-changing-by-county-in-2020](Kaiser Family Foundation)
+[Kaiser Family Foundation](https://www.kff.org/health-costs/issue-brief/how-aca-marketplace-premiums-are-changing-by-county-in-2020)
 :::
 
 ---

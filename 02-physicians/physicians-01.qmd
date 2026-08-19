@@ -39,7 +39,7 @@ And what does that mean for costs, quality, and equity?
    - How training, affiliations, and institutions shape practice  
 
 2. Physicians as gatekeepers  
-   - Why they hold outsized influence over patient care  
+   - Why they hold central influence over patient care  
 
 3. Physician agency  
    - Information, incentives, and alignment with patient interests  
@@ -59,7 +59,7 @@ And what does that mean for costs, quality, and equity?
 - Ancillary services (labs, imaging)
 
 ::: {.fragment}
-But physicians have an outsized role, shaping nearly all areas of delivery.
+But physicians have a central role, shaping nearly all areas of delivery.
 :::
 
 

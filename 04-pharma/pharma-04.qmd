@@ -339,7 +339,7 @@ State Policies:
 
 ## Paper Discussion 2
 
-[PHARMACEUTICAL PRICING AND R&D AS A GLOBAL PUBLIC GOOD](https://www-nber-org.proxy.library.emory.edu/papers/w31272)
+[PHARMACEUTICAL PRICING AND R&D AS A GLOBAL PUBLIC GOOD](https://www.nber.org/papers/w31272)
 
 
 ## Who Pays for Pharma R&D?
@@ -357,7 +357,7 @@ State Policies:
 
 - US clearly pays higher prices than other countries
 - Strong evidence that US contribution to profit for future innovation is higher than it should be
-- That said, the ROW contribution is meaningful (all other countries do not force prices to marginal costs)
+- That said, the rest of world (ROW) contribution is meaningful (all other countries do not force prices to marginal costs)
 - Authors urge a more international view of spending, suggesting better policy is to advocate for higher prices elsewhere rather than directly for lower prices in the US
 
 

@@ -32,7 +32,7 @@ pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 # Some History
 
 
-## Timeline of hospitcal care in the U.S.
+## Timeline of hospital care in the U.S.
 
 - Before 1900: Just don't go to the hospital! (at least in the U.S.)
   - mainly charity care
@@ -65,7 +65,7 @@ pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 ## Why does any of this matter?
 
 - As we know, we now spend **a lot** on health care in the U.S., and a big part of that is very high health care prices (and a big part of that is hospital prices)
-- Must understand hospital markets and hospital pricing if we want to address healthcare spending
+- Must understand hospital markets and hospital pricing if we want to address health care spending
 
 
 # What is a hospital's **price**?
@@ -153,7 +153,7 @@ We'll get into the real data later in this module, but for now...a few facts:
 
 ## Hospital prices in US
 
-- Recall the high spending on healthcare in US relative to other countries. [Health System Tracker](https://www.healthsystemtracker.org/brief/what-drives-health-spending-in-the-u-s-compared-to-other-countries/#Healthcare%20spending%20per%20capita,%20by%20spending%20category,%202021)
+- Recall the high spending on health care in US relative to other countries. [Health System Tracker](https://www.healthsystemtracker.org/brief/what-drives-health-spending-in-the-u-s-compared-to-other-countries/#Healthcare%20spending%20per%20capita,%20by%20spending%20category,%202021)
 - This is largely driven by higher prices. [Health System Tracker](https://www.healthsystemtracker.org/chart-collection/how-do-healthcare-prices-and-use-in-the-u-s-compare-to-other-countries/)
 
 
@@ -188,8 +188,8 @@ Source: [Health Care Pricing Project](https://healthcarepricingproject.org)
 
 ## Role of price transparency
 
-- How does the lack of price transparency impact patient behavior and healthcare costs?
-- Would making hospital prices more transparent reduce healthcare spending, or would it lead to unintended consequences?
+- How does the lack of price transparency impact patient behavior and health care costs?
+- Would making hospital prices more transparent reduce health care spending, or would it lead to unintended consequences?
 
 
 ## Role of price transparency
@@ -197,7 +197,7 @@ Source: [Health Care Pricing Project](https://healthcarepricingproject.org)
 - Price transparency can increase prices by facilitating collusion
 - Firms observe each other’s prices and adjust to match higher competitors' prices rather than competing to lower them
 - Undermines competition, as firms coordinate tacitly by setting prices at similar, often higher, levels
-- This could play out in healthcare as well, but it's not guaranteed
+- This could play out in health care as well, but it's not guaranteed
 
 
 ## Role of competition

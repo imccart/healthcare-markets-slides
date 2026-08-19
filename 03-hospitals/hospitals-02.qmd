@@ -22,7 +22,7 @@ if (!require("pacman")) install.packages("pacman")
 pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 ```
 
-# Hopsital Ownership
+# Hospital Ownership
 
 ---
 
@@ -129,7 +129,7 @@ From an economics perspective:
 ## Demand and Cost Changes from Increase in Quality
 
 ```{tikz}
-#| echo: false
+%| echo: false
 
 \usetikzlibrary{calc}
 \begin{tikzpicture}[scale=1]
@@ -159,7 +159,7 @@ From an economics perspective:
 ## PPC from Demand and Cost Intersection
 
 ```{tikz}
-#| echo: false
+%| echo: false
 
 \usetikzlibrary{calc}
 \begin{tikzpicture}[scale=.8]

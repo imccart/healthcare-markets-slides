@@ -62,7 +62,7 @@ For the next couple of classes, we're going to focus on the role of financial in
 
 Well...**yes!**. Let's talk about one paper in particular:
 
-- Clemens and Gottlieb, 2014. [Do Physician's Financial Incentives Affect Medical Treatment and Patient Health](https://www.aeaweb.org/articles?id=10.1257/aer.104.4.1320).
+- Clemens and Gottlieb, 2014. [Do Physicians' Financial Incentives Affect Medical Treatment and Patient Health?](https://www.aeaweb.org/articles?id=10.1257/aer.104.4.1320).
 
 
 # A model with price-setting physicians
@@ -102,8 +102,8 @@ Denote the quantity of care consumed by $x$, and denote by $B(x)$ the function t
 ## Physician agency in a graph
 
 ```{tikz}
-#| echo: false
-#| fig.cap: "Depiction of physician agency"
+%| echo: false
+%| fig.cap: "Depiction of physician agency"
 
 \usetikzlibrary{calc}
 \begin{tikzpicture}[scale=0.70, every node/.style={black,opacity=1, transform shape}]
@@ -155,22 +155,20 @@ Condition: $4x^{-1/2} = p$, which yields $x = (32/15)^{2} \approx 4.5$ at $p=15/
 
 ## Solving the model
 
-## Solving the model
-
 - The two-step method applies when both price and quantity are variable.  
 - If price is fixed (e.g., by Medicare), we instead use the participation constraint:  
 
 $$B(x) - \bar{p}x = NB^{0}$$
 
 ::: {.fragment}
-Why? This is a corner solution — derivatives don’t apply in the same way.
+Why? This is a corner solution, derivatives don’t apply in the same way.
 :::
 
 
 
 ## In-class Problem: Agency and fixed prices
 
-Assume $B(x)=4x^{1/2}$, $NB^{0}=0$, anc $c=1$. Further assume that prices are fixed administratively at, $\bar{p}=2$. Note that, in this case, we work only off of the patient's net benefit constraint.
+Assume $B(x)=4x^{1/2}$, $NB^{0}=0$, and $c=1$. Further assume that prices are fixed administratively at, $\bar{p}=2$. Note that, in this case, we work only off of the patient's net benefit constraint.
 
 1. What is the physician's and patient's optimal amount of care provided?
 2. The government is considering increasing the price to $\bar{p}=3$. What are the new optimal levels of care for physicians and patients at this new price?

@@ -46,7 +46,7 @@ Health insurance can still improve health by:
 - facilitating availability of care (providers receive lower payments for "cash" patients)  
 
 ::: {.fragment}
-Made more important due to extremely high healthcare prices  
+Made more important due to extremely high health care prices  
 :::
 
 

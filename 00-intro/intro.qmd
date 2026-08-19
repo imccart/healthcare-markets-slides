@@ -199,7 +199,7 @@ The real culprit(s):
 
 ## Rephrasing of the Problem
 
-We have an "access" problem in the U.S. In many ways, we "overprovide" care to some people and underprovide care to lots of other people. We are particularly bad at helping the least healthy among us. These issues are, of course, very closely related to other economic problems and inequality in general.
+We have an "access" problem in the U.S. In many ways, we "overprovide" care to some people and underprovide care to lots of other people. We are particularly bad at helping the least healthy among us. These issues are very closely related to other economic problems and inequality in general.
 
 
 
@@ -265,25 +265,28 @@ By the end of this course, you will be able to:
 
 ## Assignments & Logistics
 
-- **Participation** – in-class and Canvas activities  
-- **Homework (3)** – mix of theory and data, ~60 pts each  
-- **Midterm Exam** – 60 pts (Tuesday, 10/21)  
-- **Final Project** – group-based, 140 pts  
+- **Class participation** – 50 pts (check-in and questions on lecture days)  
+- **Panel** – 45 pts (as a panelist when drawn, plus audience questions)  
+- **Simulations** – 25 pts (in-class games, best 5 of 7)  
+- **Quizzes** – 60 pts (in-class, best 5 of 6)
+- **Midterm** – 60 pts (one in-class exam, Thursday 11/19)
+- **Empirical homework** – 60 pts (best 2 of 3)  
 
-Total = **400 points** → standard grading scale  
+Total = **300 points** (about 80% earned in class)  
 
-Class meets: **Tues/Thurs, 8:30–9:45am, White Hall 103**  
-Office Hours: **Tues/Thurs, 10–11am, RRR 418** (or by appointment)  
+Class meets: **Tues/Thurs, 2:30–3:45pm, New Psychology Building 225**  
+Office Hours: **Thursdays, 1–2pm, RRR 418** (by appointment)  
 
 ---
 
 ## Nuts and Bolts
 
-- **Class Website** – slides, notes, assignments, data  
+- **Class Website** – slides, notes, assignments, data
+- **Commons** – our in-class app: check-in, quizzes, polls, panels, and simulations  
 - **Canvas** – readings, grades, announcements, private info (e.g., Zoom links)  
-- **Teaching Assistant** – Katerina Katsimpri (Office Hours: Fri 4–6pm, RRR 4th floor)  
-- **Data & Software** – R (recommended), Python, Excel, or Google Sheets all acceptable  
-- **Office Hours** – Prof. McCarthy, Tues/Thurs 10–11am, RRR 418 (sign up online)  
+- **Teaching Assistant** – Shirley Cai  
+- **Data & Software** – R or Python, with an AI coding assistant (GitHub Copilot, free via Emory)  
+- **Office Hours** – Prof. McCarthy, Thursdays 1–2pm, RRR 418 (sign up online)  
 
 
 # Closing

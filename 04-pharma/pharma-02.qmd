@@ -70,8 +70,8 @@ Profit maximizing choice of $p, q$:
 ---
 
 ```{tikz}
-#| echo: false
-#| fig.cap: "Depiction of monopoly pricing"
+%| echo: false
+%| fig.cap: "Depiction of monopoly pricing"
 
 \usetikzlibrary{calc}
 \begin{tikzpicture}[scale=0.40, every node/.style={black,opacity=1, transform shape}]
@@ -120,7 +120,9 @@ New profit maximizing choice of $p, q$:
 - Monopoly price is higher with coinsurance than without
 - To see this, let's take the ratio of prices with and without coinsurance:
 
-$$\frac{p^{*}_{c}}{p^{*}_{nc}} = \frac{\frac{1}{2} (\frac{a}{\alpha}+c)}{\frac{a+c}{2}} = \frac{1}{\alpha}$$
+$$\frac{p^{*}_{c}}{p^{*}_{nc}} = \frac{\frac{1}{2} (\frac{a}{\alpha}+c)}{\frac{a+c}{2}} = \frac{a+\alpha c}{\alpha(a+c)} > 1$$
+
+- Equal to $\frac{1}{\alpha}$ when marginal cost $c=0$
 
 
 ---
@@ -136,7 +138,7 @@ $$\frac{p^{*}_{c}}{p^{*}_{nc}} = \frac{\frac{1}{2} (\frac{a}{\alpha}+c)}{\frac{a
 
 ## Real world example
 
-- Speciality drugs more likely to be unique, with few close substitutes
+- Specialty drugs more likely to be unique, with few close substitutes
 - Theoretical prediction: coinsurance should be more common with specialty drugs versus more common drugs
 - Empirical evidence: coinsurance rates increasing for specialty drugs over time, 25% in 2006 to 33% in 2009
 
@@ -175,8 +177,8 @@ $$\frac{p^{*}_{c}}{p^{*}_{nc}} = \frac{\frac{1}{2} (\frac{a}{\alpha}+c)}{\frac{a
 
 ## Best Response Functions
 
-**Firm 1:** $$p_{1}^*(p_{2}) = \frac{a + cp_{2} + mc_{1}}{2b + 1}$$
-**Firm 2:** $$p_{2}^*(p_{1}) = \frac{a + cp_{1} + mc_{2}}{2b + 1}$$
+**Firm 1:** $$p_{1}^*(p_{2}) = \frac{a + cp_{2} + b\,mc_{1}}{2b}$$
+**Firm 2:** $$p_{2}^*(p_{1}) = \frac{a + cp_{1} + b\,mc_{2}}{2b}$$
 
 **Key Points:**
 
@@ -189,8 +191,8 @@ $$\frac{p^{*}_{c}}{p^{*}_{nc}} = \frac{\frac{1}{2} (\frac{a}{\alpha}+c)}{\frac{a
 
 Equating the two best response functions to solve for equilibrium prices:
 
-$$\begin{align*} p_{1}^* &= \frac{a(2b+1) + c(a + mc_{2}) + mc_{1}(2b+1)}{2b+1 - c^2} \\
-p_{2}^* &= \frac{a(2b+1) + c(a + mc_{1}) + mc_{2}(2b+1)}{2b+1 - c^2} \end{align*}$$
+$$\begin{align*} p_{1}^* &= \frac{a(2b+c) + 2b^2\,mc_{1} + bc\,mc_{2}}{4b^2 - c^2} \\
+p_{2}^* &= \frac{a(2b+c) + 2b^2\,mc_{2} + bc\,mc_{1}}{4b^2 - c^2} \end{align*}$$
 
 **Key Points:**
 
@@ -207,7 +209,7 @@ p_{2}^* &= \frac{a(2b+1) + c(a + mc_{1}) + mc_{2}(2b+1)}{2b+1 - c^2} \end{align*
 ## Comparison to Monopoly Pricing
 
 **Monopoly Price (previously derived):**
-$$p_{m} = \frac{a + mc_{m}}{2b}$$
+$$p_{m} = \frac{a + b\,mc_{m}}{2b}$$
 
 **Comparison:**
 
@@ -219,7 +221,7 @@ $$p_{m} = \frac{a + mc_{m}}{2b}$$
 
 ## Bertrand Pricing with Insurance
 
-1. **Stage 1:** Insurer chooses one drug with copayment $c$ to be on formulary. Other drug will not be covered at all
+1. **Stage 1:** Insurer chooses one drug with a copayment to be on formulary. Other drug will not be covered at all
 2. **Stage 2:** Bertrand pricing with "bids" to insurer
 3. **Stage 3:** Insurer selects drug to be on formulary
 
@@ -230,7 +232,7 @@ $$p_{m} = \frac{a + mc_{m}}{2b}$$
 - Imagine firm 1 set price to original bertrand price, $p_{1}^{b}$
 - Firm 2 can then set price to $p_{2}^{b}=p_{1}^{b}-\epsilon$ and get most or all of the market
 - So, $p_{1}^{b}, p_{2}^{b}$ is not an equilibrium
-- Firms lower price until extra sales on formularly are less than profit of drug off formulary
+- Firms lower price until extra sales on formulary are less than profit of drug off formulary
 - **Final prediction:** Insurers used tiered formularies and copayments for differentiated (but substitutable) on-patent drugs
 
 ---
@@ -239,9 +241,9 @@ $$p_{m} = \frac{a + mc_{m}}{2b}$$
 
 **Unique drugs with patent protection:**
 
-> Under these circumstances, there is little opportunity for a purchaser to stimulate competition among manufacturers. Manufacturers are roughly free to set launch prices, they rarely discount those prices, and purchasers and price takers.
+> Under these circumstances, there is little opportunity for a purchaser to stimulate competition among manufacturers. Manufacturers are roughly free to set launch prices, they rarely discount those prices, and purchasers are price takers.
 
 **Differentiated drugs with imperfect substitutes:**
 
-> This stage represents the lion's share of the market at any given time...Depending on how similar the drugs are...organized purchasers have the ability to either switch patients in a medially appropriate way...or at least start new patients on a preferred drug...This is the area where formularies can be applied for the greatest effect on overall costs.
+> This stage represents the lion's share of the market at any given time...Depending on how similar the drugs are...organized purchasers have the ability to either switch patients in a medically appropriate way...or at least start new patients on a preferred drug...This is the area where formularies can be applied for the greatest effect on overall costs.
 
