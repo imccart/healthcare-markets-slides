@@ -195,11 +195,29 @@ $presentation-h3-font-size: 1.1em;
 }
 .do-home a:hover { color: $emory-navy; }
 
-body:has(#title-slide.present) .do-today,
+// course home hidden on the title slide and the navy dividers; the Today button
+// hidden on the navy dividers only -- it stays on each day's title slide as a
+// start-of-class reminder (and is cued there; see .do-cue below).
 body:has(#title-slide.present) .do-home,
-body:has(.reveal section.present.level1:not(:has(:is(p, ul, ol, table, figure, img, .columns, .fragment)))) .do-today,
-body:has(.reveal section.present.level1:not(:has(:is(p, ul, ol, table, figure, img, .columns, .fragment)))) .do-home {
+body:has(.reveal section.present.level1:not(:has(:is(p, ul, ol, table, figure, img, .columns, .fragment)))) .do-home,
+body:has(.reveal section.present.level1:not(:has(:is(p, ul, ol, table, figure, img, .columns, .fragment)))) .do-today {
   display: none;
+}
+// on the navy title slide, keep the Today button legible when it isn't pulsing
+body:has(#title-slide.present) .do-today:not(.do-cue) { color: #cfd8ea; }
+body:has(#title-slide.present) .do-today:not(.do-cue):hover { color: #ffffff; }
+
+// activity cue: the Today button pulses gold on each day's title slide and on any
+// slide tagged {.today-cue}. Cleared for a slide once the panel is opened there
+// (JS sets data-cue-ack). Signals only; never opens the panel on its own.
+.do-today.do-cue {
+  color: $emory-gold;
+  animation: doCuePulse 1.5s ease-in-out infinite;
+}
+.do-today.do-cue::before { background: $emory-gold; }
+@keyframes doCuePulse {
+  0%, 100% { opacity: 0.5; text-shadow: 0 0 0 rgba(238, 178, 17, 0); }
+  50%      { opacity: 1;   text-shadow: 0 0 12px rgba(238, 178, 17, 0.75); }
 }
 
 .do-panel {
@@ -276,4 +294,5 @@ body:has(.reveal section.present.level1:not(:has(:is(p, ul, ol, table, figure, i
 
 @media (prefers-reduced-motion: reduce) {
   .do-panel, .do-pill { transition: none; }
+  .do-today.do-cue { animation: none; opacity: 1; }
 }

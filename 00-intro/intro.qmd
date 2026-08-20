@@ -101,7 +101,7 @@ ggplot(gapminder, aes(gdpPercap, lifeExp, size = pop)) +
 
 ---
 
-## But the U.S. is unique
+## But the U.S. is unique {.today-cue}
 
 ```{r}
 #| code-fold: true
@@ -159,7 +159,7 @@ gapminder %>% filter(country %in% c("Canada", "France", "Germany", "Italy", "Jap
 
 ---
 
-## So why is the US so different?
+## So why is the US so different? {.today-cue}
 
 
 Some common arguments:
@@ -183,7 +183,7 @@ The real culprit(s):
 
 ---
 
-## Rephrasing of the Problem
+## Rephrasing of the Problem {.today-cue}
 
 We have an "access" problem in the U.S. In many ways, we "overprovide" care to some people and underprovide care to lots of other people. We are particularly bad at helping the least healthy among us. These issues are very closely related to other economic problems and inequality in general.
 

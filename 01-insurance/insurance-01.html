@@ -32,7 +32,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="insurance-01_files/libs/revealjs/dist/theme/quarto-3be8dd67368c93849387f87ca94e5947.css">
+  <link rel="stylesheet" href="insurance-01_files/libs/revealjs/dist/theme/quarto-e406bd91725a2f8819c271df7919a3e7.css">
   <link href="insurance-01_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="insurance-01_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="insurance-01_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -650,9 +650,29 @@ Ian McCarthy
             body.appendChild(list(e.notes, true));
           }
         }
+        function presentSlide() {
+          var pres = document.querySelectorAll(".reveal section.present");
+          return pres.length ? pres[pres.length - 1] : null;
+        }
+        function isCueSlide(s) {
+          if (!s) return false;
+          var tagged = s.classList.contains("today-cue") ||
+            (s.closest && s.closest("section.today-cue"));
+          return !!(tagged || s.id === "title-slide");
+        }
+        function refreshCue() {
+          var s = presentSlide();
+          var on = isCueSlide(s) && !(s && s.dataset.cueAck);
+          today.classList.toggle("do-cue", on);
+        }
         function toggle(force) {
           var open = (force === undefined) ? !panel.classList.contains("open") : force;
           panel.classList.toggle("open", open);
+          if (open) {
+            var s = presentSlide();
+            if (isCueSlide(s)) s.dataset.cueAck = "1";
+            refreshCue();
+          }
         }
 
         today.addEventListener("click", function (ev) { ev.stopPropagation(); toggle(); });
@@ -676,6 +696,19 @@ Ian McCarthy
           .then(function (r) { return r.ok ? r.json() : null; })
           .then(function (data) { if (data) { current = pickEntry(data) || DEMO; render(); } })
           .catch(function () { /* keep demo */ });
+
+        // pulse the Today button on cue slides (each day's title + any {.today-cue}
+        // slide); re-check on every slide change. The MutationObserver on the present
+        // class is the robust path even if Reveal isn't ready when this runs.
+        refreshCue();
+        if (window.Reveal && typeof Reveal.on === "function") {
+          Reveal.on("slidechanged", refreshCue);
+          Reveal.on("ready", refreshCue);
+        }
+        var slidesEl = document.querySelector(".reveal .slides") || document.body;
+        new MutationObserver(refreshCue).observe(slidesEl, {
+          subtree: true, attributes: true, attributeFilter: ["class"]
+        });
       }
 
       if (document.readyState === "loading") {
