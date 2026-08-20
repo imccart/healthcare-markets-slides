@@ -212,12 +212,28 @@ body:has(#title-slide.present) .do-today:not(.do-cue):hover { color: #ffffff; }
 // (JS sets data-cue-ack). Signals only; never opens the panel on its own.
 .do-today.do-cue {
   color: $emory-gold;
-  animation: doCuePulse 1.5s ease-in-out infinite;
+  text-shadow: 0 0 6px rgba(238, 178, 17, 0.85);
+  transform-origin: top right;
+  animation: doCuePulse 1.05s ease-in-out infinite;
 }
 .do-today.do-cue::before { background: $emory-gold; }
+.do-today.do-cue::after {
+  content: "";
+  position: absolute;
+  inset: -5px -8px;
+  border-radius: 999px;
+  border: 2px solid $emory-gold;
+  opacity: 0;
+  pointer-events: none;
+  animation: doCuePing 1.05s ease-out infinite;
+}
 @keyframes doCuePulse {
-  0%, 100% { opacity: 0.5; text-shadow: 0 0 0 rgba(238, 178, 17, 0); }
-  50%      { opacity: 1;   text-shadow: 0 0 12px rgba(238, 178, 17, 0.75); }
+  0%, 100% { transform: scale(1);    text-shadow: 0 0 4px rgba(238, 178, 17, 0.6); }
+  50%      { transform: scale(1.18); text-shadow: 0 0 20px rgba(238, 178, 17, 1); }
+}
+@keyframes doCuePing {
+  0%   { transform: scale(0.7); opacity: 0.8; }
+  100% { transform: scale(1.8); opacity: 0; }
 }
 
 .do-panel {
@@ -295,4 +311,5 @@ body:has(#title-slide.present) .do-today:not(.do-cue):hover { color: #ffffff; }
 @media (prefers-reduced-motion: reduce) {
   .do-panel, .do-pill { transition: none; }
   .do-today.do-cue { animation: none; opacity: 1; }
+  .do-today.do-cue::after { animation: none; opacity: 0; }
 }
