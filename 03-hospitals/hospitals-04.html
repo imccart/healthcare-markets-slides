@@ -32,7 +32,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="hospitals-04_files/libs/revealjs/dist/theme/quarto-baeb46fd96b47110f3abda17febe93fb.css">
+  <link rel="stylesheet" href="hospitals-04_files/libs/revealjs/dist/theme/quarto-3be8dd67368c93849387f87ca94e5947.css">
   <link href="hospitals-04_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="hospitals-04_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="hospitals-04_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -224,7 +224,7 @@ Ian McCarthy
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-<p><a href="https://econ372f26.classes.ianmccarthyecon.com/">← Course home</a></p>
+
 </div>
 </div></div>
 
@@ -437,6 +437,126 @@ Ian McCarthy
           RevealZoom
         ]
       });
+    </script>
+    <!-- Minimal "Today" control (top-right) that opens a slide-over outline panel,
+         plus a small course-home link at the very bottom. Built on every deck.
+         The outline is fetched at load time from daily-outline.json (keyed by date)
+         so decks never re-render when the plan changes. An embedded demo entry keeps
+         the panel populated before the sync is wired. The post-class summary is not
+         part of the per-slide overlay; its placement is still to be decided. -->
+    <script>
+    (function () {
+      var COURSE_URL = "https://econ372f26.classes.ianmccarthyecon.com/";
+
+      var DEMO = {
+        date: "2026-08-26",
+        topic: "Health Insurance: A New Language",
+        baseline: ["Check-in", "Quiz 2 (insurance basics)", "Simulation 1A"],
+        notes: [
+          "New CMS price-transparency rule (5 min discussion)",
+          "Common question to revisit: deductible vs. out-of-pocket max"
+        ]
+      };
+      var current = DEMO;
+
+      function todayISO() {
+        var d = new Date();
+        return d.getFullYear() + "-" +
+          String(d.getMonth() + 1).padStart(2, "0") + "-" +
+          String(d.getDate()).padStart(2, "0");
+      }
+      function pickEntry(data) {
+        if (!data) return null;
+        var today = todayISO();
+        if (data[today]) return data[today];
+        var upcoming = Object.keys(data).filter(function (k) { return k >= today; }).sort();
+        return upcoming.length ? data[upcoming[0]] : null;
+      }
+      function fmtDate(iso) {
+        return new Date(iso + "T00:00:00").toLocaleDateString(undefined,
+          { weekday: "long", month: "long", day: "numeric" });
+      }
+      function el(tag, cls, text) {
+        var e = document.createElement(tag);
+        if (cls) e.className = cls;
+        if (text != null) e.textContent = text;
+        return e;
+      }
+      function label(t) { return el("div", "do-panel__label", t); }
+      function list(items, isNotes) {
+        var ul = el("ul", "do-list" + (isNotes ? " do-notes" : ""));
+        (items || []).forEach(function (t) { ul.appendChild(el("li", null, t)); });
+        return ul;
+      }
+
+      function build() {
+        var today = el("button", "do-today", "Today");
+        today.setAttribute("aria-label", "Show today's class outline");
+
+        var home = el("div", "do-home");
+        var homeLink = el("a", null, "← Course home");
+        homeLink.href = COURSE_URL; homeLink.target = "_blank"; homeLink.rel = "noopener";
+        home.appendChild(homeLink);
+
+        var panel = el("aside", "do-panel");
+        panel.innerHTML =
+          '<div class="do-panel__head">' +
+            '<button class="do-panel__close" aria-label="Close">&times;</button>' +
+            '<h3>Today in class</h3>' +
+            '<div class="do-panel__date"></div>' +
+          '</div>' +
+          '<div class="do-panel__body"></div>' +
+          '<div class="do-panel__foot"><a href="' + COURSE_URL + '" target="_blank" rel="noopener">Class website &rarr;</a></div>';
+
+        document.body.appendChild(today);
+        document.body.appendChild(home);
+        document.body.appendChild(panel);
+
+        function render() {
+          var e = current;
+          panel.querySelector(".do-panel__date").textContent = fmtDate(e.date);
+          var body = panel.querySelector(".do-panel__body");
+          body.innerHTML = "";
+          body.appendChild(el("div", "do-panel__topic", e.topic || ""));
+          body.appendChild(label("On the schedule"));
+          body.appendChild(list(e.baseline, false));
+          if (e.notes && e.notes.length) {
+            body.appendChild(label("Notes for today"));
+            body.appendChild(list(e.notes, true));
+          }
+        }
+        function toggle(force) {
+          var open = (force === undefined) ? !panel.classList.contains("open") : force;
+          panel.classList.toggle("open", open);
+        }
+
+        today.addEventListener("click", function (ev) { ev.stopPropagation(); toggle(); });
+        panel.querySelector(".do-panel__close").addEventListener("click", function () { toggle(false); });
+        panel.addEventListener("click", function (ev) { ev.stopPropagation(); });
+        document.addEventListener("click", function () { toggle(false); });
+
+        // keyboard: T toggles the outline; Esc closes (captured so reveal's own
+        // keys don't also fire).
+        document.addEventListener("keydown", function (ev) {
+          var typing = /^(input|textarea|select)$/i.test(ev.target.tagName || "");
+          if (!typing && (ev.key === "t" || ev.key === "T")) {
+            ev.stopPropagation(); ev.preventDefault(); toggle();
+          } else if (ev.key === "Escape" && panel.classList.contains("open")) {
+            ev.stopPropagation(); ev.preventDefault(); toggle(false);
+          }
+        }, true);
+
+        render();
+        fetch("../daily-outline.json", { cache: "no-store" })
+          .then(function (r) { return r.ok ? r.json() : null; })
+          .then(function (data) { if (data) { current = pickEntry(data) || DEMO; render(); } })
+          .catch(function () { /* keep demo */ });
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", build);
+      } else { build(); }
+    })();
     </script>
     
 

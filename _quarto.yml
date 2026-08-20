@@ -14,12 +14,12 @@ format:
     preview-links: auto
     chalkboard:
       boardmarker-width: 5
-    footer: "[← Course home](https://econ372f26.classes.ianmccarthyecon.com/)"
     include-in-header:
       text: |
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Libre+Franklin:wght@400;500;600;700;800&display=swap">
+    include-after-body: _daily-outline.html
 
 title-slide-attributes:
   data-background-color: "#012169"

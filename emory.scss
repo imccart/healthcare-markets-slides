@@ -139,10 +139,141 @@ $presentation-h3-font-size: 1.1em;
 .reveal .footer a:hover { text-decoration: underline; }
 .reveal .slide-number,
 .reveal .slide-number a { color: $emory-mut; background: transparent; }
+.reveal .slide-number { right: 16px; bottom: 26px; }   // sits just above the course-home link
 
 // hide the footer + slide number on the navy title slide (a navy-on-navy link
 // would be invisible there)
 .reveal:has(#title-slide.present) .footer,
 .reveal:has(#title-slide.present) .slide-number {
   display: none;
+}
+
+// ---- "Today in class" overlay (pill + slide-over panel) ----
+// A fixed pill in the top-right of every slide opens a panel with the day's
+// plan (schedule baseline + last-minute notes). Content is fetched at load time
+// from daily-outline.json so the decks never re-render when the plan changes.
+// Markup and behavior live in _daily-outline.html.
+
+// minimal controls: "Today" (opens the outline panel) top-right, course home
+// small at the very bottom. Quiet muted text; shown only on content slides,
+// not the navy dividers or title (nothing to click there, muted text vanishes).
+.do-today {
+  position: fixed;
+  top: 12px; right: 16px;
+  z-index: 60;
+  background: none; border: none;
+  padding: 0.1em 0.2em;
+  font-family: "Libre Franklin", system-ui, sans-serif;
+  font-size: 13px; font-weight: 600; letter-spacing: 0.02em;
+  color: $emory-mut;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+.do-today:hover { color: $emory-navy; }
+.do-today::before {
+  content: "";
+  display: inline-block;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: $emory-gold;
+  margin-right: 0.45em;
+  vertical-align: middle;
+}
+
+.do-home {
+  position: fixed;
+  right: 16px; bottom: 8px;   // just under the slide counter
+  z-index: 60;
+  text-align: right;
+  font-family: "Libre Franklin", system-ui, sans-serif;
+  font-size: 12px;
+}
+.do-home a {
+  color: $emory-mut;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: color 0.15s ease;
+}
+.do-home a:hover { color: $emory-navy; }
+
+body:has(#title-slide.present) .do-today,
+body:has(#title-slide.present) .do-home,
+body:has(.reveal section.present.level1:not(:has(:is(p, ul, ol, table, figure, img, .columns, .fragment)))) .do-today,
+body:has(.reveal section.present.level1:not(:has(:is(p, ul, ol, table, figure, img, .columns, .fragment)))) .do-home {
+  display: none;
+}
+
+.do-panel {
+  position: fixed;
+  top: 0; right: 0;
+  width: 360px;
+  max-width: 88vw;
+  height: 100%;
+  z-index: 61;
+  background: #f3f4f1;
+  color: $emory-ink;
+  box-shadow: -12px 0 32px rgba(9, 20, 45, 0.28);
+  transform: translateX(100%);
+  transition: transform 0.22s ease;
+  display: flex;
+  flex-direction: column;
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+}
+.do-panel.open { transform: translateX(0); }
+
+.do-panel__head {
+  position: relative;
+  background: $emory-navy;
+  color: #ffffff;
+  padding: 18px 20px 14px;
+}
+.do-panel__head h3 {
+  margin: 0;
+  color: #ffffff;
+  font-family: "Libre Franklin", system-ui, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+}
+.do-panel__date { margin-top: 2px; font-size: 13px; color: #cfd8ea; }
+.do-panel__close {
+  position: absolute;
+  top: 12px; right: 14px;
+  background: transparent; border: none;
+  color: #cfd8ea; font-size: 24px; line-height: 1;
+  cursor: pointer;
+}
+.do-panel__close:hover { color: #ffffff; }
+
+.do-panel__body { padding: 16px 20px; overflow-y: auto; flex: 1; }
+.do-panel__topic {
+  font-size: 15px; font-weight: 600; color: $emory-navy-soft;
+  margin-bottom: 6px;
+}
+.do-panel__label {
+  text-transform: uppercase; letter-spacing: 0.06em;
+  font-size: 11px; font-weight: 600; color: $emory-mut;
+  margin: 16px 0 6px;
+}
+.do-list { list-style: none; margin: 0; padding: 0; }
+.do-list li {
+  position: relative; padding-left: 20px;
+  margin: 7px 0; font-size: 15px; line-height: 1.35;
+}
+.do-list li::before {
+  content: "";
+  position: absolute; left: 0; top: 0.5em;
+  width: 8px; height: 8px; border-radius: 50%;
+  background: $emory-gold;
+}
+.do-list.do-notes li::before { border-radius: 2px; background: $emory-navy-soft; }
+
+.do-panel__foot {
+  padding: 12px 20px; border-top: 1px solid $emory-rule;
+  font-size: 13px;
+}
+.do-panel__foot a { color: $emory-navy; font-weight: 600; text-decoration: none; }
+.do-panel__foot a:hover { text-decoration: underline; }
+
+@media (prefers-reduced-motion: reduce) {
+  .do-panel, .do-pill { transition: none; }
 }

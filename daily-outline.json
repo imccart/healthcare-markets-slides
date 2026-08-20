@@ -1,0 +1,277 @@
+{
+  "2026-08-27": {
+    "date": "2026-08-27",
+    "class": 1,
+    "topic": "The U.S. health care paradox",
+    "baseline": [
+      "Check-in"
+    ],
+    "notes": []
+  },
+  "2026-09-01": {
+    "date": "2026-09-01",
+    "class": 2,
+    "topic": "How insurance works",
+    "baseline": [
+      "Check-in",
+      "Simulation"
+    ],
+    "notes": []
+  },
+  "2026-09-03": {
+    "date": "2026-09-03",
+    "class": 3,
+    "topic": "Private insurance",
+    "baseline": [
+      "Check-in",
+      "Panel discussion"
+    ],
+    "notes": []
+  },
+  "2026-09-08": {
+    "date": "2026-09-08",
+    "class": 4,
+    "topic": "Public insurance",
+    "baseline": [
+      "Check-in",
+      "Quiz"
+    ],
+    "notes": []
+  },
+  "2026-09-10": {
+    "date": "2026-09-10",
+    "class": 5,
+    "topic": "Why we buy insurance",
+    "baseline": [
+      "Check-in",
+      "Panel discussion"
+    ],
+    "notes": []
+  },
+  "2026-09-15": {
+    "date": "2026-09-15",
+    "class": 6,
+    "topic": "What insurance is worth",
+    "baseline": [
+      "Check-in",
+      "Quiz"
+    ],
+    "notes": []
+  },
+  "2026-09-17": {
+    "date": "2026-09-17",
+    "class": 7,
+    "topic": "Set the premium",
+    "baseline": [
+      "Check-in",
+      "Simulation"
+    ],
+    "notes": []
+  },
+  "2026-09-22": {
+    "date": "2026-09-22",
+    "class": 8,
+    "topic": "Adverse selection",
+    "baseline": [
+      "Check-in",
+      "Quiz"
+    ],
+    "notes": []
+  },
+  "2026-09-24": {
+    "date": "2026-09-24",
+    "class": 9,
+    "topic": "Do we want competition in insurance?",
+    "baseline": [
+      "Check-in",
+      "Panel discussion"
+    ],
+    "notes": []
+  },
+  "2026-09-29": {
+    "date": "2026-09-29",
+    "class": 10,
+    "topic": "Does your doctor work for you?",
+    "baseline": [
+      "Check-in",
+      "Simulation"
+    ],
+    "notes": []
+  },
+  "2026-10-01": {
+    "date": "2026-10-01",
+    "class": 11,
+    "topic": "Do incentives change treatment?",
+    "baseline": [
+      "Check-in"
+    ],
+    "notes": []
+  },
+  "2026-10-06": {
+    "date": "2026-10-06",
+    "class": 12,
+    "topic": "How physicians are paid",
+    "baseline": [
+      "Check-in",
+      "Quiz"
+    ],
+    "notes": []
+  },
+  "2026-10-08": {
+    "date": "2026-10-08",
+    "class": 13,
+    "topic": "Overtreated?",
+    "baseline": [
+      "Check-in",
+      "Panel discussion"
+    ],
+    "notes": []
+  },
+  "2026-10-15": {
+    "date": "2026-10-15",
+    "class": 14,
+    "topic": "You're the doctor",
+    "baseline": [
+      "Check-in",
+      "Simulation"
+    ],
+    "notes": []
+  },
+  "2026-10-20": {
+    "date": "2026-10-20",
+    "class": 15,
+    "topic": "The end of fee-for-service?",
+    "baseline": [
+      "Check-in",
+      "Panel discussion"
+    ],
+    "notes": []
+  },
+  "2026-10-22": {
+    "date": "2026-10-22",
+    "class": 16,
+    "topic": "What is a hospital price?",
+    "baseline": [
+      "Check-in"
+    ],
+    "notes": []
+  },
+  "2026-10-27": {
+    "date": "2026-10-27",
+    "class": 17,
+    "topic": "Does profit status matter?",
+    "baseline": [
+      "Check-in",
+      "Panel discussion"
+    ],
+    "notes": []
+  },
+  "2026-10-29": {
+    "date": "2026-10-29",
+    "class": 18,
+    "topic": "How hospitals set prices",
+    "baseline": [
+      "Check-in"
+    ],
+    "notes": []
+  },
+  "2026-11-03": {
+    "date": "2026-11-03",
+    "class": 19,
+    "topic": "The two-price market",
+    "baseline": [
+      "Check-in",
+      "Simulation"
+    ],
+    "notes": []
+  },
+  "2026-11-05": {
+    "date": "2026-11-05",
+    "class": 20,
+    "topic": "Insurer\u2013hospital bargaining",
+    "baseline": [
+      "Check-in"
+    ],
+    "notes": []
+  },
+  "2026-11-10": {
+    "date": "2026-11-10",
+    "class": 21,
+    "topic": "Make the deal",
+    "baseline": [
+      "Check-in",
+      "Simulation"
+    ],
+    "notes": []
+  },
+  "2026-11-12": {
+    "date": "2026-11-12",
+    "class": 22,
+    "topic": "When hospitals merge",
+    "baseline": [
+      "Check-in",
+      "Quiz"
+    ],
+    "notes": []
+  },
+  "2026-11-17": {
+    "date": "2026-11-17",
+    "class": 23,
+    "topic": "Are hospitals too big?",
+    "baseline": [
+      "Check-in",
+      "Panel discussion"
+    ],
+    "notes": []
+  },
+  "2026-11-19": {
+    "date": "2026-11-19",
+    "class": 24,
+    "topic": "In-class exam, insurance, physicians, and hospitals",
+    "baseline": [
+      "Check-in",
+      "Midterm"
+    ],
+    "notes": []
+  },
+  "2026-11-24": {
+    "date": "2026-11-24",
+    "class": 25,
+    "topic": "The life of a drug",
+    "baseline": [
+      "Check-in"
+    ],
+    "notes": []
+  },
+  "2026-12-01": {
+    "date": "2026-12-01",
+    "class": 26,
+    "topic": "Why new drugs cost so much",
+    "baseline": [
+      "Check-in",
+      "Simulation"
+    ],
+    "notes": []
+  },
+  "2026-12-03": {
+    "date": "2026-12-03",
+    "class": 27,
+    "topic": "Generics and the patent cliff",
+    "baseline": [
+      "Check-in",
+      "Panel discussion",
+      "Quiz"
+    ],
+    "notes": []
+  },
+  "2026-12-08": {
+    "date": "2026-12-08",
+    "class": 28,
+    "topic": "The future of U.S. health care policy",
+    "baseline": [
+      "Check-in",
+      "Reverse panel"
+    ],
+    "notes": []
+  }
+}
