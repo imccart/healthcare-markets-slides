@@ -32,7 +32,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="pharma-03_files/libs/revealjs/dist/theme/quarto-06c20f6892618ea9d17fbb0229834e5d.css">
+  <link rel="stylesheet" href="pharma-03_files/libs/revealjs/dist/theme/quarto-b60c5827c297cfca03cb5aadee55f286.css">
   <link href="pharma-03_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="pharma-03_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="pharma-03_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -582,8 +582,6 @@ Ian McCarthy
       function build() {
         var today = el("button", "do-today", "Today");
         today.setAttribute("aria-label", "Show today's class outline");
-        // what to do on a cued slide, shown beside the button while it pulses
-        var cueMsg = el("div", "do-cue-msg");
 
         var home = el("div", "do-home");
         var homeLink = el("a", null, "← Course home");
@@ -602,7 +600,6 @@ Ian McCarthy
           '<div class="do-panel__foot"><a href="' + COURSE_URL + '" target="_blank" rel="noopener">Class website &rarr;</a></div>';
 
         document.body.appendChild(today);
-        document.body.appendChild(cueMsg);
         document.body.appendChild(home);
         document.body.appendChild(panel);
 
@@ -629,8 +626,9 @@ Ian McCarthy
             (s.closest && s.closest("section.today-cue"));
           return !!(tagged || s.id === "title-slide");
         }
-        // the instruction for a cued slide: its data-cue attribute (set on the heading
-        // as {.today-cue data-cue="..."}), or the start-of-class default on a title slide
+        // the instruction for a cued slide, shown at the top of the panel when it is
+        // opened there: the slide's data-cue attribute (set on the heading as
+        // {.today-cue data-cue="..."}), or the start-of-class default on a title slide
         function cueText(s) {
           if (!s) return "";
           var tagged = s.hasAttribute("data-cue") ? s :
@@ -642,9 +640,6 @@ Ian McCarthy
           var s = presentSlide();
           var on = isCueSlide(s) && !(s && s.dataset.cueAck);
           today.classList.toggle("do-cue", on);
-          var msg = on ? cueText(s) : "";
-          cueMsg.textContent = msg;
-          cueMsg.classList.toggle("show", !!msg);
         }
         function toggle(force) {
           var open = (force === undefined) ? !panel.classList.contains("open") : force;
