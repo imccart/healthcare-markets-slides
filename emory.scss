@@ -217,6 +217,33 @@ body:has(#title-slide.present) .do-today:not(.do-cue):hover { color: #ffffff; }
   animation: doCuePulse 1.05s ease-in-out infinite;
 }
 .do-today.do-cue::before { background: $emory-gold; }
+// the instruction beside the pulsing button ("Launch poll: ..."), from the slide's
+// data-cue attribute; hidden unless the cue is on. Repeated at the top of the panel.
+.do-cue-msg {
+  position: fixed;
+  top: 11px; right: 84px;
+  z-index: 60;
+  display: none;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: $emory-gold;
+  color: $emory-navy;
+  font-family: "Libre Franklin", system-ui, sans-serif;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.02em;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.do-cue-msg.show { display: block; }
+.do-panel__cue {
+  display: none;
+  margin-top: 0.5em;
+  padding: 0.35em 0.6em;
+  border-left: 3px solid $emory-gold;
+  background: rgba(238, 178, 17, 0.12);
+  color: $emory-navy;
+  font-weight: 600; font-size: 0.95em;
+}
+.do-panel__cue.show { display: block; }
 .do-today.do-cue::after {
   content: "";
   position: absolute;

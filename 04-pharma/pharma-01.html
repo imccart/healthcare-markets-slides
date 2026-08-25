@@ -32,7 +32,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="pharma-01_files/libs/revealjs/dist/theme/quarto-d73d73717743ff649677dbdebf7d3d83.css">
+  <link rel="stylesheet" href="pharma-01_files/libs/revealjs/dist/theme/quarto-06c20f6892618ea9d17fbb0229834e5d.css">
   <link href="pharma-01_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="pharma-01_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="pharma-01_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -572,6 +572,8 @@ Ian McCarthy
       function build() {
         var today = el("button", "do-today", "Today");
         today.setAttribute("aria-label", "Show today's class outline");
+        // what to do on a cued slide, shown beside the button while it pulses
+        var cueMsg = el("div", "do-cue-msg");
 
         var home = el("div", "do-home");
         var homeLink = el("a", null, "← Course home");
@@ -584,11 +586,13 @@ Ian McCarthy
             '<button class="do-panel__close" aria-label="Close">&times;</button>' +
             '<h3>Today in class</h3>' +
             '<div class="do-panel__date"></div>' +
+            '<div class="do-panel__cue"></div>' +
           '</div>' +
           '<div class="do-panel__body"></div>' +
           '<div class="do-panel__foot"><a href="' + COURSE_URL + '" target="_blank" rel="noopener">Class website &rarr;</a></div>';
 
         document.body.appendChild(today);
+        document.body.appendChild(cueMsg);
         document.body.appendChild(home);
         document.body.appendChild(panel);
 
@@ -615,16 +619,31 @@ Ian McCarthy
             (s.closest && s.closest("section.today-cue"));
           return !!(tagged || s.id === "title-slide");
         }
+        // the instruction for a cued slide: its data-cue attribute (set on the heading
+        // as {.today-cue data-cue="..."}), or the start-of-class default on a title slide
+        function cueText(s) {
+          if (!s) return "";
+          var tagged = s.hasAttribute("data-cue") ? s :
+            (s.closest && s.closest("section[data-cue]"));
+          if (tagged) return tagged.getAttribute("data-cue") || "";
+          return s.id === "title-slide" ? "Start of class: open the outline" : "";
+        }
         function refreshCue() {
           var s = presentSlide();
           var on = isCueSlide(s) && !(s && s.dataset.cueAck);
           today.classList.toggle("do-cue", on);
+          var msg = on ? cueText(s) : "";
+          cueMsg.textContent = msg;
+          cueMsg.classList.toggle("show", !!msg);
         }
         function toggle(force) {
           var open = (force === undefined) ? !panel.classList.contains("open") : force;
           panel.classList.toggle("open", open);
           if (open) {
             var s = presentSlide();
+            var cue = panel.querySelector(".do-panel__cue");
+            cue.textContent = isCueSlide(s) ? cueText(s) : "";
+            cue.classList.toggle("show", !!cue.textContent);
             if (isCueSlide(s)) s.dataset.cueAck = "1";
             refreshCue();
           }
