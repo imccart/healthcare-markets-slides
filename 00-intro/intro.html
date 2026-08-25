@@ -253,11 +253,11 @@ Ian McCarthy
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>R Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a>gapminder <span class="sc">%&gt;%</span></span>
-<span id="cb1-2"><a href=""></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span></span>
-<span id="cb1-3"><a href=""></a>  <span class="fu">summarize</span>(<span class="at">lifeExp =</span> <span class="fu">median</span>(lifeExp),</span>
-<span id="cb1-4"><a href=""></a>            <span class="at">gdpMed =</span> <span class="fu">median</span>(gdpPercap)) <span class="sc">%&gt;%</span></span>
-<span id="cb1-5"><a href=""></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(year,lifeExp)) <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="at">alpha =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>) <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a>wb <span class="sc">%&gt;%</span></span>
+<span id="cb1-2"><a href=""></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(life_exp)) <span class="sc">%&gt;%</span></span>
+<span id="cb1-3"><a href=""></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span></span>
+<span id="cb1-4"><a href=""></a>  <span class="fu">summarize</span>(<span class="at">life_exp =</span> <span class="fu">median</span>(life_exp)) <span class="sc">%&gt;%</span></span>
+<span id="cb1-5"><a href=""></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(year, life_exp)) <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="at">alpha =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>) <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
 <span id="cb1-6"><a href=""></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Year"</span>,</span>
 <span id="cb1-7"><a href=""></a>         <span class="at">y =</span> <span class="st">"Life Expectancy (years)"</span>,</span>
 <span id="cb1-8"><a href=""></a>         <span class="at">title =</span> <span class="st">"Median life expectancy across the world"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -270,11 +270,13 @@ Ian McCarthy
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>R Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="fu">ggplot</span>(<span class="at">data =</span> gapminder, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp)) <span class="sc">+</span> </span>
-<span id="cb2-2"><a href=""></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">scale_x_continuous</span>(<span class="at">label =</span> comma) <span class="sc">+</span></span>
-<span id="cb2-3"><a href=""></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"GDP Per Capita ($US)"</span>,</span>
-<span id="cb2-4"><a href=""></a>       <span class="at">y =</span> <span class="st">"Life Expectancy (years)"</span>,</span>
-<span id="cb2-5"><a href=""></a>       <span class="at">title =</span> <span class="st">"Life expectancy and GDP"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a>wb <span class="sc">%&gt;%</span></span>
+<span id="cb2-2"><a href=""></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(gdp_pc), <span class="sc">!</span><span class="fu">is.na</span>(life_exp)) <span class="sc">%&gt;%</span></span>
+<span id="cb2-3"><a href=""></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> gdp_pc, <span class="at">y =</span> life_exp)) <span class="sc">+</span></span>
+<span id="cb2-4"><a href=""></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">scale_x_continuous</span>(<span class="at">label =</span> comma) <span class="sc">+</span></span>
+<span id="cb2-5"><a href=""></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"GDP per capita (PPP $)"</span>,</span>
+<span id="cb2-6"><a href=""></a>       <span class="at">y =</span> <span class="st">"Life Expectancy (years)"</span>,</span>
+<span id="cb2-7"><a href=""></a>       <span class="at">title =</span> <span class="st">"Life expectancy and GDP"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 
 </div>
@@ -284,16 +286,17 @@ Ian McCarthy
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>R Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="fu">ggplot</span>(gapminder, <span class="fu">aes</span>(gdpPercap, lifeExp, <span class="at">size =</span> pop)) <span class="sc">+</span></span>
-<span id="cb3-2"><a href=""></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb3-3"><a href=""></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> country_colors) <span class="sc">+</span></span>
-<span id="cb3-4"><a href=""></a>  <span class="fu">scale_size</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">12</span>)) <span class="sc">+</span></span>
-<span id="cb3-5"><a href=""></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
-<span id="cb3-6"><a href=""></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>continent) <span class="sc">+</span></span>
-<span id="cb3-7"><a href=""></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">'Year: {frame_time}'</span>, <span class="at">x =</span> <span class="st">'Log GDP Per Capita ($US)'</span>, <span class="at">y =</span> <span class="st">'Life Expectancy (years)'</span>) <span class="sc">+</span></span>
-<span id="cb3-8"><a href=""></a>  <span class="fu">transition_time</span>(year) <span class="sc">+</span></span>
-<span id="cb3-9"><a href=""></a>  <span class="fu">ease_aes</span>(<span class="st">'linear'</span>) <span class="sc">+</span></span>
-<span id="cb3-10"><a href=""></a>  <span class="fu">theme_bw</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>wb <span class="sc">%&gt;%</span></span>
+<span id="cb3-2"><a href=""></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(gdp_pc), <span class="sc">!</span><span class="fu">is.na</span>(life_exp), <span class="sc">!</span><span class="fu">is.na</span>(pop)) <span class="sc">%&gt;%</span></span>
+<span id="cb3-3"><a href=""></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(gdp_pc, life_exp, <span class="at">size =</span> pop, <span class="at">color =</span> region)) <span class="sc">+</span></span>
+<span id="cb3-4"><a href=""></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb3-5"><a href=""></a>  <span class="fu">scale_size</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">12</span>)) <span class="sc">+</span></span>
+<span id="cb3-6"><a href=""></a>  <span class="fu">scale_x_log10</span>(<span class="at">labels =</span> comma) <span class="sc">+</span></span>
+<span id="cb3-7"><a href=""></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>region) <span class="sc">+</span></span>
+<span id="cb3-8"><a href=""></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">'Year: {round(frame_time)}'</span>, <span class="at">x =</span> <span class="st">'GDP per capita (PPP $, log scale)'</span>, <span class="at">y =</span> <span class="st">'Life Expectancy (years)'</span>) <span class="sc">+</span></span>
+<span id="cb3-9"><a href=""></a>  <span class="fu">transition_time</span>(year) <span class="sc">+</span></span>
+<span id="cb3-10"><a href=""></a>  <span class="fu">ease_aes</span>(<span class="st">'linear'</span>) <span class="sc">+</span></span>
+<span id="cb3-11"><a href=""></a>  <span class="fu">theme_bw</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 
 </div>
@@ -304,17 +307,19 @@ Ian McCarthy
 <details class="code-fold">
 <summary>R Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a>mycolors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"US"</span> <span class="ot">=</span> <span class="st">"red"</span>, <span class="st">"other"</span> <span class="ot">=</span> <span class="st">"grey50"</span>)</span>
-<span id="cb4-2"><a href=""></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">filter</span>(country <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Canada"</span>, <span class="st">"France"</span>, <span class="st">"Germany"</span>, <span class="st">"Italy"</span>, <span class="st">"Japan"</span>, <span class="st">"United Kingdom"</span>, <span class="st">"United States"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb4-3"><a href=""></a>  <span class="fu">mutate</span>(<span class="at">highlight =</span> <span class="fu">ifelse</span>(country<span class="sc">==</span><span class="st">"United States"</span>, <span class="st">"US"</span>, <span class="st">"other"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb4-4"><a href=""></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(gdpPercap, lifeExp, <span class="at">size =</span> pop)) <span class="sc">+</span></span>
-<span id="cb4-5"><a href=""></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>, <span class="fu">aes</span>(<span class="at">color=</span>highlight)) <span class="sc">+</span></span>
-<span id="cb4-6"><a href=""></a>  <span class="fu">scale_color_manual</span>(<span class="st">"U.S."</span>, <span class="at">values =</span> mycolors) <span class="sc">+</span></span>
-<span id="cb4-7"><a href=""></a>  <span class="fu">scale_size</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">12</span>)) <span class="sc">+</span></span>
-<span id="cb4-8"><a href=""></a>  <span class="fu">scale_x_comma</span>(<span class="at">limits=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">55000</span>)) <span class="sc">+</span> </span>
-<span id="cb4-9"><a href=""></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">'Year: {frame_time}'</span>, <span class="at">x =</span> <span class="st">'GDP Per Capita ($US)'</span>, <span class="at">y =</span> <span class="st">'Life Expectancy (years)'</span>) <span class="sc">+</span></span>
-<span id="cb4-10"><a href=""></a>  <span class="fu">transition_time</span>(year) <span class="sc">+</span></span>
-<span id="cb4-11"><a href=""></a>  <span class="fu">ease_aes</span>(<span class="st">'linear'</span>) <span class="sc">+</span></span>
-<span id="cb4-12"><a href=""></a>  <span class="fu">theme_bw</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb4-2"><a href=""></a>wb <span class="sc">%&gt;%</span></span>
+<span id="cb4-3"><a href=""></a>  <span class="fu">filter</span>(country <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Canada"</span>, <span class="st">"France"</span>, <span class="st">"Germany"</span>, <span class="st">"Italy"</span>, <span class="st">"Japan"</span>, <span class="st">"United Kingdom"</span>, <span class="st">"United States"</span>),</span>
+<span id="cb4-4"><a href=""></a>         <span class="sc">!</span><span class="fu">is.na</span>(gdp_pc), <span class="sc">!</span><span class="fu">is.na</span>(life_exp)) <span class="sc">%&gt;%</span></span>
+<span id="cb4-5"><a href=""></a>  <span class="fu">mutate</span>(<span class="at">highlight =</span> <span class="fu">ifelse</span>(country <span class="sc">==</span> <span class="st">"United States"</span>, <span class="st">"US"</span>, <span class="st">"other"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb4-6"><a href=""></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(gdp_pc, life_exp, <span class="at">size =</span> pop)) <span class="sc">+</span></span>
+<span id="cb4-7"><a href=""></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>, <span class="fu">aes</span>(<span class="at">color =</span> highlight)) <span class="sc">+</span></span>
+<span id="cb4-8"><a href=""></a>  <span class="fu">scale_color_manual</span>(<span class="st">"U.S."</span>, <span class="at">values =</span> mycolors) <span class="sc">+</span></span>
+<span id="cb4-9"><a href=""></a>  <span class="fu">scale_size</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">12</span>)) <span class="sc">+</span></span>
+<span id="cb4-10"><a href=""></a>  <span class="fu">scale_x_comma</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">30000</span>, <span class="dv">80000</span>)) <span class="sc">+</span></span>
+<span id="cb4-11"><a href=""></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">'Year: {round(frame_time)}'</span>, <span class="at">x =</span> <span class="st">'GDP per capita (PPP $)'</span>, <span class="at">y =</span> <span class="st">'Life Expectancy (years)'</span>) <span class="sc">+</span></span>
+<span id="cb4-12"><a href=""></a>  <span class="fu">transition_time</span>(year) <span class="sc">+</span></span>
+<span id="cb4-13"><a href=""></a>  <span class="fu">ease_aes</span>(<span class="st">'linear'</span>) <span class="sc">+</span></span>
+<span id="cb4-14"><a href=""></a>  <span class="fu">theme_bw</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 
 </div>
