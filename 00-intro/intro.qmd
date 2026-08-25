@@ -88,30 +88,6 @@ wb %>%
 
 ---
 
-## Health and Wealth
-
-```{r}
-#| code-fold: true
-#| code-summary: "R Code"
-#| fig-align: center
-wb %>%
-  filter(!is.na(gdp_pc), !is.na(life_exp), !is.na(pop)) %>%
-  ggplot(aes(gdp_pc, life_exp, size = pop, color = region)) +
-  geom_point(alpha = 0.5, show.legend = FALSE) +
-  scale_size(range = c(2, 12)) +
-  scale_x_log10(labels = comma) +
-  facet_wrap(~region) +
-  labs(title = 'Year: {round(frame_time)}', x = 'GDP per capita (PPP $, log scale)', y = 'Life Expectancy (years)') +
-  transition_time(year) +
-  ease_aes('linear') +
-  theme_bw()
-```
-
-
-
-
----
-
 ## But the U.S. is unique {.today-cue data-cue="Launch poll: U.S. outcomes rank?"}
 
 ```{r}
