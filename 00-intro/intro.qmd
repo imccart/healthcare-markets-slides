@@ -155,7 +155,7 @@ gapminder %>% filter(country %in% c("Canada", "France", "Germany", "Italy", "Jap
 - Are we just woefully inefficient?
 - The right answer is probably more complicated
   - U.S. very good in some areas (breast cancer treatment, interventional cardiology)
-  - Let's look at some more graphs from the [Commonwealth Fund](https://www.commonwealthfund.org/publications/issue-briefs/2020/jan/us-health-care-global-perspective-2019)
+  - Let's look at some more graphs from the Commonwealth Fund's [Mirror, Mirror 2024](https://www.commonwealthfund.org/series/mirror-mirror-comparing-health-systems-across-countries) comparison
 
 ---
 
