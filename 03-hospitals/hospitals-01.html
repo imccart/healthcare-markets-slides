@@ -32,7 +32,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="hospitals-01_files/libs/revealjs/dist/theme/quarto-b60c5827c297cfca03cb5aadee55f286.css">
+  <link rel="stylesheet" href="hospitals-01_files/libs/revealjs/dist/theme/quarto-6a5aab5738b3567f97d144dfd31ec1ba.css">
   <link href="hospitals-01_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="hospitals-01_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="hospitals-01_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -649,9 +649,9 @@ Ian McCarthy
             '<button class="do-panel__close" aria-label="Close">&times;</button>' +
             '<h3>Today in class</h3>' +
             '<div class="do-panel__date"></div>' +
-            '<div class="do-panel__cue"></div>' +
           '</div>' +
           '<div class="do-panel__body"></div>' +
+          '<div class="do-panel__cue"><div class="do-panel__cue-label">On this slide</div><div class="do-panel__cue-text"></div></div>' +
           '<div class="do-panel__foot"><a href="' + COURSE_URL + '" target="_blank" rel="noopener">Class website &rarr;</a></div>';
 
         document.body.appendChild(today);
@@ -702,8 +702,9 @@ Ian McCarthy
           if (open) {
             var s = presentSlide();
             var cue = panel.querySelector(".do-panel__cue");
-            cue.textContent = isCueSlide(s) ? cueText(s) : "";
-            cue.classList.toggle("show", !!cue.textContent);
+            var text = isCueSlide(s) ? cueText(s) : "";
+            cue.querySelector(".do-panel__cue-text").textContent = text;
+            cue.classList.toggle("show", !!text);
             if (isCueSlide(s)) s.dataset.cueAck = "1";
             refreshCue();
           }

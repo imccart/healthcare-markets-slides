@@ -221,14 +221,22 @@ body:has(#title-slide.present) .do-today:not(.do-cue):hover { color: #ffffff; }
 // attribute, shown at the top of the panel when it is opened on that slide
 .do-panel__cue {
   display: none;
-  margin-top: 0.5em;
-  padding: 0.35em 0.6em;
-  border-left: 3px solid $emory-gold;
-  background: rgba(238, 178, 17, 0.12);
+  margin: 1.2em 0 0.4em;
+  padding: 0.8em 1em;
+  border-radius: 8px;
+  background: $emory-gold;
   color: $emory-navy;
-  font-weight: 600; font-size: 0.95em;
 }
 .do-panel__cue.show { display: block; }
+.do-panel__cue-label {
+  font-size: 0.7em; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  opacity: 0.75;
+  margin-bottom: 0.3em;
+}
+.do-panel__cue-text {
+  font-size: 1.35em; font-weight: 700; line-height: 1.25;
+}
 .do-today.do-cue::after {
   content: "";
   position: absolute;
