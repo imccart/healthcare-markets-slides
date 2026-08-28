@@ -158,6 +158,7 @@ Some common arguments:
 - High physician salaries
 - Fraud
 - Administrative waste
+- Defensive medicine and malpractice
 
 ---
 
