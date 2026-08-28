@@ -4,9 +4,10 @@
      places: when the deck is playing inside the Commons classroom board, the
      board hands over today's plan and the current step (postMessage), and the
      action steps become buttons that ask the board to run them; opened on its
-     own, the panel reads daily-outline.json (keyed by date) and shows the plan
-     read-only. The JSON is fetched at load time, so decks never re-render when a
-     plan changes. -->
+     own, the panel reads daily-outline.json and shows, read-only, the plan of
+     the class day that names this deck (a deck belongs to its scheduled day,
+     whatever today's date is). The JSON is fetched at load time, so decks never
+     re-render when a plan changes. -->
 <script>
 (function () {
   var COURSE_URL = "https://econ372f26.classes.ianmccarthyecon.com/";
@@ -24,12 +25,28 @@
       String(d.getMonth() + 1).padStart(2, "0") + "-" +
       String(d.getDate()).padStart(2, "0");
   }
+  // a deck is identified by its last two path segments (module folder + file)
+  function deckTail(u) {
+    var parts = String(u || "").split("?")[0].split("#")[0].split("/");
+    return parts.slice(-2).join("/").toLowerCase();
+  }
+  var THIS_DECK = deckTail(location.pathname);
+  function namesThisDeck(e) {
+    return (e.plan || []).some(function (st) {
+      return st.action === "slides" && st.url && deckTail(st.url) === THIS_DECK;
+    });
+  }
+  // the class day whose plan names this deck; if it is scheduled more than
+  // once, today's date or the next one, else the most recent
   function pickEntry(data) {
     if (!data) return null;
     var today = todayISO();
-    if (data[today]) return data[today];
-    var upcoming = Object.keys(data).filter(function (k) { return k >= today; }).sort();
-    return upcoming.length ? data[upcoming[0]] : null;
+    var mine = Object.keys(data).sort().filter(function (k) { return namesThisDeck(data[k]); });
+    if (!mine.length) return null;
+    var pick = mine.filter(function (k) { return k >= today; })[0] || mine[mine.length - 1];
+    var e = data[pick];
+    e.is_today = (pick === today);
+    return e;
   }
   function fmtDate(iso) {
     return new Date(iso + "T00:00:00").toLocaleDateString(undefined,
@@ -106,9 +123,10 @@
       var e = current;
       var body = panel.querySelector(".do-panel__body");
       body.innerHTML = "";
+      panel.querySelector("h3").textContent = (e && e.is_today) ? "Today in class" : "In class";
       if (!e) {
         panel.querySelector(".do-panel__date").textContent = "";
-        body.appendChild(el("div", "do-panel__topic", "No class outline on file."));
+        body.appendChild(el("div", "do-panel__topic", "Bonus material, not scheduled for a class day."));
         return;
       }
       panel.querySelector(".do-panel__date").textContent = fmtDate(e.date);

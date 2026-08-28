@@ -576,220 +576,471 @@ Ian McCarthy
       });
     </script>
     <!-- Minimal "Today" control (top-right) that opens a slide-over outline panel,
+
          plus a small course-home link at the very bottom. Built on every deck.
+
          The panel shows the day's run of show. Its content comes from one of two
+
          places: when the deck is playing inside the Commons classroom board, the
+
          board hands over today's plan and the current step (postMessage), and the
+
          action steps become buttons that ask the board to run them; opened on its
-         own, the panel reads daily-outline.json (keyed by date) and shows the plan
-         read-only. The JSON is fetched at load time, so decks never re-render when a
-         plan changes. -->
+
+         own, the panel reads daily-outline.json and shows, read-only, the plan of
+
+         the class day that names this deck (a deck belongs to its scheduled day,
+
+         whatever today's date is). The JSON is fetched at load time, so decks never
+
+         re-render when a plan changes. -->
+
     <script>
+
     (function () {
+
       var COURSE_URL = "https://econ372f26.classes.ianmccarthyecon.com/";
+
       // origins allowed to drive the panel (the live board and local development)
+
       var BOARD_ORIGINS = ["https://ian-desktop-02.tail7a5b83.ts.net", "http://127.0.0.1:8771", "http://localhost:8771"];
 
+    
+
       var current = null;      // {date, class, topic, kind, plan, baseline, notes}
+
       var stepNow = -1;        // current step index when the board is driving
+
       var boardDriven = false; // true once the board has sent a plan
+
       var boardOrigin = null;
 
+    
+
       function todayISO() {
+
         var d = new Date();
+
         return d.getFullYear() + "-" +
+
           String(d.getMonth() + 1).padStart(2, "0") + "-" +
+
           String(d.getDate()).padStart(2, "0");
+
       }
-      function pickEntry(data) {
-        if (!data) return null;
-        var today = todayISO();
-        if (data[today]) return data[today];
-        var upcoming = Object.keys(data).filter(function (k) { return k >= today; }).sort();
-        return upcoming.length ? data[upcoming[0]] : null;
+
+      // a deck is identified by its last two path segments (module folder + file)
+
+      function deckTail(u) {
+
+        var parts = String(u || "").split("?")[0].split("#")[0].split("/");
+
+        return parts.slice(-2).join("/").toLowerCase();
+
       }
-      function fmtDate(iso) {
-        return new Date(iso + "T00:00:00").toLocaleDateString(undefined,
-          { weekday: "long", month: "long", day: "numeric" });
-      }
-      function el(tag, cls, text) {
-        var e = document.createElement(tag);
-        if (cls) e.className = cls;
-        if (text != null) e.textContent = text;
-        return e;
-      }
-      function label(t) { return el("div", "do-panel__label", t); }
-      function list(items, isNotes) {
-        var ul = el("ul", "do-list" + (isNotes ? " do-notes" : ""));
-        (items || []).forEach(function (t) { ul.appendChild(el("li", null, t)); });
-        return ul;
-      }
-      var ACTION_LABELS = {
-        checkin: "Open check-in", slides: "Show the deck", sim: "Launch", poll: "Launch poll",
-        quiz: "Open quiz", "panel-draw": "Draw panel", "panel-questions": "Show questions",
-        "panel-audience": "Open the floor"
-      };
-      function actionLabel(step) {
-        var base = ACTION_LABELS[step.action] || "";
-        if (step.action === "sim" && step.id) base += " " + String(step.id).toUpperCase();
-        return base;
-      }
-      // the run of show; buttons only when the board is driving and the day is today
-      function planList(plan, withButtons) {
-        var ol = el("ol", "do-plan");
-        plan.forEach(function (step, i) {
-          var li = el("li", "do-plan__step" +
-            (stepNow >= 0 && i < stepNow ? " done" : "") + (i === stepNow ? " now" : ""));
-          li.appendChild(el("span", "do-plan__min", step.min + "′"));
-          li.appendChild(el("span", "do-plan__label", step.label));
-          if (withButtons && step.action && (i === stepNow || i === stepNow + 1)) {
-            var b = el("button", "do-plan__btn" + (i === stepNow ? "" : " next"), actionLabel(step));
-            b.addEventListener("click", function (ev) {
-              ev.stopPropagation();
-              window.parent.postMessage({ type: "commons-action", index: i }, boardOrigin);
-            });
-            li.appendChild(b);
-          }
-          ol.appendChild(li);
+
+      var THIS_DECK = deckTail(location.pathname);
+
+      function namesThisDeck(e) {
+
+        return (e.plan || []).some(function (st) {
+
+          return st.action === "slides" && st.url && deckTail(st.url) === THIS_DECK;
+
         });
-        return ol;
+
       }
+
+      // the class day whose plan names this deck; if it is scheduled more than
+
+      // once, today's date or the next one, else the most recent
+
+      function pickEntry(data) {
+
+        if (!data) return null;
+
+        var today = todayISO();
+
+        var mine = Object.keys(data).sort().filter(function (k) { return namesThisDeck(data[k]); });
+
+        if (!mine.length) return null;
+
+        var pick = mine.filter(function (k) { return k >= today; })[0] || mine[mine.length - 1];
+
+        var e = data[pick];
+
+        e.is_today = (pick === today);
+
+        return e;
+
+      }
+
+      function fmtDate(iso) {
+
+        return new Date(iso + "T00:00:00").toLocaleDateString(undefined,
+
+          { weekday: "long", month: "long", day: "numeric" });
+
+      }
+
+      function el(tag, cls, text) {
+
+        var e = document.createElement(tag);
+
+        if (cls) e.className = cls;
+
+        if (text != null) e.textContent = text;
+
+        return e;
+
+      }
+
+      function label(t) { return el("div", "do-panel__label", t); }
+
+      function list(items, isNotes) {
+
+        var ul = el("ul", "do-list" + (isNotes ? " do-notes" : ""));
+
+        (items || []).forEach(function (t) { ul.appendChild(el("li", null, t)); });
+
+        return ul;
+
+      }
+
+      var ACTION_LABELS = {
+
+        checkin: "Open check-in", slides: "Show the deck", sim: "Launch", poll: "Launch poll",
+
+        quiz: "Open quiz", "panel-draw": "Draw panel", "panel-questions": "Show questions",
+
+        "panel-audience": "Open the floor"
+
+      };
+
+      function actionLabel(step) {
+
+        var base = ACTION_LABELS[step.action] || "";
+
+        if (step.action === "sim" && step.id) base += " " + String(step.id).toUpperCase();
+
+        return base;
+
+      }
+
+      // the run of show; buttons only when the board is driving and the day is today
+
+      function planList(plan, withButtons) {
+
+        var ol = el("ol", "do-plan");
+
+        plan.forEach(function (step, i) {
+
+          var li = el("li", "do-plan__step" +
+
+            (stepNow >= 0 && i < stepNow ? " done" : "") + (i === stepNow ? " now" : ""));
+
+          li.appendChild(el("span", "do-plan__min", step.min + "′"));
+
+          li.appendChild(el("span", "do-plan__label", step.label));
+
+          if (withButtons && step.action && (i === stepNow || i === stepNow + 1)) {
+
+            var b = el("button", "do-plan__btn" + (i === stepNow ? "" : " next"), actionLabel(step));
+
+            b.addEventListener("click", function (ev) {
+
+              ev.stopPropagation();
+
+              window.parent.postMessage({ type: "commons-action", index: i }, boardOrigin);
+
+            });
+
+            li.appendChild(b);
+
+          }
+
+          ol.appendChild(li);
+
+        });
+
+        return ol;
+
+      }
+
+    
 
       function build() {
+
         var today = el("button", "do-today", "Today");
+
         today.setAttribute("aria-label", "Show today's class outline");
 
+    
+
         var home = el("div", "do-home");
+
         var homeLink = el("a", null, "← Course home");
+
         homeLink.href = COURSE_URL; homeLink.target = "_blank"; homeLink.rel = "noopener";
+
         home.appendChild(homeLink);
 
+    
+
         var panel = el("aside", "do-panel");
+
         panel.innerHTML =
+
           '<div class="do-panel__head">' +
+
             '<button class="do-panel__close" aria-label="Close">&times;</button>' +
+
             '<h3>Today in class</h3>' +
+
             '<div class="do-panel__date"></div>' +
+
           '</div>' +
+
           '<div class="do-panel__body"></div>' +
+
           '<div class="do-panel__cue"><div class="do-panel__cue-label">On this slide</div><div class="do-panel__cue-text"></div></div>' +
+
           '<div class="do-panel__foot"><a href="' + COURSE_URL + '" target="_blank" rel="noopener">Class website &rarr;</a></div>';
 
+    
+
         document.body.appendChild(today);
+
         document.body.appendChild(home);
+
         document.body.appendChild(panel);
 
+    
+
         function render() {
+
           var e = current;
+
           var body = panel.querySelector(".do-panel__body");
+
           body.innerHTML = "";
+
+          panel.querySelector("h3").textContent = (e && e.is_today) ? "Today in class" : "In class";
+
           if (!e) {
+
             panel.querySelector(".do-panel__date").textContent = "";
-            body.appendChild(el("div", "do-panel__topic", "No class outline on file."));
+
+            body.appendChild(el("div", "do-panel__topic", "Bonus material, not scheduled for a class day."));
+
             return;
+
           }
+
           panel.querySelector(".do-panel__date").textContent = fmtDate(e.date);
+
           body.appendChild(el("div", "do-panel__topic", (e.class ? "Class " + e.class + " · " : "") + (e.topic || "")));
+
           if (e.plan && e.plan.length) {
+
             body.appendChild(label(boardDriven ? "Run of show" : "Plan"));
+
             body.appendChild(planList(e.plan, boardDriven && e.is_today !== false));
+
           } else {
+
             body.appendChild(label("On the schedule"));
+
             body.appendChild(list(e.baseline, false));
+
           }
+
           if (e.notes && e.notes.length) {
+
             body.appendChild(label("Notes for today"));
+
             body.appendChild(list(e.notes, true));
+
           }
+
         }
+
         function presentSlide() {
+
           var pres = document.querySelectorAll(".reveal section.present");
+
           return pres.length ? pres[pres.length - 1] : null;
+
         }
+
         function isCueSlide(s) {
+
           if (!s) return false;
+
           var tagged = s.classList.contains("today-cue") ||
+
             (s.closest && s.closest("section.today-cue"));
+
           return !!(tagged || s.id === "title-slide");
+
         }
+
         function cueText(s) {
+
           if (!s) return "";
+
           var tagged = s.hasAttribute("data-cue") ? s :
+
             (s.closest && s.closest("section[data-cue]"));
+
           if (tagged) return tagged.getAttribute("data-cue") || "";
+
           return s.id === "title-slide" ? "Start of class: open the outline" : "";
+
         }
+
         function refreshCue() {
+
           var s = presentSlide();
+
           var on = isCueSlide(s) && !(s && s.dataset.cueAck);
+
           today.classList.toggle("do-cue", on);
+
         }
+
         function toggle(force) {
+
           var open = (force === undefined) ? !panel.classList.contains("open") : force;
+
           panel.classList.toggle("open", open);
+
           if (open) {
+
             var s = presentSlide();
+
             var cue = panel.querySelector(".do-panel__cue");
+
             var text = isCueSlide(s) ? cueText(s) : "";
+
             cue.querySelector(".do-panel__cue-text").textContent = text;
+
             cue.classList.toggle("show", !!text);
+
             if (isCueSlide(s)) s.dataset.cueAck = "1";
+
             refreshCue();
+
           }
+
         }
+
+    
 
         today.addEventListener("click", function (ev) { ev.stopPropagation(); toggle(); });
+
         panel.querySelector(".do-panel__close").addEventListener("click", function () { toggle(false); });
+
         panel.addEventListener("click", function (ev) { ev.stopPropagation(); });
+
         document.addEventListener("click", function () { toggle(false); });
 
+    
+
         document.addEventListener("keydown", function (ev) {
+
           var typing = /^(input|textarea|select)$/i.test(ev.target.tagName || "");
+
           if (!typing && (ev.key === "t" || ev.key === "T")) {
+
             ev.stopPropagation(); ev.preventDefault(); toggle();
+
           } else if (ev.key === "Escape" && panel.classList.contains("open")) {
+
             ev.stopPropagation(); ev.preventDefault(); toggle(false);
+
           }
+
         }, true);
 
+    
+
         render();
+
         fetch("../daily-outline.json", { cache: "no-store" })
+
           .then(function (r) { return r.ok ? r.json() : null; })
+
           .then(function (data) { if (data && !boardDriven) { current = pickEntry(data); render(); } })
+
           .catch(function () { /* nothing on file */ });
 
+    
+
         // inside the classroom board: the board sends the plan and the current step,
+
         // and re-sends whenever either changes; the panel's buttons ask it to act
+
         if (window.parent !== window) {
+
           window.addEventListener("message", function (ev) {
+
             if (BOARD_ORIGINS.indexOf(ev.origin) < 0 || !ev.data || ev.data.type !== "commons-plan") return;
+
             boardOrigin = ev.origin;
+
             boardDriven = true;
+
             current = ev.data.day || null;
+
             stepNow = (typeof ev.data.stepNow === "number") ? ev.data.stepNow : -1;
+
             render();
+
           });
+
           BOARD_ORIGINS.forEach(function (o) {
+
             try { window.parent.postMessage({ type: "commons-ready" }, o); } catch (e) {}
+
           });
+
         }
+
+    
 
         refreshCue();
+
         if (window.Reveal && typeof Reveal.on === "function") {
+
           Reveal.on("slidechanged", refreshCue);
+
           Reveal.on("ready", refreshCue);
+
         }
+
         var slidesEl = document.querySelector(".reveal .slides") || document.body;
+
         new MutationObserver(refreshCue).observe(slidesEl, {
+
           subtree: true, attributes: true, attributeFilter: ["class"]
+
         });
+
       }
 
+    
+
       if (document.readyState === "loading") {
+
         document.addEventListener("DOMContentLoaded", build);
+
       } else { build(); }
+
     })();
+
     </script>
+
     
 
     <script>
