@@ -94,13 +94,13 @@
       },
       {
         "min": 15,
-        "label": "Panel questions",
+        "label": "Panel: main questions",
         "action": "panel-questions",
         "id": 1
       },
       {
         "min": 35,
-        "label": "Audience questions",
+        "label": "Panel: audience questions",
         "action": "panel-audience",
         "id": 1
       },
@@ -164,13 +164,13 @@
       },
       {
         "min": 15,
-        "label": "Panel questions",
+        "label": "Panel: main questions",
         "action": "panel-questions",
         "id": 2
       },
       {
         "min": 35,
-        "label": "Audience questions",
+        "label": "Panel: audience questions",
         "action": "panel-audience",
         "id": 2
       },
@@ -313,13 +313,13 @@
       },
       {
         "min": 15,
-        "label": "Panel questions",
+        "label": "Panel: main questions",
         "action": "panel-questions",
         "id": 3
       },
       {
         "min": 35,
-        "label": "Audience questions",
+        "label": "Panel: audience questions",
         "action": "panel-audience",
         "id": 3
       },
@@ -450,13 +450,13 @@
       },
       {
         "min": 15,
-        "label": "Panel questions",
+        "label": "Panel: main questions",
         "action": "panel-questions",
         "id": 4
       },
       {
         "min": 35,
-        "label": "Audience questions",
+        "label": "Panel: audience questions",
         "action": "panel-audience",
         "id": 4
       },
@@ -518,13 +518,13 @@
       },
       {
         "min": 15,
-        "label": "Panel questions",
+        "label": "Panel: main questions",
         "action": "panel-questions",
         "id": 5
       },
       {
         "min": 35,
-        "label": "Audience questions",
+        "label": "Panel: audience questions",
         "action": "panel-audience",
         "id": 5
       },
@@ -587,13 +587,13 @@
       },
       {
         "min": 15,
-        "label": "Panel questions",
+        "label": "Panel: main questions",
         "action": "panel-questions",
         "id": 6
       },
       {
         "min": 35,
-        "label": "Audience questions",
+        "label": "Panel: audience questions",
         "action": "panel-audience",
         "id": 6
       },
@@ -790,13 +790,13 @@
       },
       {
         "min": 15,
-        "label": "Panel questions",
+        "label": "Panel: main questions",
         "action": "panel-questions",
         "id": 7
       },
       {
         "min": 35,
-        "label": "Audience questions",
+        "label": "Panel: audience questions",
         "action": "panel-audience",
         "id": 7
       },
@@ -919,13 +919,13 @@
       },
       {
         "min": 18,
-        "label": "Panel questions",
+        "label": "Panel: main questions",
         "action": "panel-questions",
         "id": 8
       },
       {
         "min": 40,
-        "label": "Audience questions",
+        "label": "Panel: audience questions",
         "action": "panel-audience",
         "id": 8
       },
