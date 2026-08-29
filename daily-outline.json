@@ -94,12 +94,6 @@
       },
       {
         "min": 15,
-        "label": "Draw the panel",
-        "action": "panel-draw",
-        "id": 1
-      },
-      {
-        "min": 17,
         "label": "Panel questions",
         "action": "panel-questions",
         "id": 1
@@ -170,12 +164,6 @@
       },
       {
         "min": 15,
-        "label": "Draw the panel",
-        "action": "panel-draw",
-        "id": 2
-      },
-      {
-        "min": 17,
         "label": "Panel questions",
         "action": "panel-questions",
         "id": 2
@@ -325,12 +313,6 @@
       },
       {
         "min": 15,
-        "label": "Draw the panel",
-        "action": "panel-draw",
-        "id": 3
-      },
-      {
-        "min": 17,
         "label": "Panel questions",
         "action": "panel-questions",
         "id": 3
@@ -468,12 +450,6 @@
       },
       {
         "min": 15,
-        "label": "Draw the panel",
-        "action": "panel-draw",
-        "id": 4
-      },
-      {
-        "min": 17,
         "label": "Panel questions",
         "action": "panel-questions",
         "id": 4
@@ -542,12 +518,6 @@
       },
       {
         "min": 15,
-        "label": "Draw the panel",
-        "action": "panel-draw",
-        "id": 5
-      },
-      {
-        "min": 17,
         "label": "Panel questions",
         "action": "panel-questions",
         "id": 5
@@ -617,12 +587,6 @@
       },
       {
         "min": 15,
-        "label": "Draw the panel",
-        "action": "panel-draw",
-        "id": 6
-      },
-      {
-        "min": 17,
         "label": "Panel questions",
         "action": "panel-questions",
         "id": 6
@@ -826,12 +790,6 @@
       },
       {
         "min": 15,
-        "label": "Draw the panel",
-        "action": "panel-draw",
-        "id": 7
-      },
-      {
-        "min": 17,
         "label": "Panel questions",
         "action": "panel-questions",
         "id": 7
@@ -961,12 +919,6 @@
       },
       {
         "min": 18,
-        "label": "Draw the panel",
-        "action": "panel-draw",
-        "id": 8
-      },
-      {
-        "min": 20,
         "label": "Panel questions",
         "action": "panel-questions",
         "id": 8
