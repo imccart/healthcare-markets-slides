@@ -338,7 +338,7 @@ body:has(#title-slide.present) .do-today:not(.do-cue):hover { color: #ffffff; }
 // playing inside the Commons board) a button on the current and next action step
 .do-plan { list-style: none; margin: 0; padding: 0; }
 .do-plan__step {
-  display: grid; grid-template-columns: 2.4em 1fr auto;
+  display: grid; grid-template-columns: 2.8em 1fr auto;
   align-items: center; gap: 0.5em;
   margin: 4px 0; padding: 5px 8px; border-radius: 6px;
   font-size: 14px; line-height: 1.3; color: $emory-mut;

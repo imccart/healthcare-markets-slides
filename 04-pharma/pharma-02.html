@@ -32,7 +32,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="pharma-02_files/libs/revealjs/dist/theme/quarto-18571a527a5673eb0f8ca90986ebd381.css">
+  <link rel="stylesheet" href="pharma-02_files/libs/revealjs/dist/theme/quarto-ac3ab496dc3ec426afe653c3bd32c65a.css">
   <link href="pharma-02_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="pharma-02_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="pharma-02_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -597,6 +597,8 @@ p_{2}^* &amp;= \frac{a(2b+c) + 2b^2\,mc_{2} + bc\,mc_{1}}{4b^2 - c^2} \end{align
 
       var COURSE_URL = "https://econ372f26.classes.ianmccarthyecon.com/";
 
+      var CLASS_START = 14 * 60 + 30;   // every class meets at 2:30 pm; plan steps are minutes from then
+
       // origins allowed to drive the panel (the live board and local development)
 
       var BOARD_ORIGINS = ["https://ian-desktop-02.tail7a5b83.ts.net", "http://127.0.0.1:8771", "http://localhost:8771"];
@@ -671,6 +673,18 @@ p_{2}^* &amp;= \frac{a(2b+c) + 2b^2\,mc_{2} + bc\,mc_{1}}{4b^2 - c^2} \end{align
 
       }
 
+      // a plan step's minute offset as the clock time it falls on (2:30, 2:35, 3:05)
+
+      function clockAt(min) {
+
+        var t = CLASS_START + Number(min || 0);
+
+        var h = Math.floor(t / 60) % 24, m = t % 60;
+
+        return (((h + 11) % 12) + 1) + ":" + String(m).padStart(2, "0");
+
+      }
+
       function fmtDate(iso) {
 
         return new Date(iso + "T00:00:00").toLocaleDateString(undefined,
@@ -735,7 +749,7 @@ p_{2}^* &amp;= \frac{a(2b+c) + 2b^2\,mc_{2} + bc\,mc_{1}}{4b^2 - c^2} \end{align
 
             (stepNow >= 0 && i < stepNow ? " done" : "") + (i === stepNow ? " now" : ""));
 
-          li.appendChild(el("span", "do-plan__min", step.min + "′"));
+          li.appendChild(el("span", "do-plan__min", clockAt(step.min)));
 
           li.appendChild(el("span", "do-plan__label", step.label));
 

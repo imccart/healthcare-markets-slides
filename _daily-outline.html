@@ -11,6 +11,7 @@
 <script>
 (function () {
   var COURSE_URL = "https://econ372f26.classes.ianmccarthyecon.com/";
+  var CLASS_START = 14 * 60 + 30;   // every class meets at 2:30 pm; plan steps are minutes from then
   // origins allowed to drive the panel (the live board and local development)
   var BOARD_ORIGINS = ["https://ian-desktop-02.tail7a5b83.ts.net", "http://127.0.0.1:8771", "http://localhost:8771"];
 
@@ -48,6 +49,12 @@
     e.is_today = (pick === today);
     return e;
   }
+  // a plan step's minute offset as the clock time it falls on (2:30, 2:35, 3:05)
+  function clockAt(min) {
+    var t = CLASS_START + Number(min || 0);
+    var h = Math.floor(t / 60) % 24, m = t % 60;
+    return (((h + 11) % 12) + 1) + ":" + String(m).padStart(2, "0");
+  }
   function fmtDate(iso) {
     return new Date(iso + "T00:00:00").toLocaleDateString(undefined,
       { weekday: "long", month: "long", day: "numeric" });
@@ -80,7 +87,7 @@
     plan.forEach(function (step, i) {
       var li = el("li", "do-plan__step" +
         (stepNow >= 0 && i < stepNow ? " done" : "") + (i === stepNow ? " now" : ""));
-      li.appendChild(el("span", "do-plan__min", step.min + "′"));
+      li.appendChild(el("span", "do-plan__min", clockAt(step.min)));
       li.appendChild(el("span", "do-plan__label", step.label));
       if (withButtons && step.action && (i === stepNow || i === stepNow + 1)) {
         var b = el("button", "do-plan__btn" + (i === stepNow ? "" : " next"), actionLabel(step));
