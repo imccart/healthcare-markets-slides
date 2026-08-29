@@ -66,19 +66,13 @@
       },
       {
         "min": 35,
-        "label": "Simulation 1A: Buying Insurance",
+        "label": "Simulation 1A: Buying Insurance, then debrief and reflection",
         "action": "sim",
         "id": "1a"
       },
       {
-        "min": 60,
-        "label": "Debrief the simulation, then a poll",
-        "action": "poll",
-        "id": "ins-plan-factor"
-      },
-      {
         "min": 70,
-        "label": "Reflection (5 min)"
+        "label": "Wrap-up and preview of next class"
       }
     ],
     "baseline": [
@@ -263,17 +257,13 @@
       },
       {
         "min": 35,
-        "label": "Simulation 1B: Setting Premiums",
+        "label": "Simulation 1B: Setting Premiums, then debrief and reflection",
         "action": "sim",
         "id": "1b"
       },
       {
-        "min": 60,
-        "label": "Debrief the simulation"
-      },
-      {
         "min": 70,
-        "label": "Reflection (5 min)"
+        "label": "Wrap-up and preview of next class"
       }
     ],
     "baseline": [
@@ -383,19 +373,13 @@
       },
       {
         "min": 35,
-        "label": "Simulation 2A: Choosing Your Own Care",
+        "label": "Simulation 2A: Choosing Your Own Care, then debrief and reflection",
         "action": "sim",
         "id": "2a"
       },
       {
-        "min": 60,
-        "label": "Debrief the simulation, then a poll",
-        "action": "poll",
-        "id": "phys-agency"
-      },
-      {
         "min": 70,
-        "label": "Reflection (5 min)"
+        "label": "Wrap-up and preview of next class"
       }
     ],
     "baseline": [
@@ -530,17 +514,13 @@
       },
       {
         "min": 35,
-        "label": "Simulation 2B: Treating Patients",
+        "label": "Simulation 2B: Treating Patients, then debrief and reflection",
         "action": "sim",
         "id": "2b"
       },
       {
-        "min": 60,
-        "label": "Debrief the simulation"
-      },
-      {
         "min": 70,
-        "label": "Reflection (5 min)"
+        "label": "Wrap-up and preview of next class"
       }
     ],
     "baseline": [
@@ -718,17 +698,13 @@
       },
       {
         "min": 35,
-        "label": "Simulation 3A: Setting Hospital Prices",
+        "label": "Simulation 3A: Setting Hospital Prices, then debrief and reflection",
         "action": "sim",
         "id": "3a"
       },
       {
-        "min": 60,
-        "label": "Debrief the simulation"
-      },
-      {
         "min": 70,
-        "label": "Reflection (5 min)"
+        "label": "Wrap-up and preview of next class"
       }
     ],
     "baseline": [
@@ -782,17 +758,13 @@
       },
       {
         "min": 35,
-        "label": "Simulation 3B: Bargaining with Insurers",
+        "label": "Simulation 3B: Bargaining with Insurers, then debrief and reflection",
         "action": "sim",
         "id": "3b"
       },
       {
-        "min": 60,
-        "label": "Debrief the simulation"
-      },
-      {
         "min": 70,
-        "label": "Reflection (5 min)"
+        "label": "Wrap-up and preview of next class"
       }
     ],
     "baseline": [
@@ -955,19 +927,13 @@
       },
       {
         "min": 35,
-        "label": "Simulation 4A: Funding Drug R&D",
+        "label": "Simulation 4A: Funding Drug R&D, then debrief and reflection",
         "action": "sim",
         "id": "4a"
       },
       {
-        "min": 60,
-        "label": "Debrief the simulation, then a poll",
-        "action": "poll",
-        "id": "pharma-tradeoff"
-      },
-      {
         "min": 70,
-        "label": "Reflection (5 min)"
+        "label": "Wrap-up and preview of next class"
       }
     ],
     "baseline": [
