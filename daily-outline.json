@@ -1004,18 +1004,11 @@
       },
       {
         "min": 5,
-        "label": "Reverse panel: the class answers the invited guests"
+        "label": "Reverse panel: the invited guests put the questions to the class"
       },
       {
-        "min": 55,
-        "label": "Where U.S. health policy goes next, then a poll",
-        "action": "poll",
-        "id": "pharma-price-policy"
-      },
-      {
-        "min": 65,
-        "label": "Wrap-up: the semester in five ideas",
-        "action": "slides"
+        "min": 70,
+        "label": "Wrap-up"
       }
     ],
     "baseline": [
