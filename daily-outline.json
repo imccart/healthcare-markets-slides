@@ -36,7 +36,7 @@
       },
       {
         "min": 70,
-        "label": "Wrap-up and preview of next class"
+        "label": "Wrap-up"
       }
     ],
     "baseline": [
@@ -72,7 +72,7 @@
       },
       {
         "min": 70,
-        "label": "Wrap-up and preview of next class"
+        "label": "Wrap-up"
       }
     ],
     "baseline": [
@@ -112,7 +112,7 @@
       },
       {
         "min": 60,
-        "label": "Synthesis and preview of next class",
+        "label": "Wrap-up",
         "action": "slides",
         "url": "https://imccart.github.io/healthcare-markets-slides/01-insurance/insurance-02.html"
       }
@@ -148,7 +148,7 @@
       },
       {
         "min": 70,
-        "label": "Wrap-up and preview of next class"
+        "label": "Wrap-up"
       }
     ],
     "baseline": [
@@ -188,7 +188,7 @@
       },
       {
         "min": 60,
-        "label": "Synthesis and preview of next class",
+        "label": "Wrap-up",
         "action": "slides",
         "url": "https://imccart.github.io/healthcare-markets-slides/01-insurance/insurance-04.html"
       }
@@ -230,7 +230,7 @@
       },
       {
         "min": 70,
-        "label": "Wrap-up and preview of next class"
+        "label": "Wrap-up"
       }
     ],
     "baseline": [
@@ -263,7 +263,7 @@
       },
       {
         "min": 70,
-        "label": "Wrap-up and preview of next class"
+        "label": "Wrap-up"
       }
     ],
     "baseline": [
@@ -303,7 +303,7 @@
       },
       {
         "min": 70,
-        "label": "Wrap-up and preview of next class"
+        "label": "Wrap-up"
       }
     ],
     "baseline": [
@@ -343,7 +343,7 @@
       },
       {
         "min": 60,
-        "label": "Synthesis and preview of next class",
+        "label": "Wrap-up",
         "action": "slides",
         "url": "https://imccart.github.io/healthcare-markets-slides/01-insurance/insurance-07.html"
       }
@@ -379,7 +379,7 @@
       },
       {
         "min": 70,
-        "label": "Wrap-up and preview of next class"
+        "label": "Wrap-up"
       }
     ],
     "baseline": [
@@ -407,7 +407,7 @@
       },
       {
         "min": 70,
-        "label": "Wrap-up and preview of next class"
+        "label": "Wrap-up"
       }
     ],
     "baseline": [
@@ -446,7 +446,7 @@
       },
       {
         "min": 70,
-        "label": "Wrap-up and preview of next class"
+        "label": "Wrap-up"
       }
     ],
     "baseline": [
@@ -486,7 +486,7 @@
       },
       {
         "min": 60,
-        "label": "Synthesis and preview of next class",
+        "label": "Wrap-up",
         "action": "slides"
       }
     ],
@@ -520,7 +520,7 @@
       },
       {
         "min": 70,
-        "label": "Wrap-up and preview of next class"
+        "label": "Wrap-up"
       }
     ],
     "baseline": [
@@ -560,7 +560,7 @@
       },
       {
         "min": 60,
-        "label": "Synthesis, then a poll",
+        "label": "Wrap-up, then a poll",
         "action": "poll",
         "id": "phys-supply"
       }
@@ -596,7 +596,7 @@
       },
       {
         "min": 70,
-        "label": "Wrap-up and preview of next class"
+        "label": "Wrap-up"
       }
     ],
     "baseline": [
@@ -635,7 +635,7 @@
       },
       {
         "min": 60,
-        "label": "Synthesis and preview of next class",
+        "label": "Wrap-up",
         "action": "slides",
         "url": "https://imccart.github.io/healthcare-markets-slides/03-hospitals/hospitals-02.html"
       }
@@ -671,7 +671,7 @@
       },
       {
         "min": 70,
-        "label": "Wrap-up and preview of next class"
+        "label": "Wrap-up"
       }
     ],
     "baseline": [
@@ -704,7 +704,7 @@
       },
       {
         "min": 70,
-        "label": "Wrap-up and preview of next class"
+        "label": "Wrap-up"
       }
     ],
     "baseline": [
@@ -732,7 +732,7 @@
       },
       {
         "min": 70,
-        "label": "Wrap-up and preview of next class"
+        "label": "Wrap-up"
       }
     ],
     "baseline": [
@@ -764,7 +764,7 @@
       },
       {
         "min": 70,
-        "label": "Wrap-up and preview of next class"
+        "label": "Wrap-up"
       }
     ],
     "baseline": [
@@ -804,7 +804,7 @@
       },
       {
         "min": 70,
-        "label": "Wrap-up and preview of next class"
+        "label": "Wrap-up"
       }
     ],
     "baseline": [
@@ -844,7 +844,7 @@
       },
       {
         "min": 60,
-        "label": "Synthesis and preview of next class",
+        "label": "Wrap-up",
         "action": "slides"
       }
     ],
@@ -901,7 +901,7 @@
       },
       {
         "min": 70,
-        "label": "Wrap-up and preview of next class"
+        "label": "Wrap-up"
       }
     ],
     "baseline": [
@@ -933,7 +933,7 @@
       },
       {
         "min": 70,
-        "label": "Wrap-up and preview of next class"
+        "label": "Wrap-up"
       }
     ],
     "baseline": [
@@ -979,7 +979,7 @@
       },
       {
         "min": 65,
-        "label": "Synthesis and preview of next class",
+        "label": "Wrap-up",
         "action": "slides",
         "url": "https://imccart.github.io/healthcare-markets-slides/04-pharma/pharma-03.html"
       }
