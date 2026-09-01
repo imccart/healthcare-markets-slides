@@ -260,7 +260,7 @@ Office Hours: **Thursdays, 1–2pm, RRR 418** (by appointment)
 - **Class Website** – slides, notes, assignments, data
 - **Commons** – our in-class app: check-in, quizzes, polls, panels, and simulations  
 - **Canvas** – readings, grades, announcements, private info (e.g., Zoom links)  
-- **Teaching Assistant** – Shirley Cai (shirley.cai@emory.edu)  
+- **Teaching Assistant** – Shirley Cai (shirley.cai@emory.edu), office hours Thursdays 4–5pm, RRR 4th floor common area
 - **Data & Software** – R or Python, with an AI coding assistant (GitHub Copilot, free via Emory)  
 - **Office Hours** – Prof. McCarthy, Thursdays 1–2pm, RRR 418 (sign up online)  
 
