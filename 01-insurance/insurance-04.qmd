@@ -34,8 +34,12 @@ Our goal: build the tools (probability, expected value, utility) that explain **
    - Concavity & expected utility (graphic)
 
 3. **Why This Matters**
-   - Intuition behind paying for insurance  
+   - Intuition behind paying for insurance
    - Foreshadow: the risk premium & WTP (next time)
+
+4. **What Makes a Risk Insurable**
+   - Five conditions
+   - Where health insurance falls short
 
 
 # Describing Risk
@@ -208,7 +212,39 @@ eu <- .5*sqrt(80) + .5*sqrt(120)
 - But your expected utility is $\frac{1}{2} \times u(w_{heads}) + \frac{1}{2} \times u(w_{tails}) = \frac{1}{2} \times \sqrt{80} + \frac{1}{2} \times \sqrt{120} =$ `r format(eu, digits=3)`.
 
 ::: {.fragment}
-- Because expected utility < utility at expected wealth, the lottery is less attractive than a sure outcome of the same expected value. 
-  
+- Because expected utility < utility at expected wealth, the lottery is less attractive than a sure outcome of the same expected value.
+
 - This gap is what we’ll later call the risk premium, and it’s the reason people are willing to pay extra for insurance.
+:::
+
+
+# What makes a risk insurable?
+
+- Risk aversion gives us a **willing buyer** who will pay more than expected cost
+- But an insurance market needs more than a willing buyer
+
+::: {.fragment}
+The risk itself has to have the right features.
+:::
+
+
+## Five conditions
+
+1. The loss is **random**, not chosen
+2. The probability is **estimable**, so the insurer can price it
+3. Risks are roughly **independent** across people, so the pool averages out
+4. The loss is **large** relative to the premium, so the overhead is worth paying
+5. The loss is **verifiable**
+
+
+## Does health insurance qualify?
+
+Health insurance strains several of these:
+
+- Much care is partly **chosen**, not purely random (checkups, treatment choices)
+- You often know more about your health than the insurer does
+- Lots of spending is **small and routine**, yet covered anyway
+
+::: {.fragment}
+These failures are a big part of why the market looks the way it does. More on this next time.
 :::

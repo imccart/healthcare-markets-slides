@@ -169,6 +169,12 @@
         "action": "checkin"
       },
       {
+        "min": 10,
+        "label": "Slides: describing risk",
+        "action": "slides",
+        "url": "https://imccart.github.io/healthcare-markets-slides/01-insurance/insurance-04.html"
+      },
+      {
         "min": 15,
         "label": "Panel: main questions",
         "action": "panel-questions",
@@ -191,7 +197,9 @@
       "Check-in",
       "Panel discussion"
     ],
-    "notes": []
+    "notes": [
+      "A few slides on describing risk before the panel"
+    ]
   },
   "2026-09-15": {
     "date": "2026-09-15",
