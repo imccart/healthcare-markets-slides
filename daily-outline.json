@@ -203,7 +203,7 @@
     "date": "2026-09-15",
     "class": 6,
     "topic": "What insurance is worth",
-    "kind": "quiz",
+    "kind": "lecture",
     "plan": [
       {
         "min": 0,
@@ -211,13 +211,7 @@
         "action": "checkin"
       },
       {
-        "min": 5,
-        "label": "Quiz (15 min)",
-        "action": "quiz",
-        "id": "q2"
-      },
-      {
-        "min": 20,
+        "min": 10,
         "label": "Lecture: What insurance is worth",
         "action": "slides",
         "url": "https://imccart.github.io/healthcare-markets-slides/01-insurance/insurance-05.html"
@@ -234,8 +228,7 @@
       }
     ],
     "baseline": [
-      "Check-in",
-      "Quiz"
+      "Check-in"
     ],
     "notes": []
   },
@@ -252,11 +245,17 @@
       },
       {
         "min": 5,
+        "label": "Quiz (15 min)",
+        "action": "quiz",
+        "id": "q2"
+      },
+      {
+        "min": 20,
         "label": "Lecture: Set the premium",
         "action": "slides"
       },
       {
-        "min": 35,
+        "min": 40,
         "label": "Simulation 1B: Setting Premiums",
         "action": "sim",
         "id": "1b"
@@ -268,6 +267,7 @@
     ],
     "baseline": [
       "Check-in",
+      "Quiz",
       "Simulation"
     ],
     "notes": []
