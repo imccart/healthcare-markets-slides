@@ -276,7 +276,7 @@
     "date": "2026-09-22",
     "class": 8,
     "topic": "Adverse selection",
-    "kind": "quiz",
+    "kind": "lecture",
     "plan": [
       {
         "min": 0,
@@ -284,13 +284,7 @@
         "action": "checkin"
       },
       {
-        "min": 5,
-        "label": "Quiz (15 min)",
-        "action": "quiz",
-        "id": "q3"
-      },
-      {
-        "min": 20,
+        "min": 10,
         "label": "Lecture: Adverse selection",
         "action": "slides",
         "url": "https://imccart.github.io/healthcare-markets-slides/01-insurance/insurance-06.html"
@@ -307,8 +301,7 @@
       }
     ],
     "baseline": [
-      "Check-in",
-      "Quiz"
+      "Check-in"
     ],
     "notes": []
   },
@@ -316,7 +309,7 @@
     "date": "2026-09-24",
     "class": 9,
     "topic": "Do we want competition in insurance?",
-    "kind": "panel",
+    "kind": "panel+quiz",
     "plan": [
       {
         "min": 0,
@@ -324,19 +317,25 @@
         "action": "checkin"
       },
       {
-        "min": 15,
+        "min": 5,
+        "label": "Quiz (15 min)",
+        "action": "quiz",
+        "id": "q3"
+      },
+      {
+        "min": 20,
         "label": "Panel: main questions",
         "action": "panel-questions",
         "id": 3
       },
       {
-        "min": 35,
+        "min": 40,
         "label": "Panel: audience questions",
         "action": "panel-audience",
         "id": 3
       },
       {
-        "min": 60,
+        "min": 65,
         "label": "Wrap-up",
         "action": "slides",
         "url": "https://imccart.github.io/healthcare-markets-slides/01-insurance/insurance-07.html"
@@ -344,7 +343,8 @@
     ],
     "baseline": [
       "Check-in",
-      "Panel discussion"
+      "Panel discussion",
+      "Quiz"
     ],
     "notes": []
   },
