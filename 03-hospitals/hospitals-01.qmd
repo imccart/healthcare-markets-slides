@@ -172,7 +172,7 @@ Source: [Health Care Pricing Project](https://healthcarepricingproject.org)
 - Decent evidence that not-for-profit hospitals still act with strong for-profit motives
 
 
-## Role of price transparency
+## Role of price transparency {.today-cue data-cue="Launch poll: require posted prices?"}
 
 - How does the lack of price transparency impact patient behavior and health care costs?
 - Would making hospital prices more transparent reduce health care spending, or would it lead to unintended consequences?

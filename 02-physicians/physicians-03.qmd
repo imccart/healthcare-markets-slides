@@ -109,7 +109,7 @@ Excessive treatment may arise because physicians can choose a level of care, and
 # "Capitation" in practice
 
 
-## Capitated Payments
+## Capitated Payments {.today-cue data-cue="Launch poll: best way to pay physicians?"}
 
 There are two forms of capitated payments in Medicare now:
 

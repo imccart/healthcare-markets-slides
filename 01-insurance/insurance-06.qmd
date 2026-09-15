@@ -214,7 +214,7 @@ Standard & Poor's writes: “The ACA individual market is not in a 'death spiral
 
 ---
 
-## Some potential policy solutions
+## Some potential policy solutions {.today-cue data-cue="Launch poll: individual mandate?"}
 
 1. Subsidize consumers
 2. Subsidize insurers
