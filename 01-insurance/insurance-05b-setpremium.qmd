@@ -29,30 +29,25 @@ That risk premium grows with three things:
 ![](../figures/setpremium-cost.png){width="62%" fig-align="center"}
 
 
-# The more risk-averse you are, the more you buy
+# How an insurer makes money
 
-![](../figures/setpremium-riskaversion.png){width="62%" fig-align="center"}
-
-
-# Where the insurer lives
-
-- People pay **more than the average cost of care** to be covered.
-- That gap, between what people will pay and what care costs on average, is where an insurer can make money.
-- Today, you set that price.
+- To be insured, people pay more than their care costs on average.
+- Your profit is the premium you charge minus what your enrollees' care costs you.
+- Today, you choose the premium.
 
 
-# Your job today
+# What you do
 
-- Each round, you set **one premium**.
-- Buyers pick the cheapest plan that is still worth it to them.
-- Highest cumulative profit at the end wins.
+- Each round, you set one premium.
+- Buyers choose the cheapest plan that is still worth it to them.
+- Whoever ends with the most money wins.
 
 
-# Before we start, predict
+# One prediction before we start
 
-- When all of you compete for the same buyers, where do premiums end up?
-- How many people end up **uninsured**?
+- When everyone competes for the same buyers, where do premiums end up?
+- How many people end up with no insurance?
 
 ::: {.fragment}
-We put a name to what you find **next Tuesday**.
+We come back to what you find on Tuesday and give it a name.
 :::
