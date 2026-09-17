@@ -251,8 +251,9 @@
       },
       {
         "min": 20,
-        "label": "Lecture: Set the premium",
-        "action": "slides"
+        "label": "Warm-up: Set the premium",
+        "action": "slides",
+        "url": "https://imccart.github.io/healthcare-markets-slides/01-insurance/insurance-05b-setpremium.html"
       },
       {
         "min": 40,
