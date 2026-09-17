@@ -98,7 +98,7 @@ Source: [CBO Report on R&D Spending](https://www.cbo.gov/publication/57126)
 
 ---
 
-## Marketing Expenditures {.today-cue data-cue="Launch poll: allow DTC drug ads?"}
+## Marketing Expenditures {.today-cue data-cue="Launch poll: where does the marketing money go?"}
 
 ![](../figures/cbo-promotional-spending.png){width=40%}
 

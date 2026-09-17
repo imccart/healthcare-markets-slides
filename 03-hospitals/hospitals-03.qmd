@@ -77,7 +77,7 @@ The profit function is, $\pi = (16-q)q - 5 - q^{2}$. Differentiating with respec
 
 ---
 
-## In-class problem (unilateral pricing) {.today-cue data-cue="After the problem, launch poll: choosing a surgery hospital"}
+## In-class problem (unilateral pricing) {.today-cue data-cue="After the problem, launch poll: what picks your hospital?"}
 
 Consider the firm's demand curve, $d=40-2q$, and cost curve, $c(q)=5q+\frac{1}{2}q^{2}$. 
 

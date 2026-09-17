@@ -218,7 +218,7 @@
       },
       {
         "min": 50,
-        "label": "Poll: which plan would you take?",
+        "label": "Poll: what would you pay to insure a coin flip?",
         "action": "poll",
         "id": "ins-risk-attitude"
       },
@@ -291,7 +291,7 @@
       },
       {
         "min": 50,
-        "label": "Poll: individual mandate?",
+        "label": "Poll: what stops the death spiral?",
         "action": "poll",
         "id": "ins-mandate"
       },
@@ -434,7 +434,7 @@
       },
       {
         "min": 50,
-        "label": "Poll: best way to pay physicians?",
+        "label": "Poll: capitation, more care or less?",
         "action": "poll",
         "id": "phys-payment"
       },
@@ -542,7 +542,7 @@
       },
       {
         "min": 60,
-        "label": "Wrap-up, then a poll: easing primary-care shortages",
+        "label": "Wrap-up, then a poll: fixing primary-care shortages",
         "action": "poll",
         "id": "phys-supply"
       }
@@ -572,7 +572,7 @@
       },
       {
         "min": 45,
-        "label": "Poll: require posted prices?",
+        "label": "Poll: posted prices, what happens?",
         "action": "poll",
         "id": "hosp-price"
       },
@@ -641,7 +641,7 @@
       },
       {
         "min": 45,
-        "label": "Poll: choosing a surgery hospital",
+        "label": "Poll: what picks your hospital?",
         "action": "poll",
         "id": "hosp-choice"
       },
@@ -774,7 +774,7 @@
       },
       {
         "min": 50,
-        "label": "Poll: merger, first reaction?",
+        "label": "Poll: merger, what happens to prices?",
         "action": "poll",
         "id": "hosp-merger"
       },
@@ -865,7 +865,7 @@
       },
       {
         "min": 45,
-        "label": "Poll: allow DTC drug ads?",
+        "label": "Poll: where does the marketing money go?",
         "action": "poll",
         "id": "pharma-ads"
       },

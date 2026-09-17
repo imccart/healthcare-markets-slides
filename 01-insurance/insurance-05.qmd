@@ -243,7 +243,7 @@ Assume that utility takes the log form, $u(x)=ln(x)$. If someone is healthy, the
 # Determinants of Risk Premium and WTP
 
 
-## What affects the risk premium? {.today-cue data-cue="Launch poll: which plan would you take?"}
+## What affects the risk premium? {.today-cue data-cue="Launch poll: what would you pay to insure a coin flip?"}
 
 Based on the graph, what do you think are some things that might affect the risk premium and WTP?
 

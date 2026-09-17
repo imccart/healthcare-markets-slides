@@ -118,7 +118,7 @@ Historical perception of hospital competition as "wasteful" and assumption that 
 # Hospital mergers (horizontal)
 
 
-## Types of hospitals involved in mergers {.today-cue data-cue="Launch poll: merger, first reaction?"}
+## Types of hospitals involved in mergers {.today-cue data-cue="Launch poll: merger, what happens to prices?"}
 
 ![](../figures/nihcm-hospital-types.jpg)
 
