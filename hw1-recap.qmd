@@ -1,0 +1,39 @@
+---
+title: "Homework 1 Recap"
+---
+
+## Overall
+
+- A strong first effort. The class mean was 27.8 out of 30.
+- Grades and comments are posted in Canvas, so read your comment.
+- A few things came up across several submissions, and they are all worth carrying into Homework 2.
+
+## Getting the data right
+
+- Pull each premium from the correct source column and plan-year.
+- The most common lost points were premiums that did not match the filed rates.
+- Check your numbers against the source before you interpret them.
+
+## Building the national rate
+
+- Build the national Medicare rate from the two county files: merge on FIPS and year, then count-weight (sum the counts, then divide).
+- Averaging the county rates, or reading in a ready-made national file, does not earn full credit.
+- Do the build in the notebook itself, so anyone can reproduce it.
+
+## Committing your work
+
+- Commit the dataset your code actually produces, not a file left in a gitignored `data/` folder.
+- Use git: commit and push from a local clone, rather than uploading files through the website.
+- Keep your repository private.
+
+## Making the argument
+
+- Q1(d) asked for a verdict. Name the alternatives and weigh them against your data before you land on one.
+- Listing "other factors" without weighing them is not a verdict.
+- State the mechanism, do not just name it.
+
+## Working with AI
+
+- The tool writes code and prose quickly. Your job is to check it.
+- Read everything before you submit it.
+- If AI hands you a citation, confirm the source is real and that it supports your point.
