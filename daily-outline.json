@@ -429,21 +429,21 @@
       },
       {
         "min": 5,
-        "label": "Quiz (15 min)",
-        "action": "quiz",
-        "id": "q4"
-      },
-      {
-        "min": 20,
         "label": "Lecture: How physicians are paid",
         "action": "slides",
         "url": "https://imccart.github.io/healthcare-markets-slides/02-physicians/physicians-03.html"
       },
       {
-        "min": 50,
+        "min": 15,
         "label": "Poll: capitation, more care or less?",
         "action": "poll",
         "id": "phys-payment"
+      },
+      {
+        "min": 50,
+        "label": "Quiz (15 min)",
+        "action": "quiz",
+        "id": "q4"
       },
       {
         "min": 70,
