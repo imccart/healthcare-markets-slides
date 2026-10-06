@@ -51,7 +51,7 @@ pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 
 
 
-## Incentives
+## Incentives {.today-cue data-cue="Launch poll: capitation, more care or less?"}
 
 Thinking about FFS versus capitated payments...
 
@@ -109,7 +109,7 @@ Excessive treatment may arise because physicians can choose a level of care, and
 # "Capitation" in practice
 
 
-## Capitated Payments {.today-cue data-cue="Launch poll: capitation, more care or less?"}
+## Capitated Payments
 
 There are two forms of capitated payments in Medicare now:
 
