@@ -481,8 +481,7 @@
       },
       {
         "min": 60,
-        "label": "Wrap-up",
-        "action": "slides"
+        "label": "Wrap-up"
       }
     ],
     "baseline": [
