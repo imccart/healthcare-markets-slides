@@ -810,7 +810,7 @@
   "2026-11-17": {
     "date": "2026-11-17",
     "class": 23,
-    "topic": "Are hospitals too big?",
+    "topic": "Exam review",
     "kind": "panel",
     "plan": [
       {
@@ -819,26 +819,19 @@
         "action": "checkin"
       },
       {
-        "min": 15,
-        "label": "Panel: main questions",
-        "action": "panel-questions",
-        "id": 7
+        "min": 10,
+        "label": "Draw the panel, one problem each",
+        "action": "review",
+        "id": "midterm"
       },
       {
-        "min": 35,
-        "label": "Panel: audience questions",
-        "action": "panel-audience",
-        "id": 7
-      },
-      {
-        "min": 60,
-        "label": "Wrap-up",
-        "action": "slides"
+        "min": 70,
+        "label": "Wrap-up"
       }
     ],
     "baseline": [
       "Check-in",
-      "Panel discussion"
+      "Review problems"
     ],
     "notes": []
   },
