@@ -296,13 +296,13 @@ NB^{m,s} \left(p_{mj, j\in J_{s}} | \vec{p}_{m,-s}\right) &amp;= \left(\sum_{j\i
 <h2>Nash Bargaining Solution</h2>
 <p>Note that taking the natural log of the objective does not change the maximum, since the natural log is a “monotonic transformation.” In other words, the log will change the value of some function <span class="math inline">\(f(x)\)</span>, but it will not change the order, so that if <span class="math inline">\(f(x_{1})&gt;f(x_{2})\)</span>, it follows that <span class="math inline">\(\ln (f(x_{1})) &gt; \ln (f(x_{2}))\)</span>.</p>
 <p>The resulting first order condition yields: <span class="math display">\[\begin{align*}
-\frac{d \ln (NB^{m,s})}{d p_{mj}} &amp;= b_{s(m)} \frac{q_{mj} + \sum_{k\in J_{s}} \frac{d q_{mk}}{d p_{mj}} \left[p_{mk}-mc_{mk}\right]}{\sum_{k\in J_{s}} q_{mk}\left[p_{mk}-mc_{mk}\right]} + b_{m(s)} \frac{\frac{d V_{m}}{d p_{mj}}}{V_{m}(N_{m},\vec{p}_{m})-V_{m}(N_{m,-j},\vec{p}_{m})} \\
-&amp;= 0 \end{align*}\]</span></p>
+\frac{d \ln (NB^{m,s})}{d p_{mj}} &amp;= b_{s(m)} \frac{q_{mj} + \sum_{k\in J_{s}} \frac{d q_{mk}}{d p_{mj}} \left[p_{mk}-mc_{mk}\right]}{\sum_{k\in J_{s}} q_{mk}\left[p_{mk}-mc_{mk}\right]} + b_{m(s)} \frac{\frac{d V_{m}}{d p_{mj}}}{\triangle V_{m}} \\
+&amp;= 0, \end{align*}\]</span> where <span class="math inline">\(\triangle V_{m} = V_{m}(N_{m},\vec{p}_{m})-V_{m}(N_{m,-j},\vec{p}_{m})\)</span> is the insurer’s net value from the agreement.</p>
 </section>
 <section id="nash-bargaining-solution-2" class="slide level2">
 <h2>Nash Bargaining Solution</h2>
 <ul>
-<li><p>Rearrange this equation to write: <span class="math display">\[q_{mj} + \sum_{k\in J_{s}} \frac{d q_{mk}}{d p_{mj}} \left[p_{mk}-mc_{mk}\right] = -\frac{b_{m(s)}}{b_{s(m)}} \frac{\frac{d V_{m}}{d p_{mj}} \sum_{k\in J_{s}} q_{mk}\left[p_{mk}-mc_{mk}\right]}{V_{m}(N_{m},\vec{p}_{m})-V_{m}(N_{m,-j},\vec{p}_{m})}\]</span></p></li>
+<li><p>Rearrange this equation to write: <span class="math display">\[q_{mj} + \sum_{k\in J_{s}} \frac{d q_{mk}}{d p_{mj}} \left[p_{mk}-mc_{mk}\right] = -\frac{b_{m(s)}}{b_{s(m)}} \frac{\frac{d V_{m}}{d p_{mj}} \sum_{k\in J_{s}} q_{mk}\left[p_{mk}-mc_{mk}\right]}{\triangle V_{m}}\]</span></p></li>
 <li><p>By assumption, the first order conditions are separable across insurers. Combining all first order conditions therefore yields the following system of equations: <span class="math display">\[q + \omega (p-mc) = -\lambda (p-mc),\]</span> where <span class="math inline">\(\omega\)</span> and <span class="math inline">\(\lambda\)</span> are each <span class="math inline">\(J_{s} \times J_{s}\)</span> matrices, while <span class="math inline">\(q\)</span> and <span class="math inline">\(p-mc\)</span> are <span class="math inline">\(J_{s} \times 1\)</span> vectors</p></li>
 <li><p>We can then solve for prices: <span class="math display">\[p = mc - (\omega + \lambda)^{-1} q\]</span></p></li>
 </ul>
