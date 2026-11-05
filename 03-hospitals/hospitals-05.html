@@ -318,10 +318,18 @@ NB^{m,s} \left(p_{mj, j\in J_{s}} | \vec{p}_{m,-s}\right) &amp;= \left(\sum_{j\i
 </ul></li>
 </ul>
 </section>
-<section id="bargaining-and-prices" class="slide level2">
-<h2>Bargaining and Prices</h2>
-<p>Consider the special case of a single-hospital system, <span class="math display">\[p_{mj} - mc_{mj} = -q_{mj} \left(\frac{d q_{mj}}{d p_{mj}} + q_{mj} \times \frac{b_{m(j)}}{b_{j(m)}} \times \frac{\frac{d V_{m}}{d p_{mj}}}{\triangle V_{m}} \right)^{-1}\]</span></p>
+<section id="prices-without-bargaining" class="slide level2">
+<h2>Prices without bargaining</h2>
+<p>Consider a single-hospital system. If the hospital set <span class="math inline">\(p_{mj}\)</span> on its own, with no say for the insurer (<span class="math inline">\(b_{m(j)} = 0\)</span>), it would pick the price that maximizes <span class="math inline">\(q_{mj}(p_{mj}) \left[p_{mj} - mc_{mj}\right]\)</span>, the same problem as the monopolist earlier in this module: <span class="math display">\[q_{mj} + \frac{d q_{mj}}{d p_{mj}} \left[p_{mj} - mc_{mj}\right] = 0 \quad \Longrightarrow \quad p_{mj} - mc_{mj} = -q_{mj} \left(\frac{d q_{mj}}{d p_{mj}} \right)^{-1}\]</span></p>
 <ul>
+<li>The markup over marginal cost depends only on how fast the hospital’s own demand falls as its price rises. Patients leaving for other hospitals is the only thing holding the price down.</li>
+</ul>
+</section>
+<section id="prices-with-bargaining" class="slide level2">
+<h2>Prices with bargaining</h2>
+<p>Keep the insurer at the table (<span class="math inline">\(b_{m(j)} &gt; 0\)</span>) and the single-hospital case of the first-order condition becomes <span class="math display">\[p_{mj} - mc_{mj} = -q_{mj} \left(\frac{d q_{mj}}{d p_{mj}} + \underbrace{q_{mj} \times \frac{b_{m(j)}}{b_{j(m)}} \times \frac{\frac{d V_{m}}{d p_{mj}}}{\triangle V_{m}}}_{\text{new term}} \right)^{-1}\]</span></p>
+<ul>
+<li>The new term is the insurer’s side of the negotiation: how much a higher price hurts the insurer, <span class="math inline">\(\frac{d V_{m}}{d p_{mj}}\)</span>, relative to what hospital <span class="math inline">\(j\)</span> is worth to it, <span class="math inline">\(\triangle V_{m}\)</span>, scaled by the insurer’s bargaining weight. Set <span class="math inline">\(b_{m(j)} = 0\)</span> and it vanishes, leaving the previous slide.</li>
 <li>The term <span class="math inline">\(\triangle V_{m}\)</span> is positive by construction. With some work, we can find that <span class="math inline">\(\frac{d V_{m}}{d p_{mj}}&lt;0\)</span> under most conditions. This means that the presence of bargaining tends to increase the “effective” price sensitivity and reduce hospital margins relative to standard pricing conditions.</li>
 <li>However, note that this result does not always hold. In cases where some hospitals are particularly higher priced than others, then the insurer may allow a given hospital to increase its margins (relative to standard pricing conditions) so as to steer patients away from the very high priced hospital.</li>
 </ul>
