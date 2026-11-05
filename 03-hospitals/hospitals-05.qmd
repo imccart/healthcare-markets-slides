@@ -162,7 +162,7 @@ Note that taking the natural log of the objective does not change the maximum, s
 
 The resulting first order condition yields:
 $$\begin{align*}
-\frac{d \ln (NB^{m,s})}{p_{mj}} &= b_{s(m)} \frac{d q_{mj} + \sum_{k\in J_{s}} \frac{d q_{mk}}{d p_{mj}} \left[p_{mk}-mc_{mk}\right]}{\sum_{k\in J_{s}} q_{mk}\left[p_{mk}-mc_{mk}\right]} + b_{m(s)} \frac{\frac{d V_{m}}{d p_{mj}}}{V_{m}(N_{m},\vec{p}_{m})-V_{m}(N_{m,-j},\vec{p}_{m})} \\
+\frac{d \ln (NB^{m,s})}{d p_{mj}} &= b_{s(m)} \frac{q_{mj} + \sum_{k\in J_{s}} \frac{d q_{mk}}{d p_{mj}} \left[p_{mk}-mc_{mk}\right]}{\sum_{k\in J_{s}} q_{mk}\left[p_{mk}-mc_{mk}\right]} + b_{m(s)} \frac{\frac{d V_{m}}{d p_{mj}}}{V_{m}(N_{m},\vec{p}_{m})-V_{m}(N_{m,-j},\vec{p}_{m})} \\
 &= 0 \end{align*}$$
 
 ---
