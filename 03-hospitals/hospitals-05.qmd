@@ -108,7 +108,16 @@ Solve the problem working backward, finding patient choice probabilities based o
 
 - Adding a hospital never lowers the patient's expected surplus, and a hospital adds more when its $\beta x_{mikd} - \alpha c_{mid} w_{d} p_{mk}$ is high relative to the others
 - A \$1 increase in $p_{mj}$ lowers expected surplus by $c_{mid} w_{d} s_{mijd}$ dollars, the patient's expected out-of-pocket spending at hospital $j$, the same quantity-times-price logic as the area under a demand curve
-- Removing hospital $j$ from the network lowers the log-sum by $\ln \left( \frac{1}{1 - s_{mijd}} \right)$ utils, since the hospitals left over hold share $1 - s_{mijd}$. A hospital the patient picks 10% of the time is worth $\ln (1/0.9) \approx 0.11$ and one picked half the time is worth $\ln 2 \approx 0.69$
+- Removing a hospital from the network lowers it by an amount that depends only on that hospital's choice share (next slide)
+
+---
+
+## Removing a hospital from the network
+
+- Write $v_{mikd} = \beta x_{mikd} - \alpha c_{mid} w_{d} p_{mk}$. With hospital $j$ in the network, the patient's expected surplus is $\ln \sum_{k \in N_{m}} e^{v_{mikd}}$, and without it, $\ln \sum_{k \in N_{m,-j}} e^{v_{mikd}}$
+- The difference is
+$$\ln \sum_{k \in N_{m}} e^{v_{mikd}} - \ln \sum_{k \in N_{m,-j}} e^{v_{mikd}} = -\ln \left( \frac{\sum_{k \in N_{m,-j}} e^{v_{mikd}}}{\sum_{k \in N_{m}} e^{v_{mikd}}} \right) = -\ln \left( 1 - s_{mijd} \right) = \ln \left( \frac{1}{1 - s_{mijd}} \right)$$
+- The ratio inside the log is the combined choice share of every hospital other than $j$, so the loss from dropping $j$ is pinned down by $j$'s own share. A hospital the patient picks 10% of the time is worth $\ln (1/0.9) \approx 0.11$ utils, one picked half the time $\ln 2 \approx 0.69$. Dividing by $\alpha$ gives dollars, which is the willingness-to-pay measure of Capps, Dranove, and Satterthwaite (2003)
 
 ---
 
