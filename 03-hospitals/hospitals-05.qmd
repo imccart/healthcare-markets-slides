@@ -106,9 +106,9 @@ Solve the problem working backward, finding patient choice probabilities based o
 
 ## Why the log-sum behaves like surplus
 
-- Adding a hospital never lowers it, and a hospital adds more when its $\beta x_{mikd} - \alpha c_{mid} w_{d} p_{mk}$ is high relative to the others
-- A \$1 increase in $p_{mj}$ lowers it by $c_{mid} w_{d} s_{mijd}$ dollars, the patient's expected out-of-pocket spending at hospital $j$, the same quantity-times-price logic as the area under a demand curve
-- Removing hospital $j$ lowers it by $\ln \left( \frac{1}{1 - s_{mijd}} \right)$ utils, so a hospital the patient picks 10% of the time is worth $\ln (1/0.9) \approx 0.11$ and one picked half the time is worth $\ln 2 \approx 0.69$
+- Adding a hospital never lowers the patient's expected surplus, and a hospital adds more when its $\beta x_{mikd} - \alpha c_{mid} w_{d} p_{mk}$ is high relative to the others
+- A \$1 increase in $p_{mj}$ lowers expected surplus by $c_{mid} w_{d} s_{mijd}$ dollars, the patient's expected out-of-pocket spending at hospital $j$, the same quantity-times-price logic as the area under a demand curve
+- Removing hospital $j$ from the network lowers the log-sum by $\ln \left( \frac{1}{1 - s_{mijd}} \right)$ utils, since the hospitals left over hold share $1 - s_{mijd}$. A hospital the patient picks 10% of the time is worth $\ln (1/0.9) \approx 0.11$ and one picked half the time is worth $\ln 2 \approx 0.69$
 
 ---
 

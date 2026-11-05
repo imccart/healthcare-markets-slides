@@ -248,9 +248,9 @@ Ian McCarthy
 <section id="why-the-log-sum-behaves-like-surplus" class="slide level2">
 <h2>Why the log-sum behaves like surplus</h2>
 <ul>
-<li>Adding a hospital never lowers it, and a hospital adds more when its <span class="math inline">\(\beta x_{mikd} - \alpha c_{mid} w_{d} p_{mk}\)</span> is high relative to the others</li>
-<li>A $1 increase in <span class="math inline">\(p_{mj}\)</span> lowers it by <span class="math inline">\(c_{mid} w_{d} s_{mijd}\)</span> dollars, the patient’s expected out-of-pocket spending at hospital <span class="math inline">\(j\)</span>, the same quantity-times-price logic as the area under a demand curve</li>
-<li>Removing hospital <span class="math inline">\(j\)</span> lowers it by <span class="math inline">\(\ln \left( \frac{1}{1 - s_{mijd}} \right)\)</span> utils, so a hospital the patient picks 10% of the time is worth <span class="math inline">\(\ln (1/0.9) \approx 0.11\)</span> and one picked half the time is worth <span class="math inline">\(\ln 2 \approx 0.69\)</span></li>
+<li>Adding a hospital never lowers the patient’s expected surplus, and a hospital adds more when its <span class="math inline">\(\beta x_{mikd} - \alpha c_{mid} w_{d} p_{mk}\)</span> is high relative to the others</li>
+<li>A $1 increase in <span class="math inline">\(p_{mj}\)</span> lowers expected surplus by <span class="math inline">\(c_{mid} w_{d} s_{mijd}\)</span> dollars, the patient’s expected out-of-pocket spending at hospital <span class="math inline">\(j\)</span>, the same quantity-times-price logic as the area under a demand curve</li>
+<li>Removing hospital <span class="math inline">\(j\)</span> from the network lowers the log-sum by <span class="math inline">\(\ln \left( \frac{1}{1 - s_{mijd}} \right)\)</span> utils, since the hospitals left over hold share <span class="math inline">\(1 - s_{mijd}\)</span>. A hospital the patient picks 10% of the time is worth <span class="math inline">\(\ln (1/0.9) \approx 0.11\)</span> and one picked half the time is worth <span class="math inline">\(\ln 2 \approx 0.69\)</span></li>
 </ul>
 </section>
 <section id="patients-2" class="slide level2">
