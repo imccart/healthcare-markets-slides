@@ -112,35 +112,6 @@ Solve the problem working backward, finding patient choice probabilities based o
 
 ---
 
-## In-class problem (surplus in a two-hospital network)
-
-A patient's network has two hospitals, A and B. Utility from hospital $k$ is $u_{k} = v_{k} - \alpha p_{k} + e_{k}$, with $\alpha = 0.01$, $v_{A} = 3$, $p_{A}=$ \$200, $v_{B} = 1$, and $p_{B}=$ \$100.<br>
-
-1. What is the probability the patient chooses A?
-2. What is the patient's expected surplus, in dollars?
-3. How much surplus does the patient lose if B leaves the network? If A leaves?
-
-## Answer
-```{r include=FALSE}
-alpha <- 0.01
-vA <- 3 - alpha*200
-vB <- 1 - alpha*100
-sA <- exp(vA)/(exp(vA)+exp(vB))
-w_both <- log(exp(vA)+exp(vB))/alpha
-w_noB <- log(exp(vA))/alpha
-w_noA <- log(exp(vB))/alpha
-```
-
-- Net of price, A gives $3 - 0.01 \times 200 = 1$ and B gives $1 - 0.01 \times 100 = 0$, so $s_{A} = \frac{e^{1}}{e^{1} + e^{0}} =$ `r format(sA, digits=2)`
-- Expected surplus is $\frac{1}{0.01} \ln (e^{1} + e^{0}) =$ \$`r format(w_both, digits=3)`
-- Without B it is $\frac{1}{0.01} \ln (e^{1}) =$ \$`r format(w_noB, digits=3)`, so B is worth \$`r format(w_both - w_noB, digits=2)` to this patient. Without A it is \$`r format(w_noA, digits=1)`, so A is worth \$`r format(w_both - w_noA, digits=3)`
-
-::: {.fragment}
-- B is chosen only `r format(100*(1-sA), digits=2)`% of the time but is still worth \$`r format(w_both - w_noB, digits=2)` because the patient values having the option. Summing this over every patient and every disease gives the willingness to pay on the next slide.
-:::
-
----
-
 ## Patients
 
 - Summing the log-sum over enrollees and diseases, weighted by the chance of each disease, gives the closed form for consumer surplus, $$W_{m}(N_{m},\vec{p}_{m})=\frac{1}{\alpha} \sum_{i=1}^{I_{m}} \sum_{d=1}^{D} f_{mid} \ln \left( \sum_{k}\exp (\beta x_{mikd} - \alpha c_{mid} w_{d} p_{mk}) \right)$$ 
