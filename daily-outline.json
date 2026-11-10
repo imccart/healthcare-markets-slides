@@ -747,12 +747,11 @@
       },
       {
         "min": 5,
-        "label": "Lecture: Make the deal",
-        "action": "slides"
+        "label": "How the negotiation works"
       },
       {
-        "min": 35,
-        "label": "Simulation 3B: Bargaining with Insurers",
+        "min": 15,
+        "label": "Simulation 3B: Make the Deal",
         "action": "sim",
         "id": "3b"
       },
