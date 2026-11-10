@@ -1,0 +1,43 @@
+---
+title: "Make the Deal"
+---
+
+# From setting a price to negotiating one
+
+- Last week your hospital set its own price, and Medicare paid a fixed rate.
+- On Thursday the insurer got a seat at the table. The price comes out of a negotiation, and what each side would have without a deal decides who gets what.
+- Today you negotiate. Half of you are hospitals and half are insurers, and each hospital is paired with one insurer.
+
+
+# The procedure and what you know
+
+- Every pair is negotiating the price of one knee replacement.
+- A hospital knows its own cost per case and what it would net without a contract.
+- An insurer knows what the case would cost it without this hospital in its network.
+- Each side sees one line about the other side's position, and nothing else about it.
+
+
+# How a negotiation runs
+
+1. The hospital asks a price.
+2. The insurer accepts, or counters.
+3. The hospital accepts the counter, or asks again.
+4. The insurer accepts, counters again, or refuses.
+5. The hospital accepts, or refuses.
+
+A deal closes as soon as either side accepts the other's last number. A refusal, or no acceptance by the end of step 5, means no contract.
+
+
+# What a deal is worth
+
+- A hospital earns the price less its cost on each case. With no deal it keeps what it nets without a contract.
+- An insurer saves what the case would have cost it, less the price. With no deal it saves nothing.
+- Eight negotiations, four as one side and then four as the other. Your position changes between negotiations.
+- Your balance adds up across all eight.
+
+
+# Before you type a number
+
+- Where would you be with no contract? For a hospital that is the least it can take. For an insurer it is the most it can pay.
+- Read the line about the other side. Where would they be with no contract?
+- The space between those two numbers is what the two of you are dividing.
