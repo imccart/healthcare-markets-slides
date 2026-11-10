@@ -5,7 +5,7 @@ title: "Make the Deal"
 # From setting a price to negotiating one
 
 - Last week your hospital set its own price, and Medicare paid a fixed rate.
-- On Thursday the insurer got a seat at the table. The price comes out of a negotiation, and what each side would have without a deal decides who gets what.
+- On Thursday we added the insurer. The price is the outcome of a negotiation, and each side's outside option determines its share.
 - Today you negotiate. Half of you are hospitals and half are insurers, and each hospital is paired with one insurer.
 
 
@@ -36,8 +36,8 @@ A deal closes as soon as either side accepts the other's last number. A refusal,
 - Your balance adds up across all eight.
 
 
-# Before you type a number
+# Your outside option
 
-- Where would you be with no contract? For a hospital that is the least it can take. For an insurer it is the most it can pay.
-- Read the line about the other side. Where would they be with no contract?
-- The space between those two numbers is what the two of you are dividing.
+- Your outside option is what you have with no contract. For a hospital it is the lowest price worth accepting. For an insurer it is the highest price worth paying.
+- The line about the other side tells you something about their outside option.
+- The difference between the two outside options is the surplus the negotiation divides.
