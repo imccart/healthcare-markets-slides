@@ -33,7 +33,8 @@ A deal closes as soon as either side accepts the other's last number. A refusal,
 - A hospital earns the price less its cost on each case. With no deal it keeps what it nets without a contract.
 - An insurer saves what the case would have cost it, less the price. With no deal it saves nothing.
 - Eight negotiations, four as one side and then four as the other. Your position changes between negotiations.
-- Your balance adds up across all eight.
+- A ninth repeats the eighth, with every hospital's price from the eighth on the board.
+- Your balance adds up across all nine.
 
 
 # Your outside option
