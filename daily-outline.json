@@ -781,15 +781,21 @@
       },
       {
         "min": 5,
+        "label": "Poll: nearby merger, price change?",
+        "action": "poll",
+        "id": "hosp-merger-nearby"
+      },
+      {
+        "min": 10,
+        "label": "Poll: out-of-state merger, price change?",
+        "action": "poll",
+        "id": "hosp-merger-outofstate"
+      },
+      {
+        "min": 15,
         "label": "Lecture: When hospitals merge",
         "action": "slides",
         "url": "https://imccart.github.io/healthcare-markets-slides/03-hospitals/hospitals-06.html"
-      },
-      {
-        "min": 40,
-        "label": "Poll: merger, what happens to prices?",
-        "action": "poll",
-        "id": "hosp-merger"
       },
       {
         "min": 55,
