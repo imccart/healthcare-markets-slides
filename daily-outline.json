@@ -781,13 +781,13 @@
       },
       {
         "min": 5,
-        "label": "Poll: nearby merger, price change?",
+        "label": "Poll: prices after a nearby merger",
         "action": "poll",
         "id": "hosp-merger-nearby"
       },
       {
         "min": 10,
-        "label": "Poll: out-of-state merger, price change?",
+        "label": "Poll: prices after an out-of-state merger",
         "action": "poll",
         "id": "hosp-merger-outofstate"
       },
