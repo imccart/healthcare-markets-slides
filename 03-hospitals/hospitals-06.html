@@ -193,14 +193,14 @@ Ian McCarthy
 <h2>First-Order Condition for Profit Maximization</h2>
 <ul>
 <li><p>Each firm maximizes profit by choosing <span class="math inline">\(q_{i}\)</span> such that: <span class="math display">\[\frac{\partial \pi_{i}}{\partial q_{i}} = P(Q) + q_{i} P'(Q) - c = 0\]</span></p></li>
-<li><p>Rearrange to express the <strong>markup</strong> of price over marginal cost for firm <span class="math inline">\(i\)</span>: <span class="math display">\[\frac{P(Q) - c}{P(Q)} = \frac{P'(Q) q_{i}}{P(Q)}\]</span></p></li>
+<li><p>Rearrange to express the <strong>markup</strong> of price over marginal cost for firm <span class="math inline">\(i\)</span>: <span class="math display">\[\frac{P(Q) - c}{P(Q)} = -\frac{P'(Q) q_{i}}{P(Q)}\]</span></p></li>
 </ul>
 </section>
 <section id="deriving-the-markup-over-marginal-cost" class="slide level2">
 <h2>Deriving the Markup Over Marginal Cost</h2>
 <ul>
 <li><p>Using market share <span class="math inline">\(s_{i} = \frac{q_{i}}{Q}\)</span>: <span class="math display">\[\frac{P(Q) - c}{P(Q)} = \frac{s_{i}}{\epsilon}\]</span></p>
-<p>where <span class="math inline">\(\epsilon = \frac{P(Q)}{Q} \cdot \frac{dP}{dQ}\)</span> is the market demand elasticity.</p></li>
+<p>where <span class="math inline">\(\epsilon = -\frac{dQ}{dP} \cdot \frac{P(Q)}{Q}\)</span> is the market demand elasticity, in absolute value.</p></li>
 <li><p>Denote the Lerner index by <span class="math inline">\(L_{i} = \frac{P(Q) - c}{P(Q)}\)</span> and derive weighted average:</p>
 <p><span class="math display">\[L_{avg} = \sum_{i=1}^{N} s_{i} L_{i} = \sum_{i=1}^{N} s_{i} \times \frac{s_{i}}{\epsilon} = \frac{1}{\epsilon}\times \sum_{i=1}^{N} s_{i}^{2}\]</span></p></li>
 </ul>
@@ -770,7 +770,9 @@ Ian McCarthy
 
         quiz: "Open quiz", "panel-draw": "Draw panel", "panel-questions": "Show questions",
 
-        "panel-audience": "Open the floor"
+        "panel-audience": "Open the floor",
+
+        "review": "Draw the panel"
 
       };
 

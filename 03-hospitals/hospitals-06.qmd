@@ -47,7 +47,7 @@ pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
   $$\frac{\partial \pi_{i}}{\partial q_{i}} = P(Q) + q_{i} P'(Q) - c = 0$$
 
 - Rearrange to express the **markup** of price over marginal cost for firm $i$:
-  $$\frac{P(Q) - c}{P(Q)} = \frac{P'(Q) q_{i}}{P(Q)}$$
+  $$\frac{P(Q) - c}{P(Q)} = -\frac{P'(Q) q_{i}}{P(Q)}$$
 
 
 ## Deriving the Markup Over Marginal Cost
@@ -55,7 +55,7 @@ pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 - Using market share $s_{i} = \frac{q_{i}}{Q}$:
   $$\frac{P(Q) - c}{P(Q)} = \frac{s_{i}}{\epsilon}$$
   
-  where $\epsilon = \frac{P(Q)}{Q} \cdot \frac{dP}{dQ}$ is the market demand elasticity.
+  where $\epsilon = -\frac{dQ}{dP} \cdot \frac{P(Q)}{Q}$ is the market demand elasticity, in absolute value.
 
 - Denote the Lerner index by $L_{i} = \frac{P(Q) - c}{P(Q)}$ and derive weighted average:
   
