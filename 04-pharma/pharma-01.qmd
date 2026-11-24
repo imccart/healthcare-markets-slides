@@ -8,7 +8,7 @@ if (!require("pacman")) install.packages("pacman")
 pacman::p_load(tidyverse, ggplot2, lubridate, gapminder, scales)
 ```
 
-# Pharmaceutical Spending
+# Pharmaceutical Spending {.today-cue data-cue="Launch poll: drug spending per person"}
 
 ---
 
@@ -42,7 +42,7 @@ Source: [CBO Report on Pharma Spending](https://www.cbo.gov/publication/57772)
 - Sales
 
 
-# Research and Development
+# Research and Development {.today-cue data-cue="Launch poll: pharma R&D spending"}
 
 ---
 

@@ -877,9 +877,21 @@
       },
       {
         "min": 5,
+        "label": "Poll: drug spending per person",
+        "action": "poll",
+        "id": "pharma-spending-guess"
+      },
+      {
+        "min": 10,
         "label": "Lecture: The life of a drug",
         "action": "slides",
         "url": "https://imccart.github.io/healthcare-markets-slides/04-pharma/pharma-01.html"
+      },
+      {
+        "min": 20,
+        "label": "Poll: pharma R&D spending",
+        "action": "poll",
+        "id": "pharma-rd-guess"
       },
       {
         "min": 45,
